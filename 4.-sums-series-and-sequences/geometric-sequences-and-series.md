@@ -1,0 +1,52 @@
+# Geometric Sequences and Series
+
+A **geometric sequence** is a sequence of numbers defined by a starting term  and a common ratio . In the sequence, the ratio of consecutive terms \(i.e. \) is constant, and is equal to .
+
+is a geometric sequence with first term  and common ratio .
+
+Notice that the second term is the first term multiplied by the common ratio once, and the third term is the first term multiplied by the common ratio twice. Then, in general:
+
+represents the th term in the series, assuming that we start counting at 1.
+
+## Sum of a Geometric Sequence
+
+The derivation of the sum of a geometric series is similar to that of the arithmetic series. Suppose we want to find the sum  of the first  terms of a geometric series with first term  and common ratio . Then:
+
+Notice, if we subtract the second line from the first, the terms  are all cancelled out.
+
+This formula is also equal to
+
+which comes from multiplying both the numerator and denominator of the first form by -1.
+
+### Sum of an Infinite Geometric Series
+
+So far, we made no assumptions about  or . Now, let's look at two different cases of :
+
+* : The magnitude of  is greater than the magnitude of 
+* : The magnitude of  is less than the magnitude of 
+
+The reason we look at the magnitude of  is because if  is negative, terms oscillate between positive and negative.
+
+In the case where , we know that  as . Then, consider  as :
+
+This is the formula for the sum of an infinite geometric series. When , we say that the series **converges**, and it converges to the value above. In all other cases, we say that the series **diverges**.
+
+Perhaps the most common example of a diverging geometric series is the case of .
+
+## Problems and Applications
+
+### Find 
+
+One type of problem we can ask now is, suppose the third term of a geometric series is 12, and the fifth is 108. What are  and ?
+
+We know the third term must be of the form , and the fifth of the form . Then:
+
+Remember,  has two solutions for , and both are valid here, meaning that we either have  or . This implies that .
+
+### Financial Mathematics
+
+Geometric sequences and series have a direct application in finance – we can model payments with compounding interest as a geometric sequence, and use the properties we know of geometric series to calculate values.
+
+1. Compounding Interest
+2. Annuities
+

@@ -1,0 +1,70 @@
+# Binomial Theorem
+
+In this note, we will extend our discussion of the combinatorial term and Pascal's triangle into a useful concept in algebra, known as the binomial theorem.
+
+Recall, a binomial is a polynomial with two terms, where terms are items joined by addition. A trinomial is a polynomial with three terms.
+
+## Motivation
+
+Consider the following expansion of the product of two binomials:
+
+To compute the final expansion, we multiplied every combination of terms in the first polynomial by terms in the second polynomial. In this example, we multiplied two different binomials --- polynomials with two terms --- both of which were used two different variables. Let's concentrate our efforts on a simpler case, that is, binomials multiplied by themselves.
+
+What if we wanted to expand ? We can follow the same technique as above --- multiply  by , yielding , and  by , yielding  and sum the result, yielding .
+
+What if instead we wanted to expand ? One approach is to write  as , and manually try and multiply every combination of one item from the first bracket, one item in the second bracket, and one item in the third bracket. If we were to do this, we would expand in the following way:
+
+However, if we were to try to expand  in this way, we'd have a mess on our hands. Another approach is to recognize that  is the product of , which we know to be , with . We can then multiply each term in  by each term in , to yield the final expansion of . Sure, this works, however with exponents greater than  one can see that this process becomes messy.
+
+## The Combinatoral Approach
+
+Let's approach this problem differently. Consider the expansion of , which we can write as . We know that each term in its expansion must contain one term from each polynomial being multiplied. Since the only possible terms are  and , and there are three polynomials being multiplied, the each term in the expansion of  will contain either 3 s,  s and 1 , 1  and 2 s, or 3 s. Now, we need to determine the number of , ,  and  terms that exist.
+
+To determine the coefficient on , we think, how many ways can we choose 3 s, from a possible 3? This is precisely . Similarly, to determine the coefficient on , we ask, how many ways can we choose 1  from a possible of 3? Again, this is . We don't need to consider the number of ways to choose the s in these cases, as whatever isn't chosen to be an  is automatically a . Putting all of this together, we have:
+
+This confirms our result from the previous section. One point of interest is the fact that since , we can treat our coefficients as either the number of ways to choose s OR the number of ways to choose s. This means that we can also write the above result as:
+
+In general, we can write  as:
+
+To simplify the expansion, we need to determine the number of ways to choose  s,  s and 1 y,  s and 2 s, so on and so forth, until we find the number of ways to choose  s. The result is presented in the following section.
+
+## The Binomial Theorem, Formalized
+
+The binomial theorem states the following:
+
+It is worth noting that since we're using the combinatorial term to determine coefficients, the coefficients in the expansion of  are the entries in the -th row of Pascal's triangle. However, rarely will we expand  itself; we will typically expand more complicated binomials raised to other exponents.
+
+### Example
+
+Let ,  and . Then:
+
+These numbers are absurdly large. You should practice on your own made-up example with smaller numbers.
+
+## The General Term
+
+We define the -th term in the expansion of a binomial as .
+
+In the expansion of  from the previous section, the general term is:
+
+You may be asking yourself why we've written the general term this way. With the  at the front, we can quickly tell whether a term is positive or negative. By splitting the , ,  and , each exponential base is isolated, simplifying the multiplication process \(i.e. we don't need to multiply  and  and then raise that to an exponent; instead, we raise  and  to exponents separately, as we are more likely to know the powers of  on their own\).
+
+Let's look at another example, namely, the expansion of .
+
+Since  is a function of only one variable, , we were able to combine  and  into a single  term. Therefore, the general term only contains one variable, instead of two as in the previous example. We will use this fact in the next section to aid us in determining coefficients for arbitrary terms.
+
+## Sum of Coefficients
+
+In the expansion of an instance of the binomial theorem, if one sets all variables equal to $1$, then the result is the sum of the coefficients of in the expansion. Let's consider . If we set , then , telling us that the sum of coefficients in the expansion of  should be . We can verify this via expansion:
+
+This also works with multivariate binomials, i.e. binomials that are functions of more than one variable \(as all previous examples were\). You should verify this on your own.
+
+An interesting result in the above example is that no matter how large  is, the sum of the coefficients in  is always either  or , depending on whether  is even or odd. This is interesting, as when , terms of the form  can be on the order of , yet the sum of coefficients is still just  ---- fascinating!
+
+## Determining Coefficients without Expansion
+
+Consider the expansion of . You should verify that it has the general term . In the exponent for , since there is a  term, we know that consecutive terms decrease in their exponent by  --- the first term has exponent , the second exponent , and so on. \(You may be able to see this without calculating the general term, as the "difference in power" between  and  is .\)
+
+Suppose we want to find the coefficient on  in the expansion. In the general term, we can set the exponent, , equal to , and solve for the term number, which in this case is . We then can plug  into the general term to find , yielding that the coefficient is .
+
+What if we were asked for the coefficient on ? Upon solving , we yield the solution . However, this doesn't make any sense ---  represents the term number in the expansion, and must be an integer between  and  inclusive. Therefore, in this case, there is no  term in the expansion, and we can report that there is no solution.
+

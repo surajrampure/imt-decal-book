@@ -1,0 +1,38 @@
+# Complex Roots
+
+The final key property of polynomials determined by their degree are their number of roots. You may have learned before that a real-valued polynomial with real coefficients of degree  has anywhere between 0 and  roots, depending on its specifics. However, we can actually make a stronger claim, which we will examine in this article.
+
+**All real-valued polynomials with real coefficients of degree  have exactly  complex roots.**
+
+One important fact to remember is that the real numbers are a subset of the complex numbers, meaning that all real numbers are also complex. However, not all complex numbers are real.
+
+The first class of polynomial we encounter with varying numbers of roots is the parabola, of degree 2. You may have studied before that parabolas have one of the following:
+
+* 2 roots, meaning they intercept the  axis twice
+* 1 root, meaning they sit on the  axis \(this is known as a double root, and is actually treated as two roots of the same value\)
+* 0 roots, meaning that they sit completely above or completely below the  axis
+
+Recall, given a quadratic of the form , the solutions to  are given by . The three cases above come from the three different states of the discriminant, . When , there are two distinct roots. When , the "plus-or-minus" term vanishes, leaving a double root at . The case we're now interested in is when , where we would previously claim there to be "no solution" since we cannot take the square root of a negative number. In fact, there are still two perfectly valid solutions - they're just not real numbers.
+
+## Complex Numbers
+
+Complex numbers, as discussed earlier in the course, are a superset of the real numbers. We can represent a complex number  in **rectangular form** as , where  are real numbers and  is the imaginary unit defined by . We say  is the "real part" and  is the "imaginary part." We can represent the set of real numbers as complex numbers, with .
+
+The simplest parabola that has complex roots is , which sits one unit above the  axis, centered on the  axis. It has roots  and , respectively, which you can verify with the quadratic equation.
+
+An important consequence of our new, stronger definition of the number of roots of a polynomial is that **all polynomials are now completely factorable into linear terms**, whereas previously this was not the case. Previously, we could factor  and  into  and , respectively, because we knew these polynomials in standard form had roots. However, now we can factor  as well, into , by the factor theorem. In general,
+
+for some real constant . Remember, our polynomials still only take and return real numbers as inputs and outputs, and all coefficients are still real numbers. It's just the roots that are potentially complex.
+
+### Complex Root Pairs
+
+As it turns out, complex roots always occur in pairs. No real polynomial can have only a single complex root, or three complex roots, or any odd number of complex roots. Furthermore:
+
+This says that if a complex number is a root of a real polynomial, its **complex conjugate** must also be a root. Conjugates are defined exactly as above - the conjugate of  is . Complex conjugates are defined this way for the following reason:
+
+When multiplying a complex number by its conjugate, the imaginary parts fall out and we're left with a real number. In particular, this real number  is the **square of the magnitude** of the complex number, i.e. the squared distance from 0.
+
+Let's justify why  and  will always exist together as roots. By the factor theorem, if they are both roots of some  of degree :
+
+The product  yields a completely real polynomial. This real polynomial, multiplied by the rest of , which is assumed to be real, will result in a real . However, if  were multipled by , for some general complex number , the resulting last term of  would contain complex terms, meaning that  would have complex coefficients, going against our definition set in the beginning.
+

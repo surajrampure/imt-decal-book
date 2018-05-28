@@ -1,0 +1,37 @@
+# Vieta's Formulas
+
+Vieta's formulas give us a way to interpret a polynomial in standard form, e.g. , in terms of its roots, without having to find the roots specifically. While there are more practical applications to this, the derivation of Vieta's formulas prove to be an interesting combinatoral problem.
+
+## Vieta's Formulas for a Polynomial of Degree 2
+
+**Given a polynomial of the form , the sum of the roots of  is  and the product of the roots of  is .**
+
+Let's derive this! Let  be some parabola with roots . By the factor theorem, we know that , for some constant . Expanding :
+
+Comparing this expansion with , we see:
+
+We will follow a similar process to derive Vieta's formulas for degree 3. However, at this point, you should try and derive these on your own, then come back here to check your work.
+
+## Vieta's Formulas for Polynomials of Degrees 3, 4
+
+Assume  has roots , and has the form . Then:
+
+We could follow the same process to find the formulas for degrees 4, 5 and so on and so forth. However, there's a pattern here. When multiplying out , we know our product must contain every combination of one term from the first bracket, one term from the second bracket and one term from the third bracket. Then, our choices are the following:
+
+* We can choose  s and no roots, yielding 
+* We can choose  s and one root, yielding 
+* We can choose   and two roots, yielding 
+* We can choose no s and three roots, yielding 
+
+Each successive term is a **sum of products of roots, taken in different quantities at a time**.  is the sum of the products of the roots, taken one at a time, since multiplying a constant by nothing is the constant itself.  is the sum of the product of the roots, taken two at a time – it features all 3 possible combinations of two different roots multiplied together.  is the sum of the product of the roots, taken three at a time – there is only one way to take three items at once, and this is that one way.
+
+Following this pattern, we can find the expansion \(and Vieta's\) for a degree 4 polynomial without having to do any manual expanding. Let  have roots . Then, if we let  we have:
+
+One thing to notice is that 1 term makes up the coefficient of , 4 terms make up the coefficient of , 6 terms make up the coefficient of , 4 terms make up the coefficient of  and 1 term makes up the coefficient of . These numbers – 1, 4, 6, 4, 1 – are of course the 4th row of **Pascal's triangle**! This makes sense, as the coefficient of  consists of the roots taken one at a time, which means there should be  terms. The coefficient of  consists of the roots taken two at a time, which means there should be  terms.
+
+Of course, since this is a pattern, we can generalize it to polynomials of an arbitrary degree.
+
+## Generalized Derivation of Vieta's Formulas
+
+What we did here was powerful. We took a pattern for a small , extended it to a slightly larger , and then generalized it for all . We will follow a similar process in the next section, with the binomial theorem.
+
