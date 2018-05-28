@@ -1,0 +1,619 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="http://www.surajrampure.com/resources/imt-decal/air.css">
+  <script type='text/x-mathjax-config'>MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}});</script>
+  <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <style>
+    /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-rendering: optimizeLegibility;
+      line-height: 1;
+      margin-top: 0;
+      color: #222;
+    }
+
+    blockquote+figcaption cite {
+      display: block;
+      font-size: inherit;
+      text-align: right;
+    }
+
+    body {
+      word-wrap: break-word;
+    }
+
+    pre code {
+      word-wrap: normal;
+    }
+
+    body {
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      color: #444;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #4d9d91;
+      /* 2*16 = 32 */
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #4d9d91;
+      /* 1.5*16 = 24 */
+    }
+
+    h3 {
+      font-size: 1.17em;
+      color: #4d9d91;
+      /* 1.17*16 = 18.72 */
+    }
+
+    h4 {
+      font-size: 1em;
+      color: #4d9d91;
+      /* 1*16 = 16 */
+    }
+
+    h5 {
+      font-size: 0.83em;
+      color: #4d9d91;
+      /* 0.83*16 = 13.28 */
+    }
+
+    h6 {
+      font-size: 0.75em;
+      /* 0.75*16 = 12 */
+    }
+
+    h1 {
+      margin: 2.42424rem 0 1.454544rem;
+    }
+
+    h2 {
+      margin: 2.0202rem 0 1.21212rem;
+    }
+
+    h3 {
+      margin: 1.61616rem 0 1rem;
+    }
+
+    h4 {
+      margin: 1.21212rem 0 1;
+    }
+
+    h5 {
+      margin: 0.80808rem 0;
+    }
+
+    h6 {
+      margin: 0.70707rem 0;
+    }
+
+    p {
+      margin: auto auto 1.5rem;
+    }
+
+    small {
+      font-size: 65%;
+    }
+
+    input,
+    abbr,
+    acronym,
+    blockquote,
+    code,
+    kbd,
+    q,
+    samp,
+    var {
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+    }
+
+    pre {
+      white-space: pre;
+    }
+
+    pre code {
+      white-space: -moz-pre-wrap;
+      white-space: pre-wrap;
+    }
+
+    code {
+      white-space: pre;
+      font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+    }
+
+    abbr {
+      -webkit-font-variant: small-caps;
+      -moz-font-variant: small-caps;
+      -ms-font-variant: small-caps;
+      font-variant: small-caps;
+      font-weight: 600;
+      text-transform: lowercase;
+      color: gray;
+    }
+
+    abbr[title]:hover {
+      cursor: help;
+    }
+
+    /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      color: #444;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+    code,
+    pre {
+      background-color: #f5f5f5;
+      color: #444;
+      border-radius: 2px;
+      text-shadow: 0px 1px 0px white;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    pre code {
+      border: none;
+      box-shadow: none;
+    }
+
+    pre {
+      padding: 0.5em;
+    }
+
+    code {
+      display: inline-block;
+      padding: 0 0.5em;
+      line-height: 1.4;
+      font-size: 0.9em;
+    }
+
+    table {
+      border-spacing: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    table th,
+    table td {
+      padding: 0.3em 0.7em;
+    }
+
+    table th {
+      background-color: #f4f4f4;
+      border-bottom: 2px solid #444;
+    }
+
+    table td {
+      border: 1px solid #f5f5f5;
+    }
+
+    /* Add transition to containers so they can push in and out. */
+
+    #layout,
+    #menu,
+    .menu-link {
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+    }
+
+    /* This is the parent `<div>` that contains the menu and the content area. */
+
+    #layout {
+      position: relative;
+      padding-left: 0;
+    }
+
+    #layout.active #menu {
+      left: 250px;
+      width: 250px;
+    }
+
+    #layout.active .menu-link {
+      left: 250px;
+    }
+
+    /* The content `<div>` is where all your content goes. */
+
+    .content {
+      margin: 50px auto;
+      padding: 0 2em;
+      max-width: 80ex;
+      line-height: 1.6em;
+    }
+
+    /*
+    The `#menu` `<div>` is the parent `<div>` that contains the menu that
+    appears on the left side of the page.
+    */
+
+    #menu {
+      margin-left: -250px;
+      /* "#menu" width */
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1000;
+      /* so the menu or its navicon stays above all content */
+      background: #f4f4f4;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      font-size: 0.9em;
+    }
+
+    a,
+    a * {
+      text-decoration: none;
+      color: #4d9d91;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: #4d9d91;
+    }
+
+    /* All anchors inside the menu should be styled like this. */
+
+    #menu a {
+      display: block;
+      padding: 0.5em 0.5em;
+    }
+
+    #menu a:first-letter {
+      text-transform: capitalize;
+    }
+
+    #menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1em 0.5em;
+    }
+
+    #menu ul ul {
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+      border-left: 4px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* Change color of the anchor links on hover/focus. */
+
+    #menu li a:hover,
+    #menu li a:focus {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* This styles the selected menu item `<li>`. */
+
+    #menu li a.active {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    /* This styles a link within a selected menu item `<li>`. */
+
+    #menu li a.active {
+      color: #222;
+    }
+
+    /* This styles the menu heading. */
+
+    #menu li.heading {
+      font-size: 0.9em;
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    #menu li.heading>* {
+      padding: 0.5em;
+      display: block;
+    }
+
+    #menu li.heading a {
+      color: #4d9d91;
+    }
+
+    /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+    /*
+    `.menu-link` represents the responsive menu toggle that shows/hides on
+    small screens.
+    */
+
+    .menu-link {
+      position: fixed;
+      display: block;
+      /* show this only on small screens */
+      top: 0;
+      left: 0;
+      /* "#menu width" */
+      background: #f4f4f4;
+      /* change this value to increase/decrease button size */
+      z-index: 10;
+      width: 2em;
+      height: auto;
+      padding: 1.6em 1.2em;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .menu-link:hover {
+      background: /* #f4f4f4 * 0.8 */
+      #eee;
+    }
+
+    .menu-link span {
+      position: relative;
+      display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+      background-color: #555;
+      width: 100%;
+      height: 0.2em;
+      border-radius: 1em;
+    }
+
+    .menu-link span:before,
+    .menu-link span:after {
+      position: absolute;
+      margin-top: -0.6em;
+      content: " ";
+    }
+
+    .menu-link span:after {
+      margin-top: 0.6em;
+    }
+
+    /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+    @media (min-width: 48em) {
+
+      .header,
+      .content {
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+
+      #layout {
+        padding-left: 250px;
+        /* left col width "#menu" */
+        left: 0;
+      }
+      #menu {
+        left: 250px;
+      }
+
+      .menu-link {
+        position: fixed;
+        left: 250px;
+        display: none;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+    }
+
+    @media (max-width: 48em) {
+      /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+       * Make the window small.
+       * Tap the menu to trigger the active state.
+       * Make the window large again.
+       */
+      #layout.active {
+        position: relative;
+        left: 250px;
+      }
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+      <!-- Hamburger icon -->
+      <span></span>
+    </a>
+    <nav id="menu">
+      <ul>
+<li><a class="" href="../index.html">index</a></li>
+<li class="heading"><span>1. Sets and Functions</span></li>
+<ul>
+<li><a class="" href="../1. Sets and Functions/1.0 Introduction.html">1.0 Introduction</a></li>
+<li><a class="" href="../1. Sets and Functions/1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
+<li><a class="" href="../1. Sets and Functions/1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
+<li><a class="" href="../1. Sets and Functions/1.3 Number Sets.html">1.3 Number Sets</a></li>
+</ul>
+<li class="heading"><span>2. Proof Techniques</span></li>
+<ul>
+<li><a class="" href="../2. Proof Techniques/2.0 Introduction.html">2.0 Introduction</a></li>
+<li><a class="" href="../2. Proof Techniques/2.1 Basic Proof Techiques.html">2.1 Basic Proof Techiques</a></li>
+<li><a class="" href="../2. Proof Techniques/2.2 Mathematical Induction.html">2.2 Mathematical Induction</a></li>
+<li><a class="" href="../2. Proof Techniques/2.3 Faulty Proofs.html">2.3 Faulty Proofs</a></li>
+</ul>
+<li class="heading"><span>4. Series and Sequences</span></li>
+<ul>
+<li><a class="" href="../4. Series and Sequences/4.0 Introduction.html">4.0 Introduction</a></li>
+<li><a class="" href="../4. Series and Sequences/4.1 Summation Notation.html">4.1 Summation Notation</a></li>
+<li><a class="" href="../4. Series and Sequences/4.2 Arithmetic Series.html">4.2 Arithmetic Series</a></li>
+<li><a class="" href="../4. Series and Sequences/4.3 Geometric Series.html">4.3 Geometric Series</a></li>
+<li><a class="" href="../4. Series and Sequences/4.4 Telescoping Sums.html">4.4 Telescoping Sums</a></li>
+</ul>
+<li class="heading"><span>6. Polynomials</span></li>
+<ul>
+<li><a class="" href="6.0 Introduction.html">6.0 Introduction</a></li>
+<li><a class="" href="6.1 Representation of Polynomials.html">6.1 Representation of Polynomials</a></li>
+<li><a class="" href="6.2 Factor and Remainder Theorems.html">6.2 Factor and Remainder Theorems</a></li>
+<li><a class="" href="6.3 Roots.html">6.3 Roots</a></li>
+<li><a class="" href="6.4 Vieta's Formulas.html">6.4 Vieta's Formulas</a></li>
+<li><a class="" href="6.5 The Binomial Theorem.html">6.5 The Binomial Theorem</a></li>
+<li><a class="active" href="6.6 Extensions of the Binomial Theorem.html">6.6 Extensions of the Binomial Theorem</a></li>
+<li><a class="" href="6.7 Exercises.html">6.7 Exercises</a></li>
+</ul>
+</ul>
+    </nav>
+    <article id="main" class="content">
+      <h1>Extensions of the Binomial Theorem</h1>
+<p>We will now look at a few extensions of the binomial theorem and the thought process we used in deriving it.</p>
+<br>
+<h2>The “Trinomial” Theorem?</h2>
+<p>What if we would like to expand something of the form $(x + y + z)^n$? One option is to treat either $x + y$ or $y + z$ as a single term, and use the binomial theorem. However, once again, we can treat this as a combinatorial problem on its own.</p>
+<p>Suppose a general term in the expansion of $(x + y + z)^n$ contains $a$ $x$s, $b$ $y$s and $c$ $z$s. Then, we must have that $a + b + c = n$, since the total number of parentheses we choose from in the expansion must be exactly $n$. We can then say the following:</p>
+<p>$
+t_{a, b, c} = \frac{n!}{a! b! c!} x^a y^b z^c
+$</p>
+<p>The coefficient $\frac{n!}{a!b!c!}$ comes from the number of ways to arrange $a$ $x$s, $b$ $y$s and $c$ $z$s (think back to counting the number of permutations of MISSISSIPPI).</p>
+<h3>Example</h3>
+<p>Let’s calculate the coefficient of the term containing $x^4$ in the expansion of $(x - 3x^{-2} + 4)^8$:</p>
+<p>$t_{a, b, c} = \frac{8!}{a! b! c!} x^a (-3x^{-2})^b (4)^c$
+$= (-1)^b \frac{8!}{a!b!c!}3^b4^c x^{a-2b}$</p>
+<p>Setting $x^{a - 2b} = x^4$, we require $a - 2b = 4$, with the constraints that $0 \leq a, b, c \leq 8$ and $a + b + c = 8$. If we set $a = 4$ and $b = 0$, we satisfy the given constraints. We can use this solution as a starting point to find the remaining solutions:</p>
+<ul>
+<li>
+<p>$a = 4, b = 0, c = 4$</p>
+</li>
+<li>
+<p>$a = 6, b = 1, c = 1$</p>
+</li>
+</ul>
+<p>We then find the general terms corresponding to each of these two triplets:</p>
+<p>$t_{4, 0, 4} = (-1)^0 \frac{8!}{4!0!4!} 3^0 4^4 x^4 = 17920x^4$
+$t_{6, 1, 1} = (-1)^1 \frac{8!}{6!1!1!}3^14^1x^4 = - 336x^4$</p>
+<p>Then, in the final expansion, the term containing $x^4$ is $t_{4, 0, 4} + t_{6, 1,1} = 17920x^4 - 336x^4 = 17584x^4$, and the coefficient of $x^4$ is $17584$.</p>
+<h3>Generalization</h3>
+<p>Note that can write the expansion of a trinomial raised to an exponent
+as a sum, though it is slightly less meaningful:</p>
+<p>$
+(x + y + z)^n = \sum_{a, b, c | a + b + c = n} \frac{n!}{a!b!c!}x^ay^bz^c
+$</p>
+<br>
+<h2>The Multinomial Theorem</h2>
+<p>We can generalize this even further. Let’s introduce the <strong>multinomial coefficient</strong>:</p>
+<p>$
+{n \choose k_1, k_2, … k_m} = \frac{n!}{k_1!k_2! … k_m!}
+$</p>
+<p>Under the assumption $k_1 + k_2 + … + k_m = n$, this term is the number of ways to select one subset of size $k_1$, one subset of size $k_2$, … and one subset of size $k_m$ from a group of $n$ items. Notice that with $m = 2$, this is the same as the binomial coefficient that we’re used to.</p>
+<p>Then:</p>
+<p>$
+(x_1 + x_2 + … + x_m)^n = \sum_{k_1 + k_2 + … + k_m = n} {n \choose k_1, k_2, … k_m} \prod_{i = 1}^m x_i^{k_i}
+$</p>
+<p><strong>Question</strong>: How many terms are in the initial sum?
+This corresponds to the number of non-negative integer solutions to $k_1 + k_2 + … + k_m = n$, which is a stars-and-bars counting problem! Here we have $n$ stars and $m$ bins, meaning $m-1$ bars, meaning we have ${n + m - 1 \choose m-1}$ unique terms in the first expansion. (Some combinations of terms may end up being the same when $x_i$, $x_j$ contain common variables).</p>
+<br>
+<h2>Product of Two Binomial Expansions</h2>
+<p>Let’s switch gears. Rather than expanding from binomials to trinomials or general multinomials, what if we instead take a look at the product of two binomials, each raised to different exponents? Let’s illustrate this with an example!</p>
+<p>Let $f(x, y) = (2x - 3y)^5$ and $g(x, y) = (x^3 - 3xy^2)^9$. Our goal will be to find the general term of the product $f(x, y) \cdot g(x, y)$, and determine the existence of certain terms.</p>
+<p>First, we find the general term of each, using the index variable $i$ for $f(x, y)$ and $k$ for $g(x, y)$ (these choices are arbitrary, but we need some way of differentiating the two, as you will see). You should verify these on your own:</p>
+<p>$
+t_i = (-1)^i {5 \choose i} 2^{5-i} 3^i x^{5-i} y^i \
+t_k = (-1)^k {9 \choose k} 3^k x^{27-2k} y^{2k}
+$</p>
+<p>Now, to find the general term of the product, we take the product of the two general terms:</p>
+<p>$
+t_{i, k} = (-1)^i {5 \choose i} 2^{5-i} 3^i x^{5-i} y^i (-1)^k {9 \choose k} 3^k x^{27-2k} y^{2k}
+\ =(-1)^{i+k} {5 \choose i} {9 \choose k} 2^{5-i} 3^{i+k} x^{32 - i - 2k} y^{i+2k}
+$</p>
+<p>This tells us that the product of the $i$th term of $f(x)$ and $k$th term of $g(x)$ is $t_{i, k}$. Since we separated our exponential bases in the individual general terms, it was easy to combine bases in the product.</p>
+<p>We are now well equipped to answer the following questions:</p>
+<ul>
+<li>What are all terms containing $x^{20}$ in the expansion of $f(x, y) \cdot g(x,y)$?</li>
+<li>What is the coefficient of $x^{12}y^{10}$ in the expansion of $f(x, y) \cdot g(x, y)$?</li>
+</ul>
+<p>We will walk through the solution of the first problem as an example, while the latter is left as an exercise.</p>
+<br>
+<h3>Problem Setup</h3>
+<p>Using $f(x, y)$ and $g(x, y)$ as before, we want to find all terms containing $x^{20}$. Our analysis will be similar to what it was when we looked at the expansion of trinomials. Since the exponent on $x$ is $32 - i - 2k$, we are looking for all integer solutions to the following problem:</p>
+<p>$
+32 - i - 2k = 20,
+:0 \leq i \leq 5, 0 \leq k \leq 9
+$
+We know that the first line reduces to $i + 2k = 12$. One way to determine these solutions assuming the equation only contains two variables is to find the simplest solution that minimizes one variable and maximizes the other – such as $i = 0, k = 6$ – and iteratively increase the minimum and decrease the maximum until all solutions are found.</p>
+<p>After finding $i = 0, k = 6$, we can reduce $k$ by $1$ to find $i = 2, k = 5$. Doing so again yields $i = 4, k = 4$ which we know is the last solution as setting $k = 3$ yields $i = 6$ which is out of the range of possible values for $i$.</p>
+<p>Now that we have our three solutions, our problem reduces to plugging in the values of $i$ and $k$ into our expanded term.</p>
+<ul>
+<li>$t_{0, 6} = (-1)^{0 + 6} {5 \choose 0}{9 \choose 6} 2^{5-0} 3^{0 + 6} x^{32 - 0 - 2 * 6} y^{0 + 2*6} = 1959552x^{12}y^{12}$</li>
+<li>$t_{2, 5} = (-1)^{2 + 5} {5 \choose 2}{9 \choose 5} 2^{5-2} 3^{2+5}x^{32 - 2 - 2<em>5}y^{2 + 2</em>5} = -22044960x^{12}y^{12}$</li>
+<li>$t_{4, 4} = (-1)^{4 + 4} {5 \choose 4}{9 \choose 4} 2^{5-4} 3^{4+4} x^{32 - 4 - 2<em>4} y^{4 + 2</em>4} = 8266860x^{12}y^{12}$</li>
+</ul>
+<p>In this example, it turned out that the exponent on $x$ exactly matched the exponent on $y$ – this was simply a coincidence, and plugging in arbitrary values of $I$ and $k$ into the general term shows that this result isn’t always the case.</p>
+<p>It should also be noted that the multiplication of these large numbers isn’t exactly a skill that one needs to develop to be successful; no reasonable assessment (at least in this course) will ask for you to do this by hand, and leaving terms in the form ${5 \choose 2}{9 \choose 5}2^3 3^7 x^{12} y^{12}$ is perfectly fine.</p>
+
+    </article>
+  </div>
+  <script>
+    // FROM http://purecss.io/js/ui.js
+    (function (window, document) {
+
+      var layout = document.getElementById('layout'),
+        menu = document.getElementById('menu'),
+        menuLink = document.getElementById('menuLink');
+
+      function toggleClass(element, className) {
+        var classes = element.className.split(/\s+/),
+          length = classes.length,
+          i = 0;
+
+        for (; i < length; i++) {
+          if (classes[i] === className) {
+            classes.splice(i, 1);
+            break;
+          }
+        }
+        // The className is not found
+        if (length === classes.length) {
+          classes.push(className);
+        }
+
+        element.className = classes.join(' ');
+      }
+
+      menuLink.onclick = function (e) {
+        var active = 'active';
+
+        e.preventDefault();
+        toggleClass(layout, active);
+        toggleClass(menu, active);
+        toggleClass(menuLink, active);
+      };
+
+    }(this, this.document));
+  </script>
+</body>
+
+</html>
