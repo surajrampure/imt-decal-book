@@ -458,7 +458,7 @@
 <li><a class="" href="1.0 Introduction.html">1.0 Introduction</a></li>
 <li><a class="" href="1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
 <li><a class="" href="1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
-<li><a class="active" href="1.3 Number Sets.html">1.3 Number Sets</a></li>
+<li><a class="active" href="1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
@@ -491,6 +491,19 @@
     <article id="main" class="content">
       <title>1.3: Sets of Numbers – Sets and Functions</title>
 <h1>1.3: Sets of Numbers</h1>
+<hr>
+<br>
+<p>Jump to:</p>
+<ul>
+<li><a href="#natural">Natural numbers</a></li>
+<li><a href="#whole">Whole numbers</a>
+<ul>
+<li><a href="#countable">Countability</a></li>
+</ul>
+</li>
+<li><a href="#integers">Integers</a></li>
+</ul>
+<br>
 <p>We will now put together our knowledge of set theory and of functions and bijections to formally study the sets of numbers that we use everyday.</p>
 <p>Think about the order in which numbers are introduced to you throughout your study of mathematics:</p>
 <ul>
@@ -503,8 +516,118 @@
 <li><strong>Complex numbers</strong>: Complex numbers are usually introduced alongside the quadratic formula, when trying to explain the nature of complex roots; complex numbers are of the form $a + bi$, where $a, b$ are real numbers and $i$ is the imaginary unit defined by $i^2 = -1$</li>
 </ul>
 <p>Recall, in the previous section, we saw that two sets have the same size when there is a bijection between the two sets. We will use this fact in determining which of the above sets have the same size, and which don’t.</p>
-<h3>Counting Numbers – $\mathbb{N}$</h3>
-<p>We first look at the</p>
+<br>
+<a name='natural'>
+<h2>Natural Numbers</h2>
+<hr>
+</a>
+<br>
+<blockquote>
+<h3>Definition: <strong>Natural numbers</strong></h3>
+<p>The <strong>natural numbers</strong> (also known as the counting numbers), denoted by $\mathbb{N}$, are the most primitive numbers; ones that occur trivially in nature that can be used to count a (non-zero) number of things.</p>
+</blockquote>
+<blockquote>
+<p>$\mathbb{N} = \{ 1, 2, 3, 4, … \}$</p>
+</blockquote>
+<br>
+<p>That formal definition of the natural numbers leaves something to be desired. However, the natural numbers are the numbers you’ve dealt with for the longest – the set of positive numbers beginning with 1, spaced 1 apart. Note the omission of 0 in this set.</p>
+<br>
+<a name='whole'>
+<h2>Whole Numbers</h2>
+<hr>
+</a>
+<br>
+<blockquote>
+<h3>Definition: <strong>Whole numbers</strong></h3>
+<p>The set of <strong>whole numbers</strong>, denoted by $\mathbb{N}_0$, is the union of the set of counting numbers with the number 0.</p>
+</blockquote>
+<blockquote>
+<p>$\mathbb{N}_0 = \{ 0, 1, 2, 3, 4, … \}$</p>
+</blockquote>
+<blockquote>
+<p>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0}$.</p>
+</blockquote>
+<br>
+<p>Some mathematicians consider 0 to be a part of the natural numbers, hence rendering the above two sets equal. To avoid ambiguity, we will always use $\mathbb{N}$ to refer to the set $\{1, 2, 3, …\}$ and $\mathbb{N}_0$ to refer to the set $\{0, 1, 2, 3, …\}$. Read <a href="http://mathforum.org/library/drmath/view/57186.html">this</a> for more insight.</p>
+<p>Using our definition, though, clearly the set of whole numbers has <em>more</em> elements than the set of naturals – the whole numbers include every single element in the naturals, along with the number 0! However, that does not mean their cardinalities cannot be the same. The question is, does there exist a bijection that maps elements from $\mathbb{N}$ to elements of $\mathbb{N}_0$? If such a function existed, we should be able to pass in the natural numbers, in order, and receive the whole numbers, in some order.</p>
+<p><strong>It turns out that such a function does indeed exist. It is the function $f: \mathbb{N} \rightarrow \mathbb{N}_0$ given by $f(x) = x - 1$.</strong></p>
+<p>Let’s see if it checks the boxes:</p>
+<ul>
+<li><strong>Injective</strong>: Do two elements in the domain ever map to the same element in the codomain? No, but as justification, let’s suppose they did. Let $a$ and $b$ be two unequal ($a \neq b$) natural numbers that map to the same whole number under this function. That would mean $a - 1 = b - 1$, but by adding 1 to both sides we see that $a = b$. This contradicts what we assumed earlier, so that doesn’t make sense. (Such a justification is overkill, but it’s good to start thinking formally as we start studying proofs in the next chapter.)</li>
+<li><strong>Surjective</strong>: Does every element in the codomain $\mathbb{N}_0$ get mapped to? Yes – in fact, if we let $n$ be some element in $\mathbb{N}_0$, the number pointing to it from $\mathbb{N}$ is precisely $n + 1$, because $f(n+1) = n$, as required.</li>
+</ul>
+<p>Therefore, $f: x \mapsto x - 1$ is indeed a bijection from $\mathbb{N}$ to $\mathbb{N}_0$, therefore the two sets have the same cardinality.</p>
+<p>Notice, as we pass in consecutive elements of $\mathbb{N}$ – 1, then 2, then 3, then 4, and so on – we get consecutive elements of $\mathbb{N_0}$ – 0, then 1, then 2, then 3, and so on. Sets have no inherent order, but since there is no largest element in either $\mathbb{N}$ or $\mathbb{N} _ 0$, it doesn’t really make sense to start counting from anywhere else. By finding a bijection to map between the two sets, we are essentially finding an ordering of the second set – $f(1)$ is the first element, $f(2)$ is the second element, and so on. The following is a result of this interpretation:</p>
+<a name='countable'>
+<blockquote>
+<h3>Definition: <strong>Countably infinite</strong> </a></h3>
+<p>We say set $S$ is <strong>countably infinite</strong> if and only if there exists a bijection from the natural numbers (or any other countable set) to $S$. If such a bijection does not exist, we say $S$ is <strong>uncountably infinite</strong>.</p>
+</blockquote>
+<br>
+<p>Since the natural numbers and whole numbers both have the same cardinality, and the natural numbers are the basis for countability, the whole numbers are also countable. Showing that a set has a bijection with the whole numbers is the same as showing it has a bijection with the natural numbers; either works in showing the countability of a set. We will use the idea of countability to examine the sets that follow.</p>
+<br>
+<a name='integers'>
+<h2>Integers</h2>
+<hr>
+</a>
+<br>
+<blockquote>
+<h3>Definition: <strong>Integers</strong></h3>
+<p>The set of integers, denoted by $\mathbb{Z}$, is the union of the whole numbers with their negatives.</p>
+</blockquote>
+<blockquote>
+<p>$\mathbb{Z} = \{ …, -3, -2, -1, 0, 1, 2, 3, … \}$</p>
+</blockquote>
+<blockquote>
+<p>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0} \subset \mathbb{Z}$.</p>
+</blockquote>
+<br>
+<p>You should be asking yourself – are the integers countably infinite, or uncountably infinite?</p>
+<p>It turns out that they are indeed countable, but finding the bijection isn’t so obvious. We need a function that, as we plug in successive natural (or whole) numbers, gives us successive integers. However, unlike the jump from naturals to whole numbers, where we just added one new element, we now added infinitely many numbers in the negative direction of the number line. It wouldn’t make sense to attempt to count all numbers greater than or equal to zero, and then somehow start counting the numbers less than zero – we need to find a way to count positive and negative integers at the same time, systematically. We can do so by writing the set out in a clever way (which we can do, since sets do not change based on their ordering), with the whole numbers listed above:</p>
+<table>
+<thead>
+<tr>
+<th>$\mathbb{N}_0$</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th style="text-align:right">3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\mathbb{Z}$</td>
+<td>0</td>
+<td>1</td>
+<td>-1</td>
+<td style="text-align:right">2</td>
+<td>-2</td>
+<td>3</td>
+<td>-3</td>
+<td>4</td>
+<td>-4</td>
+<td>5</td>
+<td>-5</td>
+</tr>
+</tbody>
+</table>
+<p>What do we notice?</p>
+<ul>
+<li>Every integer corresponding to an even whole number is exactly half of the whole number, but negative</li>
+<li>Every integer corresponding to an odd whole number is exactly half of the next largest whole number</li>
+</ul>
+<p>We can encapsulate that behavior into the following function, which you can verify independently to be a bijection:</p>
+<p>$
+f(x) = \left\{ \begin{array}{ll} -\frac{x}{2} &amp; x \: \text{is even} \\ \frac{x+1}{2} &amp; x \: \text{is odd} \\ \end{array}  \right.
+$</p>
+<p>As we plug in consecutive values of whole numbers beginning with 0, we get an ordering of the integers. This isn’t the only possible ordering: we could count from 0 to 10, then -1 to -10, then 11 to 20, then -11 to -20 (and so on and so forth), and find a bijection (albeit complicated) that returns the integers in that order. We just happened to choose a simpler bijection and a more natural (no pun intended) ordering.</p>
 
     </article>
   </div>

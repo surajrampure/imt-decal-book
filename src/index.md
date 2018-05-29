@@ -1,8 +1,11 @@
 <title> Supplementary Textbook: Introduction to Mathematical Thinking </title>
 
-# Introduction to Mathematical Thinking 
+# Introduction to Mathematical Thinking
 
 ## Supplementary Textbook
+---
+
+<br>
 
 **Author:** Suraj Rampure (suraj.rampure@berkeley.edu)
 
@@ -12,7 +15,7 @@
 
 <br>
 
-**This will serve as the textbook for the [UC Berkeley student-run course](http://imt-decal.org) with the same title.** It isn't meant to be a comprehensive book on any of these topics, but rather is meant to supplement the course. Feel free to reach out to the author or any contributors with questions or suggestions regarding the book.
+**This will serve as the textbook for the [UC Berkeley student-run course](http://imt-decal.org) with the same title.** It isn't meant to be a comprehensive book on any of these topics, but rather is meant to supplement the course. If you have any questions, comments or suggestions regarding any of the material in this book (whether or not you are a student at Berkeley taking this course), or want to use this book to teach your own class elsewhere, please email suraj.rampure@berkeley.edu. This is a new text, and feedback is appreciated!
 
 <br>
 

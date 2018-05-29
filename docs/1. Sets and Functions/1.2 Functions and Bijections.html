@@ -458,7 +458,7 @@
 <li><a class="" href="1.0 Introduction.html">1.0 Introduction</a></li>
 <li><a class="" href="1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
 <li><a class="active" href="1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
-<li><a class="" href="1.3 Number Sets.html">1.3 Number Sets</a></li>
+<li><a class="" href="1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
@@ -491,25 +491,55 @@
     <article id="main" class="content">
       <title>1.2: Functions – Sets and Functions</title>
 <h1>1.2: Functions</h1>
+<hr>
+<br>
+<p>Jump to:</p>
+<ul>
+<li><a href="#function">Function, Domain, Range</a></li>
+<li><a href="#representation">Representation</a></li>
+<li><a href="#injection_surjection">Injections and Surjections</a>
+<ul>
+<li><a href="#injections">Injections</a></li>
+<li><a href="#surjections">Surjections</a></li>
+</ul>
+</li>
+<li><a href="#bijections">Bijections</a>
+<ul>
+<li><a href="#permutations">Permutations</a></li>
+<li><a href="#cardinality">Cardinality</a></li>
+</ul>
+</li>
+</ul>
+<br>
 <p>We now have enough background to introduce functions in a formal way.</p>
 <p><strong>Note</strong>: We briefly mention the idea of the set of real numbers in some of the following examples, though we have not yet described what the real number set is. That’s because we think it’s best to study the definition of a function before we study the various number sets (covered in the next section). However, the usage of the real numbers here is not very detailed nor significant, but feel free to ask questions for clarification!</p>
 <br>
-<h3>Definition</h3>
+<a name='function'>
+<blockquote>
+<h3>Definition: <strong>Function</strong>, <strong>Domain</strong>, <strong>Range</strong> </a></h3>
 <p>We say $f$ is a <strong>function</strong> with <em>domain</em> $A$ and <em>codomain</em> $B$ if $f \subset A \times B $ such that for every element in $A$, there is exactly one element in $B$. Symbolically, we represent this as $f : A \rightarrow B$.</p>
+</blockquote>
 <br>
-<p>Recall from the last section, the cross product $A \times B$ of two sets $A, B$ is another set, that contains all possible combinations of one element in $A$ and one element in $B$. For example, if $A = {\text{“Hi”}, \text{“Hey”} , \text{“Hello”}}$ and $B = {5, 10, 15 }$, we would have</p>
-<p>$A \times B = { (\text{“Hi”}, 5), (\text{“Hi”}, 10), (\text{“Hi”}, 15), (\text{“Hey”}, 5), (\text{“Hey”}, 10), (\text{“Hey”}, 15), (\text{“Hello”}, 5), (\text{“Hello”}, 10), (\text{“Hello”}, 15) }$</p>
-<p>We form a function $f$ by removing elements from $A \times B$ such that there are only as many elements as there are in $A$. The following is an example of some function $f$, sending elements from $A$ to $B$:</p>
-<p>$f = { (\text{“Hi”}, 10), (\text{“Hey”}, 5), (\text{“Hello”}, 5) }$</p>
-<p>We say $A$ is the <strong>domain</strong>, as it represents all possible inputs, and $B$ is the <strong>codomain</strong>, as it represents all possible outputs; as a result, we say that $f(A) = B$. However, the <strong>image</strong>, or <strong>range</strong>, is the set of all actual outputs of a function. In the example $f$ above, the image would not be $B$, since 15 is never actually an output (though it is a possible output); instead, the range would be the set ${5, 10 }$. Notice that the domain in this case isn’t even a set of numbers. In virtually all cases, you will be dealing with functions with numbers as both inputs and outputs, but it’s important to see that there’s nothing inherently numeric about the definition of a function.</p>
+<p>Recall from the last section, the Cartesian product $A \times B$ of two sets $A, B$ is another set, that contains all possible combinations of one element in $A$ and one element in $B$. For example, if $A = \{\text{“Hi”}, \text{“Hey”} \}$ and $B = \{5, 10 \}$, we would have</p>
+<p>$A \times B = \{ (\text{“Hi”}, 5), (\text{“Hi”}, 10), (\text{“Hey”}, 5), (\text{“Hey”}, 10) \}$</p>
+<p>We form a function $f$ by removing elements from $A \times B$ such that there are only as many elements as there are in $A$. The following sets $f$ and $g$ are examples of functions sending elements from $A$ to $B$:</p>
+<p>$f = \{ (\text{“Hi”}, 10), (\text{“Hey”}, 5) \}$</p>
+<p>$g = \{ (\text{“Hi”}, 5), (\text{“Hey”, 5}) \}$</p>
+<p>We say $A$ is the <strong>domain</strong>, as it represents all possible inputs, and $B$ is the <strong>codomain</strong>, as it represents all possible outputs; as a result, we say that $f(A) = B$. However, the <strong>image</strong>, or <strong>range</strong>, is the set of all actual outputs of a function. In the example $g$ above, the image would not be $B$, since 10 is never actually an output (though it is a possible output); instead, the range would be the set $\{ 5 \}$. $f$, however, behaves in a way such that the range and codomain are the same.</p>
+<p>Notice that the domain in this case isn’t even a set of numbers. In virtually all cases, you will be dealing with functions with numbers as both inputs and outputs, but it’s important to see that there’s nothing inherently numeric about the definition of a function.</p>
 <p>In the following <a href="https://upload.wikimedia.org/wikipedia/commons/6/64/Codomain2.SVG">image</a>, the red area represents the domain, the blue the codomain, and the yellow the range.</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Codomain2.SVG" alt="domain-codomain-range" style="width: 400px;"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Codomain2.SVG" alt="domain-codomain-range" style="width: 250px;"/>
+<br>
 <p>In general, subsets of $A \times B$ are known as <strong>relations</strong>. Not all relations are functions, but all functions are relations (since all functions are subsets of $A \times B$). Consider the following relation $g \subset A \times B$:</p>
-<p>$g = { (\text{“Hi”}, 5), (\text{“Hi”}, 15), (\text{“Hey”}, 15), (\text{“Hello”}, 10) }$</p>
+<p>$g = \{ (\text{“Hi”}, 5), (\text{“Hi”}, 10), (\text{“Hey”}, 10) \}$</p>
 <p>$g$ in this case is not a function, since it has two different outputs for the input of “Hi”.</p>
 <br>
-<h4>Representation</h4>
-<p>In order to define a function $f$, we need to specify the domain, codomain, and how to <em>map</em> elements of the domain to the codomain. We can do this in two ways:</p>
+<a name='representation'>
+<h2>Representation</h2>
+<hr>
+</a>
+<br>
+<p>In order to define a function $f$, we need to specify the domain, codomain, and how to <strong>map</strong> elements of the domain to the codomain. We can do this in two ways:</p>
 <ul>
 <li>List out the pairs (as we did for the examples above)</li>
 <li>Specify a rule that describes how to get from input to corresponding output</li>
@@ -518,34 +548,75 @@
 <p>$f(x) = \text{the } x^{th} \text{ smallest prime number}$</p>
 <p>$f$ is indeed a valid function, as are the various algebraic functions you have seen before: $f(x) = x^2$, $g(x) = \frac{sin(x^4)}{e^{tan x}}$, and so on. Another way of writing algebraic functions is $f: x \mapsto x^2$; we can even drop the $f$ and simply write $x \mapsto x^2$ if we don’t need to give the function a name. This is read as “the mapping that sends $x$ to $x^2$.”  This symbol is similar to the $\rightarrow$ we use when defining the domain and codomain of a function, but there is a subtle difference.</p>
 <p>However, something like $x^2 + y^2 = 1$ is not a function, as for each $x$ there are two $y$ values, and vice versa.</p>
-<p>Side Note: Some functions do not have <em>closed form representations</em>. A common example is $f(x) = \int_{-\infty}^x e^{-t^2}dt$ – this is a perfectly valid function, however there is no way to express it other than as an integral or limit of an infinite sum.</p>
+<p>Side Note: Some functions do not have <strong>closed form representations</strong>. A common example is $f(x) = \int_{-\infty}^x e^{-t^2}dt$ – this is a perfectly valid function, however there is no way to express it other than as an integral or limit of an infinite sum. This integral is commonly used in probability theory; its lack of a closed form representation is the reason we use pre-computed tables to find values on a normal distribution.</p>
 <br>
-<h3>Injections and Surjections</h3>
+<a name='injection_surjection'>
+<h2>Injections and Surjections</h2>
+<hr>
+</a>
+<br>
 <p>There are two classes of functions we will now look at.</p>
-<h4>Injections</h4>
-<p>We say a function $f : A \rightarrow B$ is injective, or <strong>one-to-one</strong>, if no two elements in the input have the same output. Formally we say</p>
-<p>$f(x_1) = f(x_2) \implies x_1 = x_2$</p>
-<p>or equivalently,</p>
-<p>$x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$</p>
+<br>
+<a name='injections'>
+<blockquote>
+<h3>Definition: <strong>Injection (One-to-one)</strong> </a></h3>
+<p>We say a function $f : A \rightarrow B$ is injective, or <strong>one-to-one</strong>, if no two elements in the input have the same output. Formally we say
+$f(x_1) = f(x_2) \implies x_1 = x_2$
+or equivalently,
+$x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$</p>
+</blockquote>
+<blockquote>
 <p>The first of these statements says if two inputs have the same output, then the inputs must be equal. The second says if two inputs are not equal, then their outputs can’t be equal.</p>
+</blockquote>
+<br>
 <p>Examples of injections are $f(x) = e^x$ and $g(x) = \sqrt{x}$, while $f(x) = x^2$ is not an injection over its entire domain (all real numbers), since $-a$ and $a$ both map to $a^2$. However, if we restrict the set of inputs to $f : x \mapsto x^2$ to be only non-negative real numbers (or only non-positive real numbers), then it is an injection!</p>
 <p><strong>insert set diagrams</strong></p>
-<h4>Surjections</h4>
+<br>
+<a name='surjections'>
+<blockquote>
+<h3>Definition: <strong>Surjection (Onto)</strong> </a></h3>
 <p>We say a function $f : A \rightarrow B$ is surjective, or <strong>onto</strong>, if every element in $B$ has is mapped to by an element in $A$. Another way of saying this is that a function is a surjection when its codomain and range are the same set (that is, all possible outputs are actually seen as outputs). Symbolically:</p>
-<p>$\forall : b \in B, : \exists : a \in A : b = f(a)$</p>
+</blockquote>
+<blockquote>
+<p>$\forall \: b \in B,  \exists \: a \in A : b = f(a)$</p>
+</blockquote>
+<br>
+<p>(Note: The symbol $\forall$ means “for all”, and $\exists$ means “there exists”.)</p>
 <p>$f: x \mapsto x^2$ is a surjection when the codomain is the set of all non-negative real numbers (and domain is the set of all real numbers), as every number greater than or equal to $0$ exists as an output (since all non-negative numbers have a square root). However, when the codomain is the set of all real numbers, positive and negative (and domain is still all real numbers), then $f(x) = x^2$ is not a surjection, as there is no real number $x$ such that $x^2 = -1$. If we let the set of positive integers be both our domain and codomain, again, $x \mapsto x^2$ is not a surjection, because not every positive integer is a square.</p>
 <p><strong>insert set diagrams</strong></p>
 <p>One way to remember the correspondence between the terms “surjection” and “onto”: the <em>sur</em> in surjective means “on” in French!</p>
 <br>
-<h3>Bijections</h3>
+<a name='bijections'>
+<h2>Bijections</h2>
+<hr>
+</a>
+<br>
 <p>A function can be injective or not, and surjective or not, as we saw above. However, when a function is both injective and surjective, it also belongs to another class of functions, one with many desirable properties.</p>
-<h4>Definition</h4>
+<blockquote>
+<h3>Definition: <strong>Bijection</strong></h3>
 <p>A function $f$ is bijective if and only if it is both injective and surjective. That is, a function is a bijection if and only if no two elements in the domain map to the same element in the range, and every element in the codomain has something mapping to it from the domain.</p>
+</blockquote>
+<br>
 <p><strong>TODO: Insert picture</strong></p>
 <p>For example, if we let our domain and codomain be the set of non-negative real numbers, we have that the function given by $x \mapsto \sqrt{x}$ is a bijection. The map given by $x \mapsto x^2$ is a bijection if we use the non-negative real numbers as our domain and codomain, however if we let our domain and codomain be all real numbers, it is not a bijection.</p>
-<p>One notion regarding sets we have yet to talk about is the size of a set, known as a set’s <strong>cardinality</strong>. For sets of finite size, the cardinality is the number of unique elements in the set. However, for sets of infinite size, such as the set of all integers or all real numbers, cardinality becomes harder to define. What we can do, though, is determine whether or not two sets have the same cardinality. <strong>We say two sets have the same cardinality if and only if there exists a bijection between the two sets.</strong> This is an idea we will explore further in the following section, on the sets of numbers.</p>
-<h4>Permutations</h4>
-<p>A <strong>permutation</strong> is a bijection whose domain and codomain are the same set. One way to think of a permutation is a “shuffling” of a set; for example, if we let our domain and codomain both be the set $S = { 1, 2, 3, 4 }$, a permutation on this set could be the mapping given by $f: { (1, 3), (2, 2), (3, 4), (4, 1) }$.  We will study permutations further when we deal with combinatorics.</p>
+<br> 
+<a name='permutations'>
+<blockquote>
+<h3>Definition: <strong>Permutation</strong> </a></h3>
+<p>A <strong>permutation</strong> is a bijection whose domain and codomain are the same set.</p>
+</blockquote>
+<br>
+<p>One way to think of a permutation is a “shuffling” of a set; for example, if we let our domain and codomain both be the set $S = \{ 1, 2, 3, 4 \}$, a permutation on this set could be the mapping given by $f: \{ (1, 3), (2, 2), (3, 4), (4, 1) \}$.  We will study permutations further when we deal with combinatorics.</p>
+<br>
+<p>One notion regarding sets we have yet to talk about is the size of a set.</p>
+<a name='cardinality'>
+<blockquote>
+<h3>Definiion: <strong>Cardinality</strong> </a></h3>
+<p>For sets of finite size, the <strong>cardinality</strong> is the number of unique elements in the set. For sets of infinite size, cardinality serves as a measure of the relative sizes of sets. Specifically, <strong>we say two sets have the same cardinality if and only if there exists a bijection between the two sets.</strong></p>
+</blockquote>
+<br>
+<p>For finite sets, there is not a whole lot to cardinality. One interesting result is the <strong>Principle of Inclusion-Exclusion</strong> (defined later), which allows us to determine the cardinality of the union of any number sets, given the sizes of the sets themselves and all intersections between the sets. The derivation of the PIE is left as an exercise in the corresponding problem set; we will use it further upon reaching the combinatorics section of the course.</p>
+<p>However, we are now concerned with the cardinality of infinite sets. An issue we will deal with in the next section is, how do we compare two infinite sets, where one seemingly has more elements than the other? Bijections will aid us in this exploration.</p>
 
     </article>
   </div>
