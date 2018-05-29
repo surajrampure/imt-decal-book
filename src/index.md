@@ -8,9 +8,7 @@
 
 **Contributors:** Fahad Kamran, Hermish Mehta, Jerry Huang
 
-**Last modified:** May 22, 2018
-
-$$\int_0^1 f_X(x) dx = P(X \in [0, 1])$$
+**Last modified:** May 28, 2018
 
 <br>
 
@@ -36,6 +34,7 @@ As a result, this course will prepare students for higher-level mathematics cour
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
+Built using [markdown-folder-to-html](https://www.npmjs.com/package/markdown-folder-to-html).
 
 
 
