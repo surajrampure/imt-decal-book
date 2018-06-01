@@ -513,7 +513,7 @@
 <li><a href="#demorgan">De Morgan’s Laws</a></li>
 </ul>
 <br>
-<p>In this section, we will look at the formal definition of a set, a subset, and identify various operations that act on multiple sets. We also introduce the idea of the universal set and a compliment. One notion omission is any discussion on the size of a set; this idea will be briefly introduced in later sections, but studied further when we discuss combinatorics.</p>
+<p>In this section, we will look at the formal definition of a set, a subset, and identify various operations that act on multiple sets. We also introduce the idea of the universal set and a complement. One notable omission is any discussion on the size of a set; this idea will be briefly introduced in later sections, but studied further when we discuss combinatorics.</p>
 <br>
 <a name='sets'>
 <blockquote>
@@ -531,6 +531,7 @@ By well-defined, we mean that for any object $x$, we can easily determine whethe
 <ul>
 <li>The symbols $:$ and $\big|$ both translate to “such that”, and precede the condition for inclusion into a set. You will see both used throughout this text.</li>
 <li>It should be noted that sets can either have finitely many elements, as in $A_1$, $A_3$ and $A_5$, or infinitely many elements, as in $A_2$ and $A_4$ above. This is a concept we will explore further later in the chapter.</li>
+<li>Stating a property (or properties) that defines a set is known as “set-builder notation”</li>
 </ul>
 <p><br><br></p>
 <a name='subsets'>
@@ -540,7 +541,7 @@ By well-defined, we mean that for any object $x$, we can easily determine whethe
 <br>
 <blockquote>
 <h3>Definition: <strong>Subset</strong></h3>
-<p>Given some set $A$, another set $B$ is a <strong>subset</strong> of $A$ if and only if every element in $B$ is also an element of $A$. Symbolically, we represent this relationship as $B \subset A$ (just like with $\geq, &gt;, \leq, &lt;$ signs, the $\subset$ sign opens towards the larger set), and it’s opposite (i.e. $B$ is not a subset of $A$) as $B \not \subset A$. Equivalently, we can say $A$ is a <strong>superset</strong> of $B$.</p>
+<p>Given some set $A$, another set $B$ is a <strong>subset</strong> of $A$ if and only if every element in $B$ is also an element of $A$. Symbolically, we represent this relationship as $B \subset A$ (just like with $\geq, &gt;, \leq, &lt;$ signs, the $\subset$ sign opens towards the larger set), and its opposite (i.e. $B$ is not a subset of $A$) as $B \not \subset A$. Equivalently, we can say $A$ is a <strong>superset</strong> of $B$.</p>
 </blockquote>
 <br>
 <p>For example, if $A = \{1, 5, 7, 9, 12\}$ and $B = \{7, 12\}$, we can say $B \subset A$, but also that $\{5, 6\} \not \subset A$.</p>
@@ -608,7 +609,9 @@ $A \times B = \{(x, y) : x \in A, y \in B  \}$</p>
 </blockquote>
 <br>
 <p>Let’s use a smaller example – let $A = \{1, 2, 3\}$ and $B = \{x, y, z\}$. Then, we have</p>
+<div align=center>
 <p>$A \times B = \{(1, x), (1, y), (1, z), (2, x), (2, y), (2, z), (3, x), (3, y), (3, z) \}$</p>
+</div>
 <p>Notice that the Cartesian product is also not symmetric – if we instead looked at $B \times A$, each of the ordered pairs in the set above would be flipped.</p>
 <br>
 <p>While we only defined the above set operations on two sets, since the result of any of these operations is also a set, we can combine these operations in any way we want. For example, $A \cup B \cup C$ can be thought of as $(A \cup B) \cup C$, or $A \cup (B \cup C)$. We can’t assign parentheses as arbitrarily when we combine operations, though: $(A \cap B) \cup C \neq A \cap (B \cup C)$ in general.</p>
@@ -642,7 +645,9 @@ $A^c = \{x : x \not \in A, x \in U \}$</p>
 <br>
 <p>De Morgan’s Laws allow us to convert from a union to an intersection, and vice versa. We leave the proof as an exercise (for those following along in the course, this will be a problem on the corresponding problem set).</p>
 <p>Let’s work out an example as a sanity check. Suppose again that $U = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$, $A = \{1, 2, 4, 8\}$ and $B = \{3, 4\}$. Then:</p>
+<div align=center>
 <p>$\begin{align*} (A \cup B)^c &amp;= \{1, 2, 3, 4, 8 \}^c \\ &amp;= \{5, 6, 7, 9\} \\ &amp;= \{3, 5, 6, 7, 9\} \cap \{1, 2, 5, 6, 7, 8, 9, 10\} \\ &amp;= A^c \cap B^c \end{align*}$</p>
+</div>
 <p>You should work out the second case on your own, and verify that it works.</p>
 
     </article>

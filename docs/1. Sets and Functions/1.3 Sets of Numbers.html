@@ -502,6 +502,7 @@
 </ul>
 </li>
 <li><a href="#integers">Integers</a></li>
+<li><a href="#rationals">Rational numbers</a></li>
 </ul>
 <br>
 <p>We will now put together our knowledge of set theory and of functions and bijections to formally study the sets of numbers that we use everyday.</p>
@@ -564,6 +565,7 @@
 <p>We say set $S$ is <strong>countably infinite</strong> if and only if there exists a bijection from the natural numbers (or any other countable set) to $S$. If such a bijection does not exist, we say $S$ is <strong>uncountably infinite</strong>.</p>
 </blockquote>
 <br>
+<p>One way to think of this is to give each number a waiting number in an infinitely long line (credits to <a href="https://www.homeschoolmath.net/teaching/rational-numbers-countable.php">homeschoolmath.net</a> for that analogy).</p>
 <p>Since the natural numbers and whole numbers both have the same cardinality, and the natural numbers are the basis for countability, the whole numbers are also countable. Showing that a set has a bijection with the whole numbers is the same as showing it has a bijection with the natural numbers; either works in showing the countability of a set. We will use the idea of countability to examine the sets that follow.</p>
 <br>
 <a name='integers'>
@@ -624,10 +626,32 @@
 <li>Every integer corresponding to an odd whole number is exactly half of the next largest whole number</li>
 </ul>
 <p>We can encapsulate that behavior into the following function, which you can verify independently to be a bijection:</p>
+<div align=center>
 <p>$
 f(x) = \left\{ \begin{array}{ll} -\frac{x}{2} &amp; x \: \text{is even} \\ \frac{x+1}{2} &amp; x \: \text{is odd} \\ \end{array}  \right.
 $</p>
+</div>
 <p>As we plug in consecutive values of whole numbers beginning with 0, we get an ordering of the integers. This isn’t the only possible ordering: we could count from 0 to 10, then -1 to -10, then 11 to 20, then -11 to -20 (and so on and so forth), and find a bijection (albeit complicated) that returns the integers in that order. We just happened to choose a simpler bijection and a more natural (no pun intended) ordering.</p>
+<br>
+<a name = 'rationals'>
+<h2>Rational Numbers</h2>
+<hr>
+</a>
+<br>
+<blockquote>
+<h3>Definition: <strong>Rational numbers</strong></h3>
+<p>The set of rational numbers, denoted by $\mathbb{Q}$, is the set of all possible combinations of one integer divided by another, with the latter integer being non-zero.</p>
+</blockquote>
+<blockquote>
+<p>$\mathbb{Q} = \{ \frac{p}{q} : p, q \in \mathbb{Z}, q \neq 0\}$</p>
+</blockquote>
+<blockquote>
+<p>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0} \subset \mathbb{Z} \subset \mathbb{Q}$.</p>
+</blockquote>
+<br>
+<p>We wrote the set of rational numbers symbolically slightly differently than we wrote the sets that preceeded it – we had to specify a rule to generate rational numbers. There’s no one concrete ordering of all rational numbers, because between any two rational numbers, there are infinitely many other rational numbers! (To see this fact, consider two rational numbers $a$ and $b$. Since both are integers divided by integers, $\frac{a}{2}$ and $\frac{b}{2}$ are also rational, and the rational number $\frac{a}{2} + \frac{b}{2} = \frac{a+b}{2}$ is also rational, and in between $a + b$ – it is the average of the two numbers.) This is in constrast to the integers, where in between any two integers, there are only finitely many integers (in fact, if $n$ and $m$ are two rational numbers, such that $m &gt; n$, then there are $m - n + 1$ integers in between, including both $n$ and $m$).</p>
+<p>The question remains, is the set of rational numbers countable or uncountable? The fact that there are infinitely many rational numbers in between any two rational numbers may lead you to believe that the set is uncountable, but in fact, the rationals are still countable! Let’s explore.</p>
+<p>Again, we need to find some sort of “ordering” of the set of rational numbers – a rule that determines when the $i$th rational number will be reached.</p>
 
     </article>
   </div>
