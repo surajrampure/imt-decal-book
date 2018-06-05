@@ -502,7 +502,11 @@
 </ul>
 </li>
 <li><a href="#integers">Integers</a></li>
-<li><a href="#rationals">Rational numbers</a></li>
+<li><a href="#rationals">Rational numbers</a>
+<ul>
+<li><a href="#cantor-bern">Cantor-Schroeder-Bernstein Theorem</a></li>
+</ul>
+</li>
 </ul>
 <br>
 <p>We will now put together our knowledge of set theory and of functions and bijections to formally study the sets of numbers that we use everyday.</p>
@@ -651,7 +655,57 @@ $</p>
 <br>
 <p>We wrote the set of rational numbers symbolically slightly differently than we wrote the sets that preceeded it – we had to specify a rule to generate rational numbers. There’s no one concrete ordering of all rational numbers, because between any two rational numbers, there are infinitely many other rational numbers! (To see this fact, consider two rational numbers $a$ and $b$. Since both are integers divided by integers, $\frac{a}{2}$ and $\frac{b}{2}$ are also rational, and the rational number $\frac{a}{2} + \frac{b}{2} = \frac{a+b}{2}$ is also rational, and in between $a + b$ – it is the average of the two numbers.) This is in constrast to the integers, where in between any two integers, there are only finitely many integers (in fact, if $n$ and $m$ are two rational numbers, such that $m &gt; n$, then there are $m - n + 1$ integers in between, including both $n$ and $m$).</p>
 <p>The question remains, is the set of rational numbers countable or uncountable? The fact that there are infinitely many rational numbers in between any two rational numbers may lead you to believe that the set is uncountable, but in fact, the rationals are still countable! Let’s explore.</p>
-<p>Again, we need to find some sort of “ordering” of the set of rational numbers – a rule that determines when the $i$th rational number will be reached.</p>
+<p>This time, we will use a slightly different technique, because finding a simple bijection from $\mathbb{N}$ to $\mathbb{Q}$ is hard (but of course, it is possible). Instead, we will use the following idea:</p>
+<a name = 'cantor-bern'>
+<blockquote>
+<h3>Definition: <strong>Cantor-Schroeder-Bernstein Theorem</strong> </a></h3>
+<p>If two sets $A, B$ are such that $|A| \leq |B|$ and $|B| \leq |A|$, then $|A| = |B|$. Furthermore, if there is an injection $f: A \rightarrow B$ and an injection $g: B \rightarrow A$, there is a bijection $h: A \rightarrow B$.</p>
+</blockquote>
+<br>
+<p>The first property applies to numbers themselves – consider any two numbers $x, y$. If $x \leq y$, and $y \leq x$, the only solution is that $x$ and $y$ are equal. The proof of the second property is beyond a lower-division mathematics class, but we will use it anyways.</p>
+<p>Since $\mathbb{N} \subset \mathbb{Q}$ (as every natural number can be expressed as itself divided by 1), by the first part of the above theorem, there is an injection from $\mathbb{N}$ to $\mathbb{Q}$. This makes sense – we can definitely find a function between these two sets such that no two integers map to the same rational number (consider the function $f: \mathbb{N} \rightarrow \mathbb{Q}$ given by $f: x \mapsto x$).</p>
+<p>We need to show an injection in the opposite direction, i.e. a function from the rationals to the integers such that no two rationals map to the same integer. Consider the following diagram (taken from the <a href="http://www.eecs70.org/static/notes/n10.html">CS 70 notes</a>):</p>
+<img src="n10-spiral.png" alt="spiral-proof" style="width: 250px;"/>
+<p>Suppose each point $(x, y)$ represents the rational number $\frac{y}{x}$. Then, this path will eventually hit every single rational number, no matter how large its numerator and/or denominator are. The output value of each point is its “position” in the spiral path. As well, not every point is a valid point:</p>
+<ul>
+<li>every point on the y-axis is invalid, as the x-coordinates are all zero, and thus are of the form $\frac{y}{0}$ (except $\frac{0}{0}$, which we can arbitrarily set to be the number 0)</li>
+<li>the numbers $\frac{4}{3}$, $\frac{8}{6}$, $\frac{12}{9}$, etc. all represent the same number – in order to have duplicates in our domain, we only count the first valid occurrence of each rational number</li>
+</ul>
+<p>Then, our injectio $\mathbb{N} \rightarrow \mathbb{Q}$ looks something like this:</p>
+<table>
+<thead>
+<tr>
+<th>$\mathbb{N}$</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th style="text-align:right">4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\mathbb{Q}$</td>
+<td>0</td>
+<td>1</td>
+<td>-1</td>
+<td style="text-align:right"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
     </article>
   </div>
