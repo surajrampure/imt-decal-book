@@ -557,13 +557,17 @@
 <a name = 'addition'>
 <h3>Addition and Subtraction </a></h3>
 <p>Suppose we have two complex numbers $z = a + bi$ and $w = c + di$. Then,</p>
-<p>$z + w = (a + bi) + (c + di) = (a+c) + (b+d)i$</p>
+<div align=center>
+$z + w = (a + bi) + (c + di) = (a+c) + (b+d)i$
 <p>$z - w = (a-c) + (b-d)i$</p>
+</div>
 <p>as you might expect. Notice that the sum of two complex numbers is always complex, but is real only when $b + d = 0$, or $b = -d$.</p>
 <br>
 <a name = 'multiplication'>
 <h3>Multiplication </a></h3>
+<div align=center>
 <p>$z \cdot w = (a + bi)(c + di) = ac + adi + bci + bdi^2 = (ac - bd) + (ad + bc)i$</p>
+</div>
 <p>Notice that the product of two complex numbers is always complex, but is real only when $ad + bc = 0$. For example, suppose $z = a + bi$ and $w = a - bi$: then, the product $zw$ is real. It turns out that there is a special relationship between the given examples of $z$ and $w$.</p>
 <br>
 <a name = 'conjugate'>
@@ -573,19 +577,25 @@
 </blockquote>
 <br>
 <p>Complex conjugates are defined this way for the following reason:</p>
+<div align=center>
 <p>$
 z\bar{z} = (a + bi)(a - bi) = a^2 - abi + bai - b^2i = a^2 - b^2i = a^2 + b^2
 $</p>
+</div>
 <p>When multiplying a complex number by its conjugate, the imaginary parts fall out and we’re left with a real number. In particular, this real number $z\bar{z} = |z|^2$ is the <strong>square of the magnitude</strong> of the complex number, i.e. the squared distance from 0.</p>
 <br>
 <p>The product of two complex numbers may just look like gibberish, but it turns out that an interesting property holds: the magnitude of the product of two complex numbers is the product of the magnitudes of the two numbers – that is, $|z \cdot w| = |z| \cdot |w|$. Let’s show that this is true:</p>
+<div align=center>
 <p>$|z \cdot w| = |(ac - bd)^2 + (ad + bc)^2| \\ = a^2c^2 - 2abcd + b^2d^2 + a^2d^2 + 2abcd + b^2c^2 \\ = a^2(c^2 + d^2) + b^2(c^2 + d^2) \\ = (a^2 + b^2)(c^2 + d^2) \\ = |z| \cdot |w| $</p>
+</div>
 <p>This result is part of a theorem known as <strong>De Moivre’s Theorem</strong>, which we won’t talk about here, but you may research for your own pleasure.</p>
 <br>
 <a name = 'division'>
 <h3>Division </a></h3>
 <p>Conjugates allow us to perform division with complex numbers. Again, consider $z = a + bi$ and $w = c + di$. Then:</p>
+<div align=center>
 <p>$\frac{z}{w} = \frac{a + bi}{c + di} = \frac{a + bi}{c + di} \cdot \frac{c-di}{c-di} \\ = \frac{(ac + bd) + (bc - ad)i}{c^2 + d^2} \\ = \frac{ac + bd}{c^2 + d^2} + \frac{bc - ad}{c^2 + d^2}i$</p>
+</div>
 <p>We used the fact that $w \cdot \bar{w}$ simplifies to a real number in order to simplify the quotient.</p>
 <br>
 <a name = 'summary'>
