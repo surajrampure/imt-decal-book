@@ -459,6 +459,7 @@
 <li><a class="" href="1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
 <li><a class="" href="1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
 <li><a class="active" href="1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
+<li><a class="" href="1.4 Complex Numbers.html">1.4 Complex Numbers</a></li>
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
@@ -510,15 +511,10 @@
 <li><a href="#real">Real numbers</a>
 <ul>
 <li><a href="#irrational">Irrational numbers</a></li>
-<li><a href="#transcendental">Transcendental numbers</a></li>
 </ul>
 </li>
-<li><a href="#complex">Complex numbers</a>
-<ul>
-<li><a href="#i">Imaginary unit</a></li>
-<li><a href="#imaginary">Imaginary numbers</a></li>
-</ul>
-</li>
+<li><a href="#complex">Complex numbers</a></li>
+<li><a href="#summary">Summary</a></li>
 </ul>
 <br>
 <p>We will now put together our knowledge of set theory and of functions and bijections to formally study the sets of numbers that we use everyday.</p>
@@ -736,7 +732,7 @@ $</p>
 <p>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$.</p>
 </blockquote>
 <br>
-<p>For the sake of completeness, we define the set of <strong>irrational numbers</strong> below, along with a subset of them.</p>
+<p>For the sake of completeness, we define the set of <strong>irrational numbers</strong> below.</p>
 <a name = 'irrational'>
 <blockquote>
 <h3>Definition: <strong>Irrational numbers</strong> </a></h3>
@@ -749,16 +745,6 @@ $</p>
 <p>With regards to other number sets, $\mathbb{R - Q} \subset \mathbb{R}$. It should be noted that $\mathbb{R - Q}$ is the first set we’ve studied that is not a superset of the sets that we studied before it.</p>
 </blockquote>
 <br>
-<a name = 'transcendental'>
-<blockquote>
-<h3>Definition: <strong>Transcendental numbers</strong> </a></h3>
-</blockquote>
-<blockquote>
-<p>We say a number is transcendental if it is not the root of a polynomial with integer coefficients.
-For example, $\sqrt{5}$, while irrational, is not transcendental, as it is a solution to $x^2 - 5 = 0$.
-Only a few transcendental numbers are known, with $\pi$ and $e$ being key examples. (Note: A transcendental number is not necessarily a real number. )</p>
-</blockquote>
-<br>
 <p>Once again, we are faced with the question – are the real numbers countable? After all, like the rational numbers, the reals are dense – between any two real numbers are infinitely many more real numbers. Surely, the reals have the same countability as the rationals?</p>
 <p>It turns out <strong>they do not</strong>. There is no ordering of the real numbers. There is no bijection between the natural numbers and real numbers.</p>
 <p>The proof for this requires slightly more mathematics than we’ve covered so far in the course. Specifically, we have yet to present proof techniques formally. If you’re interested in reading the proof that the reals are not countable, known as “Cantor’s Diagonalization”, feel free to read it <a href="http://www.eecs70.org/static/notes/n10.html#cantors-diagonalization">on the CS 70 website</a>.</p>
@@ -769,40 +755,16 @@ Only a few transcendental numbers are known, with $\pi$ and $e$ being key exampl
 <hr>
 </a>
 <br>
-<p><strong>Note:</strong> The following section is not relevant to the rest of the chapter on sets and functions. However, the knowledge will be important when dealing with properties of polynomials towards the end of the course. Feel free to skim this section and come back to it later when necessary.</p>
-<p>To thoroughly introduce complex numbers, we need to talk about imaginary numbers. Imaginary numbers stem from the fact that the square root of a negative number is undefined over the set of real numbers – there is no real number $x$ such that $x = \sqrt{-25}$. In order to accomodate square roots of negative numbers, we introduce the imaginary unit $i$.</p>
-<a name='i'>
-<blockquote>
-<h3>Definition: <strong>$\mathbb{i}$, the imaginary unit</strong> </a></h3>
-<p>The imaginary unit $i$ is defined by the property $i^2 = -1$.</p>
-</blockquote>
+<p>The next relevant set of numbers is the set of complex numbers. However, their discussion isn’t important right now, but feel free to read [1.4 Complex Numbers](1.4 Complex <a href="http://Numbers.md">Numbers.md</a>) if you are interested.</p>
 <br>
-<p>Often you see $i$ being defined as $i = \sqrt{-1}$, however this notation introduces confusion, as it may imply that $i^2 = \sqrt{-1} \cdot \sqrt{-1} = \sqrt{(-1) \cdot (-1)} = \sqrt{1} = 1$, which is not true. It turns out that the regular radical manipulation rules $\sqrt{xy} = \sqrt{x} \cdot \sqrt{y}$ only apply for non-negative real values of $x$ and $y$.</p>
-<p>There is a cyclical nature of $i$ and its powers: $i^2 = -1$, $i^3 = i^2 \cdot i = -i$, and $i^4 = i^2 \cdot i^2 = (-1)^2 = 1$. This pattern repeats: $i^5 = i$, $i^6 = -1$, and so on. (We can formalize this once we learn about modular arithmetic.)</p>
+<a name = 'summary'>
+<h2>Summary</h2>
+<hr>
+</a>
 <br>
-<a name = 'imaginary'>
-<blockquote>
-<h3>Definition: <strong>Imaginary numbers</strong> </a></h3>
-<p>An imaginary number is a number of the form $bi$, where $b$ is a real number.</p>
-</blockquote>
-<br>
-<p>Imaginary numbers, then, are scalar multiples of $i$. The imaginary numbers $bi$ and $-bi$ are the roots of the polynomial $x^2 + b^2 = 0$, as $(bi)^2 = (-bi)^2 = b^2 \cdot (-1) = -b^2$, and $-b^2 + b^2 = 0$. The idea of polynomial roots is one we will extend further in the polynomials chapter.</p>
-<br>
-<blockquote>
-<h3>Definition: <strong>Complex numbers</strong></h3>
-<p>The set of complex numbers, denoted by $\mathbb{C}$, is the set of all numbers of the form $a + bi$, where $a$ and $b$ are real numbers and $i$ is the imaginary unit. We say $a$ is the real component of $a + bi$, whereas $bi$ is the imaginary component.</p>
-</blockquote>
-<blockquote>
-<p>$\mathbb{C} = \{ a + bi : a, b \in R, i^2 = -1 \}$</p>
-</blockquote>
-<blockquote>
-<p>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$.</p>
-</blockquote>
-<br>
-<p>We can easily write any real number as a complex number by setting $b = 0$. We can write any imaginary-only number as a complex number by setting $a = 0$.</p>
-<p>The question of whether or not the complex numbers are countable is now simple – since the set of complex numbers is a superset of the set of real numbers, and the real numbers already are not countable, the complex numbers are also not countable.</p>
-<p>One issue we run into with complex numbers is plotting them – we could represent any real number as a point on the number line, but how do we represent a complex number? For that, we introduce the <strong>complex plane</strong>.</p>
-<br>
+<p>The following diagram summarizes the hierarchy of the number sets we’ve studied thusfar:</p>
+<img src="venn-diagram-real.png" alt="real-venn-diagram" style="width: 500px;"/>
+<p>A more complete version of this picture is painted in the section on complex numbers.</p>
 
     </article>
   </div>
