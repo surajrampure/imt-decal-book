@@ -460,6 +460,7 @@
 <li><a class="" href="../1. Sets and Functions/1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
 <li><a class="" href="../1. Sets and Functions/1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
 <li><a class="" href="../1. Sets and Functions/1.4 Complex Numbers.html">1.4 Complex Numbers</a></li>
+<li><a class="" href="../1. Sets and Functions/1.5 Propositional Logic.html">1.5 Propositional Logic</a></li>
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
@@ -495,40 +496,65 @@
 </ul>
     </nav>
     <article id="main" class="content">
-      <h1>Common Proof Techniques</h1>
-<p>Throughout this section, we will introduce some of the most famous and most common proof techniques that are used to verify the truth of a mathematical statement. Remember, all of these techniques assume you have some basic information present and attempt to use the information you have to arrive at the correct conclusion.</p>
-<h3>Index</h3>
+      <title>2.1: Foundational Proof Techniques - Proof Techniques</title>
+<h1>Foundational Proof Techniques</h1>
+<hr>
+<br>
+<p>Jump to:</p>
 <ul>
-<li>Direct Proof</li>
-<li>Proof by Contradiction</li>
+<li><a href="#direct">Direct Proof</a></li>
+<li><a href="#contradiction">Proof by Contradiction</a></li>
 <li>Proof by Contraposition</li>
 <li>Proof by Cases</li>
 </ul>
 <br>
+<p>Throughout this section, we will introduce some of the more common proof techniques that are used to verify the truth of a mathematical statement. Remember, all of these techniques assume you have some basic information present and attempt to use the information you have to arrive at the correct conclusion.</p>
+<br>
+<a name='direct'>
 <h2>Direct Proof</h2>
+<hr>
+</a>
+<br>
 <p>The direct proof is the simplest type of proof. In a direct proof, given certain information, we determine the validity of some other information. Direct proofs are often used in mathematical formulas, where simple arithmetic manipulations of given information can get us where we need to be.</p>
 <h3>Example</h3>
-<p><strong>Consider $x, y, z \in Z^+$. Prove that if $x \big| y$ and $x \big| z$, then $y + z$.</strong></p>
+<div align=center>
+<p><strong>Consider $x, y, z \in Z^+$. Prove that if $x \big| y$ and $x \big| z$, then $x \big| y + z$.</strong></p>
+</div>
 <p>The first step in each proof is representing the information that we are allowed to assume, using precise mathematical notation. We are given that $x$ divides $y$ and that $x$ divides $z$. In mathematical notation, this means that there are integers $a_1$ and $a_2$ such that $a_1 \cdot x = y$ and $a_2 \cdot x = z$. Furthermore, since we are told $x, y$ and $z$ all belong to the set of positive integers, we know that $a_1, a_2$ must also be positive. There is not much more information we can garner from this now, so we look at what we are trying to prove.</p>
 <p>By writing out equations relating $x$ and $y$ (and $x$ and $z$), we have concrete information that we can use in our proof. Then:</p>
+<div align=center>
 <p>$
 y+z = a_1 \cdot x + a_2 \cdot x = (a_1 + a_2) \cdot x
 $</p>
+</div>
 <p>We have shown that $y+z$ can be written as some positive integer – precisely, $a_1 + a_2$ – multiplied by $x$, hence proving $x$ divides $y+z$. This example gives us the natural flavor of direct proofs – we assume and work with the information we have, and reformulate it to match what we want to prove in some capacity.</p>
 <br>
+<a name='contradiction'>
 <h2>Proof by Contradiction</h2>
-<p>Proof by contradiction is one of the most widely used proof techniques, and it stems from a really nice observation. The problem statement remains the same; we are trying to prove some statement $S$. We begin by assuming not $S$ – that is, that $S$ is false - and prove that there is some piece of information that is both true and false at the same time. Since this can not happen, we know that our initial assumptions must be false. Since our initial assumption was that $S$ was false, we know this cannot be the case, thus $S$ must be true, proving our statement.</p>
+<hr>
+</a>
+<br>
+<p>Proof by contradiction is one of the most widely used proof techniques, and it stems from a really nice observation. The problem statement remains the same; we are trying to prove that some statement $S$ is true. We begin by assuming not $S$ – that is, that $S$ is false - and prove that there is some piece of information that is both true and false at the same time. Since this can not happen, we know that our initial assumptions must be false. Since our initial assumption was that $S$ was false, we know this cannot be the case, thus $S$ must be true, proving our statement.</p>
 <p>The contradiction can come about in many ways. For example, showing two things that cannot be equal as equal – such as $0 = 2$ – or showing some given information (which was told to us to be true) is false if statement $S$ is false. Whatever the contradiction might be, this proof technique presents a relatively straightforward way to prove the validity of the statement without worrying about the specific reason why the statement it holds. In specific, proof by contradiction is powerful when trying to prove a statement which implies non-existence of some entity.</p>
+<br>
 <h3>Example</h3>
+<div align=center>
 <p><strong>Prove that there is no greatest even integer.</strong></p>
-<p>Let us think for a second why we would not want to use direct proof. To use a direct proof, we would need to somehow consider every single case and prove that it is not possible, which is extremely difficult. Instead, we go by proof of contradiction.</p>
-<p>Instead, let us assume that there is a greatest even integer. Let us call this greatest even integer $M$. Define $N$ to be $M+2$. Then, $N$ is an even integer and it is strictly greater than $M$. Hence, $M$ is not the greatest even integer, which contracts our earlier assumption. This means that there is no greatest even integer.</p>
+</div>
+<p>Let’s think for a second why we wouldn’t want to use direct proof in this case. To use a direct proof, we would need to somehow consider every single case and prove that it is not possible, which is virtually impossible. Instead, we go by proof of contradiction.</p>
+<p>Instead, let us assume that there is a greatest even integer. Let us call this greatest even integer $m$. Define $n$ to be $m+2$. Then, $n$ is an even integer and it is strictly greater than $m$. Hence, $m$ is not the greatest even integer, which contracts our earlier assumption. This means that there is no greatest even integer.</p>
+<br>
 <h3>Example</h3>
+<div align=center>
 <p><strong>Prove that the negative of an irrational number is irrational.</strong></p>
+</div>
 <p>To prove this using a direct proof, we would need to show that there is no number for which this is not true. Instead, we go by the way of contradiction. We assume the statement is not true. The negation of this sentence states that there is <em>some</em> irrational number for which its negation is actually rational. Call this number $x$. So, $-x = \frac{a}{b}$, for $a, b \in Z$. We can multiply each side by $-1$ and obtain that $x = -\frac{a}{b} = \frac{-a}{b}$. It is important to note that $-a$ is still an integer, as is $b$. So, $x$ is actually equal to the division of two integers, which proves it to be rational. But, we assumed $x$ to be irrational to begin with. A number can not be rational and irrational at the same time, so we have arrived at a contradiction. Hence, our initial assumption must have been incorrect, and there does not exist any irrational number for which its negation is rational.</p>
 <p>Getting a handle on this proof technique is tricky, and only practice can really solidify a true understanding of it.</p>
 <br>
+<a name='contraposition'>
 <h2>Proof by Contraposition</h2>
+</a>
+<br>
 <p>A proof by contraposition can be used when dealing with a statement of the form: Given information $P$, prove $Q$ is true.  Symbolically, the statements “$P$ implies $Q$” and “not $Q$ implies not $P$” can be written as</p>
 <p>$
 P \implies Q
