@@ -459,13 +459,12 @@
 <li><a class="" href="../1. Sets and Functions/1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
 <li><a class="" href="../1. Sets and Functions/1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
 <li><a class="" href="../1. Sets and Functions/1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
-<li><a class="" href="../1. Sets and Functions/1.4 Complex Numbers.html">1.4 Complex Numbers</a></li>
-<li><a class="" href="../1. Sets and Functions/1.5 Propositional Logic.html">1.5 Propositional Logic</a></li>
+<li><a class="" href="../1. Sets and Functions/1.4 Propositional Logic.html">1.4 Propositional Logic</a></li>
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
 <li><a class="" href="../2. Proof Techniques/2.0 Introduction.html">2.0 Introduction</a></li>
-<li><a class="" href="../2. Proof Techniques/2.1 Basic Proof Techiques.html">2.1 Basic Proof Techiques</a></li>
+<li><a class="" href="../2. Proof Techniques/2.1 Foundational Proof Techiques.html">2.1 Foundational Proof Techiques</a></li>
 <li><a class="" href="../2. Proof Techniques/2.2 Mathematical Induction.html">2.2 Mathematical Induction</a></li>
 <li><a class="" href="../2. Proof Techniques/2.3 Faulty Proofs.html">2.3 Faulty Proofs</a></li>
 </ul>
@@ -474,29 +473,143 @@
 <li><a class="" href="../3. Number Theory/3.0 Introduction.html">3.0 Introduction</a></li>
 <li><a class="" href="../3. Number Theory/3.1 Division Algorithm.html">3.1 Division Algorithm</a></li>
 <li><a class="" href="../3. Number Theory/3.2 Prime Factorization.html">3.2 Prime Factorization</a></li>
+<li><a class="" href="../3. Number Theory/3.3 Modular Arithmetic.html">3.3 Modular Arithmetic</a></li>
 </ul>
-<li class="heading"><span>4. Series and Sequences</span></li>
+<li class="heading"><span>5. Polynomials</span></li>
 <ul>
-<li><a class="" href="4.0 Introduction.html">4.0 Introduction</a></li>
-<li><a class="" href="4.1 Summation Notation.html">4.1 Summation Notation</a></li>
-<li><a class="" href="4.2 Arithmetic Series.html">4.2 Arithmetic Series</a></li>
-<li><a class="" href="4.3 Geometric Series.html">4.3 Geometric Series</a></li>
-<li><a class="active" href="4.4 Telescoping Sums.html">4.4 Telescoping Sums</a></li>
+<li><a class="" href="../5. Polynomials/5.0 Introduction.html">5.0 Introduction</a></li>
+<li><a class="" href="../5. Polynomials/5.1 Representation of Polynomials.html">5.1 Representation of Polynomials</a></li>
+<li><a class="" href="../5. Polynomials/5.2 Factor and Remainder Theorems.html">5.2 Factor and Remainder Theorems</a></li>
+<li><a class="" href="../5. Polynomials/5.3 Roots.html">5.3 Roots</a></li>
+<li><a class="" href="../5. Polynomials/5.4 Vieta's Formulas.html">5.4 Vieta's Formulas</a></li>
+<li><a class="" href="../5. Polynomials/5.5 The Binomial Theorem.html">5.5 The Binomial Theorem</a></li>
+<li><a class="" href="../5. Polynomials/5.6 Extensions of the Binomial Theorem.html">5.6 Extensions of the Binomial Theorem</a></li>
 </ul>
-<li class="heading"><span>6. Polynomials</span></li>
+<li class="heading"><span>Appendix</span></li>
 <ul>
-<li><a class="" href="../6. Polynomials/6.0 Introduction.html">6.0 Introduction</a></li>
-<li><a class="" href="../6. Polynomials/6.1 Representation of Polynomials.html">6.1 Representation of Polynomials</a></li>
-<li><a class="" href="../6. Polynomials/6.2 Factor and Remainder Theorems.html">6.2 Factor and Remainder Theorems</a></li>
-<li><a class="" href="../6. Polynomials/6.3 Roots.html">6.3 Roots</a></li>
-<li><a class="" href="../6. Polynomials/6.4 Vieta's Formulas.html">6.4 Vieta's Formulas</a></li>
-<li><a class="" href="../6. Polynomials/6.5 The Binomial Theorem.html">6.5 The Binomial Theorem</a></li>
-<li><a class="" href="../6. Polynomials/6.6 Extensions of the Binomial Theorem.html">6.6 Extensions of the Binomial Theorem</a></li>
+<li><a class="active" href="Complex Numbers.html">Complex Numbers</a></li>
+<li><a class="" href="Series and Sequences.html">Series and Sequences</a></li>
 </ul>
 </ul>
     </nav>
     <article id="main" class="content">
-      <h1>Telescoping Sums</h1>
+      <title>1.4: Complex Numbers – Sets and Functions</title>
+<h1>1.4: Complex Numbers</h1>
+<hr>
+<br>
+<p>Jump to:</p>
+<ul>
+<li><a href="#i">Imaginary unit</a></li>
+<li><a href="#imaginary">Imaginary numbers</a></li>
+<li><a href="#definition">Definition of complex numbers</a></li>
+<li><a href="#arithmetic">Complex Arithmetic</a>
+<ul>
+<li><a href="#addition">Addition and Subtraction</a></li>
+<li><a href="#multiplication">Multiplication</a></li>
+<li><a href="#conjugate">Complex Conjugates</a></li>
+<li><a href="#division">Division</a></li>
+</ul>
+</li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+<br>
+<p><strong>Note:</strong> The following section is not relevant to the rest of the chapter on sets and functions. However, the knowledge will be important when dealing with properties of polynomials towards the end of the course. Feel free to skim this section and come back to it later when necessary.</p>
+<p>To thoroughly introduce complex numbers, we need to talk about imaginary numbers. Imaginary numbers stem from the fact that the square root of a negative number is undefined over the set of real numbers – there is no real number $x$ such that $x = \sqrt{-25}$. In order to accomodate square roots of negative numbers, we introduce the imaginary unit $i$.</p>
+<a name='i'>
+<blockquote>
+<h3>Definition: <strong>$\mathbb{i}$, the imaginary unit</strong> </a></h3>
+<p>The imaginary unit $i$ is defined by the property $i^2 = -1$.</p>
+</blockquote>
+<br>
+<p>Often you see $i$ being defined as $i = \sqrt{-1}$, however this notation introduces confusion, as it may imply that $i^2 = \sqrt{-1} \cdot \sqrt{-1} = \sqrt{(-1) \cdot (-1)} = \sqrt{1} = 1$, which is not true. It turns out that the regular radical manipulation rules $\sqrt{xy} = \sqrt{x} \cdot \sqrt{y}$ only apply for non-negative real values of $x$ and $y$.</p>
+<p>There is a cyclical nature of $i$ and its powers: $i^2 = -1$, $i^3 = i^2 \cdot i = -i$, and $i^4 = i^2 \cdot i^2 = (-1)^2 = 1$. This pattern repeats: $i^5 = i$, $i^6 = -1$, and so on. (We can formalize this once we learn about modular arithmetic.)</p>
+<br>
+<a name = 'imaginary'>
+<blockquote>
+<h3>Definition: <strong>Imaginary numbers</strong> </a></h3>
+<p>An imaginary number is a number of the form $bi$, where $b$ is a real number.</p>
+</blockquote>
+<br>
+<p>Imaginary numbers, then, are scalar multiples of $i$. The imaginary numbers $bi$ and $-bi$ are the roots of the polynomial $x^2 + b^2 = 0$, as $(bi)^2 = (-bi)^2 = b^2 \cdot (-1) = -b^2$, and $-b^2 + b^2 = 0$. The idea of polynomial roots is one we will extend further in the polynomials chapter.</p>
+<br>
+<a name = 'definition'>
+<blockquote>
+<h3>Definition: <strong>Complex numbers</strong> </a></h3>
+<p>The set of complex numbers, denoted by $\mathbb{C}$, is the set of all numbers of the form $a + bi$, where $a$ and $b$ are real numbers and $i$ is the imaginary unit. We say $a$ is the real component of $a + bi$, whereas $bi$ is the imaginary component.</p>
+</blockquote>
+<blockquote>
+<p>$\mathbb{C} = \{ a + bi : a, b \in R, i^2 = -1 \}$</p>
+</blockquote>
+<blockquote>
+<p>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$.</p>
+</blockquote>
+<br>
+<p>This form is known as <strong>rectangular form</strong> (as opposed to polar form, which is out of the scope of this course). We can easily write any real number as a complex number by setting $b = 0$. We can write any imaginary-only number as a complex number by setting $a = 0$.</p>
+<p>The question of whether or not the complex numbers are countable is now simple – since the set of complex numbers is a superset of the set of real numbers, and the real numbers already are not countable, the complex numbers are also not countable.</p>
+<p>One issue we run into with complex numbers is plotting them – we could represent any real number as a point on the number line, but how do we represent a complex number? For that, we introduce the <strong>complex plane</strong>.</p>
+<br>
+<img src="complex-plane.png" alt="complex-plane" style="width: 400px;"/>
+<p>Perpendicular to the real number line, also known as the real axis, is the imaginary axis. The number $a + bi$ is represented by the point $(a, b)$ in the complex plane, as the example from above shows. Even though the examples all have integral $a, b$, it doesn’t mean that $\pi + \sqrt{5}i$ isn’t a valid complex number – we can plot it just the same.</p>
+<br>
+<a name = 'arithmetic'>
+<h2>Complex Arithmetic</h2>
+<hr>
+</a>
+<br>
+<p>We will now look at basic arithmetic operations on the complex numbers.</p>
+<a name = 'addition'>
+<h3>Addition and Subtraction </a></h3>
+<p>Suppose we have two complex numbers $z = a + bi$ and $w = c + di$. Then,</p>
+<div align=center>
+$z + w = (a + bi) + (c + di) = (a+c) + (b+d)i$
+<p>$z - w = (a-c) + (b-d)i$</p>
+</div>
+<p>as you might expect. Notice that the sum of two complex numbers is always complex, but is real only when $b + d = 0$, or $b = -d$.</p>
+<br>
+<a name = 'multiplication'>
+<h3>Multiplication </a></h3>
+<div align=center>
+<p>$z \cdot w = (a + bi)(c + di) = ac + adi + bci + bdi^2 = (ac - bd) + (ad + bc)i$</p>
+</div>
+<p>Notice that the product of two complex numbers is always complex, but is real only when $ad + bc = 0$. For example, suppose $z = a + bi$ and $w = a - bi$: then, the product $zw$ is real. It turns out that there is a special relationship between the given examples of $z$ and $w$.</p>
+<br>
+<a name = 'conjugate'>
+<blockquote>
+<h3>Definition: <strong>Complex conjugate</strong> </a></h3>
+<p>The complex conjugate of the number $z = a + bi$ is defined by $\bar{z} = a - bi$.</p>
+</blockquote>
+<br>
+<p>Complex conjugates are defined this way for the following reason:</p>
+<div align=center>
+<p>$
+z\bar{z} = (a + bi)(a - bi) = a^2 - abi + bai - b^2i = a^2 - b^2i = a^2 + b^2
+$</p>
+</div>
+<p>When multiplying a complex number by its conjugate, the imaginary parts fall out and we’re left with a real number. In particular, this real number $z\bar{z} = |z|^2$ is the <strong>square of the magnitude</strong> of the complex number, i.e. the squared distance from 0.</p>
+<br>
+<p>The product of two complex numbers may just look like gibberish, but it turns out that an interesting property holds: the magnitude of the product of two complex numbers is the product of the magnitudes of the two numbers – that is, $|z \cdot w| = |z| \cdot |w|$. Let’s show that this is true:</p>
+<div align=center>
+<p>$|z \cdot w| = |(ac - bd)^2 + (ad + bc)^2| \\ = a^2c^2 - 2abcd + b^2d^2 + a^2d^2 + 2abcd + b^2c^2 \\ = a^2(c^2 + d^2) + b^2(c^2 + d^2) \\ = (a^2 + b^2)(c^2 + d^2) \\ = |z| \cdot |w| $</p>
+</div>
+<p>This result is part of a theorem known as <strong>De Moivre’s Theorem</strong>, which we won’t talk about here, but you may research for your own pleasure.</p>
+<br>
+<a name = 'division'>
+<h3>Division </a></h3>
+<p>Conjugates allow us to perform division with complex numbers. Again, consider $z = a + bi$ and $w = c + di$. Then:</p>
+<div align=center>
+<p>$\frac{z}{w} = \frac{a + bi}{c + di} = \frac{a + bi}{c + di} \cdot \frac{c-di}{c-di} \\ = \frac{(ac + bd) + (bc - ad)i}{c^2 + d^2} \\ = \frac{ac + bd}{c^2 + d^2} + \frac{bc - ad}{c^2 + d^2}i$</p>
+</div>
+<p>We used the fact that $w \cdot \bar{w}$ simplifies to a real number in order to simplify the quotient.</p>
+<br>
+<a name = 'summary'>
+<h2>Summary</h2>
+<hr>
+</a>
+<br>
+<p>Here is a more complete diagram depicting the sets we’ve learned about in this course:</p>
+<img src="venn-diagram.png" alt="venn-diagram" style="width: 500px;"/>
+<br>
+<p>There is a lot more to complex numbers than we described here; this introduction is far from complete. However, for the purposes of our course, this will suffice.</p>
 
     </article>
   </div>

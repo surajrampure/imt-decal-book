@@ -459,13 +459,12 @@
 <li><a class="" href="../1. Sets and Functions/1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
 <li><a class="" href="../1. Sets and Functions/1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
 <li><a class="" href="../1. Sets and Functions/1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
-<li><a class="" href="../1. Sets and Functions/1.4 Complex Numbers.html">1.4 Complex Numbers</a></li>
-<li><a class="" href="../1. Sets and Functions/1.5 Propositional Logic.html">1.5 Propositional Logic</a></li>
+<li><a class="" href="../1. Sets and Functions/1.4 Propositional Logic.html">1.4 Propositional Logic</a></li>
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
 <li><a class="" href="2.0 Introduction.html">2.0 Introduction</a></li>
-<li><a class="" href="2.1 Basic Proof Techiques.html">2.1 Basic Proof Techiques</a></li>
+<li><a class="" href="2.1 Foundational Proof Techiques.html">2.1 Foundational Proof Techiques</a></li>
 <li><a class="active" href="2.2 Mathematical Induction.html">2.2 Mathematical Induction</a></li>
 <li><a class="" href="2.3 Faulty Proofs.html">2.3 Faulty Proofs</a></li>
 </ul>
@@ -474,29 +473,149 @@
 <li><a class="" href="../3. Number Theory/3.0 Introduction.html">3.0 Introduction</a></li>
 <li><a class="" href="../3. Number Theory/3.1 Division Algorithm.html">3.1 Division Algorithm</a></li>
 <li><a class="" href="../3. Number Theory/3.2 Prime Factorization.html">3.2 Prime Factorization</a></li>
+<li><a class="" href="../3. Number Theory/3.3 Modular Arithmetic.html">3.3 Modular Arithmetic</a></li>
 </ul>
-<li class="heading"><span>4. Series and Sequences</span></li>
+<li class="heading"><span>5. Polynomials</span></li>
 <ul>
-<li><a class="" href="../4. Series and Sequences/4.0 Introduction.html">4.0 Introduction</a></li>
-<li><a class="" href="../4. Series and Sequences/4.1 Summation Notation.html">4.1 Summation Notation</a></li>
-<li><a class="" href="../4. Series and Sequences/4.2 Arithmetic Series.html">4.2 Arithmetic Series</a></li>
-<li><a class="" href="../4. Series and Sequences/4.3 Geometric Series.html">4.3 Geometric Series</a></li>
-<li><a class="" href="../4. Series and Sequences/4.4 Telescoping Sums.html">4.4 Telescoping Sums</a></li>
+<li><a class="" href="../5. Polynomials/5.0 Introduction.html">5.0 Introduction</a></li>
+<li><a class="" href="../5. Polynomials/5.1 Representation of Polynomials.html">5.1 Representation of Polynomials</a></li>
+<li><a class="" href="../5. Polynomials/5.2 Factor and Remainder Theorems.html">5.2 Factor and Remainder Theorems</a></li>
+<li><a class="" href="../5. Polynomials/5.3 Roots.html">5.3 Roots</a></li>
+<li><a class="" href="../5. Polynomials/5.4 Vieta's Formulas.html">5.4 Vieta's Formulas</a></li>
+<li><a class="" href="../5. Polynomials/5.5 The Binomial Theorem.html">5.5 The Binomial Theorem</a></li>
+<li><a class="" href="../5. Polynomials/5.6 Extensions of the Binomial Theorem.html">5.6 Extensions of the Binomial Theorem</a></li>
 </ul>
-<li class="heading"><span>6. Polynomials</span></li>
+<li class="heading"><span>Appendix</span></li>
 <ul>
-<li><a class="" href="../6. Polynomials/6.0 Introduction.html">6.0 Introduction</a></li>
-<li><a class="" href="../6. Polynomials/6.1 Representation of Polynomials.html">6.1 Representation of Polynomials</a></li>
-<li><a class="" href="../6. Polynomials/6.2 Factor and Remainder Theorems.html">6.2 Factor and Remainder Theorems</a></li>
-<li><a class="" href="../6. Polynomials/6.3 Roots.html">6.3 Roots</a></li>
-<li><a class="" href="../6. Polynomials/6.4 Vieta's Formulas.html">6.4 Vieta's Formulas</a></li>
-<li><a class="" href="../6. Polynomials/6.5 The Binomial Theorem.html">6.5 The Binomial Theorem</a></li>
-<li><a class="" href="../6. Polynomials/6.6 Extensions of the Binomial Theorem.html">6.6 Extensions of the Binomial Theorem</a></li>
+<li><a class="" href="../Appendix/Complex Numbers.html">Complex Numbers</a></li>
+<li><a class="" href="../Appendix/Series and Sequences.html">Series and Sequences</a></li>
 </ul>
 </ul>
     </nav>
     <article id="main" class="content">
-      
+      <title>2.2: Mathematical Induction - Proof Techniques</title>
+<h1>2.2: Mathematical Induction</h1>
+<hr>
+<br>
+<p>Jump to:</p>
+<ul>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#formalization">Formalization</a></li>
+<li><a href="#examples">More Examples</a></li>
+</ul>
+<br>
+<a name='motivation'>
+<h2>Motivation</h2>
+<hr>
+</a>
+<br>
+<p>Mathematical induction, the last proof technique we will look at, has many parallels to recursion. As an introduction, consider the following situation:</p>
+<p>Suppose you’re sitting in a massive lecture hall, and want to find out how many rows you’re sitting from the front of the room. You <em>could</em> sit there and count, but consider this basic principle:</p>
+<ul>
+<li>The person sitting in the first row knows their row number <em>by default</em>: they’re in the first row!</li>
+<li>If one knows the row number of the person in front of them, they add 1 to get their own row number</li>
+</ul>
+<p>With this principle, the first person can pass their row number to the second person, who “calculates” their row number (by adding 1) and passes it to the third person, and so on and so fourth. This is exactly how induction (and recursion, to an extent) works.</p>
+<p>With induction, we want to prove some property about <strong>all natural numbers</strong> (it doesn’t matter if we start with 0 or 1, as you will see).</p>
+<br>
+<a name='formalization'>
+<h2>Formalization</h2>
+<hr>
+</a>
+<br>
+<p>Suppose the expression we want to prove is in terms of the variable $n$ (which is typically used for natural numbers). We follow the following three steps, in every single induction proof:</p>
+<ul>
+<li><strong>Base Case</strong>: Establish that the statement holds for $n = 0$ or $n = 1$ (or whatever makes the most sense in the situation)</li>
+<li><strong>Induction Hypothesis</strong>: Assume that the statement holds true for $n = k$, for some arbitrary $k$</li>
+<li><strong>Induction Step</strong>: Given the fact that the statement holds true for $n = k$, show that it holds for $n = k + 1$</li>
+</ul>
+<h3>Example 1</h3>
+<p>Let’s work out an example. Sure, we could technically use induction to prove that $(x + 1)^2 = x^2 + 2x + 1$ for all natural numbers, but induction is overkill in such an example. A common example of something we may prove with induction is the following fact:</p>
+<div align=center>
+<p>$\sum_{i = 1}^n i = \frac{n(n+1)}{2}, \forall n \in \mathbb{N}$</p>
+</div>
+<p>(The last part specifies that we want all natural numbers.)</p>
+<p><strong>Base Case</strong> <br>
+$ \sum_{i = 1}^1 i = 1 = \frac{1(2)}{2}$, therefore, the statement holds for $n = 1$.</p>
+<br>
+<p><strong>Induction Hypothesis</strong> <br>
+Assume that $\sum_{i = 1}^k i = \frac{k(k+1)}{2}$, for some arbitrary integer $k$.</p>
+<br>
+<p><strong>Induction Step</strong> <br>
+Now, we need to show that $\sum_{i = 1}^{k+1} i = \frac{(k+1)(k+2)}{2}$, somehow using the information in the induction hypothesis.</p>
+<p>$\begin{aligned} \sum_{i = 1}^{k + 1} &amp;= \sum_{i = 1}^k + (k + 1) \\ &amp;= \frac{k(k+1)}{2} + \frac{2(k+1)}{2} \\ &amp;= \frac{(k+1)(k+2)}{2} \end{aligned}$</p>
+<p>By assuming that the statement held true for $n = k$, we were able to come to the conclusion that the statement holds true for $n = k + 1$. Therefore, induction holds, and the statement holds true for all natural numbers.</p>
+<p>For another proof (and derivation) of this statement, take a look at the Appendix article on Sequences. We will also provide another proof when we look at combinatorics.</p>
+<br>
+<p>Let’s introduce a more concise notation for writing out the steps of induction. Suppose that $P(i)$ means that the statement we are trying to prove holds true for the value $n = i$. Then, we have:</p>
+<ul>
+<li><strong>Base Case</strong>: Show $P(0)$ or $P(1)$ (or whatever other appropriate value)</li>
+<li><strong>Induction Hypothesis</strong>: Assume $P(k)$</li>
+<li><strong>Induction Step</strong>: Show $P(k) \implies P(k+1)$</li>
+</ul>
+<p>Essentially, what we have is a domino effect.</p>
+<div align=center>
+<p>$P(1) \implies P(2) \implies P(3) \implies … \implies P(k) \implies …$</p>
+</div>
+<p><em>(We told you implications would be important!)</em></p>
+<br>
+<p>A few things to note:</p>
+<ul>
+<li>The majority of the work in an induction proof is in the induction step. Proving the base case is usually trivial, and in the induction hypothesis you simply state your assumption.</li>
+<li>The example we gave is relatively straight forward. Most of the time, you’ll have to do slightly more work in order to show the implication $P(k) \implies P(k+1)$.</li>
+</ul>
+<br>
+<a name='examples'>
+<h2>More Examples</h2>
+<hr>
+</a>
+<br>
+<p>In order to reinforce the concept of induction, we present a few examples below. A good way to practice would be to attempt each problem on your own, and then compare your proof with the solution.</p>
+<br>
+<h3>Example 2</h3>
+<div align=center>
+<p><strong>Show that $1 + 3 + 9 + 27 + … + 3^n = \frac{3^{n+1} - 1}{2}, \forall : n \in \mathbb{N}_0$</strong>.</p>
+</div>
+<p><strong>Base Case</strong> <br>
+$3^0 = 1 = \frac{3^1 - 1}{2}$, therefore the base case holds.</p>
+<br>
+<p><strong>Induction Hypothesis</strong> <br>
+Assume $\sum_{i = 0}^k 3^i = \frac{3^{k + 1} - 1}{2}$ for some arbitrary natural number $k$.</p>
+<br>
+<p><strong>Induction Step</strong> <br></p>
+<p>$ \begin{aligned} \sum_{i = 0}^{k + 1} 3^i &amp;= \sum_{i = 0}^{k} 3^i + 3^{k + 1} \\ &amp;= \frac{3^{k + 1} - 1}{2} + \frac{2 \cdot 3^{k + 1}}{2} = \frac{3 \cdot 3^{k + 1} - 1}{2} \\ &amp;= \frac{3^{k + 2} - 1}{2} \end{aligned}  $</p>
+<p>as required. Therefore, induction holds, and the statement is true.</p>
+<br>
+<h3>Example 3</h3>
+<div align=center>
+<p><strong>The Fibonacci sequence $1, 1, 2, 3, 5, 8, 13, 21, 34, …$ is defined by: <br> $F_1 = 1, F_2 = 1, F_n = F_{n-2} + F_{n-1}$. <br><br> Prove that $F_1 + F_2 + … F_n = F_{n + 2} - 1$.</strong></p>
+</div>
+<p><strong>Base Case</strong> <br>
+$F_1 = 1,  F_3 - 1 = 2 - 1 = 1$, therefore the base case holds.</p>
+<br>
+<p><strong>Induction Hypothesis</strong> <br>
+Assume $F_1 + … + F_k = F_{k + 2} - 1$, for some arbitrary natural number $k$.</p>
+<br>
+<p><strong>Induction Step</strong> <br></p>
+<p>$\begin{aligned} F_1 + … + F_{k + 1} &amp;= (F_1 + … + F_k) + F_{k + 1} \\ &amp;= F_{k+2} - 1 + F{k+1} \\ &amp;= F_{k + 3} - 1 \end{aligned}$</p>
+<p>Therefore, induction holds, and the statement is true.</p>
+<br>
+<h3>Example 4</h3>
+<p>This example will illustrate the fact that not all induction proofs need be algebraic.</p>
+<div align=center>
+<p><strong>Suppose that there are $2n+1$ airports where $n$ is a positive integer. The distances between any two airports are all different. For each airport, there is exactly one airplane departing from it, and heading towards the closest airport. Prove by induction that there is an airport which none of the airplanes are heading towards.</strong></p>
+</div>
+<p><strong>Base Case</strong> <br>
+$n = 1$: If there are 3 airports, the closest pair of airports will exchange planes. The third airport will then send a plane to one of the first two, meaning this third airport will have no incoming planes.</p>
+<br>
+<p><strong>Induction Hypothesis</strong> <br>
+Assume for some $k$, in $2k+1$ airports one airport has no incoming planes.</p>
+<br>
+<p><strong>Induction Step</strong> <br>
+For $2(k+1) + 1 = 2k + 3$ airports, consider the two airports that are closest to one another.
+This is necessarily unique, given the problem statement. These airports will exchange planes, thus reducing the problem to $2k + 1$ airports. We know the $2k+1$ case holds from the induction hypothesis.</p>
+<p>QED.</p>
+
     </article>
   </div>
   <script>

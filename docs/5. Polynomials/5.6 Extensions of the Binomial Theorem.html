@@ -459,13 +459,12 @@
 <li><a class="" href="../1. Sets and Functions/1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
 <li><a class="" href="../1. Sets and Functions/1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
 <li><a class="" href="../1. Sets and Functions/1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
-<li><a class="" href="../1. Sets and Functions/1.4 Complex Numbers.html">1.4 Complex Numbers</a></li>
-<li><a class="" href="../1. Sets and Functions/1.5 Propositional Logic.html">1.5 Propositional Logic</a></li>
+<li><a class="" href="../1. Sets and Functions/1.4 Propositional Logic.html">1.4 Propositional Logic</a></li>
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
 <li><a class="" href="../2. Proof Techniques/2.0 Introduction.html">2.0 Introduction</a></li>
-<li><a class="" href="../2. Proof Techniques/2.1 Basic Proof Techiques.html">2.1 Basic Proof Techiques</a></li>
+<li><a class="" href="../2. Proof Techniques/2.1 Foundational Proof Techiques.html">2.1 Foundational Proof Techiques</a></li>
 <li><a class="" href="../2. Proof Techniques/2.2 Mathematical Induction.html">2.2 Mathematical Induction</a></li>
 <li><a class="" href="../2. Proof Techniques/2.3 Faulty Proofs.html">2.3 Faulty Proofs</a></li>
 </ul>
@@ -474,75 +473,149 @@
 <li><a class="" href="../3. Number Theory/3.0 Introduction.html">3.0 Introduction</a></li>
 <li><a class="" href="../3. Number Theory/3.1 Division Algorithm.html">3.1 Division Algorithm</a></li>
 <li><a class="" href="../3. Number Theory/3.2 Prime Factorization.html">3.2 Prime Factorization</a></li>
+<li><a class="" href="../3. Number Theory/3.3 Modular Arithmetic.html">3.3 Modular Arithmetic</a></li>
 </ul>
-<li class="heading"><span>4. Series and Sequences</span></li>
+<li class="heading"><span>5. Polynomials</span></li>
 <ul>
-<li><a class="" href="../4. Series and Sequences/4.0 Introduction.html">4.0 Introduction</a></li>
-<li><a class="" href="../4. Series and Sequences/4.1 Summation Notation.html">4.1 Summation Notation</a></li>
-<li><a class="" href="../4. Series and Sequences/4.2 Arithmetic Series.html">4.2 Arithmetic Series</a></li>
-<li><a class="" href="../4. Series and Sequences/4.3 Geometric Series.html">4.3 Geometric Series</a></li>
-<li><a class="" href="../4. Series and Sequences/4.4 Telescoping Sums.html">4.4 Telescoping Sums</a></li>
+<li><a class="" href="5.0 Introduction.html">5.0 Introduction</a></li>
+<li><a class="" href="5.1 Representation of Polynomials.html">5.1 Representation of Polynomials</a></li>
+<li><a class="" href="5.2 Factor and Remainder Theorems.html">5.2 Factor and Remainder Theorems</a></li>
+<li><a class="" href="5.3 Roots.html">5.3 Roots</a></li>
+<li><a class="" href="5.4 Vieta's Formulas.html">5.4 Vieta's Formulas</a></li>
+<li><a class="" href="5.5 The Binomial Theorem.html">5.5 The Binomial Theorem</a></li>
+<li><a class="active" href="5.6 Extensions of the Binomial Theorem.html">5.6 Extensions of the Binomial Theorem</a></li>
 </ul>
-<li class="heading"><span>6. Polynomials</span></li>
+<li class="heading"><span>Appendix</span></li>
 <ul>
-<li><a class="" href="6.0 Introduction.html">6.0 Introduction</a></li>
-<li><a class="" href="6.1 Representation of Polynomials.html">6.1 Representation of Polynomials</a></li>
-<li><a class="" href="6.2 Factor and Remainder Theorems.html">6.2 Factor and Remainder Theorems</a></li>
-<li><a class="active" href="6.3 Roots.html">6.3 Roots</a></li>
-<li><a class="" href="6.4 Vieta's Formulas.html">6.4 Vieta's Formulas</a></li>
-<li><a class="" href="6.5 The Binomial Theorem.html">6.5 The Binomial Theorem</a></li>
-<li><a class="" href="6.6 Extensions of the Binomial Theorem.html">6.6 Extensions of the Binomial Theorem</a></li>
+<li><a class="" href="../Appendix/Complex Numbers.html">Complex Numbers</a></li>
+<li><a class="" href="../Appendix/Series and Sequences.html">Series and Sequences</a></li>
 </ul>
 </ul>
     </nav>
     <article id="main" class="content">
-      <title>6.3: Roots – Polynomials</title>
-<h1>Complex Roots</h1>
+      <title>6.6: Extensions of Theorem – Polynomials</title>
+<h1>6.6: Extensions of the Binomial Theorem</h1>
 <hr>
 <br>
 <p>Jump to:</p>
+<ul>
+<li><a href="#trinomial">The “Trinomial” Theorem?</a></li>
+<li><a href="#multinomial">The Multinomial Theorem</a></li>
+<li><a href="#product">Product of Two Binomial Expansions</a></li>
+</ul>
 <br>
-<p>The final key property of polynomials determined by their degree are their number of roots. You may have learned before that a real-valued polynomial with real coefficients of degree $n$ has anywhere between 0 and $n$ roots, depending on its specifics. However, we can actually make a stronger claim, which we will examine in this article.</p>
+<p>We will now look at a few extensions of the binomial theorem and the thought process we used in deriving it.</p>
 <br>
+<a name='trinomial'>
+<h2>The “Trinomial” Theorem?</h2>
+<hr>
+</a>
+<br>
+<p>What if we would like to expand something of the form $(x + y + z)^n$? One option is to treat either $(x + y)$ or $(y + z)$ as a single term, and use the binomial theorem. However, once again, we can treat this as a combinatorial problem on its own.</p>
+<p>Suppose a general term in the expansion of $(x + y + z)^n$ contains $a$ $x$s, $b$ $y$s and $c$ $z$s. Then, we must have that $a + b + c = n$, since the total number of parentheses we choose from in the expansion must be exactly $n$. We can then say the following:</p>
 <div align=center>
-<p><strong>All real-valued polynomials with real coefficients of degree $n$ have exactly $n$ complex roots.</strong></p>
+<p>$
+t_{a, b, c} = \frac{n!}{a! b! c!} x^a y^b z^c
+$</p>
+</div>
+<p>The coefficient $\frac{n!}{a!b!c!}$ comes from the number of ways to arrange $a$ $x$s, $b$ $y$s and $c$ $z$s (think back to counting the number of permutations of MISSISSIPPI).</p>
+<br>
+<h3>Example</h3>
+<p>Let’s calculate the coefficient of the term containing $x^4$ in the expansion of $(x - 3x^{-2} + 4)^8$:</p>
+<div align=center>
+<p>$
+\begin{aligned} t_{a, b, c} &amp;= \frac{8!}{a! b! c!} x^a (-3x^{-2})^b (4)^c
+\\ &amp;= (-1)^b \frac{8!}{a!b!c!}3^b4^c x^{a-2b} \end{aligned}$</p>
+</div>
+<p>Setting $x^{a - 2b} = x^4$, we require $a - 2b = 4$, with the constraints that $0 \leq a, b, c \leq 8$ and $a + b + c = 8$. If we set $a = 4$ and $b = 0$, we satisfy the given constraints. We can use this solution as a starting point to find the remaining solutions:</p>
+<ul>
+<li>
+<p>$a = 4, b = 0, c = 4$</p>
+</li>
+<li>
+<p>$a = 6, b = 1, c = 1$</p>
+</li>
+</ul>
+<p>We then find the general terms corresponding to each of these two triplets:</p>
+<div align=center>
+<p>$\begin{aligned} t_{4, 0, 4} &amp;= (-1)^0 \frac{8!}{4!0!4!} 3^0 4^4 x^4 = 17920x^4 \\ t_{6, 1, 1} &amp;= (-1)^1 \frac{8!}{6!1!1!}3^14^1x^4 = - 336x^4 \end{aligned}$</p>
+</div>
+<p>Then, in the final expansion, the term containing $x^4$ is $t_{4, 0, 4} + t_{6, 1,1} = 17920x^4 - 336x^4 = 17584x^4$, and the coefficient of $x^4$ is $17584$.</p>
+<br>
+<h3>Generalization</h3>
+<p>Note that can write the expansion of a trinomial raised to an exponent
+as a sum, though it is slightly less meaningful:</p>
+<div align=center>
+$
+(x + y + z)^n = \sum_{a, b, c :  a + b + c = n} \frac{n!}{a!b!c!}x^ay^bz^c
+$
 </div>
 <br>
-<p>One important fact to remember is that the real numbers are a subset of the complex numbers, meaning that all real numbers are also complex. However, not all complex numbers are real.</p>
-<p>The first class of polynomial we encounter with varying numbers of roots is the parabola, of degree 2. You may have studied before that parabolas have one of the following:</p>
+<a name='multinomial'>
+<h2>The Multinomial Theorem</h2>
+<hr>
+</a>
+<br>
+<p>We can generalize this even further. Let’s introduce the <strong>multinomial coefficient</strong>:</p>
+<div align=center>
+<p>$
+{n \choose k_1, k_2, … k_m} = \frac{n!}{k_1!k_2! … k_m!}
+$</p>
+</div>
+<p>Under the assumption $k_1 + k_2 + … + k_m = n$, this term is the number of ways to select one subset of size $k_1$, one subset of size $k_2$, … and one subset of size $k_m$ from a group of $n$ items. Notice that with $m = 2$, this is the same as the binomial coefficient that we’re used to.</p>
+<p>Then:</p>
+<div align=center>
+<p>$
+(x_1 + x_2 + … + x_m)^n = \sum_{k_1 + k_2 + … + k_m = n} {n \choose k_1, k_2, … k_m} \prod_{i = 1}^m x_i^{k_i}
+$</p>
+</div>
+<br>
+<a name='product'>
+<h2>Product of Two Binomial Expansions</h2>
+<hr>
+</a>
+<br>
+<p>Let’s switch gears. Rather than expanding from binomials to trinomials or general multinomials, what if we instead take a look at the product of two binomials, each raised to different exponents? Let’s illustrate this with an example!</p>
+<p>Let $f(x, y) = (2x - 3y)^5$ and $g(x, y) = (x^3 - 3xy^2)^9$. Our goal will be to find the general term of the product $f(x, y) \cdot g(x, y)$, and determine the existence of certain terms.</p>
+<p>First, we find the general term of each, using the index variable $i$ for $f(x, y)$ and $k$ for $g(x, y)$ (these choices are arbitrary, but we need some way of differentiating the two, as you will see). You should verify these on your own:</p>
+<div align=center>
+<p>$
+\begin{aligned} t_i &amp;= (-1)^i {5 \choose i} 2^{5-i} 3^i x^{5-i} y^i \\ t_k &amp;= (-1)^k {9 \choose k} 3^k x^{27-2k} y^{2k} \end{aligned}$</p>
+</div>
+<p>Now, to find the general term of the product, we take the product of the two general terms:</p>
+<div align=center>
+<p>$
+\begin{aligned} t_{i, k} &amp;= (-1)^i {5 \choose i} 2^{5-i} 3^i x^{5-i} y^i (-1)^k {9 \choose k} 3^k x^{27-2k} y^{2k} \\ &amp;= (-1)^{i+k} {5 \choose i} {9 \choose k} 2^{5-i} 3^{i+k} x^{32 - i - 2k} y^{i+2k} \end{aligned}
+$</p>
+</div>
+<p>This tells us that the product of the $i$th term of $f(x)$ and $k$th term of $g(x)$ is $t_{i, k}$. Since we separated our exponential bases in the individual general terms, it was easy to combine bases in the product.</p>
+<p>We are now well equipped to answer the following questions:</p>
 <ul>
-<li>2 roots, meaning they intercept the $x$ axis twice</li>
-<li>1 root, meaning they sit on the $x$ axis (this is known as a double root, and is actually treated as two roots of the same value)</li>
-<li>0 roots, meaning that they sit completely above or completely below the $x$ axis</li>
+<li>What are all terms containing $x^{20}$ in the expansion of $f(x, y) \cdot g(x,y)$?</li>
+<li>What is the coefficient of $x^{12}y^{10}$ in the expansion of $f(x, y) \cdot g(x, y)$?</li>
 </ul>
-<p>Recall, given a quadratic of the form $f(x) = ax^2 + bx + c$, the solutions to $f(x) = 0$ are given by $\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$. The three cases above come from the three different states of the discriminant, $b^2 - 4ac$. When $b^2 - 4ac &gt; 0$, there are two distinct roots. When $b^2 - 4ac = 0$, the “plus-or-minus” term vanishes, leaving a double root at $x = -\frac{b}{2a}$. The case we’re now interested in is when $b^2 - 4ac &lt; 0$, where we would previously claim there to be “no solution” since we cannot take the square root of a negative number. In fact, there are still two perfectly valid solutions - they’re just not real numbers.</p>
-<h2>Complex Numbers</h2>
-<p>Complex numbers, as discussed earlier in the course, are a superset of the real numbers. We can represent a complex number $z$ in <strong>rectangular form</strong> as $z = a + bi$, where $a, b$ are real numbers and $i$ is the imaginary unit defined by $i^2 = -1$. We say $a$ is the “real part” and $bi$ is the “imaginary part.” We can represent the set of real numbers as complex numbers, with $b = 0$.</p>
-<p>The simplest parabola that has complex roots is $p(x) = x^2 + 1$, which sits one unit above the $x$ axis, centered on the $y$ axis. It has roots $x_1 = i$ and $x_2 = -i$, respectively, which you can verify with the quadratic equation.</p>
-<p>An important consequence of our new, stronger definition of the number of roots of a polynomial is that <strong>all polynomials are now completely factorable into linear terms</strong>, whereas previously this was not the case. Previously, we could factor $x^2 + 5x + 6$ and $x^2 - 16$ into $(x+2)(x+3)$ and $(x-4)(x+4)$, respectively, because we knew these polynomials in standard form had roots. However, now we can factor $x^2 + 1$ as well, into $(x-i)(x+i)$, by the factor theorem. In general,</p>
-<p>$
-p(x) = \sum_{k = 0}^n a_kx^k = a(x-r_1)(x-r_2)(x-r_3)…(x-r_{n-1})(x-r_n)$ $= a\prod_{i = 1}^n (x - r_i)
-$</p>
-<p>for some real constant $a$. Remember, our polynomials still only take and return real numbers as inputs and outputs, and all coefficients are still real numbers. It’s just the roots that are potentially complex.</p>
-<h3>Complex Root Pairs</h3>
-<p>As it turns out, complex roots always occur in pairs. No real polynomial can have only a single complex root, or three complex roots, or any odd number of complex roots. Furthermore:</p>
-<p>$
-f(a + bi) = 0 \implies f(a - bi) = 0
-$</p>
-<p>This says that if a complex number is a root of a real polynomial, its <strong>complex conjugate</strong> must also be a root. Conjugates are defined exactly as above - the conjugate of $z = a + bi$ is $\bar{z} = a - bi$. Complex conjugates are defined this way for the following reason:</p>
-<p>$
-z\bar{z} = (a + bi)(a - bi) = a^2 - abi + bai - b^2i = a^2 - b^2i = a^2 + b^2
-$</p>
-<p>When multiplying a complex number by its conjugate, the imaginary parts fall out and we’re left with a real number. In particular, this real number $z\bar{z} = |z|^2$ is the <strong>square of the magnitude</strong> of the complex number, i.e. the squared distance from 0.</p>
-<p>Let’s justify why $a + bi$ and $a - bi$ will always exist together as roots. By the factor theorem, if they are both roots of some $p(x)$ of degree $n$:</p>
-<p>$
-\begin{aligned}
-p(x) &amp;= (x-r_1)(x-r_2)(x-r_3)…(x - r_{n-2})\left[(x - (a + bi))(x - (a - bi))\right] \
-&amp;= (x-r_1)(x-r_2)(x-r_3)…(x - r_{n-2})\left[x^2 - ((a - bi) + (a + bi))x - (a+bi)(a-bi) \right] \
-&amp;= (x-r_1)(x-r_2)(x-r_3)…(x - r_{n-2})\left[x^2 - 2ax - (a^2 + b^2) \right]
-\end{aligned}
-$</p>
-<p>The product $(x - (a + bi))(x - (a - bi))$ yields a completely real polynomial. This real polynomial, multiplied by the rest of $(x - r_1)(x - r_2)…(x-r_{n-2})$, which is assumed to be real, will result in a real $p(x)$. However, if $(x - (a + bi))$ were multipled by $(x - (c + di))$, for some general complex number $c + di$, the resulting last term of $p(x)$ would contain complex terms, meaning that $p(x)$ would have complex coefficients, going against our definition set in the beginning.</p>
+<p>We will walk through the solution of the first problem as an example, while the latter is left as an exercise.</p>
+<br>
+<h3>Problem Setup</h3>
+<p>Using $f(x, y)$ and $g(x, y)$ as before, we want to find all terms containing $x^{20}$. Our analysis will be similar to what it was when we looked at the expansion of trinomials. Since the exponent on $x$ is $32 - i - 2k$, we are looking for all integer solutions to the following problem:</p>
+<div align=center>
+<p>$32 - i - 2k = 20$
+<br>
+$\text{s.t. } 0 \leq i \leq 5, 0 \leq k \leq 9$</p>
+</div>
+<p>(Note: “s.t.” means “such that”.)</p>
+<p>We know that the first line reduces to $i + 2k = 12$. One way to determine these solutions assuming the equation only contains two variables is to find the simplest solution that minimizes one variable and maximizes the other – such as $i = 0, k = 6$ – and iteratively increase the minimum and decrease the maximum until all solutions are found.</p>
+<p>After finding $i = 0, k = 6$, we can reduce $k$ by $1$ to find $i = 2, k = 5$. Doing so again yields $i = 4, k = 4$ which we know is the last solution as setting $k = 3$ yields $i = 6$ which is out of the range of possible values for $i$.</p>
+<p>Now that we have our three solutions, our problem reduces to plugging in the values of $i$ and $k$ into our expanded term.</p>
+<div align = center>
+<p>$t_{0, 6} = (-1)^{0 + 6} {5 \choose 0}{9 \choose 6} 2^{5-0} 3^{0 + 6} x^{32 - 0 - 2 \cdot 6} y^{0 + 2 \cdot 6} = 1959552x^{20}y^{12}$
+<br><br>
+$t_{2, 5} = (-1)^{2 + 5} {5 \choose 2}{9 \choose 5} 2^{5-2} 3^{2+5}x^{32 - 2 - 2 \cdot 5}y^{2 + 2 \cdot 5} = -22044960x^{20}y^{12}$
+<br><br>
+$t_{4, 4} = (-1)^{4 + 4} {5 \choose 4}{9 \choose 4} 2^{5-4} 3^{4+4} x^{32 - 4 - 2 \cdot 4} y^{4 + 2 \cdot 4} = 8266860x^{20}y^{12}$</p>
+</div>
+<p>It should also be noted that the multiplication of these large numbers isn’t exactly a skill that one needs to develop to be successful; no reasonable assessment (at least in this course) will ask for you to do this by hand, and leaving terms in the form ${5 \choose 2}{9 \choose 5}2^3 3^7 x^{20} y^{12}$ is perfectly fine.</p>
+<br>
 
     </article>
   </div>

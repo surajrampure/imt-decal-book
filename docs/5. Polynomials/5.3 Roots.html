@@ -459,13 +459,12 @@
 <li><a class="" href="../1. Sets and Functions/1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
 <li><a class="" href="../1. Sets and Functions/1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
 <li><a class="" href="../1. Sets and Functions/1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
-<li><a class="" href="../1. Sets and Functions/1.4 Complex Numbers.html">1.4 Complex Numbers</a></li>
-<li><a class="" href="../1. Sets and Functions/1.5 Propositional Logic.html">1.5 Propositional Logic</a></li>
+<li><a class="" href="../1. Sets and Functions/1.4 Propositional Logic.html">1.4 Propositional Logic</a></li>
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
 <li><a class="" href="../2. Proof Techniques/2.0 Introduction.html">2.0 Introduction</a></li>
-<li><a class="" href="../2. Proof Techniques/2.1 Basic Proof Techiques.html">2.1 Basic Proof Techiques</a></li>
+<li><a class="" href="../2. Proof Techniques/2.1 Foundational Proof Techiques.html">2.1 Foundational Proof Techiques</a></li>
 <li><a class="" href="../2. Proof Techniques/2.2 Mathematical Induction.html">2.2 Mathematical Induction</a></li>
 <li><a class="" href="../2. Proof Techniques/2.3 Faulty Proofs.html">2.3 Faulty Proofs</a></li>
 </ul>
@@ -474,72 +473,72 @@
 <li><a class="" href="../3. Number Theory/3.0 Introduction.html">3.0 Introduction</a></li>
 <li><a class="" href="../3. Number Theory/3.1 Division Algorithm.html">3.1 Division Algorithm</a></li>
 <li><a class="" href="../3. Number Theory/3.2 Prime Factorization.html">3.2 Prime Factorization</a></li>
+<li><a class="" href="../3. Number Theory/3.3 Modular Arithmetic.html">3.3 Modular Arithmetic</a></li>
 </ul>
-<li class="heading"><span>4. Series and Sequences</span></li>
+<li class="heading"><span>5. Polynomials</span></li>
 <ul>
-<li><a class="" href="../4. Series and Sequences/4.0 Introduction.html">4.0 Introduction</a></li>
-<li><a class="" href="../4. Series and Sequences/4.1 Summation Notation.html">4.1 Summation Notation</a></li>
-<li><a class="" href="../4. Series and Sequences/4.2 Arithmetic Series.html">4.2 Arithmetic Series</a></li>
-<li><a class="" href="../4. Series and Sequences/4.3 Geometric Series.html">4.3 Geometric Series</a></li>
-<li><a class="" href="../4. Series and Sequences/4.4 Telescoping Sums.html">4.4 Telescoping Sums</a></li>
+<li><a class="" href="5.0 Introduction.html">5.0 Introduction</a></li>
+<li><a class="" href="5.1 Representation of Polynomials.html">5.1 Representation of Polynomials</a></li>
+<li><a class="" href="5.2 Factor and Remainder Theorems.html">5.2 Factor and Remainder Theorems</a></li>
+<li><a class="active" href="5.3 Roots.html">5.3 Roots</a></li>
+<li><a class="" href="5.4 Vieta's Formulas.html">5.4 Vieta's Formulas</a></li>
+<li><a class="" href="5.5 The Binomial Theorem.html">5.5 The Binomial Theorem</a></li>
+<li><a class="" href="5.6 Extensions of the Binomial Theorem.html">5.6 Extensions of the Binomial Theorem</a></li>
 </ul>
-<li class="heading"><span>6. Polynomials</span></li>
+<li class="heading"><span>Appendix</span></li>
 <ul>
-<li><a class="" href="6.0 Introduction.html">6.0 Introduction</a></li>
-<li><a class="" href="6.1 Representation of Polynomials.html">6.1 Representation of Polynomials</a></li>
-<li><a class="active" href="6.2 Factor and Remainder Theorems.html">6.2 Factor and Remainder Theorems</a></li>
-<li><a class="" href="6.3 Roots.html">6.3 Roots</a></li>
-<li><a class="" href="6.4 Vieta's Formulas.html">6.4 Vieta's Formulas</a></li>
-<li><a class="" href="6.5 The Binomial Theorem.html">6.5 The Binomial Theorem</a></li>
-<li><a class="" href="6.6 Extensions of the Binomial Theorem.html">6.6 Extensions of the Binomial Theorem</a></li>
+<li><a class="" href="../Appendix/Complex Numbers.html">Complex Numbers</a></li>
+<li><a class="" href="../Appendix/Series and Sequences.html">Series and Sequences</a></li>
 </ul>
 </ul>
     </nav>
     <article id="main" class="content">
-      <h1>Factor and Remainder Theorems</h1>
-<p>Before we can look at and explain the existence of complex roots, there are two fundamental theorems that we need to discuss.</p>
+      <title>6.3: Roots – Polynomials</title>
+<h1>Complex Roots</h1>
+<hr>
 <br>
-<h2>Factor Theorem</h2>
-<p>The factor theorem states that <strong>for all polynomials $p(x)$, if $r$ is a root of $p$, meaning that $p® = 0$, then $(x - r)$ is a factor of $p(x)$.</strong></p>
-<p>As an example, since we can factor $p(x) = x^3 + 7x^2 + 6x$ into $p(x) = x(x + 1)(x + 6)$, we know that $p(0) = p(-1) = p(-6) = 0$.</p>
-<p>\vspace{.1in}
-Let’s continue.</p>
-<p>The other key property of polynomials determined by their degree are their number of roots. You may have learned before that a real-valued polynomial with real coefficients of degree $n$ has anywhere between $0$ and $n$ roots, depending on its specifics. However, we can actually make a stronger claim.</p>
-<p>\vspace{.1in}
-<strong>All real-valued polynomials with real coefficients of degree $n$ have exactly $n$ roots, with some possibly complex roots.</strong></p>
-<p>\vspace{.1in}
-Let’s disect this. The first class of polynomial we encounter with varying numbers of roots is the parabola, of degree $2$. You may have studied before that parabolas have one of the following:</p>
+<p>Jump to:</p>
+<br>
+<p>The final key property of polynomials determined by their degree are their number of roots. You may have learned before that a real-valued polynomial with real coefficients of degree $n$ has anywhere between 0 and $n$ roots, depending on its specifics. However, we can actually make a stronger claim, which we will examine in this article.</p>
+<br>
+<div align=center>
+<p><strong>All real-valued polynomials with real coefficients of degree $n$ have exactly $n$ complex roots.</strong></p>
+</div>
+<br>
+<p>One important fact to remember is that the real numbers are a subset of the complex numbers, meaning that all real numbers are also complex. However, not all complex numbers are real.</p>
+<p>The first class of polynomial we encounter with varying numbers of roots is the parabola, of degree 2. You may have studied before that parabolas have one of the following:</p>
 <ul>
-<li>
-<p>$2$ roots, meaning they intercept the $x$ axis twice</p>
-</li>
-<li>
-<p>$1$ root, meaning they sit on the $x$ axis (this is actually known as a double root)</p>
-</li>
-<li>
-<p>$0$ roots, meaning that they sit completely above or completely below the $x$ axis</p>
-</li>
+<li>2 roots, meaning they intercept the $x$ axis twice</li>
+<li>1 root, meaning they sit on the $x$ axis (this is known as a double root, and is actually treated as two roots of the same value)</li>
+<li>0 roots, meaning that they sit completely above or completely below the $x$ axis</li>
 </ul>
-<p>Recall, given a quadratic of the form $f(x) = ax^2 + bx + c$, the solutions to $f(x) = 0$ are given by $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$</p>
-<p>The three cases above come from the three different states of the discriminant, $b^2 - 4ac$. When $b^2 - 4ac &gt; 0$, there are two distinct roots. When $b^2 - 4ac = 0$, the “plus-or-minus” term vanishes, leaving a double root at $x = -\frac{b}{2a}$. The case we’re now interested in is when $b^2 - 4ac &lt; 0$, where we would previously claim there to be “no solution” since we cannot take the square root of a negative number. In fact, there are still two perfectly valid solutions ---- they’re just not real numbers.</p>
-<p>\vspace{.1in}
-<strong>Complex Numbers</strong></p>
-<p>Complex numbers, as discussed earlier in the course, are a superset of the real numbers. We can represent a complex number $z$ in <strong>rectangular form</strong> as $z = a + bi$, where $a, b$ are real numbers and $i$ is the imaginary unit[^2] defined by $i^2 = -1$. We say $a$ is the “real part” and $bi$ is the “imaginary part.” We can represent the set of real numbers as complex numbers, with $b = 0$.</p>
-<p>\vspace{.1in}
-The simplest parabola that has complex roots is $p(x) = x^2 + 1$, which sits one unit above the $x$ axis, centered on the $y$ axis. It has roots $x_1 = i$ and $x_2 = -i$, respectively, which you can verify with the quadratic equation.</p>
-<p>\vspace{.1in}
-An important consequence of our new, stronger definition of the number of roots of a polynomial is that <strong>all polynomials are now completely factorable into linear terms</strong>, whereas previously this was not the case. Previously, we could factor $x^2 + 5x + 6$ and $x^2 - 16$ into $(x+2)(x+3)$ and $(x-4)(x+4)$, respectively, because we knew these polynomials in standard form had roots. However, now we can factor $x^2 + 1$ as well, into $(x-i)(x+i)$, by the factor theorem. In general,</p>
-<p>$p(x) = \sum_{k = 0}^n a_kx^k = a(x-r_1)(x-r_2)(x-r_3)…(x-r_{n-1})(x-r_n)$ $= a\prod_{i = 0}^n (x - r_i)$</p>
+<p>Recall, given a quadratic of the form $f(x) = ax^2 + bx + c$, the solutions to $f(x) = 0$ are given by $\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$. The three cases above come from the three different states of the discriminant, $b^2 - 4ac$. When $b^2 - 4ac &gt; 0$, there are two distinct roots. When $b^2 - 4ac = 0$, the “plus-or-minus” term vanishes, leaving a double root at $x = -\frac{b}{2a}$. The case we’re now interested in is when $b^2 - 4ac &lt; 0$, where we would previously claim there to be “no solution” since we cannot take the square root of a negative number. In fact, there are still two perfectly valid solutions - they’re just not real numbers.</p>
+<h2>Complex Numbers</h2>
+<p>Complex numbers, as discussed earlier in the course, are a superset of the real numbers. We can represent a complex number $z$ in <strong>rectangular form</strong> as $z = a + bi$, where $a, b$ are real numbers and $i$ is the imaginary unit defined by $i^2 = -1$. We say $a$ is the “real part” and $bi$ is the “imaginary part.” We can represent the set of real numbers as complex numbers, with $b = 0$.</p>
+<p>The simplest parabola that has complex roots is $p(x) = x^2 + 1$, which sits one unit above the $x$ axis, centered on the $y$ axis. It has roots $x_1 = i$ and $x_2 = -i$, respectively, which you can verify with the quadratic equation.</p>
+<p>An important consequence of our new, stronger definition of the number of roots of a polynomial is that <strong>all polynomials are now completely factorable into linear terms</strong>, whereas previously this was not the case. Previously, we could factor $x^2 + 5x + 6$ and $x^2 - 16$ into $(x+2)(x+3)$ and $(x-4)(x+4)$, respectively, because we knew these polynomials in standard form had roots. However, now we can factor $x^2 + 1$ as well, into $(x-i)(x+i)$, by the factor theorem. In general,</p>
+<p>$
+p(x) = \sum_{k = 0}^n a_kx^k = a(x-r_1)(x-r_2)(x-r_3)…(x-r_{n-1})(x-r_n)$ $= a\prod_{i = 1}^n (x - r_i)
+$</p>
 <p>for some real constant $a$. Remember, our polynomials still only take and return real numbers as inputs and outputs, and all coefficients are still real numbers. It’s just the roots that are potentially complex.</p>
-<p>\vspace{.1in}
-<strong>Complex Root Pairs</strong></p>
+<h3>Complex Root Pairs</h3>
 <p>As it turns out, complex roots always occur in pairs. No real polynomial can have only a single complex root, or three complex roots, or any odd number of complex roots. Furthermore:</p>
-<p>$f(a + bi) = 0 \implies f(a - bi) = 0$</p>
-<p>This says that if a complex number is a root of a real polynomial, its <strong>complex conjugate</strong> must also be a root. Conjugates are defined exactly as above – the conjugate of $z = a + bi$ is $\bar{z} = a - bi$. Complex conjugates are defined this way for the following reason:</p>
-<p>$z\bar{z} = (a + bi)(a - bi) = a^2 - abi + bai - b^2i = a^2 - b^2i = a^2 + b^2$</p>
-<p>When multiplying a complex number by its conjugate, the imaginary parts fall out and we’re left with a real number. In particular, this real number $z\bar{z} = |z|^2$ is the <strong>square of the magnitude</strong> of the complex number, i.e. the squared distance from $0$.</p>
-<p>\vspace{.1in}
-Let’s justify why $a + bi$ and $a - bi$ will always exist together as roots. By the factor theorem, if they are both roots of some $p(x)$ of degree $n$: $p(x) = (x-r_1)(x-r_2)(x-r_3)…(x - r_{n-2})\left[(x - (a + bi))(x - (a - bi))\right]$ $= (x-r_1)(x-r_2)(x-r_3)…(x - r_{n-2})\left[x^2 - ((a - bi) + (a + bi))x - (a+bi)(a-bi) \right]$ $= (x-r_1)(x-r_2)(x-r_3)…(x - r_{n-2})\left[x^2 - 2ax - (a^2 + b^2) \right]$</p>
+<p>$
+f(a + bi) = 0 \implies f(a - bi) = 0
+$</p>
+<p>This says that if a complex number is a root of a real polynomial, its <strong>complex conjugate</strong> must also be a root. Conjugates are defined exactly as above - the conjugate of $z = a + bi$ is $\bar{z} = a - bi$. Complex conjugates are defined this way for the following reason:</p>
+<p>$
+z\bar{z} = (a + bi)(a - bi) = a^2 - abi + bai - b^2i = a^2 - b^2i = a^2 + b^2
+$</p>
+<p>When multiplying a complex number by its conjugate, the imaginary parts fall out and we’re left with a real number. In particular, this real number $z\bar{z} = |z|^2$ is the <strong>square of the magnitude</strong> of the complex number, i.e. the squared distance from 0.</p>
+<p>Let’s justify why $a + bi$ and $a - bi$ will always exist together as roots. By the factor theorem, if they are both roots of some $p(x)$ of degree $n$:</p>
+<p>$
+\begin{aligned}
+p(x) &amp;= (x-r_1)(x-r_2)(x-r_3)…(x - r_{n-2})\left[(x - (a + bi))(x - (a - bi))\right] \
+&amp;= (x-r_1)(x-r_2)(x-r_3)…(x - r_{n-2})\left[x^2 - ((a - bi) + (a + bi))x - (a+bi)(a-bi) \right] \
+&amp;= (x-r_1)(x-r_2)(x-r_3)…(x - r_{n-2})\left[x^2 - 2ax - (a^2 + b^2) \right]
+\end{aligned}
+$</p>
 <p>The product $(x - (a + bi))(x - (a - bi))$ yields a completely real polynomial. This real polynomial, multiplied by the rest of $(x - r_1)(x - r_2)…(x-r_{n-2})$, which is assumed to be real, will result in a real $p(x)$. However, if $(x - (a + bi))$ were multipled by $(x - (c + di))$, for some general complex number $c + di$, the resulting last term of $p(x)$ would contain complex terms, meaning that $p(x)$ would have complex coefficients, going against our definition set in the beginning.</p>
 
     </article>

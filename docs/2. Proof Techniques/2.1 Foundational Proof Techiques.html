@@ -459,13 +459,12 @@
 <li><a class="" href="../1. Sets and Functions/1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
 <li><a class="" href="../1. Sets and Functions/1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
 <li><a class="" href="../1. Sets and Functions/1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
-<li><a class="" href="../1. Sets and Functions/1.4 Complex Numbers.html">1.4 Complex Numbers</a></li>
-<li><a class="" href="../1. Sets and Functions/1.5 Propositional Logic.html">1.5 Propositional Logic</a></li>
+<li><a class="" href="../1. Sets and Functions/1.4 Propositional Logic.html">1.4 Propositional Logic</a></li>
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
 <li><a class="" href="2.0 Introduction.html">2.0 Introduction</a></li>
-<li><a class="active" href="2.1 Basic Proof Techiques.html">2.1 Basic Proof Techiques</a></li>
+<li><a class="active" href="2.1 Foundational Proof Techiques.html">2.1 Foundational Proof Techiques</a></li>
 <li><a class="" href="2.2 Mathematical Induction.html">2.2 Mathematical Induction</a></li>
 <li><a class="" href="2.3 Faulty Proofs.html">2.3 Faulty Proofs</a></li>
 </ul>
@@ -474,38 +473,36 @@
 <li><a class="" href="../3. Number Theory/3.0 Introduction.html">3.0 Introduction</a></li>
 <li><a class="" href="../3. Number Theory/3.1 Division Algorithm.html">3.1 Division Algorithm</a></li>
 <li><a class="" href="../3. Number Theory/3.2 Prime Factorization.html">3.2 Prime Factorization</a></li>
+<li><a class="" href="../3. Number Theory/3.3 Modular Arithmetic.html">3.3 Modular Arithmetic</a></li>
 </ul>
-<li class="heading"><span>4. Series and Sequences</span></li>
+<li class="heading"><span>5. Polynomials</span></li>
 <ul>
-<li><a class="" href="../4. Series and Sequences/4.0 Introduction.html">4.0 Introduction</a></li>
-<li><a class="" href="../4. Series and Sequences/4.1 Summation Notation.html">4.1 Summation Notation</a></li>
-<li><a class="" href="../4. Series and Sequences/4.2 Arithmetic Series.html">4.2 Arithmetic Series</a></li>
-<li><a class="" href="../4. Series and Sequences/4.3 Geometric Series.html">4.3 Geometric Series</a></li>
-<li><a class="" href="../4. Series and Sequences/4.4 Telescoping Sums.html">4.4 Telescoping Sums</a></li>
+<li><a class="" href="../5. Polynomials/5.0 Introduction.html">5.0 Introduction</a></li>
+<li><a class="" href="../5. Polynomials/5.1 Representation of Polynomials.html">5.1 Representation of Polynomials</a></li>
+<li><a class="" href="../5. Polynomials/5.2 Factor and Remainder Theorems.html">5.2 Factor and Remainder Theorems</a></li>
+<li><a class="" href="../5. Polynomials/5.3 Roots.html">5.3 Roots</a></li>
+<li><a class="" href="../5. Polynomials/5.4 Vieta's Formulas.html">5.4 Vieta's Formulas</a></li>
+<li><a class="" href="../5. Polynomials/5.5 The Binomial Theorem.html">5.5 The Binomial Theorem</a></li>
+<li><a class="" href="../5. Polynomials/5.6 Extensions of the Binomial Theorem.html">5.6 Extensions of the Binomial Theorem</a></li>
 </ul>
-<li class="heading"><span>6. Polynomials</span></li>
+<li class="heading"><span>Appendix</span></li>
 <ul>
-<li><a class="" href="../6. Polynomials/6.0 Introduction.html">6.0 Introduction</a></li>
-<li><a class="" href="../6. Polynomials/6.1 Representation of Polynomials.html">6.1 Representation of Polynomials</a></li>
-<li><a class="" href="../6. Polynomials/6.2 Factor and Remainder Theorems.html">6.2 Factor and Remainder Theorems</a></li>
-<li><a class="" href="../6. Polynomials/6.3 Roots.html">6.3 Roots</a></li>
-<li><a class="" href="../6. Polynomials/6.4 Vieta's Formulas.html">6.4 Vieta's Formulas</a></li>
-<li><a class="" href="../6. Polynomials/6.5 The Binomial Theorem.html">6.5 The Binomial Theorem</a></li>
-<li><a class="" href="../6. Polynomials/6.6 Extensions of the Binomial Theorem.html">6.6 Extensions of the Binomial Theorem</a></li>
+<li><a class="" href="../Appendix/Complex Numbers.html">Complex Numbers</a></li>
+<li><a class="" href="../Appendix/Series and Sequences.html">Series and Sequences</a></li>
 </ul>
 </ul>
     </nav>
     <article id="main" class="content">
       <title>2.1: Foundational Proof Techniques - Proof Techniques</title>
-<h1>Foundational Proof Techniques</h1>
+<h1>2.1: Foundational Proof Techniques</h1>
 <hr>
 <br>
 <p>Jump to:</p>
 <ul>
 <li><a href="#direct">Direct Proof</a></li>
 <li><a href="#contradiction">Proof by Contradiction</a></li>
-<li>Proof by Contraposition</li>
-<li>Proof by Cases</li>
+<li><a href="#contraposition">Proof by Contraposition</a></li>
+<li><a href="#cases">Proof by Cases</a></li>
 </ul>
 <br>
 <p>Throughout this section, we will introduce some of the more common proof techniques that are used to verify the truth of a mathematical statement. Remember, all of these techniques assume you have some basic information present and attempt to use the information you have to arrive at the correct conclusion.</p>
@@ -516,10 +513,12 @@
 </a>
 <br>
 <p>The direct proof is the simplest type of proof. In a direct proof, given certain information, we determine the validity of some other information. Direct proofs are often used in mathematical formulas, where simple arithmetic manipulations of given information can get us where we need to be.</p>
+<p>Specifically, we are usually given some set of facts $P$ and want to prove that some statement $S$ is true. To prove the statement $S$, we make a sequence of valid implications $P \implies S_1 \implies S_2 \implies … \implies S$, where each implication represents one step in the proof. As long as each implication we make is valid (i.e. that all of our steps are mathematically sound), we have a valid direct proof.</p>
 <h3>Example</h3>
 <div align=center>
-<p><strong>Consider $x, y, z \in Z^+$. Prove that if $x \big| y$ and $x \big| z$, then $x \big| y + z$.</strong></p>
+<p><strong>Consider $x, y, z \in Z^+$. Prove that if $x | y$ and $x | z$, then $x | (y + z)$.</strong></p>
 </div>
+<p>(The notation $a | b$ means “$a$ divides $b$”. Formally, $a | b$ means there is some integer $c$ such that $b = ac$. We will look at this further in Chapter 3. )</p>
 <p>The first step in each proof is representing the information that we are allowed to assume, using precise mathematical notation. We are given that $x$ divides $y$ and that $x$ divides $z$. In mathematical notation, this means that there are integers $a_1$ and $a_2$ such that $a_1 \cdot x = y$ and $a_2 \cdot x = z$. Furthermore, since we are told $x, y$ and $z$ all belong to the set of positive integers, we know that $a_1, a_2$ must also be positive. There is not much more information we can garner from this now, so we look at what we are trying to prove.</p>
 <p>By writing out equations relating $x$ and $y$ (and $x$ and $z$), we have concrete information that we can use in our proof. Then:</p>
 <div align=center>
@@ -536,7 +535,6 @@ $</p>
 <br>
 <p>Proof by contradiction is one of the most widely used proof techniques, and it stems from a really nice observation. The problem statement remains the same; we are trying to prove that some statement $S$ is true. We begin by assuming not $S$ – that is, that $S$ is false - and prove that there is some piece of information that is both true and false at the same time. Since this can not happen, we know that our initial assumptions must be false. Since our initial assumption was that $S$ was false, we know this cannot be the case, thus $S$ must be true, proving our statement.</p>
 <p>The contradiction can come about in many ways. For example, showing two things that cannot be equal as equal – such as $0 = 2$ – or showing some given information (which was told to us to be true) is false if statement $S$ is false. Whatever the contradiction might be, this proof technique presents a relatively straightforward way to prove the validity of the statement without worrying about the specific reason why the statement it holds. In specific, proof by contradiction is powerful when trying to prove a statement which implies non-existence of some entity.</p>
-<br>
 <h3>Example</h3>
 <div align=center>
 <p><strong>Prove that there is no greatest even integer.</strong></p>
@@ -553,37 +551,46 @@ $</p>
 <br>
 <a name='contraposition'>
 <h2>Proof by Contraposition</h2>
+<hr>
 </a>
 <br>
-<p>A proof by contraposition can be used when dealing with a statement of the form: Given information $P$, prove $Q$ is true.  Symbolically, the statements “$P$ implies $Q$” and “not $Q$ implies not $P$” can be written as</p>
-<p>$
-P \implies Q
-$</p>
-<p>and</p>
-<p>$
-\neg Q \implies \neg P
-$</p>
-<p>The latter is known as the <strong>contrapositive</strong> of the former, which is where the proof technique stems from. It is a nice fact of mathematics (and can be proven using truth tables) that the validity of $P$ implying $Q$ holds in the exact places where not $Q$ implies not $P$ holds, i.e. that $P \implies Q \equiv \neg Q \implies \neg P$. So, if $P$ implying $Q$ is too hard to prove, we can assume not $Q$ and imply not $P$ instead. This will intrinsically prove our original statement.</p>
+<p>Recall from Chapter 1.5, the contrapositive of an implication $P \implies Q$ is $\neg Q \implies \neg P$. Implications and their contrapositives are logically equivalent statements. Contrapositives are useful in cases where we are asked to prove some statement $Q$ from some set of information $P$: instead of proceeding with a direct proof, we can instead assume that $Q$ is false and make a series of logical deductions that imply that $P$. In many cases, this is easier to do than proving that $P$ implies $Q$ directly.</p>
 <h3>Example</h3>
+<div align=center>
 <p><strong>Prove that if $x^2$ is even, then $x$ is even.</strong></p>
+</div>
 <p>We can easily use a direct proof for this problem, though we will use contrapositive to introduce the general problem solving technique.</p>
 <p>Remember, the contrapositive is of the form not $Q$ implies not $P$ (if our original problem statement reads $P$ implies $Q$). Here, $P$ is the statement “$x^2$ is even”, while $Q$ is “$x$ is even.” Thus, the contrapositive states that if $x$ is not even, then $x^2$ is not even either. Proving this will prove our original statement.</p>
 <p>So we begin. If $x$ is not even, then $x$ is odd. Hence, $x^2$ is the product of two odd numbers, which in itself is odd. So, $x^2$ is not even, and we have proven the contrapositive. The validity of our original statement is then asserted.</p>
 <br>
+<a name='cases'>
 <h2>Proof by Cases</h2>
+<hr>
+</a>
 <p>The last proof technique we will discuss in the section is proof by cases. In many instances, we may find it easier to view a statement as the combination of many sub-cases. By proving each possible sub-case, we can prove the validity of the full statement. The technique we use for each sub-case can be any one of the above.</p>
 <h3>Example</h3>
+<div align=center>
 <p><strong>Prove that the cube of any integer is either a multiple of 9, 1 more than a multiple of 9, or one less than a multiple of 9.</strong></p>
-<p>Since we are looking at multiples of 9, we should look at how numbers behave when divided by 9. We know from earlier in the course that when dividing a number by 9, the remainder can be anywhere from 0 to 8, inclusive.</p>
-<p><em>Case 1</em>: $n = 3k$
+</div>
+<p>The cases we break this proof into may seem rather arbitrary, but the more we practice this sort of proof, the more natural it will seem.</p>
+<ul>
+<li>
+<p><em>Case 1</em>: $n = 3k$ <br>
 First, we look at numbers that are divisible by 3, which we can represent as $3k$ for some positive integer $k$. Cubing $n$, we get $n^3 = (3k)^3 = 27k^3 = 9(3k^3)$. Clearly, for all $k$, this is a multiple of $9$, therefore we’ve proved the statement for all integers that are multiples of 3.</p>
-<p><em>Case 2</em>: $n = 3k + 1$
+</li>
+<li>
+<p><em>Case 2</em>: $n = 3k + 1$ <br>
 Next, we explore the case where there is a remainder of 1 after dividing by 3, so the number is $3k + 1$ for some $k$. Cubing $n$ yields $n^3 = (3k+1)^3 = 27k^3 + 27k^2 + 9k + 1 = 9(3k^3 + 3k^2 + k) + 1$, which shows that in this case $n^3$ is 1 greater than a multiple of 9. Thus, we’ve proved the statement for all integers that have remainder 1 when divided by 3.</p>
-<p><em>Case 3</em>: $n = 3k + 2$
+</li>
+<li>
+<p><em>Case 3</em>: $n = 3k + 2$ <br>
 The last case is when a number has a remainder of 2 when being divided by 3. This means we can write $n$ as $3k+2$; equivalently, we can write $n$ as being 1 less than a multiple of 3, i.e. $n = 3k - 1$ (think about why this is true). Then, $n^3 = (3k-1)^3 = 27k^3 - 27k^2 + 9k - 1 = 9(3k^3 - 3k^2 + k) - 1$, which shows in this case that $n^3$ is 1 less than a multiple of 9. Now, we’ve proved the statement for all integers that have remainder 2 when divided by 3.</p>
+</li>
+</ul>
 <p>We have considered three cases, and these three cases make up the whole universe of integers. Either an integer is divisible by 3, one more than a multiple of 3, or 2 more than a multiple of 3 (and consequently, 1 less than some other multiple of 3). The statement holds for these three cases, so it holds for every integer. It may not be immediately evident why splitting this problem into cases is the best way to proceed, but that is what practice is for.</p>
 <br>
-<p>Interestingly enough, there are usually multiple ways to prove any statement. In the next section, we will look at several different ways to prove a statement that we’ve already seen in this course – $\sum_{i = 1}^n i = \frac{n(n+1)}{2}$.</p>
+<p>One thing to note – there are multiple ways to prove any one statement. They may all use the same proof technique, but use the given information differently.</p>
+<p>In the next article, we will round out our proof toolbox with a more complicated proof technique – mathematical induction.</p>
 
     </article>
   </div>

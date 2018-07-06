@@ -459,13 +459,12 @@
 <li><a class="" href="1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
 <li><a class="" href="1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
 <li><a class="" href="1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
-<li><a class="" href="1.4 Complex Numbers.html">1.4 Complex Numbers</a></li>
-<li><a class="active" href="1.5 Propositional Logic.html">1.5 Propositional Logic</a></li>
+<li><a class="active" href="1.4 Propositional Logic.html">1.4 Propositional Logic</a></li>
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
 <li><a class="" href="../2. Proof Techniques/2.0 Introduction.html">2.0 Introduction</a></li>
-<li><a class="" href="../2. Proof Techniques/2.1 Basic Proof Techiques.html">2.1 Basic Proof Techiques</a></li>
+<li><a class="" href="../2. Proof Techniques/2.1 Foundational Proof Techiques.html">2.1 Foundational Proof Techiques</a></li>
 <li><a class="" href="../2. Proof Techniques/2.2 Mathematical Induction.html">2.2 Mathematical Induction</a></li>
 <li><a class="" href="../2. Proof Techniques/2.3 Faulty Proofs.html">2.3 Faulty Proofs</a></li>
 </ul>
@@ -474,30 +473,28 @@
 <li><a class="" href="../3. Number Theory/3.0 Introduction.html">3.0 Introduction</a></li>
 <li><a class="" href="../3. Number Theory/3.1 Division Algorithm.html">3.1 Division Algorithm</a></li>
 <li><a class="" href="../3. Number Theory/3.2 Prime Factorization.html">3.2 Prime Factorization</a></li>
+<li><a class="" href="../3. Number Theory/3.3 Modular Arithmetic.html">3.3 Modular Arithmetic</a></li>
 </ul>
-<li class="heading"><span>4. Series and Sequences</span></li>
+<li class="heading"><span>5. Polynomials</span></li>
 <ul>
-<li><a class="" href="../4. Series and Sequences/4.0 Introduction.html">4.0 Introduction</a></li>
-<li><a class="" href="../4. Series and Sequences/4.1 Summation Notation.html">4.1 Summation Notation</a></li>
-<li><a class="" href="../4. Series and Sequences/4.2 Arithmetic Series.html">4.2 Arithmetic Series</a></li>
-<li><a class="" href="../4. Series and Sequences/4.3 Geometric Series.html">4.3 Geometric Series</a></li>
-<li><a class="" href="../4. Series and Sequences/4.4 Telescoping Sums.html">4.4 Telescoping Sums</a></li>
+<li><a class="" href="../5. Polynomials/5.0 Introduction.html">5.0 Introduction</a></li>
+<li><a class="" href="../5. Polynomials/5.1 Representation of Polynomials.html">5.1 Representation of Polynomials</a></li>
+<li><a class="" href="../5. Polynomials/5.2 Factor and Remainder Theorems.html">5.2 Factor and Remainder Theorems</a></li>
+<li><a class="" href="../5. Polynomials/5.3 Roots.html">5.3 Roots</a></li>
+<li><a class="" href="../5. Polynomials/5.4 Vieta's Formulas.html">5.4 Vieta's Formulas</a></li>
+<li><a class="" href="../5. Polynomials/5.5 The Binomial Theorem.html">5.5 The Binomial Theorem</a></li>
+<li><a class="" href="../5. Polynomials/5.6 Extensions of the Binomial Theorem.html">5.6 Extensions of the Binomial Theorem</a></li>
 </ul>
-<li class="heading"><span>6. Polynomials</span></li>
+<li class="heading"><span>Appendix</span></li>
 <ul>
-<li><a class="" href="../6. Polynomials/6.0 Introduction.html">6.0 Introduction</a></li>
-<li><a class="" href="../6. Polynomials/6.1 Representation of Polynomials.html">6.1 Representation of Polynomials</a></li>
-<li><a class="" href="../6. Polynomials/6.2 Factor and Remainder Theorems.html">6.2 Factor and Remainder Theorems</a></li>
-<li><a class="" href="../6. Polynomials/6.3 Roots.html">6.3 Roots</a></li>
-<li><a class="" href="../6. Polynomials/6.4 Vieta's Formulas.html">6.4 Vieta's Formulas</a></li>
-<li><a class="" href="../6. Polynomials/6.5 The Binomial Theorem.html">6.5 The Binomial Theorem</a></li>
-<li><a class="" href="../6. Polynomials/6.6 Extensions of the Binomial Theorem.html">6.6 Extensions of the Binomial Theorem</a></li>
+<li><a class="" href="../Appendix/Complex Numbers.html">Complex Numbers</a></li>
+<li><a class="" href="../Appendix/Series and Sequences.html">Series and Sequences</a></li>
 </ul>
 </ul>
     </nav>
     <article id="main" class="content">
-      <title>1.5: Propositional Logic - Sets and Functions</title>
-<h1>1.5: Propositional Logic</h1>
+      <title>1.4: Propositional Logic - Sets and Functions</title>
+<h1>1.4: Propositional Logic</h1>
 <hr>
 <br>
 <p>Jump to:</p>
@@ -514,6 +511,7 @@
 <li><a href="#converse">Converse</a></li>
 </ul>
 </li>
+<li><a href="#existence">Existential Quantifiers</a></li>
 </ul>
 <br>
 <p>Often introduced with set theory is the concept of propositional logic. Knowledge of propositional logic is crucial to formalizing proof techniques, which we will do in the following chapter. This article will be relatively interactive - it’s in your best interest to do the examples yourself as you read.</p>
@@ -522,10 +520,12 @@
 <h2>Set Operations as Logical Operators</h2>
 <hr>
 </a>
+<br>
 <blockquote>
 <h3>Definition: <strong>Proposition</strong></h3>
 <p>A proposition is a statement that is has a definitive value - either true or false. A proposition that depends on some variable $x$ is usually denoted by $P(x)$.</p>
 </blockquote>
+<br>
 <p>For example, “$x$ is prime” and “it was 93 degrees outside yesterday” are propositions; the first depends on variable $x$ and the second has no variation. Each of these statements is either definitively true, or definitively false - their truth value may depend on some value of $x$, but given this value, we can determine what the truth value is. However, statements like “LeBron James is the best basketball player of all time” or “statistics is a hard subject” are NOT propositions - they are opinions, and their “truth value” varies from person to person.</p>
 <p>There are three commonly used <strong>logical operators</strong>, and each has a counterpart that we’ve already studied in set theory.</p>
 <ul>
@@ -546,6 +546,7 @@ The implication operation $P(x) \implies Q(x)$ says that if $P(x)$ is true, then
 <p>We use implications to prove statements to be true; if we can make a series of implications starting from a proposition that we know is true and ending with the proposition we want to prove, we have proven the final statement. We will explore this further in the next chapter.</p>
 <p>In logic, a question we are commonly faced with is proving that two expressions are <strong>logically equivalent</strong>. We do this by constructing what is known as a <strong>truth table</strong>, where we look at all possible values of each proposition and show that the expression holds the same value in each case. (This is similar to proving trigonometric identities, but far less mechanical.)</p>
 <p>As we mentioned above, the implication statement is a composition of the elementary logical operators - it turns out that $P(x) \implies Q(x) \equiv \neg P(x) \vee Q(x)$ (the $\equiv$ sign means “equivalence”; we will see this more when we study modular arithmetic). The following truth table proves this equivalence (with the function notation dropped, for brevity):</p>
+<div align=center>
 <table>
 <thead>
 <tr>
@@ -582,16 +583,16 @@ The implication operation $P(x) \implies Q(x)$ says that if $P(x)$ is true, then
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notice there are four rows - one for TT, one for TF, one for FT and one for FF. If we had expressions that depended on three propositions, we would have eight rows, and so on.</p>
 <p>A good exercise at this point is to practice proving a few equivalence relations on your own, so we present some sample problems below. You don’t need to do them all.</p>
-<a name = 'practice'>
+<p><a name = 'practice'> </a></p>
 <ul>
 <li>$\neg (P \wedge Q) \equiv \neg P \vee \neg Q$ (De Morgan’s Law)</li>
 <li>$\neg P \wedge \neg Q \equiv \neg (P \vee Q)$ (De Morgan’s Law)</li>
 <li>$P \implies Q \implies R \equiv (P \wedge \neg Q) \vee R$</li>
 <li>$P \wedge \neg P \equiv \text{TRUE}$ (Tautology)</li>
 </ul>
-</a>
 <p>The first two exercises in the above prove the result known as <strong>De Morgan’s Laws</strong>. These allow us to convert from AND operations to OR operations, with the distribution of a negation. They have analogues in set theory, as we saw in Chapter 1.2.</p>
 <br>
 <a name='contra_and_conv'>
@@ -599,37 +600,71 @@ The implication operation $P(x) \implies Q(x)$ says that if $P(x)$ is true, then
 <hr>
 </a>
 <br>
-<p>The following are two common logical expressions that are related to the implication of $P \implies Q$:</p>
-<ul>
-<li>$\neg Q \implies \neg P$ (<strong>Contrapositive</strong>)</li>
-<li>$Q \implies P$ (<strong>Converse</strong>)</li>
-</ul>
+<p>The following are two common logical expressions that are related to the implication of $P \implies Q$.</p>
 <br>
 <a name='contra'>
-<h3>Contrapositive</h3>
+<h3>Contrapositive: $\neg Q \implies \neg P$</h3>
 </a>
 <p>The contrapositive, $\neg Q \implies \neg P$, of an implication is actually logically equivalent to the implication itself! You should prove this to yourself using a truth table. However, without using a truth table we can see that:</p>
 <div align=center>
-<p>$\begin{aligned}\neg Q \implies \neg P \\ &amp;\equiv \neg (\neg Q) \vee (\neg P) \\ &amp;\equiv Q \vee \neg P \\ &amp;\equiv \neg P \vee Q \\ &amp;\equiv P \implies Q$</p>
+<p>$\begin{aligned}\neg Q \implies \neg P &amp;\equiv \neg (\neg Q) \vee (\neg P) \\ &amp;\equiv Q \vee \neg P \\ &amp;\equiv \neg P \vee Q \\ &amp;\equiv P \implies Q \end{aligned}$</p>
 </div>
 <p>Why does the contrapositive exist, then, if it’s equivalent to the standard implication? That’s a question that’ll be answered in the following chapter in great detail. Hint: It’s very important.</p>
 <br>
 <a name='converse'>
-<h3>Converse</h3>
+<h3>Converse: $Q \implies P$</h3>
 </a>
-<p>The converse of an implication, however, is not equivalent to the implication. If today is Christmas ($P$), then it implies that the current month is December ($Q$), however it being December ($Q$) doesn’t mean that today is Christmas ($P$).</p>
+<p>The converse, $Q \implies P$ of an implication, however, is not equivalent to the implication. If today is Christmas ($P$), then it implies that the current month is December ($Q$), however it being December ($Q$) doesn’t mean that today is Christmas ($P$).</p>
 <p>Instead, the converse helps us in proving the equivalence of two statements.</p>
 <p>Another way we can represent the equivalence of two statements $A \equiv B$ is with the <strong>if and only if</strong> ($\iff$) symbol: $A \iff B$. If and only if is a widely used term to say that one statement is true only when the other statement is true, and is false only when the other statement is false - in other words, that two statements are equivalent. For example, “it is Christmas if and only if it is December 25th” is just a fancy way of saying “Christmas is on December 25th”.</p>
 <p>Consider the following truth table:</p>
-<p>| $A$ | $B$ | $A \iff B$ | $(A \implies B) \wedge (B \implies A)$ |
-| True | True | True | True |
-| True | False | False | False |
-| False | True | False | False |
-| False | False | True | True |</p>
+<div align=center>
+<table>
+<thead>
+<tr>
+<th>$A$</th>
+<th>$B$</th>
+<th>$A \iff B$</th>
+<th>$(A \implies B) \wedge (B \implies A)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>What this says, is that if two expressions imply one another, then they are equal. Today being Christmas implies that today is December 25th, and today being December 25th implies that today is Christmas - since these two propositions imply one another, we can say they’re equivalent. A more mechanical example that fits into the above truth table is $A$ being the implication $P \implies Q$ and $B$ being the contrapositive $\neg Q \implies \neg P$ - while being a little meta, we just showed that the contrapositive of an implication is equivalent to the implication itself. However, working out this truth table could get a little messy (the fourth column would look something like $(P \implies Q) \implies (\neg Q \implies \neg P)$).</p>
 <br>
 <a name='existence'>
-<h2>Existential Quantifier</h2>
+<h2>Existential Quantifiers</h2>
+<hr>
+</a>
+<br>
+<p>Quantifiers are the “glue” that allow us to write mathematical statements precisely. There are two, the <strong>universal quantifier</strong> ($\forall$, read as “for all”) and the <strong>existential quantifier</strong> ($\exists$, for all “there exists”).</p>
+<p>Let’s illustrate their usage with examples. Suppose we want a statement to denote that all natural numbers are either even or odd. We can have $E(x)$ represent “$x$ is even” and $U(x)$ represent “$x$ is odd”. Then, the statement $(\forall x \in \mathbb{N}) E(x) \vee U(x)$ reads “for all natural numbers $x$, $x$ is either even or odd”.</p>
 
     </article>
   </div>
