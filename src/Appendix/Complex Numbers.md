@@ -1,6 +1,6 @@
-<title>1.4: Complex Numbers – Sets and Functions</title>
+<title>Complex Numbers – Appendix</title>
 
-# 1.4: Complex Numbers
+# Complex Numbers
 ---
 
 <br>
@@ -14,11 +14,9 @@ Jump to:
 	- [Multiplication](#multiplication)
 	- [Complex Conjugates](#conjugate)
 	- [Division](#division)
-- [Summary](#summary)
+- [Connection to Set Theory](#summary)
 
 <br>
-
-**Note:** The following section is not relevant to the rest of the chapter on sets and functions. However, the knowledge will be important when dealing with properties of polynomials towards the end of the course. Feel free to skim this section and come back to it later when necessary. 
 
 To thoroughly introduce complex numbers, we need to talk about imaginary numbers. Imaginary numbers stem from the fact that the square root of a negative number is undefined over the set of real numbers – there is no real number $$x$$ such that $$x = \sqrt{-25}$$. In order to accomodate square roots of negative numbers, we introduce the imaginary unit $$i$$.
 
@@ -163,7 +161,7 @@ We used the fact that $$w \cdot \bar{w}$$ simplifies to a real number in order t
 
 <a name = 'summary'>
 
-## Summary
+## Connection to Set Theory
 ---
 
 </a>
