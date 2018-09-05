@@ -491,8 +491,8 @@
 </ul>
     </nav>
     <article id="main" class="content">
-      <title>1.2: Functions – Sets and Functions</title>
-<h1>1.2: Functions</h1>
+      <title>1.2: Functions and Bijections – Sets and Functions</title>
+<h1>1.2: Functions and Bijections</h1>
 <hr>
 <br>
 <p>Jump to:</p>
@@ -508,7 +508,6 @@
 <li><a href="#bijections">Bijections</a>
 <ul>
 <li><a href="#permutations">Permutations</a></li>
-<li><a href="#cardinality">Cardinality</a></li>
 </ul>
 </li>
 </ul>
@@ -518,7 +517,7 @@
 <br>
 <a name='function'>
 <blockquote>
-<h3>Definition: <strong>Function</strong>, <strong>Domain</strong>, <strong>Range</strong> </a></h3>
+<h3>Definition: <strong>Function</strong>, <strong>Domain</strong>, <strong>Codomain</strong> </a></h3>
 <p>We say $f$ is a <strong>function</strong> with <em>domain</em> $A$ and <em>codomain</em> $B$ if $f \subset A \times B $ such that for every element in $A$, there is exactly one element in $B$. Symbolically, we represent this as $f : A \rightarrow B$.</p>
 </blockquote>
 <br>
@@ -553,10 +552,13 @@
 <li>Specify a rule that describes how to get from input to corresponding output</li>
 </ul>
 <p>The functions you have experience with likely all come from a subset of the latter class, that is, functions that have rules that are algebraic. However, rules need not be algebraic. Consider the following rule $f$, that maps positive integers to positive integers (a set we will define in the next section but take for granted now):</p>
-<p>$f(x) = \text{the } x^{th} \text{ smallest prime number}$</p>
+<div align=center>
+$f(x) = \text{the } x^{th} \text{ smallest prime number}$
+</div>
+<br>
 <p>$f$ is indeed a valid function, as are the various algebraic functions you have seen before: $f(x) = x^2$, $g(x) = \frac{sin(x^4)}{e^{tan x}}$, and so on. Another way of writing algebraic functions is $f: x \mapsto x^2$; we can even drop the $f$ and simply write $x \mapsto x^2$ if we don’t need to give the function a name. This is read as “the mapping that sends $x$ to $x^2$.”  This symbol is similar to the $\rightarrow$ we use when defining the domain and codomain of a function, but there is a subtle difference.</p>
 <p>However, something like $x^2 + y^2 = 1$ is not a function, as for each $x$ there are two $y$ values, and vice versa.</p>
-<p>Side Note: Some functions do not have <strong>closed form representations</strong>. A common example is $f(x) = \int_{-\infty}^x e^{-t^2}dt$ – this is a perfectly valid function, however there is no way to express it other than as an integral or limit of an infinite sum. This integral is commonly used in probability theory; its lack of a closed form representation is the reason we use pre-computed tables to find values on a normal distribution.</p>
+<p>Note: Some functions do not have <strong>closed form representations</strong>. A common example is $f(x) = \int_{-\infty}^x e^{-t^2}dt$ – this is a perfectly valid function, however there is no way to express it other than as an integral or limit of an infinite sum. This integral is commonly used in probability theory; its lack of a closed form representation is the reason we use pre-computed tables to find values on a normal distribution.</p>
 <br>
 <a name='injection_surjection'>
 <h2>Injections and Surjections</h2>
@@ -573,25 +575,18 @@ $f(x_1) = f(x_2) \implies x_1 = x_2$
 or equivalently,
 $x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$</p>
 </blockquote>
-<blockquote>
-<p>The first of these statements says if two inputs have the same output, then the inputs must be equal. The second says if two inputs are not equal, then their outputs can’t be equal.</p>
-</blockquote>
 <br>
+<p>The first of these statements says if two inputs have the same output, then the inputs must be equal. The second says if two inputs are not equal, then their outputs can’t be equal.</p>
 <p>Examples of injections are $f(x) = e^x$ and $g(x) = \sqrt{x}$, while $f(x) = x^2$ is not an injection over its entire domain (all real numbers), since $-a$ and $a$ both map to $a^2$. However, if we restrict the set of inputs to $f : x \mapsto x^2$ to be only non-negative real numbers (or only non-positive real numbers), then it is an injection!</p>
-<p><strong>insert set diagrams</strong></p>
 <br>
 <a name='surjections'>
 <blockquote>
 <h3>Definition: <strong>Surjection (Onto)</strong> </a></h3>
-<p>We say a function $f : A \rightarrow B$ is surjective, or <strong>onto</strong>, if every element in $B$ has is mapped to by an element in $A$. Another way of saying this is that a function is a surjection when its codomain and range are the same set (that is, all possible outputs are actually seen as outputs). Symbolically:</p>
-</blockquote>
-<blockquote>
-<p>$\forall \: b \in B,  \exists \: a \in A : b = f(a)$</p>
+<p>We say a function $f : A \rightarrow B$ is surjective, or <strong>onto</strong>, if every element in $B$ is mapped to by an element in $A$. Another way of saying this is that a function is a surjection when its codomain and range are the same set (that is, all possible outputs are actually seen as outputs). Symbolically, we say $\forall \: b \in B,  \exists \: a \in A : b = f(a)$</p>
 </blockquote>
 <br>
 <p>(Note: The symbol $\forall$ means “for all”, and $\exists$ means “there exists”.)</p>
 <p>$f: x \mapsto x^2$ is a surjection when the codomain is the set of all non-negative real numbers (and domain is the set of all real numbers), as every number greater than or equal to $0$ exists as an output (since all non-negative numbers have a square root). However, when the codomain is the set of all real numbers, positive and negative (and domain is still all real numbers), then $f(x) = x^2$ is not a surjection, as there is no real number $x$ such that $x^2 = -1$. If we let the set of positive integers be both our domain and codomain, again, $x \mapsto x^2$ is not a surjection, because not every positive integer is a square.</p>
-<p><strong>insert set diagrams</strong></p>
 <p>One way to remember the correspondence between the terms “surjection” and “onto”: the <em>sur</em> in surjective means “on” in French!</p>
 <br>
 <a name='bijections'>
@@ -605,7 +600,6 @@ $x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$</p>
 <p>A function $f$ is bijective if and only if it is both injective and surjective. That is, a function is a bijection if and only if no two elements in the domain map to the same element in the range, and every element in the codomain has something mapping to it from the domain.</p>
 </blockquote>
 <br>
-<p><strong>TODO: Insert picture</strong></p>
 <p>For example, if we let our domain and codomain be the set of non-negative real numbers, we have that the function given by $x \mapsto \sqrt{x}$ is a bijection. The map given by $x \mapsto x^2$ is a bijection if we use the non-negative real numbers as our domain and codomain, however if we let our domain and codomain be all real numbers, it is not a bijection.</p>
 <br> 
 <a name='permutations'>
@@ -616,16 +610,10 @@ $x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$</p>
 <br>
 <p>One way to think of a permutation is a “shuffling” of a set; for example, if we let our domain and codomain both be the set $S = \{ 1, 2, 3, 4 \}$, a permutation on this set could be the mapping given by $f: \{ (1, 3), (2, 2), (3, 4), (4, 1) \}$.  We will study permutations further when we deal with combinatorics.</p>
 <br>
-<p>One notion regarding sets we have yet to talk about is the size of a set.</p>
-<a name='cardinality'>
-<blockquote>
-<h3>Definiion: <strong>Cardinality</strong> </a></h3>
-<p>For sets of finite size, the <strong>cardinality</strong> is the number of unique elements in the set; the cardinality of set $S$ is denoted by $|S|$. For sets of infinite size, cardinality serves as a measure of the relative sizes of sets. Specifically, <strong>we say two sets have the same cardinality if and only if there exists a bijection between the two sets.</strong></p>
-</blockquote>
-<br>
-<p>For finite sets, there is not a whole lot to cardinality. One interesting result is the <strong>Principle of Inclusion-Exclusion</strong> (defined later), which allows us to determine the cardinality of the union of any number sets, given the sizes of the sets themselves and all intersections between the sets. The derivation of the PIE is left as an exercise in the corresponding problem set; we will use it further upon reaching the combinatorics section of the course.</p>
-<p>However, we are now concerned with the cardinality of infinite sets. An issue we will deal with in the next section is, how do we compare two infinite sets, where one seemingly has more elements than the other? Bijections will aid us in this exploration.</p>
-
+<p>The following diagram (taken from <a href="https://www.aplustopper.com/one-to-one-and-onto-functions/">here</a>) summarizes the relationship between all types of relations we’ve seen in this section.</p>
+<div align=center>
+<img src="typesoffunctions.png" style="width: 600px">
+</div>
     </article>
   </div>
   <script>
