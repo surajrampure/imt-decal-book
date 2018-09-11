@@ -11,7 +11,7 @@
 
 **Contributors:** Fahad Kamran, Hermish Mehta, Jerry Huang
 
-**Last modified:** September 9, 2018
+**Last modified:** September 11, 2018
 
 <br>
 

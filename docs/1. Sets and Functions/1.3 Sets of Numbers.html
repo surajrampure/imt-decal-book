@@ -549,10 +549,7 @@
 <br>
 <blockquote>
 <h3>Definition: <strong>Natural numbers</strong></h3>
-<p>The <strong>natural numbers</strong> (also known as the counting numbers), denoted by $\mathbb{N}$, are the most primitive numbers; ones that occur trivially in nature that can be used to count a (non-zero) number of things.</p>
-</blockquote>
-<blockquote>
-<p>$\mathbb{N} = \{ 1, 2, 3, 4, … \}$</p>
+<p>The <strong>natural numbers</strong> (also known as the counting numbers), denoted by $\mathbb{N}$, are the most primitive numbers; ones that occur trivially in nature that can be used to count a (non-zero) number of things. Formally, we write $\mathbb{N} = \{ 1, 2, 3, 4, … \}$</p>
 </blockquote>
 <br>
 <p>That formal definition of the natural numbers leaves something to be desired. However, the natural numbers are the numbers you’ve dealt with for the longest – the set of positive numbers beginning with 1, spaced 1 apart. Note the omission of 0 in this set.</p>
@@ -564,18 +561,15 @@
 <br>
 <blockquote>
 <h3>Definition: <strong>Whole numbers</strong></h3>
-<p>The set of <strong>whole numbers</strong>, denoted by $\mathbb{N}_0$, is the union of the set of counting numbers with the number 0.</p>
-</blockquote>
-<blockquote>
-<p>$\mathbb{N}_0 = \{ 0, 1, 2, 3, 4, … \}$</p>
-</blockquote>
-<blockquote>
-<p>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0}$.</p>
+<p>The set of <strong>whole numbers</strong>, denoted by $\mathbb{N}_0$, is the union of the set of counting numbers with the number 0. Formally, we write $\mathbb{N}_0 = \{ 0, 1, 2, 3, 4, … \}$.</p>
 </blockquote>
 <br>
+<p><strong>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0}$.</strong></p>
 <p>Some mathematicians consider 0 to be a part of the natural numbers, hence rendering the above two sets equal. To avoid ambiguity, we will always use $\mathbb{N}$ to refer to the set $\{1, 2, 3, …\}$ and $\mathbb{N}_0$ to refer to the set $\{0, 1, 2, 3, …\}$. Read <a href="http://mathforum.org/library/drmath/view/57186.html">this</a> for more insight.</p>
 <p>Using our definition, though, clearly the set of whole numbers has <em>more</em> elements than the set of naturals – the whole numbers include every single element in the naturals, along with the number 0! However, that does not mean their cardinalities cannot be the same. The question is, does there exist a bijection that maps elements from $\mathbb{N}$ to elements of $\mathbb{N}_0$? If such a function existed, we should be able to pass in the natural numbers, in order, and receive the whole numbers, in some order.</p>
+<div align=center>
 <p><strong>It turns out that such a function does indeed exist. It is the function $f: \mathbb{N} \rightarrow \mathbb{N}_0$ given by $f(x) = x - 1$.</strong></p>
+</div>
 <p>Let’s see if it checks the boxes:</p>
 <ul>
 <li><strong>Injective</strong>: Do two elements in the domain ever map to the same element in the codomain? No, but as justification, let’s suppose they did. Let $a$ and $b$ be two unequal ($a \neq b$) natural numbers that map to the same whole number under this function. That would mean $a - 1 = b - 1$, but by adding 1 to both sides we see that $a = b$. This contradicts what we assumed earlier, so that doesn’t make sense. (Such a justification is overkill, but it’s good to start thinking formally as we start studying proofs in the next chapter.)</li>
@@ -599,17 +593,13 @@
 <br>
 <blockquote>
 <h3>Definition: <strong>Integers</strong></h3>
-<p>The set of integers, denoted by $\mathbb{Z}$, is the union of the whole numbers with their negatives.</p>
-</blockquote>
-<blockquote>
-<p>$\mathbb{Z} = \{ …, -3, -2, -1, 0, 1, 2, 3, … \}$</p>
-</blockquote>
-<blockquote>
-<p>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0} \subset \mathbb{Z}$.</p>
+<p>The set of integers, denoted by $\mathbb{Z}$, is the union of the whole numbers with their negatives. Formally, we write $\mathbb{Z} = \{ …, -3, -2, -1, 0, 1, 2, 3, … \}$.</p>
 </blockquote>
 <br>
+<p><strong>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0} \subset \mathbb{Z}$.</strong></p>
 <p>You should be asking yourself – are the integers countably infinite, or uncountably infinite?</p>
 <p>It turns out that they are indeed countable, but finding the bijection isn’t so obvious. We need a function that, as we plug in successive natural (or whole) numbers, gives us successive integers. However, unlike the jump from naturals to whole numbers, where we just added one new element, we now added infinitely many numbers in the negative direction of the number line. It wouldn’t make sense to attempt to count all numbers greater than or equal to zero, and then somehow start counting the numbers less than zero – we need to find a way to count positive and negative integers at the same time, systematically. We can do so by writing the set out in a clever way (which we can do, since sets do not change based on their ordering), with the whole numbers listed above:</p>
+<div align=center>
 <table>
 <thead>
 <tr>
@@ -644,6 +634,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>What do we notice?</p>
 <ul>
 <li>Every integer corresponding to an even whole number is exactly half of the whole number, but negative</li>
@@ -664,18 +655,12 @@ $</p>
 <br>
 <blockquote>
 <h3>Definition: <strong>Rational numbers</strong></h3>
-<p>The set of rational numbers, denoted by $\mathbb{Q}$, is the set of all possible combinations of one integer divided by another, with the latter integer being non-zero.</p>
-</blockquote>
-<blockquote>
-<p>$\mathbb{Q} = \{ \frac{p}{q} : p, q \in \mathbb{Z}, q \neq 0\}$</p>
-</blockquote>
-<blockquote>
-<p>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0} \subset \mathbb{Z} \subset \mathbb{Q}$.</p>
+<p>The set of rational numbers, denoted by $\mathbb{Q}$, is the set of all possible combinations of one integer divided by another, with the latter integer being non-zero. Formally, we write $\mathbb{Q} = \{ \frac{p}{q} : p, q \in \mathbb{Z}, q \neq 0\}$</p>
 </blockquote>
 <br>
-<p>We wrote the set of rational numbers symbolically slightly differently than we wrote the sets that preceeded it – we had to specify a rule to generate rational numbers. There’s no one concrete ordering of all rational numbers, because the rational numbers are <strong>dense</strong> – between any two rational numbers, there are infinitely many other rational numbers! (To see this fact, consider two rational numbers $a$ and $b$. Since both are integers divided by integers, $\frac{a}{2}$ and $\frac{b}{2}$ are also rational, and the rational number $\frac{a}{2} + \frac{b}{2} = \frac{a+b}{2}$ is also rational, and in between $a + b$ – it is the average of the two numbers.) This is in constrast to the integers, where in between any two integers, there are only finitely many integers (in fact, if $n$ and $m$ are two rational numbers, such that $m &gt; n$, then there are $m - n + 1$ integers in between, including both $n$ and $m$).</p>
+<p><strong>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0} \subset \mathbb{Z} \subset \mathbb{Q}$.</strong></p>
+<p>We wrote the set of rational numbers symbolically slightly differently than we wrote the sets that preceeded it – we had to specify a rule to generate rational numbers (i.e., we used set-builder notation). There’s no one concrete ordering of all rational numbers, because the rational numbers are <strong>dense</strong> – between any two rational numbers, there are infinitely many other rational numbers! (To see this fact, consider two rational numbers $a$ and $b$. Since both are integers divided by integers, $\frac{a}{2}$ and $\frac{b}{2}$ are also rational, and the rational number $\frac{a}{2} + \frac{b}{2} = \frac{a+b}{2}$ is also rational, and in between $a + b$ – it is the average of the two numbers.) This is in constrast to the integers, where in between any two integers, there are only finitely many integers (in fact, if $n$ and $m$ are two integers numbers, such that $m &gt; n$, then there are $m - n + 1$ integers in between, including both $n$ and $m$).</p>
 <p>The question remains, is the set of rational numbers countable or uncountable? The fact that there are infinitely many rational numbers in between any two rational numbers may lead you to believe that the set is uncountable, but in fact, the rationals are still countable! Let’s explore.</p>
-<p>This time, we will use a slightly different technique, because finding a simple bijection from $\mathbb{N}$ to $\mathbb{Q}$ is hard (but of course, it is possible). Instead, we will use the following idea:</p>
 <a name = 'cantor-bern'>
 <blockquote>
 <h3>Definition: <strong>Cantor-Schroeder-Bernstein Theorem</strong> </a></h3>
@@ -683,15 +668,27 @@ $</p>
 </blockquote>
 <br>
 <p>The first property applies to numbers themselves – consider any two numbers $x, y$. If $x \leq y$, and $y \leq x$, the only solution is that $x$ and $y$ are equal. The proof of the second property is beyond a lower-division mathematics class, but we will use it anyways.</p>
-<p>Since $\mathbb{N} \subset \mathbb{Q}$ (as every natural number can be expressed as itself divided by 1), by the first part of the above theorem, there is an injection from $\mathbb{N}$ to $\mathbb{Q}$. This makes sense – we can definitely find a function between these two sets such that no two integers map to the same rational number (consider the function $f: \mathbb{N} \rightarrow \mathbb{Q}$ given by $f: x \mapsto x$).</p>
-<p>We need to show an injection in the opposite direction, i.e. a function from the rationals to the integers such that no two rationals map to the same integer. Consider the following diagram (taken from the <a href="http://www.eecs70.org/static/notes/n10.html">CS 70 notes</a>):</p>
+<p>This theorem also implies that if $|A| \leq |B|$, then there exists an injection $f: A \rightarrow B$. It might not be immediately obvious why this is true, but consider the following (finite) example:</p>
+<div align=center>
+<p>$A = \{a_1, a_2, a_3\}, B = \{b_1, b_2, b_3, b_4, b_5\}
+\\ f: \{(a_1, b_1), (a_2, b_2), (a_3, b_3)\}$</p>
+</div>
+<p>If $B$ has “more” elements than $A$, then we can always create some mapping from $A$ to $B$ such that no two elements in $A$ map to the same element in $B$. However, consider this example, where $|A| \geq |B|$:</p>
+<div align=center>
+<p>$A = \{a_1, a_2, a_3\}, B = \{b_1, b_2\}
+\\ f: \{(a_1, b_1), (a_2, b_2), (a_3, ???)\}$</p>
+</div>
+<p>We must replace “???” with either $b_1$ or $b_2$, meaning that $f: A \rightarrow B$ can’t be an injection.</p>
+<p>Since $\mathbb{N} \subset \mathbb{Q}$ (as every natural number can be expressed as itself divided by 1), by the first part of the above theorem, there is an injection from $\mathbb{N}$ to $\mathbb{Q}$. This makes sense – we can definitely find a function between these two sets such that no two integers map to the same rational number (consider the function $f: \mathbb{N} \rightarrow \mathbb{Q}$ given by $f: x \mapsto x$). We need to show an injection in the opposite direction, i.e. a function from the rationals to the integers such that no two rationals map to the same integer. Consider the following diagram (taken from the <a href="http://www.eecs70.org/static/notes/n10.html">CS 70 notes</a>):</p>
 <img src="n10-spiral.png" alt="spiral-proof" style="width: 250px;"/>
+<br>
 <p>Suppose each point $(x, y)$ represents the rational number $\frac{y}{x}$. Then, this path will eventually hit every single rational number, no matter how large its numerator and/or denominator are. The output value of each point is its “position” in the spiral path. As well, not every point is a valid point:</p>
 <ul>
 <li>every point on the y-axis is invalid, as the x-coordinates are all zero, and thus are of the form $\frac{y}{0}$ (except $\frac{0}{0}$, which we can arbitrarily set to be the number 0)</li>
 <li>the points $(3, 4), (6, 8), (9, 12)$ all represent the same number ($\frac{4}{3}$) – in order to remove duplicates in our domain, we only count the first valid occurrence of each rational number</li>
 </ul>
 <p>Then, our injection $\mathbb{Q} \rightarrow \mathbb{N}$ looks something like this:</p>
+<div align=center>
 <table>
 <thead>
 <tr>
@@ -726,7 +723,9 @@ $</p>
 </tr>
 </tbody>
 </table>
-<p>Since the above function is an injection, we have that $|Q| \leq |N|$. From before, we had that $|N| \leq |Q|$, therefore we have (from the above theorem) that $|Q| = |N|$, thus proving that the set of rational numbers is countable.</p>
+</div>
+<p>This relationship is certainly a function, because every rational number appears somewhere along this spiral (exactly once, because we only count unique occurrences). This is certainly an injection, as no two rational numbers are at the same position in this spiral.</p>
+<p>Since the above function is an injection, we have that $|Q| \leq |N|$. From before, we had that $|N| \leq |Q|$, therefore we have (from the above theorem) that $|Q| = |N|$. Since the cardinalities of the two sets are equal, we have that there is a bijection between them.</p>
 <br>
 <a name = 'real'>
 <h2>Real Numbers</h2>
@@ -735,23 +734,15 @@ $</p>
 <br>
 <blockquote>
 <h3>Definition: <strong>Real numbers</strong></h3>
-<p>The set of real numbers, denoted by $\mathbb{R}$, is the set of all possible distances from 0 on a number line. The real numbers can be divided into two groups – rational numbers (as defined above), and irrational numbers.</p>
-</blockquote>
-<blockquote>
-<p>$\mathbb{R} = \{ 3, \pi, -\sqrt{63}, 0.1224, \frac{2}{3}, … \}$</p>
-</blockquote>
-<blockquote>
-<p>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$.</p>
+<p>The set of real numbers, denoted by $\mathbb{R}$, is the set of all possible distances from 0 on a number line. The real numbers can be divided into two groups – rational numbers (as defined above), and irrational numbers. Formally, we say $\mathbb{R} = \{ 3, \pi, -\sqrt{63}, 0.1224, \frac{2}{3}, … \}$.</p>
 </blockquote>
 <br>
+<p><strong>With regards to other number sets, $\mathbb{N} \subset \mathbb{N_0} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$.</strong></p>
 <p>For the sake of completeness, we define the set of <strong>irrational numbers</strong> below.</p>
 <a name = 'irrational'>
 <blockquote>
 <h3>Definition: <strong>Irrational numbers</strong> </a></h3>
-<p>The set of irrational numbers, denoted by $\mathbb{R} - \mathbb{Q}$, is the set of real numbers that are not rational. That is, they are real numbers that cannot be written as an integer divided by another integer.</p>
-</blockquote>
-<blockquote>
-<p>$\mathbb{R-Q} = \{ \pi, -e, \sqrt{5} \}$</p>
+<p>The set of irrational numbers, denoted by $\mathbb{R} - \mathbb{Q}$, is the set of real numbers that are not rational. That is, they are real numbers that cannot be written as an integer divided by another integer. Formally, we say $\mathbb{R-Q} = \{ \pi, -e, \sqrt{5}, … \}$</p>
 </blockquote>
 <blockquote>
 <p>With regards to other number sets, $\mathbb{R - Q} \subset \mathbb{R}$. It should be noted that $\mathbb{R - Q}$ is the first set we’ve studied that is not a superset of the sets that we studied before it.</p>
