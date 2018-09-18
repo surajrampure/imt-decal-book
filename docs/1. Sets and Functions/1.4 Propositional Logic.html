@@ -504,17 +504,30 @@
 <li><a href="#practice">Practice Problems</a></li>
 </ul>
 </li>
-<li><a href="#contra_and_conv">Contrapositive and Converse</a>
+<li><a href="#contra_and_conv">Extensions of the Implication</a>
 <ul>
 <li><a href="#contra">Contrapositive</a></li>
-<li><a href="#converse">Converse</a></li>
+<li><a href="#converse">Converse</a>
+<ul>
+<li><a href="#contra_converse_examples">Examples</a></li>
+</ul>
+</li>
 <li><a href="#iff">If and only if</a></li>
 </ul>
 </li>
-<li><a href="#existence">Existential Quantifiers</a></li>
+<li><a href="#existence">Existential Quantifiers</a>
+<ul>
+<li><a href="#demorgans_existence">De Morgan’s Laws for Existential Quantifiers</a></li>
+</ul>
+</li>
+<li><a href="#sentence_examples">Examples</a></li>
 </ul>
 <br>
 <p>Often introduced with set theory is the concept of propositional logic. Knowledge of propositional logic is crucial to formalizing proof techniques, which we will do in the following chapter. This article will be relatively interactive - it’s in your best interest to do the examples yourself as you read.</p>
+<br>
+<div align=center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aKDir_M_Nrk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 <br>
 <a name = 'setop'>
 <h2>Set Operations as Logical Operators</h2>
@@ -652,11 +665,11 @@ The implication operation $P \implies Q$ says that if $P$ is true, then $Q$ must
 <p>The first two exercises in the above prove the result known as <strong>De Morgan’s Laws</strong>. These allow us to convert from AND operations to OR operations, with the distribution of a negation. They have analogues in set theory, as we saw in Chapter 1.1.</p>
 <br>
 <a name='contra_and_conv'>
-<h2>Contrapositive and Converse</h2>
+<h2>Extensions of the Implication</h2>
 <hr>
 </a>
 <br>
-<p>The following are two common logical expressions that are related to the implication of $P \implies Q$.</p>
+<p>The following are common logical expressions that are related to the implication of $P \implies Q$.</p>
 <br>
 <a name='contra'>
 <h3>Contrapositive: $\neg Q \implies \neg P$</h3>
@@ -672,8 +685,45 @@ The implication operation $P \implies Q$ says that if $P$ is true, then $Q$ must
 </a>
 <p>The converse, $Q \implies P$ of an implication, however, is not equivalent to the implication. If today is Christmas ($P$), then it implies that the current month is December ($Q$), however it being December ($Q$) doesn’t mean that today is Christmas ($P$). Instead, the converse helps us in proving the equivalence of two statements.</p>
 <br>
-<a name='#iff'>
-<h3>If and only iff: $\iff$ </a></h3>
+<p><a name='contra_converse_examples'> </a></p>
+<p>Let’s take a look at a few implications, alongside their contrapositives and converses.</p>
+<div align=center>
+<table>
+<thead>
+<tr>
+<th><strong>Statement</strong></th>
+<th><strong>Contrapositive</strong></th>
+<th><strong>Converse</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>If it rains tomorrow, I will bring an umbrella.</strong></td>
+<td>I will not bring an umbrella if it does not rain tomorrow.</td>
+<td>I will bring an umbrella if it rains tomorrow.</td>
+</tr>
+<tr>
+<td><strong>If the clock is between 12PM and 2PM and I am hungry, then it is lunch time.</strong></td>
+<td>It is not lunchtime if the clock is not between 12PM and 2PM or I am not hungry.</td>
+<td>It is lunchtime if the clock is between 12PM and 2PM and I am hungry.</td>
+</tr>
+<tr>
+<td><strong>If your final grade in this course is at least 70%, you will pass.</strong></td>
+<td>You will not pass if your final grade in this course is not at least 70%.</td>
+<td>You will pass if your final grade in this course is at least 70%.</td>
+</tr>
+<tr>
+<td><strong>If two sets $A, B$ are disjoint, then the cardinality of their intersection is 0.</strong></td>
+<td>The cardinality of the intersection of two sets $A, B$ is not 0 if they are not disjoint.</td>
+<td>The cardinality of the intersection of two sets $A, B$ is 0 if they are disjoint.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<a name='iff'>
+<h3>If and only iff: $\iff$</h3>
+</a>
 <p>Another way we can represent the equivalence of two statements $A \equiv B$ is with the <strong>if and only if</strong> ($\iff$) symbol: $A \iff B$. If and only if (sometimes shortened to “iff”) is a widely used term to say that one statement is true only when the other statement is true, and is false only when the other statement is false - in other words, that two statements are equivalent. For example, “it is Christmas if and only if it is December 25th”, which we can decompose into the two statements “it is Christmas if it is December 25th” and “it is December 25th if it is Christmas” is just a fancy way of saying “Christmas is on December 25th”.</p>
 <p>Consider the following truth table:</p>
 <div align=center>
@@ -724,6 +774,16 @@ The implication operation $P \implies Q$ says that if $P$ is true, then $Q$ must
 <br>
 <p>Quantifiers are the “glue” that allow us to write mathematical statements precisely. There are two, the <strong>universal quantifier</strong> ($\forall$, read as “for all”) and the <strong>existential quantifier</strong> ($\exists$, read as “there exists”). We actually used these quantifiers already in Chapter 1.2, when defining what a surjective function is. We said a function $f: A \rightarrow B$ is surjective when $\forall b \in B, \exists a \in A : b = f(a)$, which translates to “for all $b$ in the codomain, there exists some $a$ in the domain such that $f$ maps $a$ to $b$.”</p>
 <p>Let’s illustrate their usage with examples. Suppose we want a statement to denote that all natural numbers are either even or odd. We can have $E(x)$ represent “$x$ is even” and $U(x)$ represent “$x$ is odd”. Then, the statement $\forall x \in \mathbb{N},  E(x) \vee U(x)$ reads “for all natural numbers $x$, $x$ is even or odd”. This statement happens to always be true, but something like $\forall x \in \mathbb{N}, E(x) \wedge U(x)$ is not true, as it is not the case that $x$ is both even and odd for all positive integers $x$. In fact, there isn’t a single positive integer for which is this is true.</p>
+<p>In general, you cannot reverse the order of different existential quantifiers. That is,</p>
+<div align=center>
+$(\forall x) (\exists y) P(x, y) \not \equiv (\exists y) (\forall x) P(x, y)$
+</div>
+<br>
+<p>Let’s reason about this with an example. Consider $P(x, y): y = x^2$ (note here we’re implicitly letting our universe $\mathbb{U} = \mathbb{R}$). The first statement says that for all $x$, there is some $y$ such that $y = x^2$. In other words, it says that every real number $x$ has a square. This statement happens to be true. The second statement says that there is some magical $y$ that is equal to the square of every single $x$. That is, this $y$ (let’s call it $y_0$) is such that $y_0 = 1^2, y_0 = \pi^2, y_0 = 100^2, …$. This statement is definitely very false. These are both saying very different things!</p>
+<br>
+<a name='demorgans_existence'>
+<h3>De Morgan’s Laws for Existential Quantifiers</h3>
+</a>
 <p>To round out our discussion on propositional logic, we need to once again look at De Morgan’s Laws, but for existential quantifiers.</p>
 <div align=center>
 <p>$\neg(\forall x, P(x)) \equiv \exists x, \neg P(x) \\ \neg(\exists x, P(x)) \equiv \forall x, \neg P(x)$</p>
@@ -734,7 +794,53 @@ The implication operation $P \implies Q$ says that if $P$ is true, then $Q$ must
 <li>The second version states “if it is not true that there exists an $x$ that is prime, then for all $x$, $x$ is not prime.”</li>
 </ol>
 <p>Since we know that it is false that all positive integers are prime, it must be true that there is at least one positive integer that isn’t prime, and indeed that is true (this is because if a statement is false, its negation must be true, and vice versa).</p>
+<p>We can extend this principle to multivariate propositions:</p>
+<div align=center>
+<p>$\neg ((\forall x)(\exists y)Q(x, y)) \equiv (\exists x)(\forall y) \neg Q(x, y) \: \: \: \: (1) \\ \neg ((\exists x)(\forall y)Q(x, y)) \equiv (\forall x)(\exists y) \neg Q(x,y) \: \: \: \: (2)$</p>
+</div>
+<p>Notice how the negation symbol propagates down the statement, flipping $\forall$ to $\exists$ and vice versa.</p>
+<p>Let’s look at an example. Suppose $Q(x, y): y = x^2$. For example, $Q(3, 4)$ is the proposition that $4 = 3^2$, which happens to be false.</p>
+<ul>
+<li><em>Equation 1</em>: The left hand side, $ \neg ((\forall x)(\exists y) \neg Q(x, y))$, states that “it is not the case that every $x$ has some $y$ such that $y = x^2$”, i.e. “it is not the case that every real number $x$ has as square.” The right hand side, $(\exists x)(\forall y) \neg Q(x,y)$, is “there exists some $x$, such that for all $y$, $y \neq x^2$”, i.e. “there exists some real number $x$ that does not have a square.” These two statements are saying the same thing: if not all real numbers have squares, there must exist some real number without a square.</li>
+<li><em>Equation 2</em>: The left hand side, $\neg ((\exists x)(\forall y)Q(x, y))$, states that “it is not the case that there exists some $x$ such that for all $y$, $y = x^2$”, i.e. “there is no $x$ that satisfies $y = x^2$ for all $y$.” The right hand side, $(\forall x)(\exists y) \neg Q(x,y)$, says that “every $x$ has some $y$ such that $y \neq x^2$.” Again, these two statements are saying the same thing: if there is no $x$ that satisfies $y = x^2$ for every single $y$, then every $x$ has some value of $y$ such that $y \neq x^2$.</li>
+</ul>
+<p>These statements are slightly difficult to parse. Make sure you read them carefully!</p>
 <p>We can even apply De Morgan’s Laws to conjunctions and disjunctions AND existential quantifiers at the same time, but we won’t be so involved in this course.</p>
+<br>
+<a name='sentence_examples'>
+<h2>Examples</h2>
+<hr>
+</a>
+<br>
+<p>Let’s take a look at examples of converting sentences in English to precise, mathematical statements using the tools we’ve studied in this chapter.</p>
+<div align=center>
+<table>
+<thead>
+<tr>
+<th><strong>English</strong></th>
+<th><strong>Propositional Logic</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>There exists an integer solution to the equation $x^2 + 2x + 1 = 0$</td>
+<td>$(\exists x \in \mathbb{Z})(x^2 + 2x + 1 = 0)$</td>
+</tr>
+<tr>
+<td>There are no three positive integers $a$, $b$, $c$ that satisfy the equation $a^n + b^n = c^n$ for any integer value of $n$ greater than 2.</td>
+<td>$\neg(\exists a,b,c,n \in \mathbb{Z}^+)(n &gt; 2 \wedge a^n + b^n = c^n)$</td>
+</tr>
+<tr>
+<td>$\sqrt{2}$ is a rational number.</td>
+<td>$(\exists a, b \in \mathbb{Z})(\sqrt{2} = \dfrac{a}{b})$</td>
+</tr>
+<tr>
+<td>For $-1 &lt; r &lt; 1, r \in \mathbb{R}$, the sum of the series $1 + r + r^2 + r^3 + \cdots$ is equal to $\dfrac{1}{1-r}$.</td>
+<td>$(\forall r \in \mathbb{R} : -1 &lt; r &lt; 1)(\sum_{n=0}^{\infty} r^n = \dfrac{1}{1-r})$</td>
+</tr>
+</tbody>
+</table>
+</div>
 
     </article>
   </div>
