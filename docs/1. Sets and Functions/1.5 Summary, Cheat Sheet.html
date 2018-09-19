@@ -455,18 +455,18 @@
 <li><a class="" href="../index.html">index</a></li>
 <li class="heading"><span>1. Sets and Functions</span></li>
 <ul>
-<li><a class="" href="../1. Sets and Functions/1.0 Introduction.html">1.0 Introduction</a></li>
-<li><a class="" href="../1. Sets and Functions/1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
-<li><a class="" href="../1. Sets and Functions/1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
-<li><a class="" href="../1. Sets and Functions/1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
-<li><a class="" href="../1. Sets and Functions/1.4 Propositional Logic.html">1.4 Propositional Logic</a></li>
+<li><a class="" href="1.0 Introduction.html">1.0 Introduction</a></li>
+<li><a class="" href="1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
+<li><a class="" href="1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
+<li><a class="" href="1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
+<li><a class="" href="1.4 Propositional Logic.html">1.4 Propositional Logic</a></li>
+<li><a class="active" href="1.5 Summary, Cheat Sheet.html">1.5 Summary, Cheat Sheet</a></li>
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
-<li><a class="" href="2.0 Introduction.html">2.0 Introduction</a></li>
-<li><a class="" href="2.1 Foundational Proof Techiques.html">2.1 Foundational Proof Techiques</a></li>
-<li><a class="" href="2.2 Mathematical Induction.html">2.2 Mathematical Induction</a></li>
-<li><a class="active" href="2.3 Faulty Proofs.html">2.3 Faulty Proofs</a></li>
+<li><a class="" href="../2. Proof Techniques/2.0 Introduction.html">2.0 Introduction</a></li>
+<li><a class="" href="../2. Proof Techniques/2.1 Foundational Proof Techiques.html">2.1 Foundational Proof Techiques</a></li>
+<li><a class="" href="../2. Proof Techniques/2.2 Mathematical Induction.html">2.2 Mathematical Induction</a></li>
 </ul>
 <li class="heading"><span>3. Number Theory</span></li>
 <ul>
@@ -491,32 +491,69 @@
 </ul>
     </nav>
     <article id="main" class="content">
-      <h1>Faulty Proofs</h1>
-<p>We must be careful while walking through a proof, as it is easy to fall into faulty logic. In this section, we will go through some common logical fallacies found in proofs which, upon first glance, may seem correct.</p>
+      <title>1.5: Summary, Cheat Sheet - Sets and Functions</title>
+<h1>1.5: Summary, Cheat Sheet</h1>
+<hr>
 <br>
-<h3>Example: $1 = 2$?</h3>
-<p><strong>Prove that $1 = 2$.</strong></p>
-<p>Assume $1=2$. Multiply both sides by 0, and we get $0=0$. Therefore, $1=2$.</p>
-<p>Where was the mistake in the proof? The arithmetic was sound; both sides multiplied by 0 is, indeed, 0. No step we made was incorrect, so we have to go back to our initial assumption. <strong>We assumed what we were trying to prove, which is a common mistake when writing proofs</strong>. This can cause us to falsely prove a lot of false things, including that every number is equal (by our proof above).</p>
-<p>Some other pieces of faulty logic found in proofs include:</p>
-<ul>
-<li>
-<p>Dividing by something which could be 0</p>
-</li>
-<li>
-<p>Not switching inequalities when working with negative numbers</p>
-</li>
-<li>
-<p>Using an example as a proof for a statement which applies to multiple cases</p>
-</li>
-<li>
-<p>Introducing a variable twice with two different values</p>
-</li>
-</ul>
+<p><strong>IN PROGRESS</strong>
+This chart summarizes all of the notation we’ve introduced throughout the chapter.</p>
 <br>
-<h3>Example: $2 = -2$?</h3>
-<p><strong>Prove that $2 = -2$</strong>.</p>
-<p>Let $y = x$. Then, $x^2 + xy = y^2 + xy$.</p>
+<div align=center>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Name</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\{ \}$</td>
+<td>set</td>
+<td>used to define a set</td>
+<td>$S = \{ 1, 2, 3, 4, … \}$</td>
+</tr>
+<tr>
+<td>$\in$</td>
+<td>in, element of</td>
+<td>used to denote that an element is part of a set</td>
+<td>$1 \in {1, 2, 3}$</td>
+</tr>
+<tr>
+<td>$\not \in$</td>
+<td>not in, not an element of</td>
+<td>used to denote than an element is not part of a set</td>
+<td>$4 \not \in {1, 2, 3}$</td>
+</tr>
+<tr>
+<td>$\mid S \mid$</td>
+<td>cardinality</td>
+<td>used to describe the size of a set (refers to the number of unique elements if the set is finite)</td>
+<td>$S = \{1, 2, 2, 2, 3, 4, 5, 5 \}$<br> $\mid S \mid = 5$</td>
+</tr>
+<tr>
+<td>$:$, $\mid$</td>
+<td>such that</td>
+<td>used to denote a condition, usually in set-builder notation or in a mathematical definition</td>
+<td>$\{x^2 : x + 3 \text{ is prime}\}$</td>
+</tr>
+<tr>
+<td>$\subseteq$</td>
+<td>subset</td>
+<td>set $A$ is a subset of set $B$ when each element in $A$ is also an element in $B$</td>
+<td>$A = \{ 1, 2 \}$ <br> $B = \{ 2, 1, 4, 3, 5 \}$ <br> $A \subseteq B$</td>
+</tr>
+<tr>
+<td>$\supseteq$</td>
+<td>superset</td>
+<td>set $A$ is a superset of set $B$ when $B$ is a subset of $A$</td>
+<td>$A = \{ 2, 4, 6, 7, 8 \}$ <br> $B = \{ 2, 4, 8 \}$ <br> $A \supseteq B$</td>
+</tr>
+</tbody>
+</table>
+</div>
 
     </article>
   </div>
