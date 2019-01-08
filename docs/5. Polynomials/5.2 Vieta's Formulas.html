@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="http://surajrampure.com/resources/imt-decal/air.css">
+  <link rel="stylesheet" href="http://surajrampure.com/resources/air.css">
   <script type='text/x-mathjax-config'>MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
   <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
   <style>
@@ -467,82 +467,124 @@
 <li><a class="" href="../2. Proof Techniques/2.0 Introduction.html">2.0 Introduction</a></li>
 <li><a class="" href="../2. Proof Techniques/2.1 Foundational Proof Techiques.html">2.1 Foundational Proof Techiques</a></li>
 <li><a class="" href="../2. Proof Techniques/2.2 Mathematical Induction.html">2.2 Mathematical Induction</a></li>
+<li><a class="" href="../2. Proof Techniques/2.3 Series and Sequences.html">2.3 Series and Sequences</a></li>
 </ul>
 <li class="heading"><span>3. Number Theory</span></li>
 <ul>
 <li><a class="" href="../3. Number Theory/3.0 Introduction.html">3.0 Introduction</a></li>
-<li><a class="" href="../3. Number Theory/3.1 Division Algorithm.html">3.1 Division Algorithm</a></li>
-<li><a class="" href="../3. Number Theory/3.2 Prime Factorization.html">3.2 Prime Factorization</a></li>
-<li><a class="" href="../3. Number Theory/3.3 Modular Arithmetic.html">3.3 Modular Arithmetic</a></li>
+<li><a class="" href="../3. Number Theory/3.1 Division Algorithm and Primality.html">3.1 Division Algorithm and Primality</a></li>
+<li><a class="" href="../3. Number Theory/3.2 Modular Arithmetic.html">3.2 Modular Arithmetic</a></li>
+<li><a class="" href="../3. Number Theory/3.3 Finding Modular Inverses.html">3.3 Finding Modular Inverses</a></li>
+</ul>
+<li class="heading"><span>4. Counting</span></li>
+<ul>
+<li><a class="" href="../4. Counting/4.0 Introduction.html">4.0 Introduction</a></li>
+<li><a class="" href="../4. Counting/4.1 Fundamental Counting Rules.html">4.1 Fundamental Counting Rules</a></li>
+<li><a class="" href="../4. Counting/4.2 Permutations and Combinations.html">4.2 Permutations and Combinations</a></li>
+<li><a class="" href="../4. Counting/4.3 Stars and Bars.html">4.3 Stars and Bars</a></li>
+<li><a class="" href="../4. Counting/4.4 Pascal's Triangle.html">4.4 Pascal's Triangle</a></li>
+<li><a class="" href="../4. Counting/4.5 Combinatorial Proofs.html">4.5 Combinatorial Proofs</a></li>
 </ul>
 <li class="heading"><span>5. Polynomials</span></li>
 <ul>
 <li><a class="" href="5.0 Introduction.html">5.0 Introduction</a></li>
-<li><a class="" href="5.1 Representation of Polynomials, Interpolation.html">5.1 Representation of Polynomials, Interpolation</a></li>
-<li><a class="" href="5.2 Factor and Remainder Theorems, Complex Roots.html">5.2 Factor and Remainder Theorems, Complex Roots</a></li>
-<li><a class="active" href="5.3 Vieta's Formulas.html">5.3 Vieta's Formulas</a></li>
-<li><a class="" href="5.4 The Binomial Theorem.html">5.4 The Binomial Theorem</a></li>
+<li><a class="" href="5.1 Binomial Theorem.html">5.1 Binomial Theorem</a></li>
+<li><a class="active" href="5.2 Vieta's Formulas.html">5.2 Vieta's Formulas</a></li>
+<li><a class="" href="5.3 Representation, Interpolation.html">5.3 Representation, Interpolation</a></li>
+<li><a class="" href="5.4 Factor and Remainder Theorems, Complex Roots.html">5.4 Factor and Remainder Theorems, Complex Roots</a></li>
 </ul>
 <li class="heading"><span>Appendix</span></li>
 <ul>
-<li><a class="" href="../Appendix/Complex Numbers.html">Complex Numbers</a></li>
-<li><a class="" href="../Appendix/Series and Sequences.html">Series and Sequences</a></li>
+<li><a class="" href="../Appendix/A Sigma and Pi Notation.html">A Sigma and Pi Notation</a></li>
+<li><a class="" href="../Appendix/B Complex Numbers.html">B Complex Numbers</a></li>
 </ul>
 </ul>
     </nav>
     <article id="main" class="content">
-      <title>5.3: Vieta's Formulas – Polynomials</title>
-<h1>5.3: Vieta’s Formulas</h1>
+      <title>5.2: Vieta's Formulas – Polynomials</title>
+<h1>5.2: Vieta’s Formulas</h1>
 <hr>
 <br>
 <p>Jump to:</p>
 <ul>
+<li><a href="#naive">Naive Approach, using the Quadratic Formula</a></li>
+<li><a href="#derivations">Derivations</a>
+<ul>
 <li><a href="#degree2">Derivation for Polynomials of Degree 2</a></li>
 <li><a href="#degree34">Derivation for Polynomials of Degrees 3, 4</a></li>
-<li><a href="#general">Generalized Derivation for All Polynomials</a></li>
+<li><a href="#general">General Vieta’s, Similarity to Binomial Theorem</a></li>
+</ul>
+</li>
+<li><a href="#symmetric">Symmetric Sums</a></li>
+<li><a href="#examples">Example Problems</a></li>
 </ul>
 <br>
-<p>Now, we will transition into thinking about polynomials from a combinatorial perspective.</p>
 <p>Vieta’s formulas give us a way to interpret a polynomial in standard form, e.g. $p(x) = 4x^2 + 3x + 3$, in terms of its roots, without having to find the roots specifically. While there are more practical applications to this, the derivation of Vieta’s formulas prove to be an interesting combinatoral problem.</p>
 <br>
-<a name = 'degree2'>
-<h2>Derivation of Vieta’s Formulas for Polynomials of Degree 2</h2>
+<a name="naive">
+<h2>Naive Approach, using the Quadratic Formula</h2>
 <hr>
 </a>
 <br>
-<blockquote>
-<h3>Definition: <strong>Vieta’s Formulas (Degree 2)</strong></h3>
-<p>Given a polynomial of the form $p(x) = ax^2 + bx + c$, the sum of the roots of $p(x)$ is $-\frac{b}{a}$ and the product of the roots of $p(x)$ is $\frac{c}{a}$.</p>
-</blockquote>
+<p>Let $p(x) = ax^2 + bx + c$. We know that $p(x)$ will have two roots, i.e. solutions to $p(x) = 0$ (they might be complex and/or equal).</p>
+<p>Suppose $p(x)$'s roots are $r_1$ and $r_2$, and suppose we want to find the sum ($r_1 + r_2$) and product ($r_1 r_2$) of these roots. One way to do this would be to use the quadratic formula to solve for both roots, and simplify.</p>
+<p>Using the quadratic formula:</p>
+<div align=center>
+<p>$r_1, r_2 = \frac{-b + \sqrt{b^2 - 4ac}}{2a}, \frac{-b - \sqrt{b^2 - 4ac}}{2a}$</p>
+</div>
+<p>Then:</p>
+<div align=center>
+<p>$r_1 + r_2 = \frac{-b + \sqrt{b^2 - 4ac} - b - \sqrt{b^2 - 4ac}}{2a} = -\frac{2b}{2a} = -\frac{b}{a}$</p>
+<p>$r_1r_2 = \left( \frac{-b + \sqrt{b^2 - 4ac}}{2a} \right)\left( \frac{-b - \sqrt{b^2 - 4ac}}{2a} \right) = \frac{b^2 - (b^2 - 4ac)}{4a^2} = \frac{4ac}{4a^2} = \frac{c}{a}$</p>
+</div>
+<p>We’ve found that the sum of the roots is $-\frac{b}{a}$, and the product of the roots is $\frac{c}{a}$.</p>
+<p>How would we extend this to cubic polynomials, though? <em>There’s a simpler way to look at this.</em></p>
 <br>
-<p>Let’s derive this! Let $p(x)$ be some parabola with roots $r_1, r_2$. By the factor theorem, we know that $p(x) = a(x - r_1)(x - r_2)$, for some constant $a$. Expanding $p(x)$:</p>
+<a name='derivations'>
+<h2>Derivations</h2>
+<hr>
+</a>
+<br>
+<a name = 'degree2'>
+<h3>Derivation of Vieta’s Formulas for Polynomials of Degree 2</h3>
+<hr>
+</a>
+<br>
+<p>Again, suppose $p(x) = ax^2 + bx + c$ have have roots $r_1, r_2$. By the factor theorem (which you can read about in Chapter 5.4), we know that $p(x) = a(x - r_1)(x - r_2)$, for some constant $a$. Expanding $p(x)$:</p>
 <div align=center>
 <p>$\begin{aligned}
 p(x) &amp;= a(x - r_1)(x-r_2) \\ &amp;= a[x^2 - (r_1 + r_2)x + r_1r_2 ] \\ &amp;= ax^2 - a(r_1 + r_2)x + ar_1r_2 \\ \end{aligned}$</p>
 </div>
 <p>Comparing this expansion with $ax^2 + bx + c$, we see:</p>
 <div align=center>
-<p>$-a(r_1 + r_2) = b \implies r_1 + r_2 = -\frac{b}{a}$</p>
-<p>$ar_1r_2 = c \implies r_1r_2 = \frac{c}{a}$</p>
+<p>$-a(r_1 + r_2) = b \implies \boxed{r_1 + r_2 = -\frac{b}{a}}$</p>
+<p>$ar_1r_2 = c \implies \boxed{r_1r_2 = \frac{c}{a}}$</p>
 </div>
-<p>We will follow a similar process to derive Vieta’s formulas for degree 3. However, at this point, you should try and derive these on your own, then come back here to check your work.</p>
+<p>These are known as <strong>Vieta’s formulas</strong> for polynomials of degree 2. This matches the results we saw above, using the quadratic formula. However, we conducted this analysis in a way that can be extended to polynomials of any degree!</p>
+<p>Notice that the signs alternate:</p>
+<ul>
+<li>In $p(x) = x^2 - 5x + 6$, the sum of the roots is 5 and product is 6.</li>
+<li>In $p(x) = x^2 + 5x + 6$, the sum of the roots is -5 and the product is 6.</li>
+</ul>
 <br>
 <a name='degree34'>
-<h2>Derivation of Vieta’s Formulas for Polynomials of Degrees 3, 4</h2>
+<h3>Derivation of Vieta’s Formulas for Polynomials of Degrees 3, 4</h3>
 <hr>
 </a>
 <br>
-<p>Let’s start with cubic polynomials. Assume $p(x)$ has roots $r_1, r_2, r_3$, and has the form $p(x) = ax^3 + bx^2 + cx + d$. Then:</p>
+<p>We will follow a similar process as above to derive Vieta’s formulas for degree 3. However, at this point, you should try and derive these on your own, then come back here to check your work.</p>
+<p>Assume $p(x)$ has roots $r_1, r_2, r_3$, and has the form $p(x) = ax^3 + bx^2 + cx + d$. Then:</p>
 <div align=center>
 <p>$
 \begin{aligned} p(x) &amp;= a(x-r_1)(x-r_2)(x-r_3) \\ &amp;= a \left[(x^3 - (r_1 + r_2 + r_3)x + (r_1r_2 + r_1r_3 + r_2r_3)x - r_1r_2r_3\right] \\ &amp;= ax^3 - a(r_1 + r_2 + r_3)x^2 + a(r_1r_2 + r_1r_3 + r_2r_3)x - ar_1r_2r_3 \<br>
 \end{aligned}
 $</p>
-<p>$\implies r_1 + r_2 + r_3 = -\frac{b}{a}$</p>
-<p>$\implies r_1r_2 + r_1r_3 + r_2r_3 = \frac{c}{a}$</p>
-<p>$\implies r_1r_2r_3 = -\frac{d}{a}$</p>
+<p>$\implies \boxed{r_1 + r_2 + r_3 = -\frac{b}{a}}$</p>
+<p>$\implies \boxed{r_1r_2 + r_1r_3 + r_2r_3 = \frac{c}{a}}$</p>
+<p>$\implies \boxed{r_1r_2r_3 = -\frac{d}{a}}$</p>
 </div>
 <br>
+<p>Again, it should be noted that the signs alternate. The sign on the sum of the roots is always negative.</p>
 <p>We could follow the same process to find the formulas for degrees 4, 5 and so on and so forth. However, there’s a pattern here. When multiplying out $(x - r_1)(x - r_2)(x - r_3)$, we know our product must contain every combination of one term from the first bracket, one term from the second bracket and one term from the third bracket. Then, our choices are the following:</p>
 <ul>
 <li>
@@ -572,15 +614,92 @@ r_1 + r_2 + r_3 + r_4 = -\frac{b}{a} \\ r_1r_2 + r_1r_3 + r_1r_4 + r_2r_3 + r_2r
 <p>Of course, since this is a pattern, we can generalize it to polynomials of an arbitrary degree.</p>
 <br>
 <a name = 'general'>
-<h2>Generalized Derivation of Vieta’s Formulas</h2>
+<h3>General Vieta’s, Similarity to Binomial Theorem</h3>
 <hr>
 </a>
 <br>
 <div align=center>
 <p>$p(x) = \sum_{k = 0}^n a_k x^k = \sum_{k = 0}^n (-1)^{n-k} \big(\text{sum of the products of the roots of } p(x) \text{, taken } n-k \text{ at a time}  \big)x^k$</p>
 </div>
+<p><strong>The binomial theorem is actually just a special case of Vieta’s formulas, when all roots are the same!</strong> For example, suppose $n = 4$, $r_i = c$ for all $i$ and the leading coefficient is 1. Then:</p>
+<div align=center>
+<p>$p(x) = (x-c)^4 = {4 \choose 0}x^4 - {4 \choose 1} x^3c + {4 \choose 2}x^2c^2 - {4 \choose 3}xc^3 + {4 \choose 4}c^4$</p>
+</div>
+<p>Using Vieta’s formulas for $n = 4$:</p>
+<div align=center>
+<p>$\begin{aligned} a_3 &amp;= -(r_1 + r_2 + r_3 + r_4) = -4c = {4 \choose 1}(-c)^1 \\ a_2 &amp;= r_1r_2 + r_1r_3 + r_1r_4 + r_2r_3 + r_2r_4 + r_3r_4 = 6c^2 = {4 \choose 2}(-c)^2 \\ a_1 &amp;= -(r_1r_2r_3 + r_1r_2r_4 + r_1r_3r_4 + r_2r_3r_4) = -4c^3 = {4 \choose 3}(-c)^3 \\ a_0 &amp;= r_1r_2r_3r_4 = c^4 = {4 \choose 4}(-c)^4 \end{aligned}$</p>
+</div>
 <br>
-<p>What we did here was powerful. We took a pattern for a small $n$, extended it to a slightly larger $n$, and then generalized it for all $n$. We will follow a similar process in the next section, with the binomial theorem.</p>
+<a name='symmetric'>
+<h2>Symmetric Sums</h2>
+<hr>
+</a>
+<br>
+<p>Vieta’s formulas give us expressions for the sum of the roots and product of the roots of polynomials. However, we are also given expressions for sums of the form $r_1r_2 + r_1r_3 + r_2r_3$, for instance.</p>
+<p>A <strong>symmetric sum</strong> is an sum in which the value does not change when the order of variables are swapped. For example, $f(a, b, c) = ab + ac + bc$ is symmetric, because in any <em>permutation</em> of our variables $a, b, c$, the value stays the same:</p>
+<div align=center>
+<p>$\begin{aligned} f(a, b, c) &amp;= ab + ac + bc = ab + ac + bc \\ f(a, c, b) &amp;= ac + ab + cb = ab + ac + bc \\ f(b, a, c) &amp;= ba + bc + ac = ab + ac + bc \\ f(b, c, a) &amp;= bc + ba + ca = ab + ac + bc \\ f(c, a, b) &amp;= ca + cb + ab = ab + ac + bc \\ f(c, b, a) &amp;= cb + ca + ba = ab + ac + bc \end{aligned}$</p>
+</div>
+<p>More concretely, with $n = 4$:</p>
+<div align=center>
+<p>$\begin{aligned} S_1 &amp;= a + b + c + d \\ S_2 &amp;= ab + ac + ad + bc + bd + cd \\ S_3 &amp;= abc + abd + acd + bcd \\ S_4 &amp;= abcd \end{aligned}$</p>
+</div>
+<br>
+<a name="examples">
+<h2>Example Problems</h2>
+<hr>
+</a>
+<br>
+<p>You should attempt each of these problems on your own before looking at the solutions that follow.</p>
+<br>
+<h3>Example 1</h3>
+<hr>
+<br>
+<p>Suppose $a, b$ satisfy $x^2 - 18x + 18$. Determine $a^2 + b^2$.</p>
+<br>
+<p><strong>Solution:</strong> From Vieta’s, we know $a + b = 18$ and $ab = 18$. Then:</p>
+<div align=center>
+<p>$(a+b)^2 = a^2 + b^2 + 2ab$</p>
+<p>$\implies a^2 + b^2 = (a+b)^2 - 2ab = 18^2 - 2\cdot18 = \boxed{288}$</p>
+</div>
+<br>
+<h3>Example 2</h3>
+<hr>
+<br>
+<p>$p(x) = x^3 - Ax + 15$ has three real roots, two of which sum to 5. What is $|A|$?</p>
+<br>
+<p><strong>Solution:</strong> Let $r_1, r_2$ be the roots that sum to 5. This must mean $r_3 = -5$, since $r_1 + r_2 + r_3 = 5 - 5 = 0$ (there is no $x^2$ term).</p>
+<p>We also know $r_1r_2r_3 = - 15$. Then,</p>
+<div align=center>
+<p>$\begin{aligned} -A &amp;= r_1r_2 + r_1r_3 + r_2r_3  = r_3(r_1 + r_2) + r_1r_2 \\ &amp;= r_3(r_1 + r_2) + \frac{r_1r_2r_3}{r_3} \\ &amp;= -5(5) + \frac{-15}{-5} = -25 + 3 = -22 \end{aligned}$</p>
+</div>
+<p>Thus, $\boxed{|A| = 22}$.</p>
+<br>
+<h3>Example 3</h3>
+<hr>
+<br>
+<p>Suppose the polynomial $f(x) = x^3 − \alpha x^2 + \beta$ has three roots, one of which is equal to $\beta^2$. What is the sum of all possible values of $\beta$? <em>(Hint: There is both an easy way and hard way to reason about this. Vieta’s formulas aren’t necessary involved.)</em></p>
+<br>
+<p><strong>Solution 1:</strong> First, let’s do this using Vieta’s formulas.</p>
+<p><strong>Solution 2:</strong> Now, let’s reason about this using the remainder theorem (which, again, you can read about in 5.4). If $\beta^2$ is a root, then $f(\beta^2) = 0$.</p>
+<div align=center>
+<p>$\begin{aligned} f(\beta^2) &amp;= 0 \\ \beta^6 - \alpha \beta^4 + \beta &amp;= 0 \end{aligned}$</p>
+</div>
+<p>This is the same polynomial as we saw in the first method just above. The sum of the roots of $\beta$ here, again, is $\boxed{0}$.</p>
+<br>
+<h3>Example 4</h3>
+<hr>
+<br>
+<p>Let $f(x) = (x^2 + 6x + 9)^{50} - 4x + 3$, and suppose $f(x)$ has 100 roots, $r_1, r_2, r_3, …, r_{100}$.  Determine $(r_1 + 3)^{100} + (r_2 + 3)^{100} + … + (r_{100} + 3)^{100}$.</p>
+<br>
+<p><strong>Solution:</strong> All roots $r_i$ must satisfy $(x^2 + 6x + 9)^{50} - 4x + 3 = 0$, i.e. $(x + 3)^{100} = 4x - 3$. Taking the sum over all roots $r_i$ on both sides:</p>
+<div align=center>
+<p>$\begin{aligned} \sum_{i = 1}^{100} (r_i + 3)^{100} &amp;= \sum_{i = 1}^{100} (4r_i - 3) \\ &amp;= 4 \sum_{i = 1}^{100}r_i - 300 \end{aligned}$</p>
+</div>
+<p>Now, we just need to find the sum of the roots $r_i$. Using the <em>binomial theorem</em>, we find the coefficient of the second term of $(x+3)^{100}$ to be ${100 \choose 1}3 = 300$, meaning the sum of the roots is $-300$. Then:</p>
+<div align=center>
+<p>$\sum_{i = 1}^{100} (r_i + 3)^{100} = 4 \cdot (-300) - 300 = \boxed{-1500}$</p>
+</div>
 
     </article>
   </div>

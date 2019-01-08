@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="http://surajrampure.com/resources/imt-decal/air.css">
+  <link rel="stylesheet" href="http://surajrampure.com/resources/air.css">
   <script type='text/x-mathjax-config'>MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
   <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
   <style>
@@ -464,47 +464,68 @@
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
-<li><a class="" href="../2. Proof Techniques/2.0 Introduction.html">2.0 Introduction</a></li>
-<li><a class="" href="../2. Proof Techniques/2.1 Foundational Proof Techiques.html">2.1 Foundational Proof Techiques</a></li>
-<li><a class="" href="../2. Proof Techniques/2.2 Mathematical Induction.html">2.2 Mathematical Induction</a></li>
+<li><a class="" href="2.0 Introduction.html">2.0 Introduction</a></li>
+<li><a class="" href="2.1 Foundational Proof Techiques.html">2.1 Foundational Proof Techiques</a></li>
+<li><a class="" href="2.2 Mathematical Induction.html">2.2 Mathematical Induction</a></li>
+<li><a class="active" href="2.3 Series and Sequences.html">2.3 Series and Sequences</a></li>
 </ul>
 <li class="heading"><span>3. Number Theory</span></li>
 <ul>
 <li><a class="" href="../3. Number Theory/3.0 Introduction.html">3.0 Introduction</a></li>
-<li><a class="" href="../3. Number Theory/3.1 Division Algorithm.html">3.1 Division Algorithm</a></li>
-<li><a class="" href="../3. Number Theory/3.2 Prime Factorization.html">3.2 Prime Factorization</a></li>
-<li><a class="" href="../3. Number Theory/3.3 Modular Arithmetic.html">3.3 Modular Arithmetic</a></li>
+<li><a class="" href="../3. Number Theory/3.1 Division Algorithm and Primality.html">3.1 Division Algorithm and Primality</a></li>
+<li><a class="" href="../3. Number Theory/3.2 Modular Arithmetic.html">3.2 Modular Arithmetic</a></li>
+<li><a class="" href="../3. Number Theory/3.3 Finding Modular Inverses.html">3.3 Finding Modular Inverses</a></li>
+</ul>
+<li class="heading"><span>4. Counting</span></li>
+<ul>
+<li><a class="" href="../4. Counting/4.0 Introduction.html">4.0 Introduction</a></li>
+<li><a class="" href="../4. Counting/4.1 Fundamental Counting Rules.html">4.1 Fundamental Counting Rules</a></li>
+<li><a class="" href="../4. Counting/4.2 Permutations and Combinations.html">4.2 Permutations and Combinations</a></li>
+<li><a class="" href="../4. Counting/4.3 Stars and Bars.html">4.3 Stars and Bars</a></li>
+<li><a class="" href="../4. Counting/4.4 Pascal's Triangle.html">4.4 Pascal's Triangle</a></li>
+<li><a class="" href="../4. Counting/4.5 Combinatorial Proofs.html">4.5 Combinatorial Proofs</a></li>
 </ul>
 <li class="heading"><span>5. Polynomials</span></li>
 <ul>
 <li><a class="" href="../5. Polynomials/5.0 Introduction.html">5.0 Introduction</a></li>
-<li><a class="" href="../5. Polynomials/5.1 Representation of Polynomials, Interpolation.html">5.1 Representation of Polynomials, Interpolation</a></li>
-<li><a class="" href="../5. Polynomials/5.2 Factor and Remainder Theorems, Complex Roots.html">5.2 Factor and Remainder Theorems, Complex Roots</a></li>
-<li><a class="" href="../5. Polynomials/5.3 Vieta's Formulas.html">5.3 Vieta's Formulas</a></li>
-<li><a class="" href="../5. Polynomials/5.4 The Binomial Theorem.html">5.4 The Binomial Theorem</a></li>
+<li><a class="" href="../5. Polynomials/5.1 Binomial Theorem.html">5.1 Binomial Theorem</a></li>
+<li><a class="" href="../5. Polynomials/5.2 Vieta's Formulas.html">5.2 Vieta's Formulas</a></li>
+<li><a class="" href="../5. Polynomials/5.3 Representation, Interpolation.html">5.3 Representation, Interpolation</a></li>
+<li><a class="" href="../5. Polynomials/5.4 Factor and Remainder Theorems, Complex Roots.html">5.4 Factor and Remainder Theorems, Complex Roots</a></li>
 </ul>
 <li class="heading"><span>Appendix</span></li>
 <ul>
-<li><a class="" href="Complex Numbers.html">Complex Numbers</a></li>
-<li><a class="active" href="Series and Sequences.html">Series and Sequences</a></li>
+<li><a class="" href="../Appendix/A Sigma and Pi Notation.html">A Sigma and Pi Notation</a></li>
+<li><a class="" href="../Appendix/B Complex Numbers.html">B Complex Numbers</a></li>
 </ul>
 </ul>
     </nav>
     <article id="main" class="content">
-      <title>Series and Sequences – Appendix</title>
-<h1>Series and Sequences</h1>
+      <title>2.3: Series and Sequences – Proof Techniques</title>
+<h1>2.3: Series and Sequences</h1>
 <hr>
 <br>
 <p>Jump to:</p>
 <ul>
-<li><a href="#arithmetic">Arithmetic Sequences</a>
+<li><a href="#arithmetic">Arithmetic Sequences</a></li>
+<li><a href="#sum-arithmetic">Sum of an Arithmetic Sequence</a>
 <ul>
-<li><a href="#sum-arithmetic">Sum of an Arithmetic Sequence</a></li>
+<li><a href="#sum-first-n">Sum of First $n$ Natural Numbers</a></li>
+<li><a href="#sum-general-arithmetic">Sum of a General Arithmetic Sequence</a></li>
+<li><a href="#arithmetic-induction">Proofs using Induction</a></li>
 </ul>
 </li>
+<li><a href="#geometric">Geometric Sequences</a></li>
+<li><a href="#sum-geometric">Sum of a Geometric Sequence</a>
+<ul>
+<li><a href="#sum-infinite">Infinite Geometric Series</a></li>
+<li><a href="#geometric-induction">Proof using Induction</a></li>
+</ul>
+</li>
+<li><a href="#telescoping">Telescoping Sums</a></li>
 </ul>
 <br>
-<p>In this article, we will review summation notation, as well as arithmetic and geometric series and sequences. Don’t be afraid to ask for help if you haven’t seen some of this content before, especially the proofs.</p>
+<p>In this article, we will review definitions and formulas for arithmetic and geometric series and sequences. We will also derive the sums of arithmetic and geometric series and prove these formulas using induction. Then, we will focus on deriving and proving formulas for sums of the form $1^k + 2^k + 3^k + … + n^k$, using a technique known as telescoping sums.</p>
 <br>
 <a name='arithmetic'>
 <h2>Arithmetic Sequences</h2>
@@ -517,125 +538,214 @@
 3, 5, 7, 9, 11…
 $</p>
 </div>
-<p>is an arithmetic sequence with first term $a = 3$ and common difference $d = 2$.</p>
-<p>Notice that the second term is the first term with the common difference added once, and the third term is the first with the common difference added twice. Then:</p>
+<p>is an arithmetic sequence with first term $a = 3$ and common difference $d = 2$. Notice that the second term is the first term with the common difference added once, and the third term is the first with the common difference added twice.</p>
+<p>In general,</p>
 <div align=center>
 <p>$
-t_k = a + (k-1)d
+\boxed{t_k = a + (k-1)d}
 $</p>
 </div>
-<p>represents the $k$th term in the series, assuming that we start counting at 1. (Recall that when we studied the binomial theorem, our general term was 0-indexed)</p>
+<p>represents the $k$th term in the series, assuming that we start counting at 1. We can also use a recursive definition:</p>
+<div align=center>
+<p>$t_1 = a$</p>
+<p>$t_k = d + t_{k - 1}, k \geq 1$</p>
+</div>
 <br>
 <a name='sum-arithmetic'>
-<h3>Sum of an Arithmetic Sequence</h3>
+<h2>Sum of an Arithmetic Sequence</h2>
+<hr>
 </a>
 <br>
-<p><strong>Sum of First $n$ Natural Numbers</strong> <br></p>
-<p>Before we derive the formula for an arithmetic series, i.e. the sum of an arithmetic sequence, we will look at the sum of perhaps the most naturally arithmetic series – the set of (positive) natural numbers!</p>
+<a name='sum-first-n'>
+<h3>Sum of First $n$ Natural Numbers</h3>
+<hr>
+</a>
+<p>Before we derive the formula for an arithmetic series, i.e. the sum of an arithmetic sequence, we will look at the sum of perhaps the most naturally arithmetic series – the set of natural numbers!</p>
 <p>Suppose we want to find the sum of the first $n$ natural numbers, that is:</p>
 <div align=center>
 <p>$
-S = 1 + 2 + 3 + … + (n-2) + (n-1) + n
+S = \sum_{i = 1}^n i = 1 + 2 + 3 + … + (n-2) + (n-1) + n
 $</p>
 </div>
 <p>We can rewrite $S$ backwards:</p>
 <div align=center>
-<p>$
-S = 1 + 2 + 3 + … + (n-2) + (n-1) + n \
-S = n + (n-1) + (n-2) + … + 3 + 2 + 1
-$</p>
+<p>$S = 1 + 2 + 3 + … + (n-2) + (n-1) + n$</p>
+<p>$S = n + (n-1) + (n-2) + … + 3 + 2 + 1$</p>
 </div>
 <p>Notice that the first term in the top line and first term in the bottom line add to $n+1$, as do the second terms, third terms, and so on and so forth. It should be noted that $n + 1$ is precisely the sum of the first and last terms of the sequence we are trying to sum.</p>
 <div align=center>
-<p>$
-2S = (n+1) + (n+1) + (n+1) + … + (n+1) + (n+1) + (n+1) \
-\implies 2S = n(n+1) \
-\implies S = \frac{n(n+1)}{2}
+<p>$ 2S = (n+1) + (n+1) + (n+1) + … + (n+1) + (n+1) + (n+1) \\ 2S = n(n+1) \\ S = \frac{n(n+1)}{2}
 $</p>
 </div>
-<p>You’ll want to remember this formula, as it shows up in several different fields. We’ll also show several other ways to prove it in Chapter 6.</p>
+<p>Therefore, $\boxed{\sum_{i = 1}^n i = \frac{n(n+1)}{2}}$. You’ll want to remember this formula, as it shows up in several different fields. We will look at variants of it in the following article.</p>
 <br>
+<a name='sum-general-arithmetic'>
 <h3>Sum of a General Arithmetic Sequence</h3>
+<hr>
+</a>
+<br>
 <p>Let’s repeat the analysis above, but for an arbitrary arithmetic series. Suppose we want to find the sum of the first $n$ terms of a series; we’ll denote this as $S_n$.</p>
-<p>$
-S_n = a + (a + d) +  … +  (a + (n-2)d) + (a + (n-1)d) \
-S_n = (a + (n-1)d) + (a + (n-2)d) +  …  + (a + d) + a \
-$</p>
+<div align=center>
+<p>$ \begin{aligned} S_n &amp;= a + (a + d) +  … +  (a + (n-2)d) + (a + (n-1)d) \\ S_n &amp;= (a + (n-1)d) + (a + (n-2)d) +  …  + (a + d) + a \end{aligned} $</p>
+</div>
 <p>In the case of the natural numbers, when we added the two different forms of $S$, the corresponding sum had $n$ terms, each of which was $n + 1$. Now, $2S_n$ will be the sum of $n$ terms, each of which are equal to $2a + (n-1)d$, which is the sum of the first and last terms of the arithmetic sequence we’re summing.</p>
-<p>$
-2S_n = (2a + (n-1)d) + (2a + (n-1)d) + … + (2a + (n-1)d) + (2a + (n-1)d)
-\ \implies 2S_n = (2a + (n-1)d)n
-\ \implies S_n = \frac{(2a + (n-1)d) }{2}n
+<div align=center>
+<p>$ \begin{aligned} 2S_n &amp;= (2a + (n-1)d) + (2a + (n-1)d) + … + (2a + (n-1)d) + (2a + (n-1)d) \\ 2S_n &amp;= (2a + (n-1)d)n \\ S_n &amp;= \frac{(2a + (n-1)d) }{2}n \end{aligned}
 $</p>
-<p>Therefore, the sum of the first $n$ terms of an arithmetic sequence with first term $a$ and common difference $d$ is $S_n = \frac{(2a + (n-1)d) }{2}n$.</p>
+</div>
+<p>Therefore, the sum of the first $n$ terms of an arithmetic sequence with first term $a$ and common difference $d$ is $\boxed{S_n = \frac{(2a + (n-1)d) }{2}n}$.</p>
 <p>There is an easier way to remember this: since $a$ is the first term and $a + (n-1)d$ is the last term, $2a + (n-1)d$ represents the sum of the first and last numbers in the series. We can then also remember the formula as</p>
+<div align=center>
 <p>$
 S_n = \frac{\text{first} + \text{last}}{2} \cdot (\text{# of numbers in sum})
 $</p>
+</div>
 <p>Since there is a common difference between terms, the value $\frac{\text{first} + \text{last}}{2}$ represents the average value of an element in the series. The sum is the result of treating the series as if each value were replaced with the average.</p>
-<h1>Geometric Sequences and Series</h1>
+<br>
+<p>We can also derive this result by using the properties of summation notation, as well as the fact that $\sum_{i = 1}^n = \frac{n(n+1)}{2}$ (derived above). Another way of phrasing this sum is as $\sum_{k = 1}^n (a + (k-1)d)$.</p>
+<div align=center>
+<p>$\begin{aligned} \sum_{k = 1}^n (a + (k-1)d) &amp;= \sum_{k = 1}^n a + \sum_{k = 1}^n (k-1)d \\ &amp;= na + d \left( \sum_{k = 1}^n k - \sum_{k = 1}^n 1 \right) \\ &amp;= na + d \left( \sum_{k = 1}^n k - n \right) \\ &amp;= na + d \left( \frac{n(n+1)}{2} - n \right) \\ &amp;= \frac{n}{2} \left( 2a + (n-1)d \right)   \end{aligned}$</p>
+</div>
+<p>This is the same result we acquired above.</p>
+<br>
+<a name='arithmetic-induction'>
+<h3>Proofs, using Induction</h3>
+<hr>
+</a>
+<br>
+<p>Now, we will prove the above two statements, using mathematical induction.</p>
+<p><strong>Statement 1</strong>: $\sum_{i = 1}^n i = \frac{n(n+1)}{2}$</p>
+<h4>Base Case</h4>
+<p>$n = 1$</p>
+<p>LHS: $\sum_{i = 1}^1 i = 1$, RHS: $\frac{1(2)}{2} = 1$</p>
+<p>LHS = RHS, therefore the base case holds.</p>
+<h4>Induction Hypothesis</h4>
+<p>Assume that $\sum_{i = 1}^k i = \frac{k(k+1)}{2}$, for some arbitrary $k$.</p>
+<h4>Induction Step</h4>
+<p>$\begin{aligned} \sum_{i = 1}^{k + 1} &amp;= \sum_{i = 1}^k + (k + 1) \\ &amp;= \frac{k(k+1)}{2} + \frac{2(k+1)}{2} \\ &amp;= \frac{(k+1)(k+2)}{2} \end{aligned}$</p>
+<br>
+<p><strong>Statement 2</strong>: $\sum_{i = 1}^n (a + (i-1)d) = \frac{2a + (n-1)d}{2}n$</p>
+<h4>Base Case</h4>
+<p>$n = 1$</p>
+<p>LHS: $\sum_{i = 1}^1 (a + (i-1)d) = a + 0d = a$, RHS: $\frac{2a + 0d}{2} = a$</p>
+<p>LHS = RHS, therefore the base case holds.</p>
+<h4>Induction Hypothesis</h4>
+<p>Assume that $\sum_{i = 1}^k (a + (i-1)d) = \frac{2a + (k-1)d}{2}k$, for some arbitrary $k$.</p>
+<h4>Induction Step</h4>
+<p>$\begin{aligned} \sum_{i = 1}^{k + 1} (a + (i-1)d) = \sum_{i = 1}^k (a + (i-1)d) + a + kd \\ &amp;= \frac{2a + (k-1)d}{2}k + \frac{2a + 2kd}{2}  \end{aligned}$</p>
+<br>
+<a name="geometric">
+<h2>Geometric Sequences</h2>
+<hr>
+</a>
+<br>
 <p>A <strong>geometric sequence</strong> is a sequence of numbers defined by a starting term $a$ and a common ratio $r$. In the sequence, the ratio of consecutive terms (i.e. $\frac{t_n}{t_{n-1}}$) is constant, and is equal to $r$.</p>
+<div align=center>
 <p>$
 2, 6, 18, 54, 108, …
 $</p>
-<p>is a geometric sequence with first term $a = 2$ and common ratio $r = 3$.</p>
-<p>Notice that the second term is the first term multiplied by the common ratio once, and the third term is the first term multiplied by the common ratio twice. Then, in general:</p>
-<p>$
-t_k = ar^{k-1}
-$</p>
-<p>represents the $k$th term in the series, assuming that we start counting at 1.</p>
+</div>
+<p>is a geometric sequence with first term $a = 2$ and common ratio $r = 3$. Notice that the second term is the first term multiplied by the common ratio once, and the third term is the first term multiplied by the common ratio twice.</p>
+<p>In general, we have that</p>
+<div align=center>
+<p>$\boxed{t_k = ar^{k-1}}$</p>
+</div>
+<p>represents the $k$th term in the sequence, assuming that we start counting at 1. As with arithmetic sequences, we can also phrase a geometric sequence recursively:</p>
+<div align=center>
+<p>$t_1 = a$</p>
+<p>$t_k = rt_{k - 1}, k \geq 1$</p>
+</div>
 <br>
+<a name="sum-geometric">
 <h2>Sum of a Geometric Sequence</h2>
-<p>The derivation of the sum of a geometric series is similar to that of the arithmetic series. Suppose we want to find the sum $S_n$ of the first $n$ terms of a geometric series with first term $a$ and common ratio $r$. Then:</p>
-<p>$
-\begin{align}
-S_n = a + ar &amp;+ ar^2 + … + ar^{n-3} + ar^{n-2} + ar^{n-1} \
-rS_n = ar &amp;+ ar^2  + … + ar^{n-3} + ar^{n-2} + ar^{n-1} + ar^{n} \
-\end{align}
-$</p>
-<p>Notice, if we subtract the second line from the first, the terms $ar, ar^2, ar^3, … ar^{n-2}, ar^{n-1}$ are all cancelled out.</p>
-<p>$
-\implies (1-r)S_n = a - ar^n = a(1 - r^n) \
-\implies S_n = \frac{a(1 - r^n)}{1-r}
-$</p>
-<p>This formula is also equal to</p>
-<p>$
-S_n = \frac{a(r^n - 1)}{r - 1}
-$</p>
-<p>which comes from multiplying both the numerator and denominator of the first form by -1.</p>
+<hr>
+</a>
 <br>
-<h3>Sum of an Infinite Geometric Series</h3>
+<p>The derivation of the sum of a geometric series is similar to that of the arithmetic series. Suppose we want to find the sum $S_n$ of the first $n$ terms of a geometric series with first term $a$ and common ratio $r$. Then:</p>
+<div align=center>
+<p>$\begin{aligned} S_n &amp;= a + ar + ar^2 + … + ar^{n-3} + ar^{n-2} + ar^{n-1} \\ rS_n &amp;= ar + ar^2  + … + ar^{n-3} + ar^{n-2} + ar^{n-1} + ar^{n} \end{aligned}$</p>
+</div>
+<p>Notice, if we subtract the second line from the first, the terms $ar, ar^2, ar^3, … ar^{n-2}, ar^{n-1}$ are all cancelled out.</p>
+<div align=center>
+<p>$\implies (1-r)S_n = a - ar^n = a(1 - r^n)$</p>
+<p>$\implies \boxed{S_n = \frac{a(1 - r^n)}{1-r}}$</p>
+</div>
+<p>This formula is also equal to $\boxed{S_n = \frac{a(r^n - 1)}{r - 1}}$, which comes from multiplying both the numerator and denominator of the first form by -1.</p>
+<br>
+<p>As a side note: We can use this formula to show that $r^n - 1$ factors into $(r - 1)(1 + r + r^2 + … + r^{n-1})$.</p>
+<div align=center>
+<p>$\begin{aligned} a\left( \frac{r^n - 1}{r - 1} \right) &amp;= a + ar + ar^2 + … + ar^{n-1} \\ \frac{r^n - 1}{r - 1} &amp;= 1 + r + r^2 + … + r^{n-1} \\ \implies r^n - 1 &amp;= (r-1)(1 + r + r^2 + … + r^{n-1}) \end{aligned} $</p>
+</div>
+<br>
+<a name="sum-infinite">
+<h3>Infinite Geometric Series</h3>
+<hr>
+</a>
+<br>
 <p>So far, we made no assumptions about $a, r$ or $n$. Now, let’s look at two different cases of $r$:</p>
 <ul>
 <li>$| r | &gt; 1$: The magnitude of $t_{k+1}$ is greater than the magnitude of $t_k$</li>
 <li>$| r| &lt; 1$: The magnitude of $t_{k+1}$ is less than the magnitude of $t_k$</li>
 </ul>
-<p>The reason we look at the magnitude of $t_k$ is because if $r$ is negative, terms oscillate between positive and negative.</p>
-<p>In the case where $| r | &lt; 1$, we know that $r^n \rightarrow 0$ as $n \rightarrow \infty$. Then, consider $S_n$ as $n \rightarrow \infty$:</p>
-<p>$
-\lim_{n \rightarrow \infty}S_n = \lim_{n \rightarrow \infty}\frac{a(r^n - 1)}{r - 1}
-\ = \frac{a(-1)}{r-1} = \frac{a}{1-r}
-$</p>
-<p>This is the formula for the sum of an infinite geometric series. When $|r| &lt; 1$, we say that the series <strong>converges</strong>, and it converges to the value above. In all other cases, we say that the series <strong>diverges</strong>.</p>
-<p>Perhaps the most common example of a diverging geometric series is the case of $a = r = \frac{1}{2}$.</p>
-<br> 
-<h2>Problems and Applications</h2>
-<h3>Find $a, r$</h3>
-<p>One type of problem we can ask now is, suppose the third term of a geometric series is 12, and the fifth is 108. What are $a$ and $r$?</p>
-<p>We know the third term must be of the form $ar^2$, and the fifth of the form $ar^4$. Then:</p>
-<p>$
-ar^4 = 108
-\ ar^2 = 12
-\ \implies r^2 = 9
-$</p>
-<p>Remember, $r^2 = 9$ has two solutions for $r$, and both are valid here, meaning that we either have $r = 3$ or $r = -3$. This implies that $a = \frac{12}{r^2} = \frac{12}{9} = \frac{4}{3}$.</p>
+<p>We’re considering the absolute value of $r$, as now we’re only concerned with the magnitude of our terms, and not the sign (if $r$ is negative, terms alternate between positive and negative).</p>
+<p>In the case where $| r | &lt; 1$, we know that $r^n \rightarrow 0$ as $n \rightarrow \infty$, from the basics of limits. This implies that our terms (which are of the form $ar^{k -1}$ also converge to 0; however, just because the terms themselves converge, it does not imply that the sum converges (as an example, recall the series defined by $a_i = \frac{1}{i}$: the terms themselves approach 0, however the sum has no limit!) Let’s look at what happens to our formula for $S_n$ as we take $n \rightarrow \infty$:</p>
+<div align=center>
+$
+\lim_{n \rightarrow \infty}S_n = \lim_{n \rightarrow \infty}\frac{a(1 - r^n)}{1 - r}
+\\ = \boxed{\frac{a}{1-r}}
+$
+</div>
 <br>
-<h3>Financial Mathematics</h3>
-<p>Geometric sequences and series have a direct application in finance – we can model payments with compounding interest as a geometric sequence, and use the properties we know of geometric series to calculate values.</p>
-<ol>
-<li>Compounding Interest</li>
-<li>Annuities</li>
-</ol>
+<p>Indeed, the sum of an infinite geometric series converges, when $|r| &lt; 1$. The formula for this sum is given by $S_\infty = \frac{a}{1-r}$.</p>
+<p>Perhaps the most common example of a diverging geometric series is the case of $a = r = \frac{1}{2}$; we can use the above formula to show that</p>
+<div align=center>
+<p>$\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + … = 1$</p>
+</div>
+<br> 
+<a name="telescoping">
+<h2>Telescoping Sums</h2>
+<hr>
+</a>
+<br>
+<p>Consider the sum</p>
+<div align=center>
+<p>$\sum_{i = 1}^{99} (a_{i + 1} - a_i) = (2-1) + (3-2) + (4-3) + (5-4) + … + (100 - 99)$</p>
+</div>
+<p>We can rewrite this sum as</p>
+<div align=center>
+<p>$-1 + (2-2) + (3-3) + (4-4) + … + (99-99) + 100$</p>
+</div>
+<p>Then, all of the terms other than $-1$ and $100$ cancel out, giving us that the value of this sum is $-1 + 100 = 99$. Such a sum, where part of term $i$ cancels out with part of term $i+1$ and $i-1$, is known as a <strong>telescoping sum</strong>. The act of cancelling these terms is called the <strong>Method of Differences</strong>.</p>
+<br>
+<p><strong>Example 1</strong></p>
+<p>Let’s evaluate $\sum_{k = 1}^{100} (\cos(k) - \cos(k-1))$.</p>
+<div align=center>
+$\begin{aligned} \sum_{k = 1}^{100} \big(\cos(k) - \cos (k-1)\big) &= (\cos 1 - \cos 0) + (\cos 2 - \cos 1) + ... + (\cos 100 - \cos 99) \\\ &= - \cos 0 + (\cos 1 - \cos 1) + (\cos 2 - \cos 2) + ... + (\cos 99 - \cos 99) + \cos 100 \\\ &= \cos 100 - \cos 0 \end{aligned}$
+</div>
+<br>
+<p><strong>Example 2</strong></p>
+<p>Now, let’s evaluate $\sum_{i = 1}^n \frac{1}{i(i+1)}$.</p>
+<p>First, we notice that $\frac{1}{i(i+1)} = \frac{1}{i} - \frac{1}{i+1}$. Then:</p>
+<div align=center>
+<p>$\begin{aligned} \sum_{i = 1}^n \frac{1}{i(i+1)} &amp;= \sum_{i = 1}^n \left( \frac{1}{i} - \frac{1}{i+1} \right) \\ &amp;= \left(\frac{1}{1} - \frac{1}{2} \right) + \left(\frac{1}{2} - \frac{1}{3} \right) + … + \left(\frac{1}{n-1} - \frac{1}{n} \right) + \left(\frac{1}{n} - \frac{1}{n+1} \right) \\ &amp;= 1 + \left(-\frac{1}{2} + \frac{1}{2} \right) + \left( -\frac{1}{3} + \frac{1}{3} \right) + … + \left( -\frac{1}{n} + \frac{1}{n} \right) - \frac{1}{n-1} \\ &amp;= 1 - \frac{1}{n+1} \end{aligned}$</p>
+</div>
+<br>
+<a name='sum-naturals'>
+<h2>Sum of the First $n$ Natural Numbers</h2>
+<hr>
+</a>
+<br>
+<p>The question remains — how can we use telescoping sums to give us formulas for sums of the form $\sum_{i = 1}^n i^k$?</p>
+<p>The key insight lies here: Consider $(i+1)^2 = i^2 + 2i + 1$. We can rearrange this to have $(i+1)^2 - i^2 = 2i + 1$. Then, on the left hand side we have something that resembles a telescoping sum. Since both the left hand side and right hand side are equal, if I sum both sides from $i = 1$ to $i = n$, the results should be the same.</p>
+<div align=center>
+<p>$\begin{aligned} \sum_{i = 1}^n \big( (i+1)^2 - i^2 \big) &amp;= \sum_{i = 1}^n \big( 2i + 1\big) \\ (2^2 - 1^2) + (3^2 - 2^2) + … + ((n+1)^2 - n^2) &amp;= 2 \sum_{i =1}^n i + \sum_{i = 1}^n 1 \\ (n+1)^2 - 1^2 &amp;= 2 \sum_{i = 1}^n i + n \end{aligned}$</p>
+</div>
+<p>We used the fact that $\sum 2x = 2\sum x$ and $\sum_{i = 1}^n 1 = 1 + 1 + … + 1 = n$.</p>
+<p>Now, we can rearrange for $\sum_{i = 1}^n i$:</p>
+<div align=center>
+<p>$\begin{aligned} (n+1)^2 - 1^2 &amp;= 2 \sum_{i = 1}^n i + n \\ 2\sum_{i = 1}^n i &amp;= (n+1)^2 - n - 1 \\ \sum_{i = 1}^n i &amp;= \frac{n^2 + 2n + 1 - n - 1}{2} \\ &amp;= \boxed{\frac{n(n+1)}{2}} \end{aligned}$</p>
+</div>
+<p>This confirms the result we saw before.</p>
 
     </article>
   </div>
