@@ -41,6 +41,10 @@
     page-break-inside: avoid;
   }
 
+  img {
+    max-width: 100% !important;
+  }
+
   p,
   h2,
   h3 {
@@ -148,7 +152,7 @@ body {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-weight: 300;
   margin: 6rem auto 1rem;
-  max-width: 96rem;
+  max-width: 72rem;
   text-align: left;
   color: #000;
 }

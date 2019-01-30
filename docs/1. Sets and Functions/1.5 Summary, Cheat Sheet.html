@@ -51,31 +51,31 @@
 
     h1 {
       font-size: 2em;
-      color: #4d9d91;
+      color: #2867cf;
       /* 2*16 = 32 */
     }
 
     h2 {
       font-size: 1.5em;
-      color: #4d9d91;
+      color: #2867cf;
       /* 1.5*16 = 24 */
     }
 
     h3 {
       font-size: 1.17em;
-      color: #4d9d91;
+      color: #2867cf;
       /* 1.17*16 = 18.72 */
     }
 
     h4 {
       font-size: 1em;
-      color: #4d9d91;
+      color: #2867cf;
       /* 1*16 = 16 */
     }
 
     h5 {
       font-size: 0.83em;
-      color: #4d9d91;
+      color: #2867cf;
       /* 0.83*16 = 13.28 */
     }
 
@@ -277,12 +277,12 @@
     a,
     a * {
       text-decoration: none;
-      color: #4d9d91;
+      color: #2867cf;
     }
 
     a:visited {
       text-decoration: none;
-      color: #4d9d91;
+      color: #2867cf;
     }
 
     /* All anchors inside the menu should be styled like this. */
@@ -341,7 +341,7 @@
     }
 
     #menu li.heading a {
-      color: #4d9d91;
+      color: #2867cf;
     }
 
     /* -- Dynamic Button For Responsive Menu -------------------------------------*/
@@ -505,8 +505,7 @@
 <h1>1.5: Summary, Cheat Sheet</h1>
 <hr>
 <br>
-<p><strong>IN PROGRESS</strong>
-This chart summarizes all of the notation we’ve introduced throughout the chapter.</p>
+<p>This chart summarizes all of the notation we’ve introduced throughout the chapter.</p>
 <br>
 <div align=center>
 <table>
@@ -556,10 +555,136 @@ This chart summarizes all of the notation we’ve introduced throughout the chap
 <td>$A = \{ 1, 2 \}$ <br> $B = \{ 2, 1, 4, 3, 5 \}$ <br> $A \subseteq B$</td>
 </tr>
 <tr>
+<td>$\subset$</td>
+<td>proper subset</td>
+<td>set $A$ is a proper subset of set $B$ when each element in $A$ is also an element in $B$ <strong>and</strong> $A \neq B$</td>
+<td>$A = \{ 1, 2, 3, 4, 5 \}$ <br> $B = \{ 2, 1, 4, 3, 5 \}$ <br> $A \subseteq B$ is true but $A \subset B$ is not true</td>
+</tr>
+<tr>
 <td>$\supseteq$</td>
 <td>superset</td>
 <td>set $A$ is a superset of set $B$ when $B$ is a subset of $A$</td>
 <td>$A = \{ 2, 4, 6, 7, 8 \}$ <br> $B = \{ 2, 4, 8 \}$ <br> $A \supseteq B$</td>
+</tr>
+<tr>
+<td>$\cup$</td>
+<td>union</td>
+<td>a set with the elements in set $A$ <strong>or</strong> in set $B$</td>
+<td>$A = \{1, 2\}$ <br> $B = \{2, 3, 5\}$ <br> $A \cup B = \{1, 2, 3, 5\}$</td>
+</tr>
+<tr>
+<td>$\cap$</td>
+<td>intersection</td>
+<td>a set with the elements in set $A$ <strong>and</strong> in set $B$</td>
+<td>$A = \{1, 2\}$ <br> $B = \{2, 3, 5\}$ <br> $A \cap B = \{2\}$</td>
+</tr>
+<tr>
+<td>$\emptyset$</td>
+<td>the empty set</td>
+<td>the set with no elements</td>
+<td>$\{1, 2, 3\} \cap \{4, 5, 6\} = \emptyset$</td>
+</tr>
+<tr>
+<td>$-$, $\backslash$</td>
+<td>set difference</td>
+<td>elements in set $A$ that are not in $B$</td>
+<td>$A = \{1, 2, 3, 4\}$ <br> $B = \{2, 3, 5, 8\}$ <br> $A - B = \{1, 4\}$ <br> $B - A = \{5, 8\}$</td>
+</tr>
+<tr>
+<td>$\times$</td>
+<td>Cartesian product</td>
+<td>a set containing all possible combinations of one element from $A$ and one element from $B$</td>
+<td>$A = \{1, 2\}$ <br> $B = \{3, 4\}$ <br> $A \times B = \{(1, 3), (2, 3), (1, 4), (2, 4)\}$ <br> $B \times A = \{(3, 1), (3, 2), (4, 1), (4, 2)\}$</td>
+</tr>
+<tr>
+<td>$A^c$</td>
+<td>complement</td>
+<td>a set containing the elements of the universe $U$ that are not in set $A$</td>
+<td>$U = \{1, 2, 3, 4, 5\}, A = \{2, 4\} \implies A^c=\{1, 3, 5\}$</td>
+</tr>
+<tr>
+<td>$f : A \rightarrow B$</td>
+<td>function</td>
+<td>the function $f$ maps elements of the set $A$ to elements of the set $B$; $A$ is the domain and $B$ is the codomain</td>
+<td>$f(x) = x^2+5$ is an example of a function $f : \mathbb{R} \rightarrow \mathbb{R}$</td>
+</tr>
+<tr>
+<td>$f : x \mapsto x^3$</td>
+<td>mapping/function</td>
+<td>the function maps any $x$ to $x^3$; this notation refers to elements of sets rather than sets themselves</td>
+<td>$f(x) = x^2+5$ can be written as $f: x \mapsto x^2+5$</td>
+</tr>
+<tr>
+<td>$\mathbb{N}$</td>
+<td>the set of natural numbers</td>
+<td>the set of naturals numbers starting at $1$</td>
+<td>$\mathbb{N} = \{1, 2, 3, …\}$</td>
+</tr>
+<tr>
+<td>$\mathbb{N}_0$</td>
+<td>the set of whole numbers</td>
+<td>the set of whole numbers starting at $0$</td>
+<td>$\mathbb{N}_0 = \{0, 1, 2, 3, …\}$</td>
+</tr>
+<tr>
+<td>$\mathbb{Z}$</td>
+<td>the set of integers</td>
+<td>the union of the whole numbers with their negatives</td>
+<td>$\mathbb{Z} = \{…, -3, -2, -1, 0, 1, 2, 3, …\}$</td>
+</tr>
+<tr>
+<td>$\mathbb{Q}$</td>
+<td>the set of rational numbers</td>
+<td>the set of all possible combinations of one integer divided by another, with the latter integer being non-zero, i.e., $\mathbb{Q} = \{ \frac{p}{q} : p, q \in \mathbb{Z}, q \neq 0\}$</td>
+<td>$\{\frac{1}{2}, \frac{5}{14}, \frac{-17}{3}\} \subset \mathbb{Q}$</td>
+</tr>
+<tr>
+<td>$\wedge$</td>
+<td>conjunction/and</td>
+<td>$P \wedge Q$ is true if both $P$ <strong>and</strong> $Q$ are true</td>
+<td>if $P = (2 \text{ is prime}), Q = (8 \text{ is a perfect cube})$ then $P \wedge Q$ is true</td>
+</tr>
+<tr>
+<td>$\vee$</td>
+<td>disjunction/or</td>
+<td>$P \vee Q$ is true if either $P$ <strong>or</strong> $Q$ is true</td>
+<td>if $P = (2 \text{ is prime}), Q = (4 \text{ is a perfect square})$ then $P \vee Q$ is true</td>
+</tr>
+<tr>
+<td>$\neg$</td>
+<td>negation</td>
+<td>$\neg P$ is true if $P$ is false and vice versaa</td>
+<td>if $P = (\text{35 is prime})$ then $\neg P$ is true</td>
+</tr>
+<tr>
+<td>$\implies$</td>
+<td>implication</td>
+<td>$P \implies Q$ means that $Q$ is true whenever $P$ is true (but it does <strong>not</strong> say anything about what happens when $P$ is false)</td>
+<td>if $P = (x \text{ is divisible by 4})$, $Q = (x \text{ is even})$ then $P \implies Q$ (but note that $P \nrightarrow Q$)</td>
+</tr>
+<tr>
+<td>$\iff$</td>
+<td>if and only if (iff)</td>
+<td>$P \implies Q$ <strong>and</strong> $Q \implies P$</td>
+<td>if $P = (\text{it is new year})$ and $Q = (\text{it is January 1})$ then $P \iff Q$</td>
+</tr>
+<tr>
+<td>$\forall$</td>
+<td>for all</td>
+<td>refers to all the elements in a set</td>
+<td>if $A = \{2, 4, 10\}$ then $x \in \mathbb{N} \text{ } \forall x \in A$</td>
+</tr>
+<tr>
+<td>$\exists$</td>
+<td>there exists</td>
+<td>refers to the existence of at least one of something</td>
+<td>$\exists x \in \mathbb{N}_0 : x = -x$</td>
+</tr>
+<tr>
+<td>$\oplus$</td>
+<td>XOR</td>
+<td>either $P$ is true or $Q$ is true but not both</td>
+<td>if $P = (\text{Donald Trump is a Democrat})$ and $Q = (\text{Hillary Clinton is a Democrat})$ then $P \oplus Q$ is true, but if $P = (\text{Donald Trump is a Republican})$ then $P \oplus Q$ is false</td>
 </tr>
 </tbody>
 </table>

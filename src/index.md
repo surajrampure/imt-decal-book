@@ -9,9 +9,9 @@
 
 **Author:** Suraj Rampure (suraj.rampure@berkeley.edu)
 
-**Contributors:** Fahad Kamran, Hermish Mehta, Jerry Huang
+**Contributors:** Fahad Kamran, Hermish Mehta, Jerry Huang, Sagnik Bhattacharya
 
-**Last modified:** January 7th, 2019
+**Last modified:** January 29th, 2019
 
 <br>
 
