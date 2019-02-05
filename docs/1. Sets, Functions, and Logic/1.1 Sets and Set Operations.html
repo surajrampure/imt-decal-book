@@ -2,7 +2,6 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="http://surajrampure.com/resources/air.css">
   <script type='text/x-mathjax-config'>MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
   <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
   <style>
@@ -249,7 +248,7 @@
     .content {
       margin: 50px auto;
       padding: 0 2em;
-      max-width: 150ex;
+      max-width: 100ex;
       line-height: 1.6em;
     }
 
@@ -453,11 +452,11 @@
     <nav id="menu">
       <ul>
 <li><a class="" href="../index.html">index</a></li>
-<li class="heading"><span>1. Sets and Functions</span></li>
+<li class="heading"><span>1. Sets, Functions, and Logic</span></li>
 <ul>
 <li><a class="" href="1.0 Introduction.html">1.0 Introduction</a></li>
-<li><a class="" href="1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
-<li><a class="active" href="1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
+<li><a class="active" href="1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
+<li><a class="" href="1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
 <li><a class="" href="1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
 <li><a class="" href="1.4 Propositional Logic.html">1.4 Propositional Logic</a></li>
 <li><a class="" href="1.5 Summary, Cheat Sheet.html">1.5 Summary, Cheat Sheet</a></li>
@@ -501,129 +500,169 @@
 </ul>
     </nav>
     <article id="main" class="content">
-      <title>1.2: Functions and Bijections – Sets and Functions</title>
-<h1>1.2: Functions and Bijections</h1>
+      <title>1.1: Sets and Set Operations – Sets, Functions, and Logic</title>
+<h1>1.1: Sets and Set Operations</h1>
 <hr>
 <br>
 <p>Jump to:</p>
 <ul>
-<li><a href="#function">Function, Domain, Range</a></li>
-<li><a href="#representation">Representation</a></li>
-<li><a href="#injection_surjection">Injections and Surjections</a>
+<li><a href="#sets">Sets</a>
 <ul>
-<li><a href="#injections">Injections</a></li>
-<li><a href="#surjections">Surjections</a></li>
+<li><a href="#cardinality">Cardinality</a></li>
 </ul>
 </li>
-<li><a href="#bijections">Bijections</a>
+<li><a href="#subsets">Subsets</a></li>
+<li><a href="#set_operations">Set Operations</a>
 <ul>
-<li><a href="#permutations">Permutations</a></li>
+<li><a href="#union">Union</a></li>
+<li><a href="#intersection">Intersection</a>
+<ul>
+<li><a href="#disjoint">Disjoint Sets</a></li>
 </ul>
 </li>
+<li><a href="#difference">Difference</a></li>
+<li><a href="#cartesian">Cartesian Product</a></li>
+</ul>
+</li>
+<li><a href="#complement">Complements and Universes</a></li>
+<li><a href="#demorgan">De Morgan’s Laws</a></li>
 </ul>
 <br>
-<p>We now have enough background to introduce functions in a formal way.</p>
-<p><strong>Note</strong>: We briefly mention the idea of the set of real numbers in some of the following examples, though we have not yet described what the real number set is. That’s because we think it’s best to study the definition of a function before we study the various number sets (covered in the next section). However, the usage of the real numbers here is not very detailed nor significant, but feel free to ask questions for clarification!</p>
-<br>
-<a name='function'>
+<p>In this section, we will look at the formal definition of a set, a subset, and identify various operations that act on multiple sets. We also introduce the idea of the universal set and a complement. One notable omission is any discussion on the size of a set; this idea will be briefly introduced in later sections, but studied further when we discuss combinatorics.</p>
+<a name='sets'>
 <blockquote>
-<h3>Definition: <strong>Function</strong>, <strong>Domain</strong>, <strong>Codomain</strong> </a></h3>
-<p>We say $f$ is a <strong>function</strong> with <em>domain</em> $A$ and <em>codomain</em> $B$ if $f \subset A \times B $ such that for every element in $A$, there is exactly one element in $B$. Symbolically, we represent this as $f : A \rightarrow B$.</p>
+<h3>Definition: <strong>Set</strong> </a></h3>
+<p>In mathematics, a <strong>set</strong> is a well-defined collection of objects.
+By well-defined, we mean that for any object $x$, we can easily determine whether or not $x$ is an element (also referred to as a “member”) of the set. Formally, if $S$ is a set, we write $x \in S$ to state that $x$ is in the set $S$, and $x \not \in S$ to state the opposite.</p>
 </blockquote>
-<br>
-<p>Recall from the last section, the Cartesian product $A \times B$ of two sets $A, B$ is another set, that contains all possible combinations of one element in $A$ and one element in $B$. For example, if $A = \{\text{“Hi”}, \text{“Hey”} \}$ and $B = \{5, 10 \}$, we would have</p>
-<div align=center>
-<p>$A \times B = \{ (\text{“Hi”}, 5), (\text{“Hi”}, 10), (\text{“Hey”}, 5), (\text{“Hey”}, 10) \}$</p>
-</div>
-<p>We form a function $f$ by removing elements from $A \times B$ such that there are only as many elements as there are in $A$. The following sets $f$ and $g$ are examples of functions sending elements from $A$ to $B$:</p>
-<div align=center>
-<p>$f = \{ (\text{“Hi”}, 10), (\text{“Hey”}, 5) \}$</p>
-<p>$g = \{ (\text{“Hi”}, 5), (\text{“Hey”, 5}) \}$</p>
-</div>
-<p>We say $A$ is the <strong>domain</strong>, as it represents all possible inputs, and $B$ is the <strong>codomain</strong>, as it represents all possible outputs; as a result, we say that $f(A) = B$. However, the <strong>image</strong>, or <strong>range</strong>, is the set of all actual outputs of a function. In the example $g$ above, the image would not be $B$, since 10 is never actually an output (though it is a possible output); instead, the range would be the set $\{ 5 \}$. $f$, however, behaves in a way such that the range and codomain are the same.</p>
-<p>Notice that the domain in this case isn’t even a set of numbers. In virtually all cases, you will be dealing with functions with numbers as both inputs and outputs, but it’s important to see that there’s nothing inherently numeric about the definition of a function.</p>
-<p>In the following <a href="https://upload.wikimedia.org/wikipedia/commons/6/64/Codomain2.SVG">image</a>, the red area represents the domain, the blue the codomain, and the yellow the range.</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Codomain2.SVG" alt="domain-codomain-range" style="width: 250px;"/>
-<br>
-<p>In general, subsets of $A \times B$ are known as <strong>relations</strong>. Not all relations are functions, but all functions are relations (since all functions are subsets of $A \times B$). Consider the following relation $g \subset A \times B$:</p>
-<div align=center>
-<p>$g = \{ (\text{“Hi”}, 5), (\text{“Hi”}, 10), (\text{“Hey”}, 10) \}$</p>
-</div>
-<p>$g$ in this case is not a function, since it has two different outputs for the input of “Hi”.</p>
-<br>
-<a name='representation'>
-<h2>Representation</h2>
-<hr>
-</a>
-<br>
-<p>In order to define a function $f$, we need to specify the domain, codomain, and how to <strong>map</strong> elements of the domain to the codomain. We can do this in two ways:</p>
+<p>We define sets in one of two ways:</p>
 <ul>
-<li>List out the pairs (as we did for the examples above)</li>
-<li>Specify a rule that describes how to get from input to corresponding output</li>
+<li>By listing out all of the elements in the set, e.g. $A_1 = \{1, 3.14, -15, \pi + e\}$, $A_2 = \{…, -3, -2, -1, 0, 1, 2, …\}$ or $A_3 = \{ \text{Lebron, Jordan, Kobe} \}$</li>
+<li>By stating a property that determines the set, e.g. $A_4 = \{x : x + 3 \: \text{is prime} \}$ or $A_5 = \{t : t^2 - 5t + 6 = 0 \}$</li>
 </ul>
-<p>The functions you have experience with likely all come from a subset of the latter class, that is, functions that have rules that are algebraic. However, rules need not be algebraic. Consider the following rule $f$, that maps positive integers to positive integers (a set we will define in the next section but take for granted now):</p>
-<div align=center>
-$f(x) = \text{the } x^{th} \text{ smallest prime number}$
-</div>
+<p>Some remarks:</p>
+<ul>
+<li>The symbols $:$ and $\big|$ both translate to “such that”, and precede the condition for inclusion into a set. You will see both used throughout this text.</li>
+<li>It should be noted that sets can either have finitely many elements, as in $A_1$, $A_3$ and $A_5$, or infinitely many elements, as in $A_2$ and $A_4$ above. This is a concept we will explore further later in the chapter.</li>
+<li>Stating a property (or properties) that defines a set is known as “set-builder notation.”</li>
+</ul>
+<p><br><br></p>
+<p>Before looking at any set operations, we need to define the most basic property of a set there is – the <strong>cardinality</strong>.</p>
+<a name='cardinality'>
+<blockquote>
+<h3>Definition: <strong>Cardinality</strong> </a></h3>
+<p>The <strong>cardinality</strong> $|S|$ of a finite set $|S|$ is the number of elements in $S$.</p>
+</blockquote>
+<p>For example, we say can say set $A = \{1, 2, 9, 12, -3\}$ has cardinality $|A| = 5$. The same is true for set $B = \{1, 1, 2, 2, 2, 2, 12, -3, -3, 9 \}$, because when dealing with sets, we only care about unique elements, and don’t care about order.</p>
+<p>Notice, our definition was specific to finite sets. It doesn’t make much sense to talk about the number of elements in an infinite set, such as the real numbers. However, cardinality is still very well defined in such cases – this is something we will study in Section 1.3.</p>
 <br>
-<p>$f$ is indeed a valid function, as are the various algebraic functions you have seen before: $f(x) = x^2$, $g(x) = \frac{sin(x^4)}{e^{tan x}}$, and so on. Another way of writing algebraic functions is $f: x \mapsto x^2$; we can even drop the $f$ and simply write $x \mapsto x^2$ if we don’t need to give the function a name. This is read as “the mapping that sends $x$ to $x^2$.”  This symbol is similar to the $\rightarrow$ we use when defining the domain and codomain of a function, but there is a subtle difference.</p>
-<p>However, something like $x^2 + y^2 = 1$ is not a function, as for each $x$ there are two $y$ values, and vice versa.</p>
-<p>Note: Some functions do not have <strong>closed form representations</strong>. A common example is $f(x) = \int_{-\infty}^x e^{-t^2}dt$ – this is a perfectly valid function, however there is no way to express it other than as an integral or limit of an infinite sum. This integral is commonly used in probability theory; its lack of a closed form representation is the reason we use pre-computed tables to find values on a normal distribution.</p>
+<a name='subsets'>
+<h2>Subsets</h2>
+</a>
+<hr>
+<blockquote>
+<h3>Definition: <strong>Subset</strong></h3>
+<p>Given some set $A$, another set $B$ is a <strong>subset</strong> of $A$ if and only if every element in $B$ is also an element of $A$. Symbolically, we represent this relationship as $B \subset A$ (just like with $\geq, &gt;, \leq, &lt;$ signs, the $\subset$ sign opens towards the larger set), and its opposite (i.e. $B$ is not a subset of $A$) as $B \not \subset A$. Equivalently, we can say $A$ is a <strong>superset</strong> of $B$.</p>
+</blockquote>
+<p>For example, if $A = \{1, 5, 7, 9, 12\}$ and $B = \{7, 12\}$, we can say $B \subset A$, but also that $\{5, 6\} \not \subset A$.</p>
+<p>What if two sets $A$ and $B$ are subsets of one another – what can we infer about $A$ and $B$? This would have to mean every element in $A$ is in $B$, and every element in $B$ is in $A$. It turns out that this is the exact condition for set equality. Formally, we can say two sets $A$ and $B$ are <strong>equal</strong> if and only if both $A \subset B$ and $B \subset A$; in this case we could also write $A = B$.</p>
+<p>All sets are subsets of themselves. We say set $B$ is a <strong>proper subset</strong> of $A$ when $B \subset A$ and $A \neq B$.</p>
 <br>
-<a name='injection_surjection'>
-<h2>Injections and Surjections</h2>
+<a name='set_operations'>
+<h2>Set Operations</h2>
 <hr>
 </a>
-<br>
-<p>There are two classes of functions we will now look at.</p>
-<br>
-<a name='injections'>
-<blockquote>
-<h3>Definition: <strong>Injection (One-to-one)</strong> </a></h3>
-<p>We say a function $f : A \rightarrow B$ is injective, or <strong>one-to-one</strong>, if no two elements in the input have the same output. Formally we say
-$f(x_1) = f(x_2) \implies x_1 = x_2$
-or equivalently,
-$x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$</p>
-</blockquote>
-<br>
-<p>The first of these statements says if two inputs have the same output, then the inputs must be equal. The second says if two inputs are not equal, then their outputs can’t be equal.</p>
-<p>Examples of injections are $f(x) = e^x$ and $g(x) = \sqrt{x}$, while $f(x) = x^2$ is not an injection over its entire domain (all real numbers), since $-a$ and $a$ both map to $a^2$. However, if we restrict the set of inputs to $f : x \mapsto x^2$ to be only non-negative real numbers (or only non-positive real numbers), then it is an injection!</p>
-<br>
-<a name='surjections'>
-<blockquote>
-<h3>Definition: <strong>Surjection (Onto)</strong> </a></h3>
-<p>We say a function $f : A \rightarrow B$ is surjective, or <strong>onto</strong>, if every element in $B$ is mapped to by an element in $A$. Another way of saying this is that a function is a surjection when its codomain and range are the same set (that is, all possible outputs are actually seen as outputs). Symbolically, we say $\forall \: b \in B,  \exists \: a \in A : b = f(a)$</p>
-</blockquote>
-<br>
-<p>(Note: The symbol $\forall$ means “for all”, and $\exists$ means “there exists”.)</p>
-<p>$f: x \mapsto x^2$ is a surjection when the codomain is the set of all non-negative real numbers (and domain is the set of all real numbers), as every number greater than or equal to $0$ exists as an output (since all non-negative numbers have a square root). However, when the codomain is the set of all real numbers, positive and negative (and domain is still all real numbers), then $f(x) = x^2$ is not a surjection, as there is no real number $x$ such that $x^2 = -1$. If we let the set of positive integers be both our domain and codomain, again, $x \mapsto x^2$ is not a surjection, because not every positive integer is a square.</p>
-<p>One way to remember the correspondence between the terms “surjection” and “onto”: the <em>sur</em> in surjective means “on” in French!</p>
-<br>
-<a name='bijections'>
-<h2>Bijections</h2>
+<p>We will now look at four operations that act on multiple sets – union, intersection, difference and product. Note that these operations are all <strong>closed</strong>, meaning that the results are all also sets (as opposed to being elements of sets, or numbers, or anything else).</p>
+<a name='union'>
+<h3>Union</h3>
 <hr>
 </a>
-<br>
-<p>A function can be injective or not, and surjective or not, as we saw above. However, when a function is both injective and surjective, it also belongs to another class of functions, one with many desirable properties.</p>
-<blockquote>
-<h3>Definition: <strong>Bijection</strong></h3>
-<p>A function $f$ is bijective if and only if it is both injective and surjective. That is, a function is a bijection if and only if no two elements in the domain map to the same element in the range, and every element in the codomain has something mapping to it from the domain.</p>
-</blockquote>
-<br>
-<p>For example, if we let our domain and codomain be the set of non-negative real numbers, we have that the function given by $x \mapsto \sqrt{x}$ is a bijection. The map given by $x \mapsto x^2$ is a bijection if we use the non-negative real numbers as our domain and codomain, however if we let our domain and codomain be all real numbers, it is not a bijection.</p>
-<br> 
-<a name='permutations'>
-<blockquote>
-<h3>Definition: <strong>Permutation</strong> </a></h3>
-<p>A <strong>permutation</strong> is a bijection whose domain and codomain are the same set.</p>
-</blockquote>
-<br>
-<p>One way to think of a permutation is a “shuffling” of a set; for example, if we let our domain and codomain both be the set $S = \{ 1, 2, 3, 4 \}$, a permutation on this set could be the mapping given by $f: \{ (1, 3), (2, 2), (3, 4), (4, 1) \}$.  We will study permutations further when we deal with combinatorics.</p>
-<br>
-<p>The following diagram (taken from <a href="https://www.aplustopper.com/one-to-one-and-onto-functions/">here</a>) summarizes the relationship between all types of relations we’ve seen in this section.</p>
+<p>The <strong>union</strong> of two sets $A, B$ is the set of everything contained by either $A$ or $B$. Formally:</p>
 <div align=center>
-<img src="typesoffunctions.png" style="width: 600px">
+<p>$\boxed{A \cup B = \{x : x \in A \: \text{or} \: x \in B \}}$</p>
 </div>
+<p>For example, if $A = \{1, 5, 7\}$ and $B = \{2, 3, 7, 8\}$, $A \cup B = \{1, 2, 3, 5, 7, 8\}$. Note that even though there was a 7 in both sets, the 7 is not repeated within the set. It is also worth noting that finite sets need not necessarily be ordered; we could equivalently write $A = \{5, 7, 1\}$ and $A \cup B = \{8, 5, 1, 3, 2, 7 \}$.</p>
+<p>For any set $A$:</p>
+<ul>
+<li>$A \cup A = A$ (Justification: $\{x : x \in A \: \text{or} \: x \in A\} = \{x : x \in A \}$)</li>
+<li>$A \cup \emptyset = A$ (Justification: $\{x : x \in A \: \text{or} \: x \in \emptyset\} = \{x : x \in A \}$)</li>
+</ul>
+<a name = 'intersection'>
+<h3>Intersection</h3>
+<hr>
+</a>
+<p>The <strong>intersection</strong> of two sets $A, B$ is the set of everything contained in both $A$ and $B$. Formally:</p>
+<div align=center>
+<p>$\boxed{A \cap B = \{x : x \in A \: \text{and} \: x \in B \}}$</p>
+</div>
+<p>Using the same examples as before, $A \cap B = \{7 \}$.</p>
+<p>For any set $A$:</p>
+<ul>
+<li>$A \cap A = A$ (Justification: $A \cap A = \{x : x \in A \: \text{and} \: x \in A \} = \{x : x \in A\}$)</li>
+<li>$A \cap \emptyset = \emptyset$ (Justification: $A \cap \emptyset = \{x : x \in A \: \text{and} \: x \in \emptyset \} = \{x : x \in \emptyset\}$)</li>
+</ul>
+<p>In the event that the intersection of two sets is the empty set, we have the following definition:</p>
+<a name='disjoint'>
+<blockquote>
+<h3>Definition: <strong>Disjoint</strong> </a></h3>
+<p>Two sets $A$ and $B$ are <strong>disjoint</strong> if they have no elements in common, i.e. if $A \cap B = \emptyset$.</p>
+</blockquote>
+<p>For example, the set of all even numbers and the set of all odd numbers is disjoint. However, the set of all non-negative numbers (numbers greater than or equal to zero) and the set of all non-positive numbers (numbers less than or equal to zero) are not disjoint, as their overlap has at least one element – in this case, the number 0.</p>
+<a name='difference'>
+<h3>Difference</h3>
+<hr>
+</a>
+<p>The <strong>difference</strong> of two sets $A, B$ is the set of everything contained in $A$ but not contained in $B$. Formally:</p>
+<div align=center>
+<p>$\boxed{A - B = \{x : x \in A, x \not \in B \}}$</p>
+</div>
+<p>With our example, $A - B = \{1, 5\}$. Notice that the difference operation is the first set operation that we’ve studied in which the other matters. $A \cup B = B \cup A$ and $A \cap B = B \cap A$, but $A - B \neq B - A$ – unlike the union and intersection, the difference operation is not <strong>symmetric</strong>.</p>
+<p>Note: Sometimes the difference is written $A \backslash B$.</p>
+<a name='cartesian'>
+<h3>Cartesian Product</h3>
+<hr>
+</a>
+<p>The <strong>Cartesian product</strong> of two sets $A, B$ is the set of all possible combinations of one element in $A$ and one element in $B$. Quite literally:</p>
+<div align=center>
+<p>$\boxed{A \times B = \{(x, y) : x \in A, y \in B  \}}$</p>
+</div>
+<p>Let’s use a smaller example – let $A = \{1, 2, 3\}$ and $B = \{x, y, z\}$. Then, we have</p>
+<div align=center>
+<p>$A \times B = \{(1, x), (1, y), (1, z), (2, x), (2, y), (2, z), (3, x), (3, y), (3, z) \}$</p>
+</div>
+<p>Notice that the Cartesian product is also not symmetric – if we instead looked at $B \times A$, each of the ordered pairs in the set above would be flipped.</p>
+<br>
+<p>While we only defined the above set operations on two sets, since the result of any of these operations is also a set, we can combine these operations in any way we want. For example, $A \cup B \cup C$ can be thought of as $(A \cup B) \cup C$, or $A \cup (B \cup C)$. We can’t assign parentheses as arbitrarily when we combine operations, though: $(A \cap B) \cup C \neq A \cap (B \cup C)$ in general.</p>
+<p>Note on vector spaces: Algebraic vector spaces are actually defined by a Cartesian product, of the real numbers. The symbol $\mathbb{R}^n$ refers to the Cartesian product of the set of real numbers (which we have yet to define) with itself $n$ times, i.e. the set of all real-valued vectors with $n$ elements.</p>
+<br>
+<a name='complement'>
+<h2>Complements and Universes</h2>
+<hr>
+</a>
+<p>Often when dealing with sets, we work relative to some <em>universal</em> set, which contains all relevant objects. For example, when choosing three students from a class of thirty, the set of all students in the class refers to the universe, and any particular subset of three students we choose can denote our set of interest. Using a numerical example, if we let the universe be $\mathbb{U} = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$, any set $A$ we deal with will be a subset of $\mathbb{U}$.</p>
+<p>Suppose $A = \{1, 2, 4, 8\}$. Sometimes, we want to consider the set of elements that are <strong>not</strong> in $A$ – this is known as the <strong>complement</strong> of $A$. Without a universe, this is impossible to quantify, but with a universe this is straightforward.</p>
+<blockquote>
+<h3>Definition: <strong>Complement</strong></h3>
+<p>Given some set $A$, the complement of $A$ is defined as
+$A^c = \{x : x \not \in A, x \in \mathbb{U} \}$</p>
+</blockquote>
+<p>In our case, the complement of $A$ (denoted $A’$, $A^{c}$ or $\bar{A}$) is $A^c = \{3, 5, 6, 7, 9\}$.</p>
+<br>
+<a name='demorgan'>
+<h2>De Morgan’s Laws</h2>
+<hr>
+</a>
+<p>We can actually combine the idea of the complement of a set with the union and intersection operations, by <strong>De Morgan’s Laws</strong>, as follows:</p>
+<div align=center>
+<p>$\boxed{\begin{align*} (A \cup B)^c &amp;= A^c \cap B^c \\ (A \cap B)^c &amp;= A^c \cup B^c \end{align*}}$</p>
+</div>
+<p>De Morgan’s Laws allow us to convert from a union to an intersection, and vice versa. We will actually prove De Morgan’s Laws when we we talk about Propositional Logic.</p>
+<p>Let’s work out an example as a sanity check. Suppose again that $\mathbb{U} = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$, $A = \{1, 2, 4, 8\}$ and $B = \{3, 4\}$. Then:</p>
+<div align=center>
+<p>$\begin{align*} (A \cup B)^c &amp;= \{1, 2, 3, 4, 8 \}^c \\ &amp;= \{5, 6, 7, 9\} \\ &amp;= \{3, 5, 6, 7, 9\} \cap \{1, 2, 5, 6, 7, 8, 9, 10\} \\ &amp;= A^c \cap B^c \end{align*}$</p>
+</div>
+<p>You should work out the second case on your own, and verify that it works.</p>
+
     </article>
   </div>
   <script>

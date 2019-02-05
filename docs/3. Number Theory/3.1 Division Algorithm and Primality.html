@@ -2,7 +2,6 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="http://surajrampure.com/resources/air.css">
   <script type='text/x-mathjax-config'>MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
   <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
   <style>
@@ -249,7 +248,7 @@
     .content {
       margin: 50px auto;
       padding: 0 2em;
-      max-width: 150ex;
+      max-width: 100ex;
       line-height: 1.6em;
     }
 
@@ -453,14 +452,14 @@
     <nav id="menu">
       <ul>
 <li><a class="" href="../index.html">index</a></li>
-<li class="heading"><span>1. Sets and Functions</span></li>
+<li class="heading"><span>1. Sets, Functions, and Logic</span></li>
 <ul>
-<li><a class="" href="../1. Sets and Functions/1.0 Introduction.html">1.0 Introduction</a></li>
-<li><a class="" href="../1. Sets and Functions/1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
-<li><a class="" href="../1. Sets and Functions/1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
-<li><a class="" href="../1. Sets and Functions/1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
-<li><a class="" href="../1. Sets and Functions/1.4 Propositional Logic.html">1.4 Propositional Logic</a></li>
-<li><a class="" href="../1. Sets and Functions/1.5 Summary, Cheat Sheet.html">1.5 Summary, Cheat Sheet</a></li>
+<li><a class="" href="../1. Sets, Functions, and Logic/1.0 Introduction.html">1.0 Introduction</a></li>
+<li><a class="" href="../1. Sets, Functions, and Logic/1.1 Sets and Set Operations.html">1.1 Sets and Set Operations</a></li>
+<li><a class="" href="../1. Sets, Functions, and Logic/1.2 Functions and Bijections.html">1.2 Functions and Bijections</a></li>
+<li><a class="" href="../1. Sets, Functions, and Logic/1.3 Sets of Numbers.html">1.3 Sets of Numbers</a></li>
+<li><a class="" href="../1. Sets, Functions, and Logic/1.4 Propositional Logic.html">1.4 Propositional Logic</a></li>
+<li><a class="" href="../1. Sets, Functions, and Logic/1.5 Summary, Cheat Sheet.html">1.5 Summary, Cheat Sheet</a></li>
 </ul>
 <li class="heading"><span>2. Proof Techniques</span></li>
 <ul>
@@ -501,48 +500,11 @@
 </ul>
     </nav>
     <article id="main" class="content">
-      <title>3.1: Division Algorithm – Number Theory</title>
-<h1>3.1: Division Algorithm</h1>
+      <title>3.1: Division Algorithm and Primality – Number Theory</title>
+<h1>3.1: Division Algorithm and Primality</h1>
 <hr>
 <br>
-<p>Jump to:</p>
-<br>
-<p>To start the chapter, we will formalize a result that you’ve been familiar with since the start of your mathematics career. It may seem trivial and unnecessary, but as you will see later, the formal statement of this theorem will aid us in deriving more complicated results.</p>
-<br>
-<p>Recall, when dividing one integer $a$ by another integer $b$, either $b$ evenly divided $a$, or there was some remainder left over, where the remainder was less than $b$. For example, when dividing 13 by 5, we have a remainder of 3.</p>
-<a name='statement'>
-<blockquote>
-<h3>Definition: <strong>Division algorithm</strong> </a></h3>
-<p>If $n, d$ are positive integers such that $n \geq d$, then it is possible to find non-negative integers $q, r$ such that
-$n = dq + r$, where $r &lt; d$.</p>
-</blockquote>
-<br>
-<p>In the above statement:</p>
-<ul>
-<li>$n$ refers to the dividend, the number to be divided</li>
-<li>$d$ refers to the divisor, the number to divide the dividend</li>
-<li>$q$ refers to the quotient, the integer result of the division</li>
-<li>$r$ refers to the remainder</li>
-</ul>
-<p>It turns out that finding $q$ and $r$ is relatively easy.</p>
-<div align=center>
-<p>$q = \lfloor \frac{n}{d} \rfloor$</p>
-<p>$r = n - dq$</p>
-</div>
-<p>For example, we can represent the division of 13 by 5 by the expression $13 = 5 \cdot 2 + 3$.</p>
-<br>
-<p>If the remainder is 0, then we say that $d$ “divides” $n$, and that $d$ is a <strong>factor</strong> of $n$. This is represented by the notation</p>
-<div align=center>
-<p>$d \big| n$</p>
-</div>
-<p>Read on to see applications of this result.</p>
-<a name = 'prime'>
-<blockquote>
-<h3>Definition: <strong>Prime, Composite</strong> </a></h3>
-<p>We say an integer $n &gt; 1$ is <strong>prime</strong> if its only factors are 1 and $n$. If $n$ has factors other than 1 and itself, then we say it is <strong>composite</strong>. The number 1 is neither prime nor composite.</p>
-</blockquote>
-<br>
-<p>This should be nothing new. However, what may be new is the process of checking to see if a number is prime. Of course, to see if some $n$ is prime, we could test to see if any of $2, 3, … n-2, n-1$ divide it. However, we don’t need to check any even number greater than 2, since if any other even number divides $n$, then so will 2. We can still throw away many potential factors, though – see if you can notice a pattern below:</p>
+<p>IN PROGRESS.</p>
 
     </article>
   </div>
