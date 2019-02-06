@@ -14,12 +14,7 @@ Jump to:
 - [Common Misconceptions](#misconceptions)
 
 
-
-<br>
-
 Here, we'll introduce and review some notation that you should be familiar with during this course. 
-
-<br>
 
 <a name='summation'>
 
@@ -27,8 +22,6 @@ Here, we'll introduce and review some notation that you should be familiar with 
 ---
 
 </a>
-
-<br>
 
 The $$\sum$$ symbol, read "sigma", is used to indicate a sum of some sequence. For example, $$\sum_{i = 1}^n i^2$$ represents the sum of the squares of all integers from 1 to $$n$$, i.e.
 
@@ -84,9 +77,7 @@ $$\sum_{t = 1}^\infty t^{-2} = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + .
 
 ---
 
-<br>
-
-**Property 1: Linearity of Constants**
+#### Property 1: Linearity of Constants
 
 <div align=center>
 
@@ -116,7 +107,7 @@ where $$c$$ is a constant that is independent of $$n$$. In fact, $$c$$ could als
 
 <br>
 
-**Property 2: Separability of Two Sums**
+#### Property 2: Separability of Two Sums
 
 <div align=center>
 
@@ -151,8 +142,6 @@ $$\begin{aligned} \sum_{i = 1}^n 2^i &= \sum_{i = 1}^{n - 1} 2^i + 2^n \\\ &= \s
 
 </a>
 
-<br>
-
 The upper-case pi symbol, $$\Pi$$, represents a product, just as the upper-case sigma symbol represented a sum. For example,
 
 <div align=center>
@@ -179,12 +168,10 @@ $$\boxed{\prod_{i = a}^b f(i) = f(a) \cdot f(a+1) \cdot f(a+2) \cdot ... \cdot f
 
 ---
 
-<br>
-
 As we did for sigma notation, there are similar properties you can derive for pi notation. We won't go through the steps of proving these properties here, but they can be proven in a similar fashion.
 
 
-**Property 1: Separability of Constants**
+#### Property 1: Separability of Constants
 
 
 <div align=center>
@@ -197,7 +184,7 @@ In fact, we can rewrite the first property more generally as $$\prod_{i = m}^n c
 
 <br>
 
-**Property 2: Separability of Multiple Products**
+#### Property 2: Separability of Multiple Products
 
 <div align=center>
 
@@ -216,8 +203,6 @@ Notice, with sigma notation we were able to separate a sum of two sequences into
 ---
 
 </a>
-
-<br>
 
 There is one important function definition that can be expressed in terms of pi notation:
 
@@ -248,8 +233,6 @@ def fact(n):
 
 </a>
 
-<br>
-
 When first learning how to manipulate sums, students often take the following equalities to be true. However, they are not: 
 
 <div align=center>
@@ -267,6 +250,4 @@ For example, consider $$a_1 = 1, a_2 = 2, b_1 = 1, b_2 = 2$$.
 The above expressions are true if we replace the sums with products, though (as seen in the Properties of Pi Notation section).
 
 <br>
-
-In the next section of the appendix, we will review various types of series and sequences. This will build upon our knowledge of sigma notation.
 

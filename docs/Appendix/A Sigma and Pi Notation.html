@@ -519,14 +519,11 @@
 </li>
 <li><a href="#misconceptions">Common Misconceptions</a></li>
 </ul>
-<br>
 <p>Here, we’ll introduce and review some notation that you should be familiar with during this course.</p>
-<br>
 <a name='summation'>
 <h2>Sigma Notation</h2>
 <hr>
 </a>
-<br>
 <p>The $\sum$ symbol, read “sigma”, is used to indicate a sum of some sequence. For example, $\sum_{i = 1}^n i^2$ represents the sum of the squares of all integers from 1 to $n$, i.e.</p>
 <div align=center>
 <p>$\sum_{i = 1}^6 i^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 + 6^2$</p>
@@ -555,8 +552,7 @@ for i in range(a, b+1):
 <h3>Properties of Sigma Notation</h3>
 </a>
 <hr>
-<br>
-<p><strong>Property 1: Linearity of Constants</strong></p>
+<h4>Property 1: Linearity of Constants</h4>
 <div align=center>
 <p>$\boxed{\sum_{i = m}^n ca_i = c\sum_{i = m}^n a_i}$</p>
 </div>
@@ -571,7 +567,7 @@ for i in range(a, b+1):
 </div>
 <p>where $c$ is a constant that is independent of $n$. In fact, $c$ could also be replaced with some variable $x$; as long the quantity being summed is independent of the index of summation, this fact holds true.</p>
 <br>
-<p><strong>Property 2: Separability of Two Sums</strong></p>
+<h4>Property 2: Separability of Two Sums</h4>
 <div align=center>
 <p>$\boxed{\sum_{i = m}^n (a_i + b_i) = \sum_{i = m}^n a_i + \sum_{i = m}^n b_i}$</p>
 </div>
@@ -589,7 +585,6 @@ for i in range(a, b+1):
 <h2>Pi Notation</h2>
 <hr>
 </a>
-<br>
 <p>The upper-case pi symbol, $\Pi$, represents a product, just as the upper-case sigma symbol represented a sum. For example,</p>
 <div align=center>
 <p>$\prod_{i = 3}^6 (x + 2^i) = (x + 2^3) (x + 2^4) (x + 2^5) (x + 2^6)$</p>
@@ -603,15 +598,14 @@ for i in range(a, b+1):
 <h3>Properties of Pi Notation</h3>
 </a>
 <hr>
-<br>
 <p>As we did for sigma notation, there are similar properties you can derive for pi notation. We won’t go through the steps of proving these properties here, but they can be proven in a similar fashion.</p>
-<p><strong>Property 1: Separability of Constants</strong></p>
+<h4>Property 1: Separability of Constants</h4>
 <div align=center>
 <p>$\boxed{\prod_{i = 1}^n ca_i = c^n \prod_{i = 1}^n a_i}$</p>
 </div>
 <p>In fact, we can rewrite the first property more generally as $\prod_{i = m}^n ca_i = c^{m - n + 1} \prod_{i = m}^n a_i$. The exponent of $m - n + 1$ comes from the fact that between $m$ and $n$, there are $m - n + 1$ integers (including both $m$ and $n$).</p>
 <br>
-<p><strong>Property 2: Separability of Multiple Products</strong></p>
+<h4>Property 2: Separability of Multiple Products</h4>
 <div align=center>
 <p>$\boxed{\prod_{i = m}^n a_ib_i = \left( \prod_{i = m}^n a_i \right) \left( \prod_{i = m}^n b_i \right)}$</p>
 </div>
@@ -621,7 +615,6 @@ for i in range(a, b+1):
 <h3>Factorial</h3>
 <hr>
 </a>
-<br>
 <p>There is one important function definition that can be expressed in terms of pi notation:</p>
 <div align=center>
 <p>$\prod_{i = 1}^n i = 1 \cdot 2 \cdot 3 \cdot … \cdot (n-1) \cdot n = n!$</p>
@@ -639,7 +632,6 @@ for i in range(a, b+1):
 <h2>Common Misconceptions</h2>
 <hr>
 </a>
-<br>
 <p>When first learning how to manipulate sums, students often take the following equalities to be true. However, they are not:</p>
 <div align=center>
 <p>$\sum_{i = m}^n a_i b_i \neq \left( \sum_{i = m}^n a_i \right) \left( \sum_{i = m}^n b_i \right)$</p>
@@ -652,7 +644,6 @@ for i in range(a, b+1):
 </ul>
 <p>The above expressions are true if we replace the sums with products, though (as seen in the Properties of Pi Notation section).</p>
 <br>
-<p>In the next section of the appendix, we will review various types of series and sequences. This will build upon our knowledge of sigma notation.</p>
 
     </article>
   </div>
