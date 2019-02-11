@@ -489,7 +489,7 @@
 <li><a class="" href="5.0 Introduction.html">5.0 Introduction</a></li>
 <li><a class="" href="5.1 Binomial Theorem.html">5.1 Binomial Theorem</a></li>
 <li><a class="" href="5.2 Vieta's Formulas.html">5.2 Vieta's Formulas</a></li>
-<li><a class="" href="5.3 Representation, Interpolation.html">5.3 Representation, Interpolation</a></li>
+<li><a class="" href="5.3 Representation and Interpolation.html">5.3 Representation and Interpolation</a></li>
 <li><a class="active" href="5.4 Factor and Remainder Theorems, Complex Roots.html">5.4 Factor and Remainder Theorems, Complex Roots</a></li>
 </ul>
 <li class="heading"><span>Appendix</span></li>
@@ -506,7 +506,7 @@
 <br>
 <p>Jump to:</p>
 <ul>
-<li><a href="#divisionalgo">Division Algorithm, for Polynomials</a></li>
+<li><a href="#divisionalgo">Division Algorithm for Polynomials</a></li>
 <li><a href="#polydiv">Polynomial Division</a>
 <ul>
 <li><a href="#longdiv">Polynomial Long Division</a></li>
@@ -519,29 +519,26 @@
 <li><a href="#factor">Factor Theorem</a></li>
 </ul>
 </li>
-<li><a href="#roots">Polynomial Roots</a>
+<li><a href="#roots">Roots</a>
 <ul>
 <li><a href="#complex">Complex Roots</a></li>
 <li><a href="#complexpair">Complex Root Pairs</a></li>
 </ul>
 </li>
 </ul>
-<br>
 <p>In this article, we will look at two theorems that formalize properties you are likely already aware of. These properties will allow us to explore the relationship between the degree of a polynomial and the number of roots it has.</p>
 <p>Before we look at these theorems, we need to look at another idea – the division of polynomials. As you will see, there are many parallels between polynomial division and regular integer division, as we studied in Chapter 3.</p>
 <br>
 <a name='divisionalgo'>
-<h2>Division Algorithm, for Polynomials</h2>
+<h2>Division Algorithm for Polynomials</h2>
 <hr>
 </a>
-<br>
 <p>Recall the division algorithm for integers, which said that given some dividend $n$ and divisor $d$, it is always possible to write $n = d q + r$, where $q$ is the quotient and $r$ is the remainder, with $r &lt; d$.</p>
-<p>What if we want to divide some polynomial $p(x)$ by some other polynomial $d(x)$? Well, essentially the same statement holds:</p>
-<blockquote>
-<h3>Definition: <strong>Division algorithm for polynomials</strong> </a></h3>
-<p>If $p(x), d(x)$ are polynomials such that $\text{deg}(p(x))\geq \text{deg}(d(x))$, then it is possible to find polynomials $q(x), r(x)$ such that
-$p(x) = d(x)q(x) + r(x)$, where $\text{deg}(q(x)) = \text{deg}(p(x)) - \text{deg}(d(x))$ and $\text{deg}(r(x)) &lt; \text{deg}(d(x))$.</p>
-</blockquote>
+<p>What if we want to divide some polynomial $p(x)$ by some other polynomial $d(x)$? Well, essentially the same statement holds: if $p(x), d(x)$ are polynomials such that $\text{deg}(p(x))\geq \text{deg}(d(x))$, then it is possible to find polynomials $q(x), r(x)$ such that</p>
+<div align=center>
+<p>$p(x) = d(x)q(x) + r(x)$</p>
+<p>where $\text{deg}(q(x)) = \text{deg}(p(x)) - \text{deg}(d(x))$ and $\text{deg}(r(x)) &lt; \text{deg}(d(x))$</p>
+</div>
 <br>
 <p>$d(x)$ is the divisor, $q(x)$ is the quotient and $r(x)$ is the remainder. For simplicity’s sake, we will almost always only look at linear divisors; that is, $d(x)$ will usually be of the form $x - a$ or $cx - a$.</p>
 <p>For example, suppose we want to show the division of $p(x) = x^2 - 5x + 6$ by $d(x) = x - 1$. It turns out the corresponding quotient is $q(x) = x - 4$ and remainder is $r(x) = 2$:</p>
@@ -552,9 +549,7 @@ $p(x) = d(x)q(x) + r(x)$, where $\text{deg}(q(x)) = \text{deg}(p(x)) - \text{deg
 <h2>Polynomial Division</h2>
 <hr>
 </a>
-<br>
 <p>There are two ways we can divide one polynomial by another.</p>
-<br>
 <a name='longdiv'>
 <h3>Polynomial Long Division</h3>
 <hr>
@@ -576,12 +571,10 @@ $p(x) = d(x)q(x) + r(x)$, where $\text{deg}(q(x)) = \text{deg}(p(x)) - \text{deg
 <br></p>
 <p>As with many things in this course, it’ll be very difficult to understand how to do polynomial division just by looking at this one example. Practice will be key here.</p>
 <br>
-<br>
 <a name='syntheticdiv'>
 <h3>Synthetic Division</h3>
 <hr>
 </a>
-<br>
 <p>Synthetic division is a short-form way of performing polynomial long division. While it can be done with divisors that are non-linear, for simplicity’s sake, we will stick with linear factors.</p>
 <p>Once again, let’s dive directly into an example, and then work our way through it. We’ll use the same example as in the previous section.</p>
 <img src='polydiv3.png' width='250'>
@@ -613,60 +606,42 @@ $p(x) = d(x)q(x) + r(x)$, where $\text{deg}(q(x)) = \text{deg}(p(x)) - \text{deg
 <img src='polydiv4.png' width='350'>
 </div>
 <br>
-<p>Here, we divided $p(x) = x^4 + 3x^2 - 11x - 3$ by $x-4$ to yield the quotient $q(x) = x^3 + 4x^2 + 19x 65$ with remainder $r(x) = 257$.</p>
-<p>Watching the embedded video will make this process far more clear. Again, practicing synthetic division is the only way you will truly understand how to use the tool.</p>
+<p>Here, we divided $p(x) = x^4 + 3x^2 - 11x - 3$ by $x-4$ to yield the quotient $q(x) = x^3 + 4x^2 + 19x + 65$ with remainder $r(x) = 257$.</p>
 <br>
 <a name='factrem'>
 <h2>Remainder and Factor Theorems</h2>
 <hr>
 </a>
-<p>Now, we’re equipped to do some analysis regarding the division algorithm. Suppose we’re dividing some arbitrary polynomial $p(x)$ by linear divisor $x-a$. Then, we can say</p>
-<div align=center>
-<p>$p(x) = (x-a)q(x) + r(x)$</p>
-</div>
+<p>Now, we’re equipped to do some analysis regarding the division algorithm.</p>
+<a name = 'remainder'>
+<h3>Remainder Theorem</h3>
+<hr>
+</a>
+<p>Suppose we’re dividing some arbitrary polynomial $p(x)$ by linear divisor $x-a$. Then, we can say $p(x) = (x-a)q(x) + r(x)$.</p>
 <p>What happens if we evaluate $p(a)$? Well, the first term cancels out since $a - a = 0$, and we’re left with $r(a)$. This result is known as the <strong>remainder theorem</strong>.</p>
-<a name='remainder'>
-<blockquote>
-<h3>Definition: <strong>Remainder theorem</strong> </a></h3>
-<p>If $p(x)$ is a polynomial, such that $r(x)$ is the remainder that results from dividing $p(x)$ by $x - a$, then $p(a) = r(a)$.</p>
-</blockquote>
-<br>
+<p>Formally, the remainder theorem states that <strong>if $p(x)$ is a polynomial, such that $r(x)$ is the remainder that results from dividing $p(x)$ by $x - a$, then $p(a) = r(a)$</strong>. (Notice that this only applies to polynomial divisions with linear divisors.)</p>
 <p>As a sanity check: When introducing polynomial division, we showed that $x^2 - 5x + 6 = (x-7)(x+2) + 20$, meaning that the remainder when dividing $x^2 - 5x + 6$ by $x - 7$ was $20$. We can also easily verify that $p(7) = 7^2 - 5 \cdot 7 + 6 = 49 - 35 + 6 = 20$.</p>
-<p>Notice that this only applies to polynomial divisions with linear divisors.</p>
 <br>
-<p>What if we had that $r(x) = 0$? Then, we’d write $p(x) = (x-a)q(x)$, meaning that $x-a$ evenly divided $p(x)$, i.e. that $x-a$ was a <strong>factor</strong> of $p(x)$. This leads to the <strong>factor theorem</strong>, which is a more specific case of the remainder theorem.</p>
 <a name='factor'>
-<blockquote>
-<h3>Definition: <strong>Factor theorem</strong> </a></h3>
-<p>The factor theorem states that $x-a$ is a factor of $p(x)$ if and only if $p(a) = 0$.</p>
-</blockquote>
-<br>
-<p>Clearly, $x - 7$ is not a factor of $p(x) = x^2 - 5x + 6$, since the remainder is 20 (or, equivalently, $p(7) = 20 \neq 0$). However, $x - 3$ is a factor of $p(x)$, as $x^2 - 5x + 6 = (x-3) (x-2) + 0$ (or, equivalently, $p(3) = 0$).</p>
-<p>As another example, since we can factor $p(x) = x^3 + 7x^2 + 6x$ into $p(x) = x(x + 1)(x + 6)$, we know that $p(0) = p(-1) = p(-6) = 0$.</p>
-<br>
+<h3>Factor Theorem</h3>
+<hr>
+</a>
+<p>What if we had that $r(x) = 0$? Then, we’d write $p(x) = (x-a)q(x)$, meaning that $x-a$ evenly divided $p(x)$, i.e. that $x-a$ was a <strong>factor</strong> of $p(x)$. This leads to the <strong>factor theorem</strong>, which is a more specific case of the remainder theorem.</p>
+<p><strong>Specifically, the factor theorem states that $x-a$ is a factor of $p(x)$ if and only if $p(a) = 0$.</strong></p>
+<p>Clearly, $x - 7$ is not a factor of $p(x) = x^2 - 5x + 6$, since the remainder is 20 (or, equivalently, $p(7) = 20 \neq 0$). However, $x - 3$ is a factor of $p(x)$, as $x^2 - 5x + 6 = (x-3) (x-2) + 0$ (or, equivalently, $p(3) = 0$). As another example, since we can factor $p(x) = x^3 + 7x^2 + 6x$ into $p(x) = x(x + 1)(x + 6)$, we know that $p(0) = p(-1) = p(-6) = 0$.</p>
 <p>We now have all of the tools necessary to formally discuss the nature of complex roots.</p>
 <br>
 <a name='roots'>
-<h2>Complex Roots</h2>
+<h2>Roots</h2>
 <hr>
 </a>
-<br>
 <p>The final key property of polynomials determined by their degree are their number of roots. You may have learned before that a real-valued polynomial with real coefficients of degree $n$ has anywhere between 0 and $n$ roots, depending on its specifics. However, we can actually make a stronger claim.</p>
-<div align=center>
 <p><strong>All real-valued polynomials with real coefficients of degree $n$ have exactly $n$ roots, with some possibly complex roots.</strong></p>
-</div>
-<br>
 <p>Let’s disect this. The first class of polynomial we encounter with varying numbers of roots is the parabola, of degree $2$. You may have studied before that parabolas have one of the following:</p>
 <ul>
-<li>
-<p>$2$ roots, meaning they intercept the $x$ axis twice</p>
-</li>
-<li>
-<p>$1$ root, meaning they sit on the $x$ axis (this is actually known as a double root)</p>
-</li>
-<li>
-<p>$0$ roots, meaning that they sit completely above or completely below the $x$ axis</p>
-</li>
+<li>$2$ roots, meaning they intercept the $x$ axis twice</li>
+<li>$1$ root, meaning they sit on the $x$ axis (this is actually known as a double root)</li>
+<li>$0$ roots, meaning that they sit completely above or completely below the $x$ axis</li>
 </ul>
 <p>Recall, given a quadratic of the form $f(x) = ax^2 + bx + c$, the solutions to $f(x) = 0$ are given by $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.</p>
 <p>The three cases above come from the three different states of the discriminant, $b^2 - 4ac$. When $b^2 - 4ac &gt; 0$, there are two distinct roots. When $b^2 - 4ac = 0$, the “plus-or-minus” term vanishes, leaving a double root at $x = -\frac{b}{2a}$. The case we’re now interested in is when $b^2 - 4ac &lt; 0$, where we would previously claim there to be “no solution” since we cannot take the square root of a negative number. In fact, there are still two perfectly valid solutions - they’re just not real numbers.</p>
@@ -675,7 +650,6 @@ $p(x) = d(x)q(x) + r(x)$, where $\text{deg}(q(x)) = \text{deg}(p(x)) - \text{deg
 <h3>Complex Roots</h3>
 <hr>
 </a>
-<br>
 <p>Complex numbers (discussed in the appendix, if you need a refresher) are a superset of the real numbers. We can represent a complex number $z$ in <strong>rectangular form</strong> as $z = a + bi$, where $a, b$ are real numbers and $i$ is the imaginary unit defined by $i^2 = -1$. We say $a$ is the “real part” and $bi$ is the “imaginary part.” We can represent the set of real numbers as complex numbers, with $b = 0$.</p>
 <p>The simplest parabola that has complex roots is $p(x) = x^2 + 1$, which sits one unit above the $x$ axis, centered on the $y$ axis. It has roots $x_1 = i$ and $x_2 = -i$, respectively, which you can verify with the quadratic equation or by evaluating $p(x_1), p(x_2)$.</p>
 <p>An important consequence of our new, stronger definition of the number of roots of a polynomial is that <strong>all polynomials are now completely factorable into linear terms</strong>, whereas previously this was not the case. Previously, we could factor $x^2 + 5x + 6$ and $x^2 - 16$ into $(x+2)(x+3)$ and $(x-4)(x+4)$, respectively, because we knew these polynomials in standard form had roots. However, now we can factor $x^2 + 1$ as well, into $(x-i)(x+i)$, by the factor theorem. In general,</p>
@@ -688,7 +662,6 @@ $p(x) = d(x)q(x) + r(x)$, where $\text{deg}(q(x)) = \text{deg}(p(x)) - \text{deg
 <h3>Complex Root Pairs</h3>
 <hr>
 </a>
-<br>
 <p>As it turns out, complex roots always occur in pairs. No real polynomial can have only a single complex root, or three complex roots, or any odd number of complex roots. Furthermore:</p>
 <div align=center>
 <p>$f(a + bi) = 0 \implies f(a - bi) = 0$</p>

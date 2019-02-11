@@ -489,7 +489,7 @@
 <li><a class="" href="5.0 Introduction.html">5.0 Introduction</a></li>
 <li><a class="" href="5.1 Binomial Theorem.html">5.1 Binomial Theorem</a></li>
 <li><a class="active" href="5.2 Vieta's Formulas.html">5.2 Vieta's Formulas</a></li>
-<li><a class="" href="5.3 Representation, Interpolation.html">5.3 Representation, Interpolation</a></li>
+<li><a class="" href="5.3 Representation and Interpolation.html">5.3 Representation and Interpolation</a></li>
 <li><a class="" href="5.4 Factor and Remainder Theorems, Complex Roots.html">5.4 Factor and Remainder Theorems, Complex Roots</a></li>
 </ul>
 <li class="heading"><span>Appendix</span></li>
@@ -517,14 +517,12 @@
 <li><a href="#symmetric">Symmetric Sums</a></li>
 <li><a href="#examples">Example Problems</a></li>
 </ul>
-<br>
 <p>Vieta’s formulas give us a way to interpret a polynomial in standard form, e.g. $p(x) = 4x^2 + 3x + 3$, in terms of its roots, without having to find the roots specifically. While there are more practical applications to this, the derivation of Vieta’s formulas prove to be an interesting combinatoral problem.</p>
 <br>
 <a name="naive">
 <h2>Naive Approach, using the Quadratic Formula</h2>
 <hr>
 </a>
-<br>
 <p>Let $p(x) = ax^2 + bx + c$. We know that $p(x)$ will have two roots, i.e. solutions to $p(x) = 0$ (they might be complex and/or equal).</p>
 <p>Suppose $p(x)$'s roots are $r_1$ and $r_2$, and suppose we want to find the sum ($r_1 + r_2$) and product ($r_1 r_2$) of these roots. One way to do this would be to use the quadratic formula to solve for both roots, and simplify.</p>
 <p>Using the quadratic formula:</p>
@@ -543,12 +541,10 @@
 <h2>Derivations</h2>
 <hr>
 </a>
-<br>
 <a name = 'degree2'>
 <h3>Derivation of Vieta’s Formulas for Polynomials of Degree 2</h3>
 <hr>
 </a>
-<br>
 <p>Again, suppose $p(x) = ax^2 + bx + c$ have have roots $r_1, r_2$. By the factor theorem (which you can read about in Chapter 5.4), we know that $p(x) = a(x - r_1)(x - r_2)$, for some constant $a$. Expanding $p(x)$:</p>
 <div align=center>
 <p>$\begin{aligned}
@@ -633,7 +629,6 @@ r_1 + r_2 + r_3 + r_4 = -\frac{b}{a} \\ r_1r_2 + r_1r_3 + r_1r_4 + r_2r_3 + r_2r
 <h2>Symmetric Sums</h2>
 <hr>
 </a>
-<br>
 <p>Vieta’s formulas give us expressions for the sum of the roots and product of the roots of polynomials. However, we are also given expressions for sums of the form $r_1r_2 + r_1r_3 + r_2r_3$, for instance.</p>
 <p>A <strong>symmetric sum</strong> is an sum in which the value does not change when the order of variables are swapped. For example, $f(a, b, c) = ab + ac + bc$ is symmetric, because in any <em>permutation</em> of our variables $a, b, c$, the value stays the same:</p>
 <div align=center>
@@ -648,12 +643,10 @@ r_1 + r_2 + r_3 + r_4 = -\frac{b}{a} \\ r_1r_2 + r_1r_3 + r_1r_4 + r_2r_3 + r_2r
 <h2>Example Problems</h2>
 <hr>
 </a>
-<br>
 <p>You should attempt each of these problems on your own before looking at the solutions that follow.</p>
 <br>
 <h3>Example 1</h3>
 <hr>
-<br>
 <p>Suppose $a, b$ satisfy $x^2 - 18x + 18$. Determine $a^2 + b^2$.</p>
 <br>
 <p><strong>Solution:</strong> From Vieta’s, we know $a + b = 18$ and $ab = 18$. Then:</p>
@@ -664,7 +657,6 @@ r_1 + r_2 + r_3 + r_4 = -\frac{b}{a} \\ r_1r_2 + r_1r_3 + r_1r_4 + r_2r_3 + r_2r
 <br>
 <h3>Example 2</h3>
 <hr>
-<br>
 <p>$p(x) = x^3 - Ax + 15$ has three real roots, two of which sum to 5. What is $|A|$?</p>
 <br>
 <p><strong>Solution:</strong> Let $r_1, r_2$ be the roots that sum to 5. This must mean $r_3 = -5$, since $r_1 + r_2 + r_3 = 5 - 5 = 0$ (there is no $x^2$ term).</p>
@@ -676,7 +668,6 @@ r_1 + r_2 + r_3 + r_4 = -\frac{b}{a} \\ r_1r_2 + r_1r_3 + r_1r_4 + r_2r_3 + r_2r
 <br>
 <h3>Example 3</h3>
 <hr>
-<br>
 <p>Suppose the polynomial $f(x) = x^3 − \alpha x^2 + \beta$ has three roots, one of which is equal to $\beta^2$. What is the sum of all possible values of $\beta$? <em>(Hint: There is both an easy way and hard way to reason about this. Vieta’s formulas aren’t necessary involved.)</em></p>
 <br>
 <p><strong>Solution 1:</strong> First, let’s do this using Vieta’s formulas.</p>
@@ -688,7 +679,6 @@ r_1 + r_2 + r_3 + r_4 = -\frac{b}{a} \\ r_1r_2 + r_1r_3 + r_1r_4 + r_2r_3 + r_2r
 <br>
 <h3>Example 4</h3>
 <hr>
-<br>
 <p>Let $f(x) = (x^2 + 6x + 9)^{50} - 4x + 3$, and suppose $f(x)$ has 100 roots, $r_1, r_2, r_3, …, r_{100}$.  Determine $(r_1 + 3)^{100} + (r_2 + 3)^{100} + … + (r_{100} + 3)^{100}$.</p>
 <br>
 <p><strong>Solution:</strong> All roots $r_i$ must satisfy $(x^2 + 6x + 9)^{50} - 4x + 3 = 0$, i.e. $(x + 3)^{100} = 4x - 3$. Taking the sum over all roots $r_i$ on both sides:</p>

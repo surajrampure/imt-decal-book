@@ -489,7 +489,7 @@
 <li><a class="" href="5.0 Introduction.html">5.0 Introduction</a></li>
 <li><a class="active" href="5.1 Binomial Theorem.html">5.1 Binomial Theorem</a></li>
 <li><a class="" href="5.2 Vieta's Formulas.html">5.2 Vieta's Formulas</a></li>
-<li><a class="" href="5.3 Representation, Interpolation.html">5.3 Representation, Interpolation</a></li>
+<li><a class="" href="5.3 Representation and Interpolation.html">5.3 Representation and Interpolation</a></li>
 <li><a class="" href="5.4 Factor and Remainder Theorems, Complex Roots.html">5.4 Factor and Remainder Theorems, Complex Roots</a></li>
 </ul>
 <li class="heading"><span>Appendix</span></li>
@@ -525,26 +525,24 @@
 </ul>
 </li>
 </ul>
-<br>
 <p>In this article, we will extend our discussion of the combinatorial term and Pascal’s triangle into a useful concept in algebra, known as the binomial theorem. Recall, a binomial is a polynomial with two terms, where terms are items joined by addition. A trinomial is a polynomial with three terms.</p>
-<br>
 <a name='motivation'>
 <h2>Motivation</h2>
 <hr>
 </a>
-<br>
 <p>Consider the following expansion of the product of two binomials:</p>
 <div align=center>
 <p>$
 (a + b) (c + d)  = a(c + d) + b(c + d) = ac + ad + bc + bd
 $</p>
 </div>
-<br>
 <p>To compute the final expansion, we multiplied every combination of terms in the first polynomial by terms in the second polynomial. In this example, we multiplied two different binomials — polynomials with two terms — both of which were used two different variables. Let’s concentrate our efforts on a simpler case, that is, binomials multiplied by themselves.</p>
 <p>What if we wanted to expand $(x + y)^2$? We can follow the same technique as above — multiply $x$ by $x + y$, yielding $x^2 + xy$, and $y$ by $x + y$, yielding $xy + y^2$ and sum the result, yielding $x^2 + 2xy + y^2$.</p>
 <p>What if instead we wanted to expand $(x + y)^3$? One approach is to write $(x+y)^3$ as $(x+y)(x+y)(x+y)$, and manually try and multiply every combination of one item from the first bracket, one item in the
 second bracket, and one item in the third bracket. If we were to do this, we would expand in the following way:</p>
+<div align=center>
 <p>$(x+y)(x+y)(x+y) = xxx + xxy + xyx + xyy + yxx + yxy + yyx + yyy$</p>
+</div>
 <p>However, if we were to try to expand $(x+y)^4$ in this way, we’d have a mess on our hands. Another approach is to recognize that $(x + y)^3$ is the product of $(x+y)^2$, which we know to be $x^2 + 2xy + y^2$, with $x + y$. We can then multiply each term in $x^2 + 2xy + y^2$ by each term in $x + y$, to yield the final expansion of $x^3 + 3x^2y + 3xy^2 + y^3$. Sure, this works, however with exponents greater than $3$ one can see that this process becomes messy.</p>
 <br>
 <a name="combinatorial">
@@ -561,7 +559,6 @@ second bracket, and one item in the third bracket. If we were to do this, we wou
 <div align=center>
 <p>$(x + y)^3 = {3 \choose 0}x^3 + {3 \choose 1} x^2y + {3 \choose 2} xy^2 + {3 \choose 3} y^3 = x^3 + 3x^2y + 3xy^2 + y^3$</p>
 </div>
-<br>
 <p>In general, we can write $(x + y)^n$ as:</p>
 <div align=center>
 <p>$(x+y)^n = (x+y)(x+y)(x+y)…(x+y)$</p>
@@ -572,20 +569,13 @@ second bracket, and one item in the third bracket. If we were to do this, we wou
 <h2>The Binomial Theorem, Formalized</h2>
 <hr>
 </a>
-<br>
 <p>The binomial theorem states the following:</p>
-<blockquote>
-<h3>Definition: <strong>The Binomial Theorem</strong></h3>
-<p>The binomial theorem states the following:
-$
-(x + y)^n = {n \choose 0}x^n + {n \choose 1}x^{n-1}y + {n \choose 2}x^{n-2}y^2 + … + {n \choose n-1}xy^{n-1} + {n \choose n}y^n = \sum_{k = 0}^n {n \choose k} x^{n-k}y^k
-$</p>
-</blockquote>
-<br>
+<div align=center>
+<p>$\boxed{(x + y)^n = {n \choose 0}x^n + {n \choose 1}x^{n-1}y + {n \choose 2}x^{n-2}y^2 + … + {n \choose n-1}xy^{n-1} + {n \choose n}y^n = \sum_{k = 0}^n {n \choose k} x^{n-k}y^k}$</p>
+</div>
 <p>It is worth noting that since we’re using the combinatorial term to determine coefficients, the coefficients in the expansion of $(x + y)^n$ are the entries in the $n$-th row of Pascal’s triangle. However, rarely will we expand $(x + y)^n$ itself; we will typically expand more complicated binomials raised to other exponents.</p>
 <p>Also, the term that we’ve introduced as the combinatorial term – ${n \choose k}$ – is sometimes referred to as the “binomial coefficient”, because of its significance in the binomial theorem.</p>
-<br>
-<h3>Example</h3>
+<h4>Example</h4>
 <p>Let’s determine the expansion of $(3a^2 - 2b)^5$. In this case, we have $x = 3a^2$, $y = -2b$ and $n = 5$.</p>
 <div align=center>
 <p>$
@@ -598,12 +588,7 @@ $</p>
 <h2>The General Term</h2>
 <hr>
 </a>
-<br>
-<blockquote>
-<h3>Definition: <strong>General term</strong></h3>
-<p>We define the $k$-th term in the expansion of a binomial as $t_k = {n \choose k} x^{n-k}y^k$, with $k$ ranging from 0 to $n$.</p>
-</blockquote>
-<br>
+<p>We define the $k$-th term in the expansion of a binomial as $\boxed{t_k = {n \choose k} x^{n-k}y^k}$, with $k$ ranging from 0 to $n$.</p>
 <p>In the expansion of $(3a^2 - 2b)^5$ from the previous section, the general term is:</p>
 <div align=center>
 <p>$
@@ -624,9 +609,7 @@ $</p>
 <h2>Applications</h2>
 <hr>
 </a>
-<br>
 <p>Now, we’ll look at some of the more direct applications of the binomial theorem.</p>
-<br>
 <a name='sumcoef'>
 <h3>Sum of Coefficients</h3>
 <hr>
@@ -645,7 +628,6 @@ f(x) &amp;= (2x - 3x^2)^4 \\ &amp;= {4 \choose 0}(2x)^4 + {4 \choose 1}(2x)^3(-3
 <h3>Sum of $n$-th row of Pascal’s Triangle</h3>
 <hr>
 </a>
-<br>
 <p>The parallels between the binomial theorem and Pascal’s triangle were outlined earlier in this article. However, the binomial theorem gives us another way to prove that the sum of the $n$-th row of Pascal’s triangle is $2^n$.</p>
 <p>Recall, in Chapter 4, we determined that ${n \choose 0} + {n \choose 1} + … + {n \choose n} = 2^n$ by reasoning about the cardinality of the power set for a set of size $n$ - in creating a subset of a set of size $n$, there are two options for each item, either to include that item or to not include that item. This yields $2^n$, which should be the same as taking $0$ items (${n \choose 0}$), or $1$ item (${n \choose 1}$), and so on and so forth.</p>
 <p>However, let’s look at the expansion of $(1 + 1)^n$:</p>
@@ -653,11 +635,11 @@ f(x) &amp;= (2x - 3x^2)^4 \\ &amp;= {4 \choose 0}(2x)^4 + {4 \choose 1}(2x)^3(-3
 <p>$\begin{aligned} 2^n = (1 + 1)^n &amp;= {n \choose 0}1^n + {n \choose 1}1^{n-1} \cdot 1 + {n \choose 2} 1^{n-2} \cdot 1^2 + … + {n \choose n-1}1^1 \cdot 1^{n-1} + {n \choose n}1^n \\ &amp;= {n \choose 0} + {n \choose 1} + … + {n \choose n-1} + {n \choose n} \end{aligned}$</p>
 </div>
 <p>Neat!</p>
+<br>
 <a name='withoutexp'>
 <h3>Determining Coefficients without Expansion</h3>
 <hr>
 </a>
-<br>
 <p>Consider the expansion of $(2x^3 + x^{-1})^8$. You should verify that it has the general term $t_k = {8 \choose k} 2^{8-k}x^{24 - 4k}$. In the exponent for $x$, since there is a $-4k$ term, we know that consecutive terms decrease in their exponent by $4$ - the first term has exponent $24$, the second exponent $20$, and so on. (You may be able to see this without calculating the general term, as the “difference in power” between $2x^3$ and $x^{-1}$ is $-4$.)</p>
 <p>Suppose we want to find the coefficient on $x^{16}$ in the expansion. In the general term, we can set the exponent, $24-4k$, equal to $16$, and solve for the term number ($k$), which in this case is $2$. We then can plug $2$ into the general term to find $t_2 = {8 \choose 2}2^{8-2}x^{16}$, yielding that the coefficient is ${8 \choose 2}2^{8-2} = 56 \cdot 32 = 1792$.</p>
 <p>What if we were asked for the coefficient on $x^{10}$? Upon solving $24 - 4k = 10$, we yield the solution $k = \frac{7}{2}$. However, this doesn’t make any sense - $k$ represents the term number in the expansion, and must be an integer between $0$ and $8$ inclusive. Therefore, in this case, there is no $x^{10}$ term in the expansion, and we can report that there is no solution.</p>
@@ -666,12 +648,10 @@ f(x) &amp;= (2x - 3x^2)^4 \\ &amp;= {4 \choose 0}(2x)^4 + {4 \choose 1}(2x)^3(-3
 <h2>Extensions</h2>
 <hr>
 </a>
-<br>
 <a name='trinomial'>
 <h3>The “Trinomial” Theorem?</h3>
 <hr>
 </a>
-<br>
 <p>What if we would like to expand something of the form $(x + y + z)^n$? One option is to treat either $(x + y)$ or $(y + z)$ as a single term, and use the binomial theorem. However, once again, we can treat this as a combinatorial problem on its own.</p>
 <p>Suppose a general term in the expansion of $(x + y + z)^n$ contains $a$ $x$s, $b$ $y$s and $c$ $z$s. Then, we must have that $a + b + c = n$, since the total number of parentheses we choose from in the expansion must be exactly $n$. We can then say the following:</p>
 <div align=center>
@@ -680,9 +660,8 @@ t_{a, b, c} = \frac{n!}{a! b! c!} x^a y^b z^c
 $</p>
 </div>
 <p>The coefficient $\frac{n!}{a!b!c!}$ comes from the number of ways to arrange $a$ $x$s, $b$ $y$s and $c$ $z$s (think back to counting the number of permutations of MISSISSIPPI).</p>
-<br>
-<p><strong>Example</strong>
-Let’s calculate the coefficient of the term containing $x^4$ in the expansion of $(x - 3x^{-2} + 4)^8$:</p>
+<h4>Example</h4>
+<p>Let’s calculate the coefficient of the term containing $x^4$ in the expansion of $(x - 3x^{-2} + 4)^8$:</p>
 <div align=center>
 <p>$
 \begin{aligned} t_{a, b, c} &amp;= \frac{8!}{a! b! c!} x^a (-3x^{-2})^b (4)^c
@@ -702,8 +681,7 @@ Let’s calculate the coefficient of the term containing $x^4$ in the expansion 
 <p>$\begin{aligned} t_{4, 0, 4} &amp;= (-1)^0 \frac{8!}{4!0!4!} 3^0 4^4 x^4 = 17920x^4 \\ t_{6, 1, 1} &amp;= (-1)^1 \frac{8!}{6!1!1!}3^14^1x^4 = - 336x^4 \end{aligned}$</p>
 </div>
 <p>Then, in the final expansion, the term containing $x^4$ is $t_{4, 0, 4} + t_{6, 1,1} = 17920x^4 - 336x^4 = 17584x^4$, and the coefficient of $x^4$ is $17584$.</p>
-<br>
-<p><strong>Generalization</strong></p>
+<h4>Generalization</h4>
 <p>Note that can write the expansion of a trinomial raised to an exponent
 as a sum, though it is slightly less meaningful:</p>
 <div align=center>
@@ -716,11 +694,10 @@ $
 <h3>The Multinomial Theorem</h3>
 <hr>
 </a>
-<br>
 <p>We can generalize this even further. Let’s introduce the <strong>multinomial coefficient</strong>:</p>
 <div align=center>
 <p>$
-{n \choose k_1, k_2, … k_m} = \frac{n!}{k_1!k_2! … k_m!}
+\boxed{{n \choose k_1, k_2, … k_m} = \frac{n!}{k_1!k_2! … k_m!}}
 $</p>
 </div>
 <p>Under the assumption $k_1 + k_2 + … + k_m = n$, this term is the number of ways to select one subset of size $k_1$, one subset of size $k_2$, … and one subset of size $k_m$ from a group of $n$ items. Notice that with $m = 2$, this is the same as the binomial coefficient that we’re used to.</p>
@@ -735,7 +712,6 @@ $</p>
 <h3>Product of Two Binomial Expansions</h3>
 <hr>
 </a>
-<br>
 <p>Let’s switch gears. Rather than expanding from binomials to trinomials or general multinomials, what if we instead take a look at the product of two binomials, each raised to different exponents? Let’s illustrate this with an example!</p>
 <p>Let $f(x, y) = (2x - 3y)^5$ and $g(x, y) = (x^3 - 3xy^2)^9$. Our goal will be to find the general term of the product $f(x, y) \cdot g(x, y)$, and determine the existence of certain terms.</p>
 <p>First, we find the general term of each, using the index variable $i$ for $f(x, y)$ and $k$ for $g(x, y)$ (these choices are arbitrary, but we need some way of differentiating the two, as you will see). You should verify these on your own:</p>
@@ -757,7 +733,7 @@ $</p>
 </ul>
 <p>We will walk through the solution of the first problem as an example, while the latter is left as an exercise.</p>
 <br>
-<p><strong>Problem Setup</strong></p>
+<h4>Problem Setup</h4>
 <p>Using $f(x, y)$ and $g(x, y)$ as before, we want to find all terms containing $x^{20}$. Our analysis will be similar to what it was when we looked at the expansion of trinomials. Since the exponent on $x$ is $32 - i - 2k$, we are looking for all integer solutions to the following problem:</p>
 <div align=center>
 <p>$32 - i - 2k = 20$
