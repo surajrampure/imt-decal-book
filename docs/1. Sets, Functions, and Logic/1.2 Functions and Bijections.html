@@ -508,24 +508,21 @@
 <ul>
 <li><a href="#relations-functions">Relations and Functions</a></li>
 <li><a href="#representation">Representation</a></li>
-<li><a href="#injection_surjection">Injections and Surjections</a>
-<ul>
 <li><a href="#injections">Injections</a>
 <ul>
-<li><a href="#determine_injection">Determining Injections</a></li>
+<li><a href="#determine_injection">Proving Injectivity</a></li>
 <li><a href="#injection_cardinality">Injections and Cardinality</a></li>
 </ul>
 </li>
 <li><a href="#surjections">Surjections</a>
 <ul>
+<li><a href="#determine_surjection">Proving Surjectivity</a></li>
 <li><a href="#surjection_cardinality">Surjections and Cardinality</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a href="#bijections">Bijections</a>
 <ul>
-<li><a href="#permutations">Permutations</a></li>
+<li><a href="#bijection_cardinality">Bijections and Cardinality</a></li>
 </ul>
 </li>
 </ul>
@@ -571,21 +568,17 @@ $f(x) = \text{the } x^{th} \text{ smallest prime number}$
 <p>$f$ is indeed a valid function, as are the various algebraic functions you have seen before: $f(x) = x^2$, $g(x) = \frac{sin(x^4)}{e^{tan x}}$, and so on. Another way of writing algebraic functions is $f: x \mapsto x^2$; we can even drop the $f$ and simply write $x \mapsto x^2$ if we don’t need to give the function a name. This is read as “the mapping that sends $x$ to $x^2$.”  This symbol is similar to the $\rightarrow$ we use when defining the domain and codomain of a function, but there is a subtle difference.</p>
 <p>However, something like $x^2 + y^2 = 1$ is not a function, as for each $x$ there are two $y$ values, and vice versa.</p>
 <p>Note: Some functions do not have <strong>closed form representations</strong>. A common example is $f(x) = \int_{-\infty}^x e^{-t^2}dt$ – this is a perfectly valid function, however there is no way to express it other than as an integral or limit of an infinite sum. This integral is commonly used in probability theory; its lack of a closed form representation is the reason we use pre-computed tables to find values on a normal distribution.</p>
+<p>We will now look at two very related classes of functions.</p>
 <br>
-<a name='injection_surjection'>
-<h2>Injections and Surjections</h2>
-<hr>
-</a>
-<p>There are two (very related) classes of functions we will now look at.</p>
 <a name='injections'>
-<h3>Injections</h3>
+<h2>Injections</h2>
 <hr>
 </a>
 <p>We say a function $f : A \rightarrow B$ is <strong>injective</strong>, or <strong>one-to-one</strong>, if no two elements in the input have the same output. Formally we say</p>
 <div align=center>
-<p>$f(x_1) = f(x_2) \implies x_1 = x_2$</p>
+<p>$\boxed{f(x_1) = f(x_2) \implies x_1 = x_2}$</p>
 <p>or equivalently,</p>
-<p>$x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$</p>
+<p>$\boxed{x_1 \neq x_2 \implies f(x_1) \neq f(x_2)}$</p>
 </div>
 <p>The first of these statements says if two inputs have the same output, then the inputs must be equal. The second says if two inputs are not equal, then their outputs can’t be equal. <em>(Note: The $\implies$ symbol means “implies.” We will discuss it in depth in Section 1.4.)</em></p>
 <p>The following two diagrams depict examples of functions that are injections:</p>
@@ -595,26 +588,53 @@ $f(x) = \text{the } x^{th} \text{ smallest prime number}$
 <br>
 <p>Algebraic examples of injections are $f(x) = e^x$ and $g(x) = \sqrt{x}$, while $f(x) = x^2$ is not an injection over its entire domain (all real numbers), since $-a$ and $a$ both map to $a^2$. However, if we restrict the set of inputs to $f : x \mapsto x^2$ to be only non-negative real numbers (or only non-positive real numbers), then it is an injection!</p>
 <a name = 'determine_injection'>
-<h4>Determining Injections</h4>
+<h3>Proving Injectivity</h3>
+<hr>
 </a>
 <p>In pre-calculus courses, you may have learned the <em>vertical line test</em>, which states that a relation is a function if and only if the function intersects any vertical line at most once. To determine if a function is an injection, it also needs to pass the <strong>horizontal line test</strong>, which tells us whether or not any output is repeated.</p>
-<p>It turns out that we can also use the derivative of a function to determine whether or not it is an injection. For a function to be an injection, it should never reach a local maximum or minimum, as in these cases, the function will reverse directions and repeat values that have already been output. Specifically, if a function is <em>strictly increasing</em> or <em>strictly decreasing</em>, we can conclude that it is an injection. To check if a function is strictly increasing, we check to see if it’s derivative is strictly greater than 0 (and strictly less than 0 for strictly decreasing).</p>
+<div align=center>
+<img src='hlt.png' width=300>
+<p><em>For example, $f(x) = x^2$ with domain and codomain $\mathbb{R}$ fails the horizontal line test, and is thus not an injection.</em></p>
+</div>
+<br>
+<p>It turns out that we can also use the derivative of a function to determine whether or not it is an injection. For a function to be an injection, it should <em>never reach a local maximum or minimum</em>, as in these cases, the function will reverse directions and repeat values that have already been output. Specifically, if a function is <em>strictly increasing</em> or <em>strictly decreasing</em>, we can conclude that it is an injection. To check if a function is strictly increasing, we check to see if its derivative is strictly greater than 0 (and strictly less than 0 for strictly decreasing).</p>
+<p><em>Note, $f(x) = x^3$ is an injection $\mathbb{R} \rightarrow \mathbb{R}$, even though it has a derivative equal to 0 at $x = 0$. Notice we said, if a function’s derivative is strictly greater than or less than 0, it is strictly increasing or decreasing. We didn’t say anything about the case when the function’s derivative is not strictly greater than or less than 0. The reason that $x \mapsto x^3$ is an injection is because it never reaches a local extrema.</em></p>
 <a name='injection_cardinality'>
-<h4>Injections and Cardinality</h4>
+<h3>Injections and Cardinality</h3>
+<hr>
 </a>
-Suppose there is an injection from set $A$ to set $B$. From this, we can deduce that $|A| \leq |B|$. This is because for every element in $A$ to map to a unique $B$, there need to be at least as many elements in $B$ as there are in $A$.
-<p><br><br></p>
+<p>Suppose there is an injection from set $A$ to set $B$. From this, we can deduce that $\boxed{|A| \leq |B|}$. This is because for every element in $A$ to map to a unique $B$, there need to be at least as many elements in $B$ as there are in $A$. It is impossible for there to be an injection $A \rightarrow B$ when $|A| &gt; |B|$. To see this, think of placing 5 balls in 3 bins. Since there are more balls than bins, at least one bin will contain multiple balls. This is known as the <strong>pigeonhole principle</strong>.</p>
+<br>
 <a name='surjections'>
-<h3>Surjections</h3>
+<h2>Surjections</h2>
 <hr>
 </a>
 <p>We say a function $f : A \rightarrow B$ is surjective, or <strong>onto</strong>, if every element in $B$ is mapped to by an element in $A$. Another way of saying this is that a function is a surjection when its codomain and range are the same set (that is, all possible outputs are actually seen as outputs). Symbolically, we say</p>
 <div align=center>
-<p>$\forall \: b \in B,  \exists \: a \in A : b = f(a)$</p>
+<p>$\boxed{\forall \: b \in B,  \exists \: a \in A : b = f(a)}$</p>
 </div>
 <p>(Note: The symbol $\forall$ means “for all”, and $\exists$ means “there exists”.)</p>
+<p>The following two diagrams depict examples of functions that are surjections:</p>
+<div align=center>
+<p><img src='Surjection.png' width=200><img src='Bijection.png' width=200></p>
+</div>
 <p>$f: x \mapsto x^2$ is a surjection when the codomain is the set of all non-negative real numbers (and domain is the set of all real numbers), as every number greater than or equal to $0$ exists as an output (since all non-negative numbers have a square root). However, when the codomain is the set of all real numbers, positive and negative (and domain is still all real numbers), then $f(x) = x^2$ is not a surjection, as there is no real number $x$ such that $x^2 = -1$. If we let the set of positive integers be both our domain and codomain, again, $x \mapsto x^2$ is not a surjection, because not every positive integer is a square.</p>
 <p>One way to remember the correspondence between the terms “surjection” and “onto”: the <em>sur</em> in surjective means “on” in French!</p>
+<a name='determining_surjection'>
+<h3>Proving Surjectivity</h3>
+<hr>
+</a>
+<p>To show that a function $A \rightarrow B$ is a surjection, we need to show that for any $b \in B$, there is a specific $a$ that gets mapped to $b$ by $f$.</p>
+<p>Visually speaking, if a function has codomain $\mathbb{R}$ and tends to infinity in both the positive and negative direction, and is continuous (i.e. has no holes or gaps), then we can say said function is a surjection.</p>
+<div align=center>
+<img src='surjection_infinity.png' width=300>
+</div>
+<p>Due to their tail-end behavior, polynomials of odd degree are always surjective with codomain $\mathbb{R}$.</p>
+<a name='surjection_cardinality'>
+<h3>Surjections and Cardinality</h3>
+<hr>
+</a>
+<p>If there is a surjection $A \rightarrow B$, this must mean that there is an element in $A$ for every single element in $B$. This implies that $\boxed{|A| \geq |B|}$, i.e. there are at least as many elements in $A$ as there are in $B$. Using the same balls and bins analogy as before, suppose we have 2 balls and 3 bins, and our goal is to place at least one ball in every bin. However, this is only possible when we have at least 3 balls.</p>
 <br>
 <a name='bijections'>
 <h2>Bijections</h2>
@@ -622,16 +642,16 @@ Suppose there is an injection from set $A$ to set $B$. From this, we can deduce 
 </a>
 <p>A function can be injective or not, and surjective or not, as we saw above. However, when a function is both injective and surjective, it also belongs to another class of functions, one with many desirable properties.</p>
 <p>A function $f$ is <strong>bijective</strong> if and only if it is both injective and surjective. That is, a function is a bijection if and only if no two elements in the domain map to the same element in the range, and every element in the codomain has something mapping to it from the domain.</p>
+<div align=center>
+<img src='Bijection.png' width=200>
+</div>
+<br>
 <p>For example, if we let our domain and codomain be the set of non-negative real numbers, we have that the function given by $x \mapsto \sqrt{x}$ is a bijection. The map given by $x \mapsto x^2$ is a bijection if we use the non-negative real numbers as our domain and codomain, however if we let our domain and codomain be all real numbers, it is not a bijection.</p>
-<br> 
-<a name='permutations'>
-<blockquote>
-<h3>Definition: <strong>Permutation</strong> </a></h3>
-<p>A <strong>permutation</strong> is a bijection whose domain and codomain are the same set.</p>
-</blockquote>
-<br>
-<p>One way to think of a permutation is a “shuffling” of a set; for example, if we let our domain and codomain both be the set $S = \{ 1, 2, 3, 4 \}$, a permutation on this set could be the mapping given by $f: \{ (1, 3), (2, 2), (3, 4), (4, 1) \}$.  We will study permutations further when we deal with combinatorics.</p>
-<br>
+<a name = 'bijection_cardinality'>
+<h3>Bijections and Cardinality</h3>
+<hr>
+</a>
+<p>If $f: A \rightarrow B$ is a bijection, then by definition it is both an injection and a surjection. However, since it is an injection, this means that $|A| \leq |B|$, and since it is a surjection, this means that $|A| \geq |B|$. Piecing these two inequalities together yields the single solution $\boxed{|A| = |B|}$. <strong>That is to say, two sets have the same cardinality if and only if there exists a bijection between them.</strong> This is a more robust definition of cardinality than we saw before, as it applies to both finite sets and infinite sets. We will rely heavily on this new definition in Section 1.3.</p>
 <p>The following diagram (taken from <a href="https://www.aplustopper.com/one-to-one-and-onto-functions/">here</a>) summarizes the relationship between all types of relations we’ve seen in this section.</p>
 <div align=center>
 <img src="typesoffunctions.png" style="width: 600px">
