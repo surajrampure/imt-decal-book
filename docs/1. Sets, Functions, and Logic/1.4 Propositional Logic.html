@@ -506,114 +506,158 @@
 <br>
 <p>Jump to:</p>
 <ul>
-<li><a href="#setop">Set Operations as Logical Operators</a></li>
-<li><a href="#implication">Implications and Truth Tables</a>
+<li><a href="#propositions">Propositions</a></li>
+<li><a href="#logicaloperators">Logical Operators</a>
+<ul>
+<li><a href="#conjunction">Conjunction</a></li>
+<li><a href="#disjunction">Disjunction</a></li>
+<li><a href="#negation">Negation</a>
 <ul>
 <li><a href="#xor">Exclusive OR</a></li>
-<li><a href="#practice">Practice Problems</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#demorgan">De Morgan’s Laws</a></li>
+<li><a href="#implication">Implications</a></li>
 <li><a href="#contra_and_conv">Extensions of the Implication</a>
 <ul>
 <li><a href="#contra">Contrapositive</a></li>
-<li><a href="#converse">Converse</a>
-<ul>
-<li><a href="#contra_converse_examples">Examples</a></li>
-</ul>
-</li>
+<li><a href="#converse">Converse</a></li>
 <li><a href="#iff">If and only if</a></li>
 </ul>
 </li>
-<li><a href="#existence">Existential Quantifiers</a>
+<li><a href="#quantifiers">Quantifiers</a>
 <ul>
-<li><a href="#demorgans_existence">De Morgan’s Laws for Existential Quantifiers</a></li>
+<li><a href="#demorgans_quantifiers">De Morgan’s Laws for Quantifiers</a></li>
 </ul>
 </li>
-<li><a href="#sentence_examples">Examples</a></li>
+<li><a href="#sentence_examples">Converting Sentences</a></li>
 </ul>
 <br>
 <p>Often introduced with set theory is the concept of propositional logic. Knowledge of propositional logic is crucial to formalizing proof techniques, which we will do in the following chapter. This article will be relatively interactive - it’s in your best interest to do the examples yourself as you read.</p>
 <br>
-<a name = 'setop'>
-<h2>Set Operations as Logical Operators</h2>
+<a name='propositions'>
+<h2>Propositions</h2>
 <hr>
 </a>
+<p>A <strong>proposition</strong> is a statement that is has a definitive value - either true or false. We usually denote a proposition that depends on some variable $x$ is usually denoted by $P(x)$.</p>
+<p>For example, “13 is prime” and “it is currently 93 degrees outside” are propositions. Each of these statements is either definitively true, or definitively false. However, statements like “LeBron James is the best basketball player of all time” or “statistics is a hard subject” are NOT propositions - they are opinions, and their “truth value” varies from person to person.</p>
+<p>The statements “$x$ is prime” and $a &gt; b$ are also propositions, but they depend on variables. We might use $P(x)$ to represent the proposition “$x$ is prime”, and $G(a, b)$ to represent “$a &gt; b$”. For example, $P(15)$ is false, and $G(10, 3)$ is true.</p>
 <br>
-<blockquote>
-<h3>Definition: <strong>Proposition</strong></h3>
-<p>A proposition is a statement that is has a definitive value - either true or false. A proposition that depends on some variable $x$ is usually denoted by $P(x)$.</p>
-</blockquote>
-<br>
-<p>For example, “13 is prime” and “it is currently 93 degrees outside” are propositions. Each of these statements is either definitively true, or definitively false. However, statements like “LeBron James is the best basketball player of all time” or “statistics is a hard subject” are NOT propositions - they are opinions, and their “truth value” varies from person to person. (In my opinion, LeBron is the greatest of all time, though!)</p>
+<a name = 'logicaloperators'>
+<h2>Logical Operators</h2>
+<hr>
+</a>
 <p>There are three commonly used <strong>logical operators</strong>, and each has a counterpart that we’ve already studied in set theory.</p>
+<a name = 'conjunction'>
 <h3>Conjunction ($\wedge$)</h3>
-<p>The intersection ($\cap$) operation over two sets corresponds to the <strong>and</strong> ($\wedge$) operation over two propositions. The set $A \cap B$ is the set of elements that are in $A$ AND in $B$; similarly, the proposition $P \wedge Q$ is true only when both $P$ is true AND $Q$ is true. We can say $A \cap B = \{ x : x \in A \wedge x \in B \}$ . The “and” operation is sometimes referred to as a <em>conjunction</em>.</p>
-<h3>Disjunction ($\vee$)</h3>
-<p>The union ($\cup$) operation over two sets corresponds to the <strong>or</strong> ($\vee$) operation over two propositions. The set $A \cup B$ is the set of elements that are in $A$ OR in $B$; similarly, the proposition $P \vee Q$ is true when $P$ is true OR when $Q$ is true. We can say $A \cup B = \{ x : x \in A \vee x \in B \}$. Remember, in mathematical logic, “or” is not exclusive – if both $P$ and $Q$ are true, $P \vee Q$ is still true. The “or” operation is sometimes referred to as a <em>disjunction</em>.</p>
-<h3>Negation ($\neg$)</h3>
-<p>The analogue of the complement of a set is the <strong>negation</strong> ($\neg$) of a proposition. We say $\neg P$ is true only when $P$ is not true. We can say $A^C = \{ x : \neg (x \in A) \}$.</p>
-<p>We can use the above logical operators to create more complex logical expressions, which themselves also take on the value true or false. For example, if $P$ is true only when $x$ is prime, $E$ is true only when $x$ is positive and even, and $U$ is true only when $x$ is under 100, the expression $P \vee (\neg E \wedge U)$ is a logical expression that depends on $x$ and is true only when $x$ is under 100 or both prime and not even.</p>
-<br>
-<a name='implication'>
-<h2>Implications and Truth Tables</h2>
 <hr>
 </a>
-<br>
-<p>Crucial in the study of propositional logic is the <strong>implication</strong> operation, which itself is a composition of the basic logical operators we saw above (though this might not be immediately obvious).
-The implication operation $P \implies Q$ says that if $P$ is true, then $Q$ must be true; if $P$ is false, it says nothing about $Q$ ($Q$ could either be true or false).</p>
-<p>For example, if all we know about today’s date is that it’s Christmas, we also know that the current month is December. However, if we don’t know that it’s Christmas, then it may or may not be December.</p>
-<p>We use implications to prove statements to be true; if we can make a series of implications starting from a proposition that we know is true and ending with the proposition we want to prove, we have proven the final statement. We will explore this further in the next chapter.</p>
-<p>In logic, a question we are commonly faced with is proving that two expressions are <strong>logically equivalent</strong>. We do this by constructing what is known as a <strong>truth table</strong>, where we look at all possible values of each proposition and show that the expression holds the same value in each case. (This is similar to proving trigonometric identities, but far less mechanical.)</p>
-<p>As we mentioned above, the implication statement is a composition of the elementary logical operators - it turns out that $P \implies Q \equiv \neg P \vee Q$ (the $\equiv$ sign means “equivalence”; we will see this more when we study modular arithmetic). The following truth table proves this equivalence:</p>
+<p>The <strong>intersection</strong> ($\cap$) operation over two sets corresponds to the <strong>and</strong> ($\wedge$) operation over two propositions.</p>
+<p>The set $A \cap B$ is the set of elements that are in $A$ AND in $B$; similarly, the proposition $P \wedge Q$ is true only when both $P$ is true AND $Q$ is true. We can say $A \cap B = \{ x : x \in A \wedge x \in B \}$ . The “and” operation is sometimes referred to as a <em>conjunction</em>.</p>
+<p>The following <strong>truth table</strong> defines the AND operation. It gives the output of $P \wedge Q$ on all possible combinations of inputs. Since $P$ is either true or false, and $Q$ is either true or false, we have four rows.</p>
 <div align=center>
 <table>
 <thead>
 <tr>
 <th>$P$</th>
 <th>$Q$</th>
-<th>$P \implies Q$</th>
-<th>$\neg P \vee Q$</th>
+<th>$P \wedge Q$</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>True</td>
-<td>True</td>
-<td>True</td>
-<td>True</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
 </tr>
 <tr>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
 </tr>
 <tr>
-<td>False</td>
-<td>True</td>
-<td>True</td>
-<td>True</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
 </tr>
 <tr>
-<td>False</td>
-<td>False</td>
-<td>True</td>
-<td>True</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Notice there are four rows - one for TT, one for TF, one for FT and one for FF. If we had expressions that depended on three propositions, we would have eight rows, and so on.</p>
-<p>It’s important to remember that implications are no different than conjunctions and disjunctions in the sense that they are propositonal statements with truth values. Another way to reason about the truth values of implications: Suppose I make the promise to you that if it rains tomorrow, I will give you 100 dollars. The “truth value” of this implication is whether or not I held my promise:</p>
-<ul>
-<li>If it rains tomorrow, and I give you 100 dollars, I held my promise! (T)</li>
-<li>If it rains tomorrow, and I don’t give you 100 dollars, I did not hold my promise. (F)</li>
-<li>If it does not rain tomorrow, and I give you 100 dollars, I held my promise! (T)</li>
-<li>If it does not rain tomorrow, and I don’t give you 100 dollars, I still held my promise! (T)</li>
-</ul>
-<br>
+<a name = 'disjunction'>
+<h3>Disjunction ($\vee$)</h3>
+<hr>
+</a>
+<p>The <strong>union</strong> ($\cup$) operation over two sets corresponds to the <strong>or</strong> ($\vee$) operation over two propositions.</p>
+<p>The set $A \cup B$ is the set of elements that are in $A$ OR in $B$; similarly, the proposition $P \vee Q$ is true when $P$ is true OR when $Q$ is true. We can say $A \cup B = \{ x : x \in A \vee x \in B \}$. Remember, in mathematical logic, “or” is not exclusive – if both $P$ and $Q$ are true, $P \vee Q$ is still true. The “or” operation is sometimes referred to as a <em>disjunction</em>.</p>
+<p>Again, we give the truth table:</p>
+<div align=center>
+<table>
+<thead>
+<tr>
+<th>$P$</th>
+<th>$Q$</th>
+<th>$P \vee Q$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+</div>
+<a name = 'negation'>
+<h3>Negation ($\neg$)</h3>
+<hr>
+</a>
+<p>The analogue of the complement of a set is the <strong>negation</strong> ($\neg$) of a proposition. We say $\neg P$ is true only when $P$ is not true, and false only when $P$ is not false. We can say $A^C = \{ x : \neg (x \in A) \}$.</p>
+<div align=center>
+<table>
+<thead>
+<tr>
+<th>$P$</th>
+<th>$\neg P$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We can use the above logical operators to create more complex logical expressions, which themselves also take on the value true or false. For example, if $P$ is true only when $x$ is prime, $E$ is true only when $x$ is positive and even, and $U$ is true only when $x$ is under 100, the expression $P \vee (\neg E \wedge U)$ is a logical expression that depends on $x$ and is true only when $x$ is prime or both not even and under 100.</p>
 <a name='xor'>
-<h3>Exclusive OR </a></h3>
+<h4>Example: Exclusive OR </a></h4>
 <p>Another important definition at this point is the <strong>XOR</strong> operation, represented by the $\oplus$ symbol. The standard “A or B” operation evaluates to true in each of the following cases:</p>
 <ul>
 <li>Only $A$ is true</li>
@@ -666,78 +710,158 @@ The implication operation $P \implies Q$ says that if $P$ is true, then $Q$ must
 </div>
 <p>If we think of $A$ and $B$ being bits instead – i.e. 1 when True, 0 when False – then we have that $A \oplus B = 1$ when $A + B$ is odd, and $A \oplus B = 0$ when $A + B$ is even.</p>
 <br>
-<p>A good exercise at this point is to practice proving a few equivalence relations on your own, so we present some sample problems below. You don’t need to do them all.</p>
-<p><a name = 'practice'> </a></p>
+<a name='demorgan'>
+<h2>De Morgan’s Laws</h2>
+<hr>
+</a>
+<p>De Morgan’s Laws allow us to simplify and re-write negations. Recall, we saw in Section 1.1 that the following rules apply for sets $A, B$:</p>
+<div align=center>
+<p>$(A \cap B)^C = A^C \cup B^C$</p>
+<p>$(A \cup B)^C = A^C \cap B^C$</p>
+</div>
+<p>It turns out that the same rules apply for propositions $P, Q$!</p>
+<div align=center>
+<p>$\neg(P \wedge Q) \equiv \neg P \vee \neg Q$</p>
+<p>$\neg(P \vee Q) \equiv \neg P \wedge \neg Q$</p>
+</div>
+<p>Notice, we flip our conjunctions into negations, and vice versa.</p>
+<p>We can actually use truth tables to prove De Morgan’s Laws. We use truth tables to <strong>prove</strong> that two logical expressions are <strong>equivalent</strong>, i.e. that upon the same inputs, they produce the same outputs. (The $\equiv$ symbol translates to “equivalent.”)</p>
+<p>Let’s prove the equivalence $\neg(P \wedge Q) \equiv \neg P \vee \neg Q$:</p>
+<div align=center>
+<table>
+<thead>
+<tr>
+<th>$P$</th>
+<th>$Q$</th>
+<th>$\neg(P \wedge Q)$</th>
+<th>$\neg P \vee \neg Q$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Since the columns for $\neg(P \wedge Q)$ and $\neg P \vee \neg Q$ are identical, we say that the two expressions are equivalent. We’ll leave the truth table for $\neg(P \vee Q) \equiv \neg P \wedge \neg Q$ as an exercise.</p>
+<br>
+<h4>Example</h4>
+<p>Let’s find the negation of the statement, “$t$ is even and not prime or irrational and prime”.</p>
+<p>The first step is to convert the statement into propositional logic. We can use $E$ to represent the proposition “$t$ is even”, $P$ for $t$ is prime, and $I$ for $t$ is irrational. Our statement then reads, $(E \wedge \neg P) \vee (I \wedge P)$.</p>
+<p>Using De Morgan’s Laws, we can propagate a negation through the expression:</p>
+<div align=center>
+<p>$\begin{align*} \neg ((E \wedge \neg P) \vee (I \wedge P)) &amp;\equiv \neg (E \wedge \neg P) \wedge \neg (I \wedge P) \\ &amp;\equiv (\neg E \vee P) \wedge (\neg I \vee \neg P) \end{align*}$</p>
+</div>
+<p>In English, the negation reads, “$t$ is not even or prime, and not irrational or not prime.” At this point in the course/book, we haven’t started talking about how to prove such statements; for now, we’re only concerned about the construction of them. We’ll start proving such statements in Chapter 2.</p>
+<br>
+<a name='implication'>
+<h2>Implications</h2>
+<hr>
+</a>
+<p>Crucial in the study of propositional logic is the <strong>implication</strong> operation, which itself is a composition of the basic logical operators we saw above (though this might not be immediately obvious).</p>
+<p><strong>The implication operation $P \implies Q$ says that if $P$ is true, then $Q$ must be true; if $P$ is false, it says nothing about $Q$ ($Q$ could either be true or false).</strong> In English, implications often read “if $P$, then $Q$”, or “$Q$ if $P$”.</p>
+<p>An example of an implication is the proposition “if today is Christmas, it is December.”, However, if today is not Christmas, then it may or may not be December.</p>
+<div align=center>
+<p>$\text{today is Christmas} \implies \text{the current month is December}$</p>
+</div>
+<p>We use implications to prove statements to be true; if we can make a series of implications starting from a proposition that we know is true and ending with the proposition we want to prove, we have proven the final statement. We will explore this further in the next chapter.</p>
+<p>As we mentioned above, the implication statement is a composition of the elementary logical operators - it turns out that $P \implies Q \equiv \neg P \vee Q$. The following truth table proves this equivalence:</p>
+<div align=center>
+<table>
+<thead>
+<tr>
+<th>$P$</th>
+<th>$Q$</th>
+<th>$P \implies Q$</th>
+<th>$\neg P \vee Q$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>It’s important to remember that implications are no different than conjunctions and disjunctions in the sense that they are propositonal statements with truth values. Another way to reason about the truth values of implications: Suppose I make the promise to you that if it rains tomorrow, I will give you 100 dollars. The “truth value” of this implication is whether or not I held my promise:</p>
 <ul>
-<li>$\neg (P \wedge Q) \equiv \neg P \vee \neg Q$ (De Morgan’s Law)</li>
-<li>$\neg P \wedge \neg Q \equiv \neg (P \vee Q)$ (De Morgan’s Law)</li>
-<li>$P \implies Q \implies R \equiv (P \wedge \neg Q) \vee R$</li>
-<li>$P \vee \neg P \equiv \text{TRUE}$ (Tautology)</li>
-<li>$P \wedge \neg P \equiv \text{FALSE}$ (Tautology)</li>
+<li>If it rains tomorrow, and I give you 100 dollars, I held my promise! (T)</li>
+<li>If it rains tomorrow, and I don’t give you 100 dollars, I did not hold my promise. (F)</li>
+<li>If it does not rain tomorrow, and I give you 100 dollars, I held my promise! (T)</li>
+<li>If it does not rain tomorrow, and I don’t give you 100 dollars, I still held my promise! (T)</li>
 </ul>
-<p>The first two exercises in the above prove the result known as <strong>De Morgan’s Laws</strong>. These allow us to convert from AND operations to OR operations, with the distribution of a negation. They have analogues in set theory, as we saw in Chapter 1.1.</p>
 <br>
 <a name='contra_and_conv'>
 <h2>Extensions of the Implication</h2>
 <hr>
 </a>
-<br>
 <p>The following are common logical expressions that are related to the implication of $P \implies Q$.</p>
-<br>
 <a name='contra'>
 <h3>Contrapositive: $\neg Q \implies \neg P$</h3>
+<hr>
 </a>
 <p>The contrapositive, $\neg Q \implies \neg P$, of an implication is actually logically equivalent to the implication itself! You should prove this to yourself using a truth table. However, without using a truth table we can see that:</p>
 <div align=center>
 <p>$\begin{aligned}\neg Q \implies \neg P &amp;\equiv \neg (\neg Q) \vee (\neg P) \\ &amp;\equiv Q \vee \neg P \\ &amp;\equiv \neg P \vee Q \\ &amp;\equiv P \implies Q \end{aligned}$</p>
 </div>
-<p>Why does the contrapositive exist, then, if it’s equivalent to the standard implication? That’s a question that’ll be answered in the following chapter in great detail. For now, let’s look at an example. Consider the statement “if it is sunny outside, I will wear sunglasses”. Its contrapositive is “if I will not wear sunglasses, it is not sunny outside” - both statements mean the same thing, as we expect. Another, more mathematical example: the contrapositive of the statement “if $x$ is even, $x^2$ is even” is the statement “if $x^2$ is not even, $x$ is not even”.</p>
+<p>Why does the contrapositive exist, then, if it’s equivalent to the standard implication? That’s a question that’ll be answered in the following chapter in great detail.</p>
+<p>For now, let’s look at an example. Consider the statement “if it is sunny outside, I will wear sunglasses”. Its contrapositive is “if I don’t wear sunglasses, it is not sunny outside” - both statements mean the same thing, as we expect. Another, more mathematical example: the contrapositive of the statement “if $x$ is even, $x^2$ is even” is the statement “if $x^2$ is not even, $x$ is not even”.</p>
 <br>
 <a name='converse'>
 <h3>Converse: $Q \implies P$</h3>
+<hr>
 </a>
-<p>The converse, $Q \implies P$ of an implication, however, is not equivalent to the implication. If today is Christmas ($P$), then it implies that the current month is December ($Q$), however it being December ($Q$) doesn’t mean that today is Christmas ($P$). Instead, the converse helps us in proving the equivalence of two statements.</p>
-<br>
-<p><a name='contra_converse_examples'> </a></p>
-<p>Let’s take a look at a few implications, alongside their contrapositives and converses.</p>
-<div align=center>
-<table>
-<thead>
-<tr>
-<th><strong>Statement</strong></th>
-<th><strong>Contrapositive</strong></th>
-<th><strong>Converse</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>If it rains tomorrow, I will bring an umbrella.</strong></td>
-<td>I will not bring an umbrella if it does not rain tomorrow.</td>
-<td>If I bring an umbrella, it will rain tomorrow.</td>
-</tr>
-<tr>
-<td><strong>If the clock is between 12PM and 2PM and I am hungry, then it is lunch time.</strong></td>
-<td>It is not lunchtime if the clock is not between 12PM and 2PM or I am not hungry.</td>
-<td>If is lunchtime then the clock is between 12PM and 2PM and I am hungry.</td>
-</tr>
-<tr>
-<td><strong>If your final grade in this course is at least 70%, you will pass.</strong></td>
-<td>You will not pass if your final grade in this course is not at least 70%.</td>
-<td>If you pass this course, then your final grade is at least 70%.</td>
-</tr>
-<tr>
-<td><strong>If two sets $A, B$ are disjoint, then the cardinality of their intersection is 0.</strong></td>
-<td>The cardinality of the intersection of two sets $A, B$ is not 0 if they are not disjoint.</td>
-<td>If the cardinality of the intersection of two sets $A, B$ is 0, they are disjoint.</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>The converse, $Q \implies P$ of an implication, however, is not equivalent to the implication. If today is Christmas ($P$), then it implies that the current month is December ($Q$), however it being December ($Q$) doesn’t mean that today is Christmas ($P$). <strong>In general, if an implication is true, it does not mean that its converse is true!</strong> There are some cases where a statement and its converse are both true, though. We have a name for that, which you’ll read about shortly.</p>
 <br>
 <a name='iff'>
 <h3>If and only iff: $\iff$</h3>
+<hr>
 </a>
-<p>Another way we can represent the equivalence of two statements $A \equiv B$ is with the <strong>if and only if</strong> ($\iff$) symbol: $A \iff B$. If and only if (sometimes shortened to “iff”) is a widely used term to say that one statement is true only when the other statement is true, and is false only when the other statement is false - in other words, that two statements are equivalent. For example, “it is Christmas if and only if it is December 25th”, which we can decompose into the two statements “it is Christmas if it is December 25th” and “it is December 25th if it is Christmas” is just a fancy way of saying “Christmas is on December 25th”.</p>
+<p>Another way we can represent the equivalence of two statements $A \equiv B$ is with the <strong>if and only if</strong> ($\iff$) symbol: $A \iff B$. If and only if (sometimes shortened to “iff”) is a term that says one statement is true only when the other statement is true, and is false only when the other statement is false - in other words, that two statements are equivalent. <strong>$A \iff B$ means that both $A \implies B$ and $B \implies A$ hold, i.e. both a statement and its converse hold</strong>.</p>
+<p>For example, “it is Christmas if and only if it is December 25th”, which we can decompose into the two statements “it is Christmas if it is December 25th” and “it is December 25th if it is Christmas” is just a fancy way of saying “Christmas is on December 25th”.</p>
 <p>Consider the following truth table:</p>
 <div align=center>
 <table>
@@ -779,13 +903,53 @@ The implication operation $P \implies Q$ says that if $P$ is true, then $Q$ must
 </div>
 <p>What this says, is that if two expressions imply one another, then they are equal. Today being Christmas implies that today is December 25th, and today being December 25th implies that today is Christmas - since these two propositions imply one another, we can say they’re equivalent.</p>
 <p>An understanding of implication and “if and only if” statements will go a long way in understanding how proof techniques work.</p>
+<p>Let’s take a look at a few implications, alongside their contrapositives and converses.</p>
+<div align=center>
+<table>
+<thead>
+<tr>
+<th><strong>Statement</strong></th>
+<th><strong>Contrapositive</strong></th>
+<th><strong>Converse</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>If it rains tomorrow, I will bring an umbrella.</strong></td>
+<td>I will not bring an umbrella if it does not rain tomorrow.</td>
+<td>If I bring an umbrella, it will rain tomorrow.</td>
+</tr>
+<tr>
+<td><strong>If the clock is between 12PM and 2PM and I am hungry, then it is lunch time.</strong></td>
+<td>It is not lunchtime if the clock is not between 12PM and 2PM or I am not hungry.</td>
+<td>If is lunchtime then the clock is between 12PM and 2PM and I am hungry.</td>
+</tr>
+<tr>
+<td><strong>If your final grade in this course is at least 70%, you will pass.</strong></td>
+<td>You will not pass if your final grade in this course is not at least 70%.</td>
+<td>If you pass this course, then your final grade is at least 70%.</td>
+</tr>
+<tr>
+<td><strong>If two sets $A, B$ are disjoint, then the cardinality of their intersection is 0.</strong></td>
+<td>The cardinality of the intersection of two sets $A, B$ is not 0 if they are not disjoint.</td>
+<td>If the cardinality of the intersection of two sets $A, B$ is 0, they are disjoint.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Notice that in statements 1, 2, and 3, the converse means something entirely different than the original statement. However, in the fourth statement, both the original statement (if two sets $A, B$ are disjoint, then the cardinality of their intersection is 0) and its converse (if the cardinality of the intersection of two sets $A, B$ is 0, they are disjoint) are true.</p>
+<p>In this case, we could say “the cardinality of the intersection of two sets $A, B$ is 0 if and only if they are disjoint.”</p>
 <br>
-<a name='existence'>
-<h2>Existential Quantifiers</h2>
+<a name='quantifiers'>
+<h2>Quantifiers</h2>
 <hr>
 </a>
-<br>
-<p>Quantifiers are the “glue” that allow us to write mathematical statements precisely. There are two, the <strong>universal quantifier</strong> ($\forall$, read as “for all”) and the <strong>existential quantifier</strong> ($\exists$, read as “there exists”). We actually used these quantifiers already in Chapter 1.2, when defining what a surjective function is. We said a function $f: A \rightarrow B$ is surjective when $\forall b \in B, \exists a \in A : b = f(a)$, which translates to “for all $b$ in the codomain, there exists some $a$ in the domain such that $f$ maps $a$ to $b$.”</p>
+<p>Quantifiers are the “glue” that allow us to write mathematical statements precisely. There are two:</p>
+<ul>
+<li>the <strong>universal quantifier</strong> ($\forall$, read as “for all”), and</li>
+<li>the <strong>existential quantifier</strong> ($\exists$, read as “there exists”).</li>
+</ul>
+<p>We actually used these quantifiers already in Chapter 1.2, when defining what a surjective function is. We said a function $f: A \rightarrow B$ is surjective when $\forall b \in B, \exists a \in A : b = f(a)$, which translates to “for all $b$ in the codomain, there exists some $a$ in the domain such that $f$ maps $a$ to $b$.”</p>
 <p>Let’s illustrate their usage with examples. Suppose we want a statement to denote that all natural numbers are either even or odd. We can have $E(x)$ represent “$x$ is even” and $U(x)$ represent “$x$ is odd”. Then, the statement $\forall x \in \mathbb{N},  E(x) \vee U(x)$ reads “for all natural numbers $x$, $x$ is even or odd”. This statement happens to always be true, but something like $\forall x \in \mathbb{N}, E(x) \wedge U(x)$ is not true, as it is not the case that $x$ is both even and odd for all positive integers $x$. In fact, there isn’t a single positive integer for which is this is true.</p>
 <p>In general, you cannot reverse the order of different existential quantifiers. That is,</p>
 <div align=center>
@@ -796,6 +960,7 @@ $(\forall x) (\exists y) P(x, y) \not \equiv (\exists y) (\forall x) P(x, y)$
 <br>
 <a name='demorgans_existence'>
 <h3>De Morgan’s Laws for Existential Quantifiers</h3>
+<hr>
 </a>
 <p>To round out our discussion on propositional logic, we need to once again look at De Morgan’s Laws, but for existential quantifiers.</p>
 <div align=center>
@@ -803,8 +968,8 @@ $(\forall x) (\exists y) P(x, y) \not \equiv (\exists y) (\forall x) P(x, y)$
 </div>
 <p>As an example, suppose $P(x)$ is the statement “$x$ is prime”, and suppose we restrict our universe to be the positive integers.</p>
 <ol>
-<li>The first version states “if it is not true that $x$ is prime for all $x$, then there must exist some $x$ that is not prime.”</li>
-<li>The second version states “if it is not true that there exists an $x$ that is prime, then for all $x$, $x$ is not prime.”</li>
+<li>The first version tells us the statements “it is not true that $x$ is prime for all $x$” and “there exists some $x$ that is not prime” are equivalent</li>
+<li>The second version tells us the statements “it is not true that there exists an $x$ that is prime” and “for all $x$, $x$ is not prime” are equivalent</li>
 </ol>
 <p>Since we know that it is false that all positive integers are prime, it must be true that there is at least one positive integer that isn’t prime, and indeed that is true (this is because if a statement is false, its negation must be true, and vice versa).</p>
 <p>We can extend this principle to multivariate propositions:</p>
@@ -818,14 +983,26 @@ $(\forall x) (\exists y) P(x, y) \not \equiv (\exists y) (\forall x) P(x, y)$
 <li><em>Equation 2</em>: The left hand side, $\neg ((\exists x)(\forall y)Q(x, y))$, states that “it is not the case that there exists some $x$ such that for all $y$, $y = x^2$”, i.e. “there is no $x$ that satisfies $y = x^2$ for all $y$.” The right hand side, $(\forall x)(\exists y) \neg Q(x,y)$, says that “every $x$ has some $y$ such that $y \neq x^2$.” Again, these two statements are saying the same thing: if there is no $x$ that satisfies $y = x^2$ for every single $y$, then every $x$ has some value of $y$ such that $y \neq x^2$.</li>
 </ul>
 <p>These statements are slightly difficult to parse. Make sure you read them carefully!</p>
-<p>We can even apply De Morgan’s Laws to conjunctions and disjunctions AND existential quantifiers at the same time, but we won’t be so involved in this course.</p>
+<p>We can even apply De Morgan’s Laws to conjunctions and disjunctions AND existential quantifiers at the same time. For example, the statement</p>
+<div align=center>
+<p>$\forall q \in \mathbb{Q}, (\exists t \in Q : qt = 1 \vee q = 0)$</p>
+</div>
+<p>reads “all natural numbers $q$ have an inverse or are equal to 0.” Its negation,</p>
+<div align=center>
+<p>$\exists q \in Q, (\forall t \in Q:qt \neq 1 \wedge q \neq 0) $</p>
+</div>
+<p>reads “there exists some non-zero rational number $q$ that does not have an inverse.”</p>
+<br>
+<p>We can even propagate a negation through a long chain of propositions and quantifiers:</p>
+<div align=center>
+<p>$\neg (\forall x \exists y: P(x, y) \vee Q(y)) \equiv \exists x \forall y :  \neg P(x, y) \wedge \neg Q(y)$</p>
+</div>
 <br>
 <a name='sentence_examples'>
 <h2>Examples</h2>
 <hr>
 </a>
-<br>
-<p>Let’s take a look at examples of converting sentences in English to precise, mathematical statements using the tools we’ve studied in this chapter.</p>
+<p>Let’s take a look at examples of converting sentences in English to precise, mathematical statements using the tools we’ve studied in this chapter. It should be noted, there isn’t necessarily only one right way to re-write a statement in English into logic.</p>
 <div align=center>
 <table>
 <thead>
@@ -850,6 +1027,10 @@ $(\forall x) (\exists y) P(x, y) \not \equiv (\exists y) (\forall x) P(x, y)$
 <tr>
 <td>For $-1 &lt; r &lt; 1, r \in \mathbb{R}$, the sum of the series $1 + r + r^2 + r^3 + \cdots$ is equal to $\dfrac{1}{1-r}$.</td>
 <td>$(\forall r \in \mathbb{R} : -1 &lt; r &lt; 1)(\sum_{n=0}^{\infty} r^n = \dfrac{1}{1-r})$</td>
+</tr>
+<tr>
+<td>All rational numbers have a multiplicative inverse or are 0.</td>
+<td>$\forall q \in \mathbb{Q}, (\exists t \in Q : qt = 1 \vee q = 0)$</td>
 </tr>
 </tbody>
 </table>
