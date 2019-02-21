@@ -525,12 +525,13 @@
 </ul>
 <br>
 <p>In this article, we will review definitions and formulas for arithmetic and geometric series and sequences. We will also derive the sums of arithmetic and geometric series and prove these formulas using induction. Then, we will focus on deriving and proving formulas for sums of the form $1^k + 2^k + 3^k + … + n^k$, using a technique known as telescoping sums.</p>
+<p>We’ll introduce these ideas as they tie in quite well with proof techniques. We will show how to prove the identities in this article in multiple ways.</p>
+<p>If you’re uncomfortable with sigma notation, please refer to the appendix section on Sigma and Pi Notation.</p>
 <br>
 <a name='arithmetic'>
 <h2>Arithmetic Sequences</h2>
 <hr>
 </a>
-<br>
 <p>An <strong>arithmetic sequence</strong> is defined by a starting term $a$ and a common difference $d$. In the sequence, the difference between consecutive terms is constant (and equal to the common difference). For example:</p>
 <div align=center>
 <p>$
@@ -554,7 +555,6 @@ $</p>
 <h2>Sum of an Arithmetic Sequence</h2>
 <hr>
 </a>
-<br>
 <a name='sum-first-n'>
 <h3>Sum of First $n$ Natural Numbers</h3>
 <hr>
@@ -576,13 +576,12 @@ $</p>
 <p>$ 2S = (n+1) + (n+1) + (n+1) + … + (n+1) + (n+1) + (n+1) \\ 2S = n(n+1) \\ S = \frac{n(n+1)}{2}
 $</p>
 </div>
-<p>Therefore, $\boxed{\sum_{i = 1}^n i = \frac{n(n+1)}{2}}$. You’ll want to remember this formula, as it shows up in several different fields. We will look at variants of it in the following article.</p>
+<p>Therefore, $\boxed{\sum_{i = 1}^n i = \frac{n(n+1)}{2}}$, as we proved in the previous article.</p>
 <br>
 <a name='sum-general-arithmetic'>
 <h3>Sum of a General Arithmetic Sequence</h3>
 <hr>
 </a>
-<br>
 <p>Let’s repeat the analysis above, but for an arbitrary arithmetic series. Suppose we want to find the sum of the first $n$ terms of a series; we’ll denote this as $S_n$.</p>
 <div align=center>
 <p>$ \begin{aligned} S_n &amp;= a + (a + d) +  … +  (a + (n-2)d) + (a + (n-1)d) \\ S_n &amp;= (a + (n-1)d) + (a + (n-2)d) +  …  + (a + d) + a \end{aligned} $</p>
@@ -611,33 +610,29 @@ $</p>
 <h3>Proofs, using Induction</h3>
 <hr>
 </a>
-<br>
-<p>Now, we will prove the above two statements, using mathematical induction.</p>
-<p><strong>Statement 1</strong>: $\sum_{i = 1}^n i = \frac{n(n+1)}{2}$</p>
-<h4>Base Case</h4>
-<p>$n = 1$</p>
+<p>Now, we will prove the above two statements, using mathematical induction. Note, the first proof was also done in the previous section.</p>
+<h4>Statement 1</h4>
+<p>RTP: $\sum_{i = 1}^n i = \frac{n(n+1)}{2}$</p>
+<p><strong>Base Case</strong>: $n = 1$</p>
 <p>LHS: $\sum_{i = 1}^1 i = 1$, RHS: $\frac{1(2)}{2} = 1$</p>
 <p>LHS = RHS, therefore the base case holds.</p>
-<h4>Induction Hypothesis</h4>
-<p>Assume that $\sum_{i = 1}^k i = \frac{k(k+1)}{2}$, for some arbitrary $k$.</p>
-<h4>Induction Step</h4>
-<p>$\begin{aligned} \sum_{i = 1}^{k + 1} &amp;= \sum_{i = 1}^k + (k + 1) \\ &amp;= \frac{k(k+1)}{2} + \frac{2(k+1)}{2} \\ &amp;= \frac{(k+1)(k+2)}{2} \end{aligned}$</p>
+<p><strong>Induction Hypothesis</strong>: Assume that $\sum_{i = 1}^k i = \frac{k(k+1)}{2}$, for some arbitrary $k$.</p>
+<p><strong>Induction Step</strong>:</p>
+<p>$\begin{aligned} \sum_{i = 1}^{k + 1} i &amp;= \sum_{i = 1}^k i + (k + 1) \\ &amp;= \frac{k(k+1)}{2} + \frac{2(k+1)}{2} \\ &amp;= \frac{(k+1)(k+2)}{2} \end{aligned}$</p>
 <br>
-<p><strong>Statement 2</strong>: $\sum_{i = 1}^n (a + (i-1)d) = \frac{2a + (n-1)d}{2}n$</p>
-<h4>Base Case</h4>
-<p>$n = 1$</p>
-<p>LHS: $\sum_{i = 1}^1 (a + (i-1)d) = a + 0d = a$, RHS: $\frac{2a + 0d}{2} = a$</p>
-<p>LHS = RHS, therefore the base case holds.</p>
-<h4>Induction Hypothesis</h4>
-<p>Assume that $\sum_{i = 1}^k (a + (i-1)d) = \frac{2a + (k-1)d}{2}k$, for some arbitrary $k$.</p>
-<h4>Induction Step</h4>
+<h4>Statement 2</h4>
+<p>RTP: $\sum_{i = 1}^n (a + (i-1)d) = \frac{2a + (n-1)d}{2}n$</p>
+<p><strong>Base Case</strong>: $n = 1$
+LHS: $\sum_{i = 1}^1 (a + (i-1)d) = a + 0d = a$, RHS: $\frac{2a + 0d}{2} = a$
+LHS = RHS, therefore the base case holds.</p>
+<p><strong>Induction Hypothesis</strong>: Assume that $\sum_{i = 1}^k (a + (i-1)d) = \frac{2a + (k-1)d}{2}k$, for some arbitrary $k$.</p>
+<p><strong>Induction Step</strong>:</p>
 <p>$\begin{aligned} \sum_{i = 1}^{k + 1} (a + (i-1)d) = \sum_{i = 1}^k (a + (i-1)d) + a + kd \\ &amp;= \frac{2a + (k-1)d}{2}k + \frac{2a + 2kd}{2}  \end{aligned}$</p>
 <br>
 <a name="geometric">
 <h2>Geometric Sequences</h2>
 <hr>
 </a>
-<br>
 <p>A <strong>geometric sequence</strong> is a sequence of numbers defined by a starting term $a$ and a common ratio $r$. In the sequence, the ratio of consecutive terms (i.e. $\frac{t_n}{t_{n-1}}$) is constant, and is equal to $r$.</p>
 <div align=center>
 <p>$
@@ -659,7 +654,6 @@ $</p>
 <h2>Sum of a Geometric Sequence</h2>
 <hr>
 </a>
-<br>
 <p>The derivation of the sum of a geometric series is similar to that of the arithmetic series. Suppose we want to find the sum $S_n$ of the first $n$ terms of a geometric series with first term $a$ and common ratio $r$. Then:</p>
 <div align=center>
 <p>$\begin{aligned} S_n &amp;= a + ar + ar^2 + … + ar^{n-3} + ar^{n-2} + ar^{n-1} \\ rS_n &amp;= ar + ar^2  + … + ar^{n-3} + ar^{n-2} + ar^{n-1} + ar^{n} \end{aligned}$</p>
@@ -680,7 +674,6 @@ $</p>
 <h3>Infinite Geometric Series</h3>
 <hr>
 </a>
-<br>
 <p>So far, we made no assumptions about $a, r$ or $n$. Now, let’s look at two different cases of $r$:</p>
 <ul>
 <li>$| r | &gt; 1$: The magnitude of $t_{k+1}$ is greater than the magnitude of $t_k$</li>
@@ -705,7 +698,6 @@ $
 <h2>Telescoping Sums</h2>
 <hr>
 </a>
-<br>
 <p>Consider the sum</p>
 <div align=center>
 <p>$\sum_{i = 1}^{99} (a_{i + 1} - a_i) = (2-1) + (3-2) + (4-3) + (5-4) + … + (100 - 99)$</p>
@@ -716,13 +708,13 @@ $
 </div>
 <p>Then, all of the terms other than $-1$ and $100$ cancel out, giving us that the value of this sum is $-1 + 100 = 99$. Such a sum, where part of term $i$ cancels out with part of term $i+1$ and $i-1$, is known as a <strong>telescoping sum</strong>. The act of cancelling these terms is called the <strong>Method of Differences</strong>.</p>
 <br>
-<p><strong>Example 1</strong></p>
+<h4>Example</h4>
 <p>Let’s evaluate $\sum_{k = 1}^{100} (\cos(k) - \cos(k-1))$.</p>
 <div align=center>
 $\begin{aligned} \sum_{k = 1}^{100} \big(\cos(k) - \cos (k-1)\big) &= (\cos 1 - \cos 0) + (\cos 2 - \cos 1) + ... + (\cos 100 - \cos 99) \\\ &= - \cos 0 + (\cos 1 - \cos 1) + (\cos 2 - \cos 2) + ... + (\cos 99 - \cos 99) + \cos 100 \\\ &= \cos 100 - \cos 0 \end{aligned}$
 </div>
 <br>
-<p><strong>Example 2</strong></p>
+<h4>Example</h4>
 <p>Now, let’s evaluate $\sum_{i = 1}^n \frac{1}{i(i+1)}$.</p>
 <p>First, we notice that $\frac{1}{i(i+1)} = \frac{1}{i} - \frac{1}{i+1}$. Then:</p>
 <div align=center>
@@ -733,7 +725,6 @@ $\begin{aligned} \sum_{k = 1}^{100} \big(\cos(k) - \cos (k-1)\big) &= (\cos 1 - 
 <h2>Sum of the First $n$ Natural Numbers</h2>
 <hr>
 </a>
-<br>
 <p>The question remains — how can we use telescoping sums to give us formulas for sums of the form $\sum_{i = 1}^n i^k$?</p>
 <p>The key insight lies here: Consider $(i+1)^2 = i^2 + 2i + 1$. We can rearrange this to have $(i+1)^2 - i^2 = 2i + 1$. Then, on the left hand side we have something that resembles a telescoping sum. Since both the left hand side and right hand side are equal, if I sum both sides from $i = 1$ to $i = n$, the results should be the same.</p>
 <div align=center>

@@ -507,36 +507,34 @@
 <p>Jump to:</p>
 <ul>
 <li><a href="#direct">Direct Proof</a></li>
-<li><a href="#contradiction">Proof by Contradiction</a></li>
-<li><a href="#contraposition">Proof by Contraposition</a>
+<li><a href="#contradiction">Proof by Contradiction</a>
 <ul>
 <li><a href="#contradictimplication">Contradicting Implications</a></li>
 </ul>
 </li>
-<li><a href="#vacuous">Vacuous Proofs</a></li>
+<li><a href="#contraposition">Proof by Contraposition</a></li>
+<li><a href="#iffproofs">Example: Proving If and Only If</a></li>
 <li><a href="#cases">Proof by Cases</a></li>
-<li><a href="#counterexamples">Counterexamples</a></li>
-<li><a href="#faulty">Faulty Proofs</a>
+<li><a href="#counter_vacuous">Counterexamples and Vacuous Proofs</a>
 <ul>
-<li><a href="#faultylogic">Faulty Logic</a></li>
+<li><a href="#counterexamples">Counterexamples</a></li>
+<li><a href="#vacuous">Vacuous Proofs</a></li>
 </ul>
 </li>
+<li><a href="#faulty">Faulty Proofs and Logic</a></li>
 </ul>
 <br>
-<p>Throughout this section, we will introduce some of the more common proof techniques that are used to verify the truth of a mathematical statement. Remember, all of these techniques assume you have some basic information present and attempt to use the information you have to arrive at the correct conclusion.</p>
-<p>It’s important that you’re familiar with the basics of propositional logic before proceeding. Chapter 1.4 serves as a sufficient primer.</p>
+<p>Throughout this section, we will introduce some of the more common proof techniques that are used to verify the truth of a mathematical statement. Remember, all of these techniques assume you have some basic information present and attempt to use the information you have to arrive at the correct conclusion. It’s important that you’re familiar with the basics of propositional logic (i.e Section 1.4) before proceeding.</p>
+<p>In this article, we’ll introduce the symbol for “divides”. $a | b$ means “$a$ divides $b$”. Formally, $a | b$ means there is some integer $c$ such that $b = c \cdot a$. For example, we could say $8 | 24$, but $\neg (5  | 24)$.</p>
+<p>Additionally, we often use $2k$, $k \in \mathbb{Z}$, to refer to an arbitrary even number, and $2k + 1$ to represent an arbitrary odd number. This means all integers can be written as either $2k$ or $2k + 1$. Similarly, we can say all integers can be written as $3k$, $3k + 1$ or $3k + 2$, where $0, 1, 2$ represent the possible remainders when we divide by 3. We will look at all of this further in Chapter 3.</p>
 <br>
 <a name='direct'>
 <h2>Direct Proof</h2>
 <hr>
 </a>
-<br>
 <p>The direct proof is the simplest type of proof. In a direct proof, given certain information, we determine the validity of some other information. Direct proofs are often used in mathematical formulas, where simple arithmetic manipulations of given information can get us where we need to be.</p>
-<h3>Example</h3>
-<div align=center>
+<h4>Example</h4>
 <p><strong>Consider $x, y, z \in \mathbb{Z}^+$. Prove that if $x | y$ and $x | z$, then $x | (y + z)$.</strong></p>
-</div>
-<p>(The notation $a | b$ means “$a$ divides $b$”. Formally, $a | b$ means there is some integer $c$ such that $b = c \cdot a$. We will look at this further in Chapter 3.)</p>
 <p>The first step in each proof is representing the information that we are allowed to assume, using precise mathematical notation. We are given that $x$ divides $y$ and that $x$ divides $z$. In mathematical notation, this means that there are integers $a_1$ and $a_2$ such that $a_1 \cdot x = y$ and $a_2 \cdot x = z$. Furthermore, since we are told $x, y$ and $z$ all belong to the set of positive integers, we know that $a_1, a_2$ must also be positive. There is not much more information we can garner from this now, so we look at what we are trying to prove.</p>
 <p>By writing out equations relating $x$ and $y$ (and $x$ and $z$), we have concrete information that we can use in our proof. Then:</p>
 <div align=center>
@@ -544,36 +542,43 @@
 y+z = a_1 \cdot x + a_2 \cdot x = (a_1 + a_2) \cdot x
 $</p>
 </div>
-<p>We have shown that $y+z$ can be written as some positive integer – precisely, $a_1 + a_2$ – multiplied by $x$, hence proving $x$ divides $y+z$. This example gives us the natural flavor of direct proofs – we assume and work with the information we have, and reformulate it to match what we want to prove in some capacity.</p>
+<p>We have shown that $y+z$ can be written as some positive integer – precisely, $a_1 + a_2$ – multiplied by $x$. Therefore, we have proven that under the given conditions, $x | (y + z)$.</p>
+<p>This example gives us the natural flavor of direct proofs – we assume and work with the information we have, and reformulate it to match what we want to prove in some capacity.</p>
+<br>
+<h4>Example</h4>
+<p><strong>Prove that $\forall n \in \mathbb{N}, 3 | (n^3 - n)$.</strong></p>
+<p>Essentially, we’re required to show that we can write $n^3 - n = 3k$, where $k$ is some integer. We can start by factoring $n^3 - n$:</p>
+<div align=center>
+<p>$\begin{aligned} n^3 - n &amp;= n(n^2 - 1) \\ &amp;= n(n - 1)(n + 1) \\ &amp;= (n-1)n(n+1) \end{aligned}$</p>
+</div>
+<p><em>In the second line, we used the difference of squares, which says $x^2 - y^2 = (x-y)(x+y)$.</em></p>
+<p>Now, we’ve written $n^3 - n$ as the product of three consecutive integers, starting with $n - 1$. A property that we can now leverage is the fact that in any three consecutive integers, one of them will be a multiple of three! We will eventually get to a stage where we can rigorously prove this. Skipping ahead a little, though: let’s consider the three possible cases for $n$:</p>
+<ul>
+<li>Case 1: $n = 3k$, meaning $n$ is a multiple of 3</li>
+<li>Case 2: $n = 3k + 1$, meaning $n - 1 = 3k$ is a multiple of 3</li>
+<li>Case 3: $n = 3k + 2$, meaning $n + 1 = 3k + 3 = 3(k+1)$ is a multiple of 3</li>
+</ul>
+<p>Therefore, it is always the case that one of our three consecutive integers is a multiple of 3, and so the product $(n-1)n(n+1)$ will always be a multiple of 3. The only edge case that we need to look out for is $n = 1$, which gives $n^3 - n = 0$, but that’s fine – every number divides 0, as we can say $3 \cdot 0 = 0$.</p>
+<p>Therefore, we can say $3 | (n^3 - n)$.</p>
+<p><em>Note: You will notice in these proofs that we often have a concluding sentence. This is a good practice to follow.</em></p>
 <br>
 <a name='contradiction'>
 <h2>Proof by Contradiction</h2>
 <hr>
 </a>
-<br>
-<p>Proofs by contradiction stem from a really nice observation. The problem statement remains the same; we are trying to prove that some statement $S$ is true. We begin by assuming $\neg S$ – that is, that $S$ is false - and make a series of implications. One of these implications will state something that contradicts that $S$ is false. Since our initial assumption was that $S$ was false, we know this cannot be the case, thus $S$ must be true, proving our statement.</p>
-<p>The contradiction can come about in many ways. For example, showing two things that cannot be equal as equal – such as $0 = 2$ – or showing some given information (which was told to us to be true) is false if statement $S$ is false. Whatever the contradiction might be, this proof technique presents a relatively straightforward way to prove the validity of the statement without worrying about the specific reason why the statement it holds. In specific, proofs by contradiction is powerful when trying to prove a statement which implies non-existence of some entity.</p>
-<h3>Example</h3>
-<div align=center>
+<p>Proofs by contradiction stem from a really nice observation. The problem statement remains the same; we are trying to prove that some statement $S$ is true. We begin by assuming $\neg S$ – that is, that $S$ is false - and make a series of implications. One of these implications will state something that contradicts that $S$ is false. Since our initial assumption was that $S$ was false, we know this cannot be the case (since $S$ and $\neg S$ cannot be equal), thus $S$ must be true, proving our statement.</p>
+<p>The contradiction can come about in many ways. For example, showing two things that cannot be equal as equal – such as $0 = 2$ – or showing some given information (which was told to us to be true) is false if statement $S$ is false. Whatever the contradiction might be, this proof technique presents a relatively straightforward way to prove the validity of the statement without worrying about the specific reason why the statement it holds. In specific, proofs by contradiction are powerful when trying to prove a statement which implies non-existence of some entity.</p>
+<h4>Example</h4>
 <p><strong>Prove that there is no greatest even integer.</strong></p>
-</div>
 <p>Let’s start by assuming that there is a greatest even integer. Let us call this greatest even integer $m$. Define $n$ to be $m+2$. Then, $n$ is an even integer and it is strictly greater than $m$. Hence, $m$ is not the greatest even integer, which contracts our earlier assumption. This means that there is no greatest even integer.</p>
 <br>
-<h3>Example</h3>
-<div align=center>
-<p><strong>Prove that the negative of an irrational number is irrational.</strong></p>
-</div>
-<p>To prove this directly, we would need to show that there is no number for which this is not true. Instead, we go by the way of contradiction. We assume the statement is not true. The negation of this sentence states that there exists some irrational number $x$ such that $-x$ is rational. Put concretely, we have $-x = \frac{a}{b}$, for $a, b \in \mathbb{Z}$. We can multiply each side by $-1$ and obtain that $x = -\frac{a}{b} = \frac{-a}{b}$. This shows that $x$ is equal to the quotient of two integers, which proves it to be rational. But, we assumed $x$ to be irrational to begin with. A number can not be rational and irrational at the same time, so we have arrived at a contradiction. Hence, our initial assumption must have been incorrect, and there does not exist any irrational number for which its negation is rational.</p>
-<br>
-<h3>Example</h3>
-<div align=center>
+<h4>Example</h4>
 <p><strong>Prove that $\sqrt{2}$ is irrational</strong>.</p>
-</div>
 <p>This is a classic example of a statement that is proved with a contradiction. Let’s start by assuming that $\sqrt{2}$ is rational, meaning that we can write $\sqrt{2} = \frac{a}{b}$ for $a, b \in \mathbb{Z}$. Furthermore, let’s assume that this is the reduced form of the fraction, i.e. that $\text{gcd}(a, b) = 1$ (this is a crucial step in the proof). Then:</p>
 <div align=center>
 <p>$\begin{align*} \sqrt{2} &amp;= \frac{a}{b} \\ 2 &amp;= \frac{a^2}{b^2} \\ 2b^2 &amp;= a^2 \end{align*}$</p>
 </div>
-<p>Since we have $a^2 = 2b^2$, we know that $a^2$ must be even (as it can be written as $2 \cdot (\text{some integer})$). If $a^2$ is even, then we must have that $a$ is even (if you don’t believe it, the proof is later in this article!). This means we can say $a = 2k$ for $k \in \mathbb{Z}$. Then:</p>
+<p>Since we have $a^2 = 2b^2$, we know that $a^2$ must be even (as it can be written as $2 \cdot (\text{some integer})$). If $a^2$ is even, then we must have that $a$ is even (if you don’t believe it, you can prove it yourself!). This means we can say $a = 2k$ for $k \in \mathbb{Z}$. Then:</p>
 <div align=center>
 <p>$\begin{align*} 2b^2 &amp;= (2k)^2 \\ 2b^2 &amp;= 4k^2 \\ b^2 &amp;= 2k^2 \end{align*}$</p>
 </div>
@@ -581,98 +586,168 @@ $</p>
 <p><em>Stop for a moment: can you spot the contradiction?</em></p>
 <p>If both $a, b$ are even, then $\text{gcd}(a, b)$ is at least $2$. This contradicts what we stated earlier – we assumed that $\text{gcd}(a, b) = 1$. This implies that our original assumption was false, thus proving that $\sqrt{2}$ is indeed irrational.</p>
 <br>
-<p>Getting a handle on this proof technique is tricky, and only practice can really solidify a true understanding of it.</p>
+<h4>Example</h4>
+<p><strong>Prove that in any set of $n$ real numbers, there is at least one number that is less than or equal to the mean.</strong></p>
+<p>Again, let’s proceed by contradiction. The contradiction of “there is at least one number” is “there is no number”. Our statement then reads, “there is no number that is less than or equal to the mean”, which we can rewrite (using De Morgan’s Laws!) as “all numbers are greater than the mean.”</p>
+<p>Let’s suppose our numbers are $x_1, x_2, … , x_n$. Then, the mean is $\frac{x_1 + x_2 + … + x_n}{n}$. If each $x_i, \forall i \in [1, n]$ is greater than the mean, we can then say</p>
+<div align=center>
+<p>$\begin{align*} x_1 &amp;&gt; \frac{x_1 + x_2 + … + x_n}{n} \\ x_2 &amp;&gt; \frac{x_1 + x_2 + … + x_n}{n} \\ &amp;\vdots \\ x_n &amp;&gt; \frac{x_1 + x_2 + … + x_n}{n} \end{align*}$</p>
+</div>
+<p>Taking the sum of both sides of the inequality:</p>
+<div align=center>
+<p>$x_1 + x_2 + … + x_n &gt; x_1 + x_2 + … + x_n$</p>
+</div>
+<p>This is a contradiction! No number is greater than itself. This means our assumption was incorrect. Since our assumption was that there is no number less than or equal to the mean, we’ve proven that in a set of $n$ numbers there is at least one number less than or equal to the mean.</p>
+<a name="contradictimplication">
+<h3>Contradicting Implications</h3>
+<hr>
+</a>
+<p>Just because our problem statement looks like an implication, doesn’t mean we need to use a proof by contraposition.</p>
+<p>Our initial statement that we negate can also be an implication! Suppose we want to show that $P \implies Q$. This is equivalent to showing that $\neg P \vee Q$ is always true. To show a contradiction, we can start by assuming $\neg (\neg P \vee Q)$, i.e. $P \wedge \neg Q$, and showing a contradiction.</p>
+<h4>Example</h4>
+<p><strong>Prove that if $x^2$ is even, then $x$ is even.</strong></p>
+<p>We want to show that $(x^2 \text{ is odd} \vee x \text{ is even})$ always holds a true value. The negation of this looks like $x^2 \text{ is even} \wedge x \text{ is odd}$.</p>
+<p>If we assume the negation to be true, we have that $x^2$ is even and $x \text{ is odd}$. If we suppose $x$ is odd, we can write it as $2k + 1, k \in \mathbb{Z}$, and we can write $x^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$. This shows that we can write $x^2$ as $2 \cdot (\text{some integer}) + 1$. This proves that $x^2$ must be odd if $x$ is odd, meaning that the assumption $x^2 \text{ is even} \wedge x \text{ is odd}$ was false. Thus, the original statement $(x^2 \text{ is odd} \vee x \text{ is even})$, i.e. $x^2 \text{ is even} \implies x \text{ is even}$, is true.</p>
+<br>
+<h4>Example</h4>
+<p><strong>Prove that if $A, B, C$ are odd integers, then there are no rational solutions to $ax^2 + bx + c = 0$.</strong></p>
+<p>The negation of this statement is “$A, B, C$ are odd integers and there exist rational solutions to $ax^2 + bx + c = 0$.” Let’s assume the negation to be true.</p>
+<p>If there are rational solutions, then we can factor $ax^2 + bx + c$ into $(Ax + B)(Cx + D)$ (implying that the two solutions are $-\frac{B}{A}$ and $-\frac{D}{C}$, but this isn’t relevant to the problem). Then,</p>
+<div align=center>
+<p>$\begin{align*} ax^2 + bx + c &amp;= (Ax + B)(Cx + D) \\ &amp;= ACx^2 + (AD + BC)x + BD \end{align*}$</p>
+</div>
+<p>This implies that we have the following equalities:</p>
+<div align=center>
+<p>$\begin{align*} a &amp;= AC \\ b &amp;= AD + BC \\ c &amp;= BD \end{align*}$</p>
+</div>
+<p>Since $a$ is odd, this means that $A$ and $C$ are both odd. Similarly, since $c$ is odd, this means that $B$ and $D$ are both odd. Putting these facts together, we have that $A, B, C, D$ all must be odd.</p>
+<p>Now, let’s consider $b = AD + BC$. The products $AD$ and $BC$ are both odd, and when we add two odd numbers, our result is even. This means that $b$ must be even. This is a contradiction, since we assumed $a, b, c$ were all odd.</p>
+<p>Therefore, by contradiction, we have that the proposition holds.</p>
 <br>
 <a name='contraposition'>
 <h2>Proof by Contraposition</h2>
 <hr>
 </a>
-<br>
 <p>Recall from Chapter 1.4, the contrapositive of an implication $P \implies Q$ is $\neg Q \implies \neg P$. Implications and their contrapositives are logically equivalent statements. Contrapositives are useful in cases where we are asked to prove some statement $Q$ from some set of information $P$: instead of proceeding with a direct proof, we can instead assume that $Q$ is false ($\neg Q$) and make a series of logical deductions that imply that $P$ is false ($\neg P$). In many cases, this is easier to do than proving that $P$ implies $Q$ directly.</p>
-<h3>Example</h3>
-<div align=center>
-<p><strong>Prove that if $x^2$ is even, then $x$ is even.</strong></p>
-</div>
-<p>We could use a direct proof for this problem (you should try it on your own!), though we will use prove this through contraposition to introduce the general problem solving technique.</p>
-<p>Here, $P$ is the statement “$x^2$ is even”, while $Q$ is “$x$ is even.” Thus, the contrapositive states that if $x$ is not even, then $x^2$ is not even either. Proving this will prove our original statement.</p>
-<p>So we begin. If $x$ is not even, then $x$ is odd. Hence, $x^2$ is the product of two odd numbers, which in itself is odd. So, $x^2$ is not even, and we have proven the contrapositive. The validity of our original statement is then asserted.</p>
+<h4>Example</h4>
+<p><strong>Prove that if $x^2 - 6x + 5$ is odd, then $x$ is even.</strong></p>
+<p>First, we’ll prove the statement directly. To proceed, we can factor $x^2 - 6x + 5$ into $(x-1)(x-5)$. If this product is odd, then each of $x-1$ and $x-5$ has to be odd (the only way for a product of two integers to be odd is if both integers are odd; this is a fact you can prove on your own).</p>
+<p>Now, if $x - 1$ is odd, we have that $x$ is even, since adding two odd numbers yields an even number. The same holds for $x - 5$. To be more rigorous, since $x - 1$ is odd, we can say $x - 1 = 2k_1 + 1$, where $k_1 \in \mathbb{Z}$. Then, $x = 2k + 2 = 2(k + 1)$, therefore $x$ is even. The same applies with $x - 5$: $x - 5 = 2k_2 + 1 \implies x = 2k_2 + 6 = 2(k_2 + 3)$ (note, we used two different $k$s, as both conditions need to be satisfied at the same time).</p>
+<p>Therefore, if $x^2 - 6x + 5$ is odd, $x$ must be even.</p>
 <br>
-<a name="contradictimplication">
-<h3>Contradicting Implications</h3>
-</a>
-<p>Just because our problem statement looks like an implication, doesn’t mean we need to use a proof by contraposition.</p>
-<p>Our initial statement that we negate can also be an implication! Suppose we want to show that $P \implies Q$. This is equivalent to showing that $\neg P \vee Q$ is always true. To show a contradiction, we can start by assuming $\neg (\neg P \vee Q)$, i.e. $P \wedge \neg Q$, and showing a contradiction.</p>
-<p>Suppose we want to show that $x^2 \text{ is even} \implies x \text{ is even}$, i.e. that $(x^2 \text{ is odd} \vee x \text{ is even})$ always holds a true value. The negation of this looks like $x^2 \text{ is even} \wedge x \text{ is odd}$.</p>
-<p>If we assume the negation to be true, we have that $x^2$ is even and $x \text{ is odd}$. If we suppose $x$ is odd, we can write it as $2k + 1, k \in \mathbb{Z}^+$, and we can write $x^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$. However, this proves that $x^2$ must be odd if $x$ is odd, meaning that the assumption $x^2 \text{ is even} \wedge x \text{ is odd}$ was false. Thus, the original statement $(x^2 \text{ is odd} \vee x \text{ is odd})$, i.e. $x^2 \text{ is even} \implies x \text{ is odd}$, is true.</p>
-<a name='vacuous'>
-<h2>Vacuous Proofs</h2>
+<p>Now, let’s prove the statement using a proof by contraposition. The contrapositive of this statement is, “if $x$ is odd, then $x^2 - 6x + 5$ is even”. If $x$ is odd, we can write $x = 2k + 1$ for $k \in \mathbb{Z}$. Then:</p>
+<div align=center>
+<p>$\begin{align*} x^2 - 6x + 5 &amp;= (2k+1)^2 - 6(2k + 1) + 5 \\ &amp;= 4k^2 + 4k + 1 - 12k - 6 + 5 \\ &amp;= 2(2k^2 - 4k) \end{align*}$</p>
+</div>
+<p>We’ve shown that when $x$ is odd, $x^2 - 6x + 5$ can be written as $2 \cdot (\text{some integer})$, therefore by contraposition, the original statement holds.</p>
+<br>
+<a name='iffproofs'>
+<h2>Example: Proving If and Only If</h2>
 <hr>
 </a>
-<br>
-<p>Remember, implications are nothing but logical expressions with a <em>truth value</em>. By proving an implication, we are proving that the truth value of an implication is true. Many of the proof statements that we’ve seen so far require us to prove something of the form $P \implies Q$, and we assume that $P$ is true. The only way for $P \implies Q$ to have a value of true when $P$ is true, is for $Q$ to be true.</p>
+<p><em>Note: Proving statements of the form “if and only if” isn’t a “proof technique” on its own.</em></p>
+<p>When the statement that we’re required to prove is of the form “$P$ if and only if $Q$”, we essentially need to perform two separate proofs. We need to independently prove $P \implies Q$ (i.e. “if $P$, then $Q$”), and prove $Q \implies P$. For each of these separate proofs, we can use whichever proof technique we’d like.</p>
+<h4>Example</h4>
+<p><strong>Given $a, b, x, y \in \mathbb{N}$ such that $A = a + \frac{1}{x}$, $B = b + \frac{1}{y}$, $y$ divides $a$, and $x$ divides $b$, prove that the product of $A$ and $B$ is an integer if and only if $x = y = 1$.</strong></p>
+<p>We need to prove both of the following (given the initial conditions):</p>
+<ul>
+<li>If $x = y = 1$, then the product $AB$ is an integer</li>
+<li>If the product $AB$ is an integer, then $x = y = 1$</li>
+</ul>
+<p>Let’s first prove the first statement (sometimes referred to as the “forward direction”). If $x = y = 1$, then $A = a + 1$ and $B = b + 1$ by subsitution. Then, we have</p>
 <div align=center>
-<table>
-<thead>
-<tr>
-<th>$P$</th>
-<th>$Q$</th>
-<th>$P \implies Q$</th>
-<th>$\neg P \vee Q$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>True</td>
-<td>True</td>
-<td>True</td>
-<td>True</td>
-</tr>
-<tr>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr>
-<td>False</td>
-<td>True</td>
-<td>True</td>
-<td>True</td>
-</tr>
-<tr>
-<td>False</td>
-<td>False</td>
-<td>True</td>
-<td>True</td>
-</tr>
-</tbody>
-</table>
+<p>$\begin{align*} AB &amp;= (a+1)(b+1) \\ &amp;= ab + a + b + 1 \end{align*}$</p>
 </div>
-<p>However, the implication $P \implies Q$ is also true whenever $P$ is false. Consider the following statement:</p>
+<p>The sum and product of several integers is also an integer. Therefore, we’ve proven the forward direction.</p>
+<p>Now, let’s prove the second statement, or the “reverse direction”. Firstly, let’s expand the product $AB$:</p>
 <div align=center>
-<p><em>If the earth is flat, then all dogs can fly.</em></p>
+<p>$\begin{align*} AB &amp;= (a + \frac{1}{x})(b + \frac{1}{y}) \\ &amp;= ab + \frac{b}{x} + \frac{a}{y} + \frac{1}{xy} \end{align*}$</p>
 </div>
-<p>The truth value of this implication, is true! This is because the earth is certainly not flat (we won’t prove that here… maybe ask Kyrie Irving?). If we let $P$ represent “the earth is flat” and $Q$ represent “all dogs can fly”, since $P$ is false, it doesn’t matter what $Q$ is: $P \implies Q$ is a true value.</p>
-<p>One way to think of this is, if the left hand side $P$ is true, the laws of our universe don’t hold. But if the laws of our universe don’t hold, then anything is possible – it doesn’t matter if $Q$ is true or false.</p>
-<h3>Example</h3>
-<div align=center>
-<p><strong>Prove that if $2x^2 - 4x + 2 &lt; 0$, for $x \in \mathbb{R}$, then $5 &gt; 7$.</strong></p>
-</div>
-<p>Usually, we assume the left hand side to be true, but let’s look a little further here. The quadratic $2x^2 - 4x + 2$ can be written as $2(x-1)^2$, which sits on the $x$-axis. Therefore, it has a minimum value of $0$, and is never less than $0$. This means the left hand side is always false, thus the implication is always true.</p>
-<p>This may seem a little confusing – we’re not proving $5 &gt; 7$. We’re only showing that if $2(x-1)^2 &lt; 0$ (for some real $x$), then $5 &gt; 7$.</p>
+<p>Using the initial condition that $y$ divides $a$ and that $x$ divides $b$, we know that $\frac{b}{x}$ and $\frac{a}{y}$ are both integers. Now, since the first three pieces of the above sum are integers, we just need to show that $\frac{1}{xy}$ is an integer.</p>
+<p>Since $x, y$ are natural numbers, we have that $x \cdot y \geq 1$. If $x \cdot y$ is anything other than $1$, $\frac{1}{xy}$ will be a non-integer rational number between 0 and 1. Therefore, in order for $\frac{1}{xy}$ to be an integer, we need $x \cdot y = 1$, which (under the naturals) is only satisfied by $x = y = 1$. This proves the reverse direction.</p>
+<p>Therefore, since we’ve proven both directions, we’ve proven the entire proposition.</p>
 <br>
 <a name='cases'>
 <h2>Proof by Cases</h2>
 <hr>
 </a>
-<br>
-<p>In many instances, we may find it easier to view a statement as the combination of many sub-cases. By proving each possible sub-case, we can prove the validity of the full statement. The technique we use for each sub-case can be any one of the above.</p>
-<h3>Example</h3>
+<p>In many instances, we may find it easier to view a statement as the combination of many sub-cases. By proving each possible sub-case, we can prove the validity of the full statement. The technique we use for each sub-case can be any one of the above. This is a consequence of the following equivalance (which we also provide a truth table for):</p>
 <div align=center>
-<p><strong>Prove that the cube of any integer is either a multiple of 9, 1 more than a multiple of 9, or one less than a multiple of 9.</strong></p>
+<p>$(P_1 \vee P_2) \implies Q \equiv (P_1 \implies Q) \wedge (P_2 \implies Q)$</p>
+<table>
+<thead>
+<tr>
+<th>$P_1$</th>
+<th>$P_2$</th>
+<th>$Q$</th>
+<th>$(P_1 \vee P_2) \implies Q$</th>
+<th>$(P_1 \implies Q) \wedge (P_2 \implies Q)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
 </div>
-<p>The cases we break this proof into may seem rather arbitrary, but the more we practice this sort of proof, the more natural it will seem.</p>
-<p>Our proof revolves around the fact that when dividing an integer by 3, there are 3 possible remainders – 0, 1, or 2.</p>
+<p>What’s important is that our cases cover all of the possible variables under consideration. Otherwise, we don’t have a complete proof!</p>
+<h4>Example</h4>
+<p><strong>Prove that the cube of any integer is either a multiple of 9, 1 more than a multiple of 9, or one less than a multiple of 9.</strong></p>
+<p>The cases we break this proof into may seem rather arbitrary, but the more we practice this sort of proof, the more natural it will seem. Our proof revolves around the fact that when dividing an integer by 3, there are 3 possible remainders – 0, 1, or 2. We can write every integer as either $3k$, $3k + 1$ or $3k + 2$.</p>
 <ul>
 <li>
 <p><em>Case 1</em>: $n = 3k$ <br>
@@ -689,51 +764,112 @@ The last case is when a number has a remainder of 2 when being divided by 3. Thi
 </ul>
 <p>We have considered three cases, and these three cases make up the whole universe of integers. Either an integer is divisible by 3, one more than a multiple of 3, or 2 more than a multiple of 3 (and consequently, 1 less than some other multiple of 3). The statement holds for these three cases, so it holds for every integer.</p>
 <br>
-<a name='counterexamples'>
-<h2>Counterexamples</h2>
+<a name='counter_vacuous'>
+<h2>Counterexamples and Vacuous Proofs</h2>
 <hr>
 </a>
-<br>
+<p>We’ve now covered the foundational proof techniques that we need to (other than induction, which we’ll look at in the next section). Now, we’ll look at a few oddities and things to note regarding proofs.</p>
+<a name='counterexamples'>
+<h3>Counterexamples</h3>
+<hr>
+</a>
 <p>“Proof by Counterexample” isn’t a proof technique. Instead, we use counterexamples to show that statements aren’t true. For example, to prove that not all dogs are labradors, we would have to show there exists at least one dog that isn’t a labrador.</p>
-<h3>Example</h3>
-<div align=center>
+<h4>Example</h4>
 <p><strong>Prove or disprove: All Pythagorean triplets are of the form $(3k, 4k, 5k)$ for $k \in \mathbb{R}$.</strong></p>
-</div>
 <p>Consider the triplet $(8, 15, 17)$. We have that $8^2 + 15^2 = 17^2$, but $(8, 15, 17) \neq (3k, 4k, 5k)$ for any real number $k$. This is a counterexample, so the original statement is not true.</p>
 <br>
-<a name='faulty'>
-<h2>Faulty Proofs</h2>
+<a name='vacuous'>
+<h3>Vacuous Proofs</h3>
 <hr>
 </a>
+<p>Remember, implications are nothing but logical expressions with a <em>truth value</em>. By proving an implication, we are proving that the truth value of an implication is true. Many of the proof statements that we’ve seen so far require us to prove something of the form $P \implies Q$, and we assume that $P$ is true. The only way for $P \implies Q$ to have a value of true when $P$ is true, is for $Q$ to be true.</p>
+<div align=center>
+<table>
+<thead>
+<tr>
+<th>$P$</th>
+<th>$Q$</th>
+<th>$P \implies Q$</th>
+<th>$\neg P \vee Q$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>However, the implication $P \implies Q$ is also true whenever $P$ is false. Consider the following statement:</p>
+<div align=center>
+<p><em>If the earth is flat, then all dogs can fly.</em></p>
+</div>
+<p>The truth value of this implication, is true! This is because the earth is certainly not flat. If we let $P$ represent “the earth is flat” and $Q$ represent “all dogs can fly”, since $P$ is false, it doesn’t matter what $Q$ is: $P \implies Q$ is a true value.</p>
+<p>One way to think of this is, if the left hand side $P$ is true, the laws of our universe don’t hold. But if the laws of our universe don’t hold, then anything is possible – it doesn’t matter if $Q$ is true or false.</p>
+<h4>Example</h4>
+<p><strong>Prove that if $2x^2 - 4x + 2 &lt; 0$, for $x \in \mathbb{R}$, then $5 &gt; 7$.</strong></p>
+<p>Usually, we assume the left hand side to be true, but let’s look a little further here. The quadratic $2x^2 - 4x + 2$ can be written as $2(x-1)^2$, which sits on the $x$-axis. Therefore, it has a minimum value of $0$, and is never less than $0$. This means the left hand side is always false, thus the implication is always true.</p>
+<p>This may seem a little confusing – we’re not proving $5 &gt; 7$. We’re only showing that if $2(x-1)^2 &lt; 0$ (for some real $x$), then $5 &gt; 7$, i.e. that the implication holds.</p>
 <br>
-<p>To round up our discussion, let’s take a look at a few convincing arguments that look like proofs, but have some holes in them.</p>
-<h3>Example</h3>
-<div align=center>
-<p><strong>Prove $1 = 2$</strong>.</p>
-</div>
-<p>Let $x = y$. Then:</p>
-<div align=center>
-<p>$\begin{align*} x^2 &amp;= xy \\ x^2 - y^2 &amp;= xy - y^2 \\ (x+y)(x-y) &amp;= y(x-y) \\ x + y &amp;= y \\ 2y &amp;= y \\ 2 &amp;=1 \end{align*}$</p>
-</div>
-<p><em>Where did we go wrong? Try and identify the issues with the above proof before reading ahead.</em></p>
+<a name='faulty'>
+<h2>Faulty Proofs and Logic</h2>
+<hr>
+</a>
+<p>Here are some common flaws to look out for in proofs:</p>
 <ul>
-<li>Since $x = y$, $x - y = 0$. From the third to fourth line, we divided by $0$, which is not a valid step.</li>
-<li>In the second last step, to solve $2y = y$, we re-arrange so that we have $y$ on one side. What we did, dividing by $y$, is problematic as $y$ could’ve been $0$.</li>
-</ul>
-<p>Let’s look at another proof of the same statement:</p>
-<p>“Assume $1 = 2$. Multiply both sides by $0$, yielding $0 = 0$. This is a true statement, therefore $1 = 2$.”</p>
-<p>Where was the mistake in the proof? The arithmetic was sound; both sides multiplied by 0 is, indeed, 0. No step we made was incorrect, so we have to go back to our initial assumption. <strong>We assumed what we were trying to prove, which is a common mistake when writing proofs</strong>. This can cause us to falsely prove a lot of false things, including that every number is equal (by our proof above).</p>
-<a name='faultylogic'>
-<h3>Faulty Logic </a></h3>
-<p>Some other pieces of faulty logic found in proofs include:</p>
-<ul>
+<li>Assuming what we are trying to prove</li>
 <li>Dividing by something which could be 0</li>
 <li>Not switching inequalities when working with negative numbers</li>
 <li>Using an example as a proof for a statement which applies to multiple cases</li>
 <li>Introducing a variable twice with two different values</li>
 </ul>
+<p>Let’s look at a few examples.</p>
+<h4>Example</h4>
+<p><strong>Prove $1 = 2$</strong>.</p>
+<p>Proof: Let $x = y$. Then:</p>
+<div align=center>
+<p>$\begin{align*} x^2 &amp;= xy \\ x^2 - y^2 &amp;= xy - y^2 \\ (x+y)(x-y) &amp;= y(x-y) \\ x + y &amp;= y \\ 2y &amp;= y \\ 2 &amp;=1 \end{align*}$</p>
+</div>
+<p><em><strong>Where did we go wrong?</strong></em></p>
+<ul>
+<li>Since $x = y$, $x - y = 0$. From the third to fourth line, we divided by $0$, which is not a valid step.</li>
+<li>In the second last step, to solve $2y = y$, we were supposed to re-arrange so that we have $y$ on one side. What we did, dividing by $y$, is problematic as $y$ could’ve been $0$.</li>
+</ul>
 <br>
-<p>In closing, there are multiple ways to prove any one statement. They may all use the same proof technique, but use the given information differently. In the next article, we will round out our proof toolbox with a more complicated proof technique – mathematical induction.</p>
+<h4>Example</h4>
+<p><strong>Prove that if $n$ is an integer and $2n + 2$ is even, then $n$ is odd.</strong></p>
+<p><em>Proof: Proceed by contraposition. Assume that $n$ is odd. We will now prove that $2n + 2$ is even. Clearly, $2n$ must be an even number, since it is divisible by $2$. Furthermore, 2 is an even number, so $2n + 2$ must be even. This concludes the proof.</em></p>
+<p><em><strong>Where did we go wrong?</strong></em> Here, we did took the converse, instead of the contrapositive. “Proof by converse” is not a proof technique. If we actually took the contrapositive, which states “if $n$ is even, then $2n + 2$ is odd”, we would see that it’s impossible to show $2n + 2$ to be odd, as it is the sum of two even numbers.</p>
+<br>
+<h4>Example</h4>
+<p><strong>Prove that 1 is the greatest whole number.</strong></p>
+<p><em>Proof: Let $n \in \mathbb{N}$ be the greatest whole number. Since it is the largest, its square $n^2$ must be less than or equal to it. We can then say $n^2 \leq n$, or equivalently, $n(n-1) \leq 0$. This inequality has two whole solutions, $n = 0$ and $n = 1$. Since $1 &gt; 0$, we have that $n$ is the greatest whole number.</em></p>
+<p><em><strong>Where did we go wrong?</strong></em> Here, we assumed the existence of a greatest whole number, which is not true.</p>
+<br>
+<p>Some of these examples may have more obvious flaws than others. In practice, though, flaws in proofs may not be as easy to spot.</p>
+<br>
+<p>In closing, there are (almost always) multiple ways to prove any one proposition. They may all use the same “proof technique” from the above, but use the given information differently. In the next article, we will round out our proof toolbox with a more involved proof technique – mathematical induction.</p>
 
     </article>
   </div>
