@@ -581,8 +581,8 @@
 		return False
 	for i in range(2, n):
 		if n % i == 0:
-			return True
-	return False
+			return False
+	return True
 </code></pre>
 <p>However, this is significantly redundant. It turns out that we only need to check up to and including $\lfloor\sqrt{n}\rfloor$. This is because, if $n$ is not prime, then we can find $a, b$ such that $n = ab$. If we have $a &gt; \sqrt{n}$ and $b &gt; \sqrt{n}$, then $ab &gt; n$, thus we must have at least one of $a, b$ being less than or equal to $\sqrt{n}$. If we cannot find any such factor, then $n$ must be prime.</p>
 <p>An intuitive way to think about this – consider $100 = 10^2$. Suppose we want to find $a, b$ such that $ab = 100$. If we increase $a$, we must decrease $b$ in order for the product to remain the same. (Credits to <a href="https://stackoverflow.com/questions/5811151/why-do-we-check-up-to-the-square-root-of-a-prime-number-to-determine-if-it-is-pr">Stack Overflow</a> for that example.)</p>
@@ -590,10 +590,10 @@
 <pre><code class="language-py">def is_prime(n):
 	if n &lt;= 1:
 		return False
-	for i in range(2, int(n**0.5)):
+	for i in range(2, int(n**0.5) + 1):
 		if n % i == 0:
-			return True
-	return False
+			return False
+	return True
 </code></pre>
 <br>
 <p>Another question we may want to answer: given some $n$, how can we find all of the primes up to and including $n$? One way is to implement the <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of Eratosthenes</a>. We will not discuss it in depth here, but below is an interactive image showing how the algorithm works (taken from the above link).</p>
@@ -640,7 +640,7 @@
 <p>$\frac{q}{p’} = \frac{p_1p_2…p_{n-1}p_n}{p’} + \frac{1}{p’}$</p>
 <p>$n_2 = n_1 + \frac{1}{p’}, n_1, n_2 \in \mathbb{N}$</p>
 </div>
-<p>If $p’$ was equal to one $p_i$, then the quotient $\frac{p_1p_2…p_{n-1}p_n}{p’}$ would be a natural number. However (since we’re assuming $p’ | q$) this would mean that we would need $p’ | 1$, which is impossible, since $p’ \neq 1$ (as $1$ is not prime).</p>
+<p>If $p’$ was equal to one $p_i$, then the quotient $\frac{p_1p_2…p_{n-1}p_n}{p’}$ would be a natural number. However (since we’re assuming $p’ | q$) this would mean that we would need $p’ | 1$, which is impossible, since $p’ \neq 1$ (as $1$ is not prime). Therefore, $p’$ is a prime that was not in the original list.</p>
 <p>All of this is to say, by contradiction, the set of all primes is not finite, and thus there are infinitely many primes, and no largest prime.</p>
 <p><em>Note: The second part of the proof isn’t stating that $q$ must be prime. It is simply stating that our original list did not contain every single prime, and thus, there is no such list.</em></p>
 <br>
@@ -677,7 +677,7 @@
 <div align=center>
 <p>$\boxed{\gcd(a, b) = p_1^{\min(a_1, b_1)} p_2^{\min(a_2, b_2)} … p_k^{\min(a_k, b_k)}}$</p>
 </div>
-<p>Note: Iff $\gcd(a, b) = 1$, we say $a$ and $b$ are <strong>relatively prime</strong>, i.e. they share no common factors (other than $1$).</p>
+<p>Note: Iff $\gcd(a, b) = 1$, we say $a$ and $b$ are <strong>relatively prime</strong>, or <strong>coprime</strong>, i.e. they share no common factors (other than $1$).</p>
 <br>
 <a name='lincomb'>
 <h3>Linear Combinations</h3>
