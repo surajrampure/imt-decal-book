@@ -527,6 +527,7 @@
 <li><a href="#gcd">Greatest Common Divisor</a></li>
 <li><a href="#lincomb">Linear Combinations</a></li>
 <li><a href="#euclid">Euclid’s GCD Algorithm</a></li>
+<li><a href="#lcm">Lowest Common Multiples</a></li>
 </ul>
 </li>
 </ul>
@@ -623,7 +624,17 @@
 <h3>Determining Prime Factorizations</h3>
 <hr>
 </a>
-<p>IN PROGRESS.</p>
+<p>To determine the prime factorization of $n$, one method is to repeatedly divide $n$ by the smallest possible prime number until it no longer is a multiple of this number. We then move up to the next largest prime and continue this process until your number is completely factored into primes.</p>
+<p>For example, let’s determine the prime factorization of $336$:</p>
+<div align=center>
+<p>$336 = 2 \cdot 168 = 2^2 \cdot 84 = 2^3 \cdot 42 = 2^4 \cdot 21 = 2^4 \cdot 3 \cdot 7$</p>
+</div>
+<p>Thus, we’d say the prime factorization of $336$ is $2^4 \cdot 3 \cdot 7$. Note, the rule that we must repeatedly divide by the smallest possible prime is not hard and fast, since multiplication can be done in any order.</p>
+<p>There is a common trick we use when a number is a multiple of $10$ – if a number is a multiple of $10$, it is a multiple of both $2$ and $5$. For example:</p>
+<div align=center>
+<p>$3600 = 2 \cdot 5 \cdot 360 = 2^2 \cdot 5^2 \cdot 36 = 2^2 \cdot 5^2 \cdot 6^2 = 2^2 \cdot 5^2 \cdot (2 \cdot 3)^2 = 2^4 \cdot 3^2 \cdot 5^2$</p>
+</div>
+<p><em>Note: It is recommended to consult the lecture video for this exercise, as it is significantly easier to learn by watching someone do it first.</em></p>
 <br>
 <a name='proofnolargest'>
 <h3>Proof: Infinitely Many Primes</h3>
@@ -687,19 +698,68 @@
 <div align=center>
 <p>$\boxed{au + bv = \gcd(a, b)}$</p>
 </div>
-<p>IN PROGRESS.</p>
+<p>The theorem states that there always exists a linear combination of $a$ and $b$ that sums to $\gcd(a, b)$. We won’t prove this here, but for now, let’s give an example.</p>
+<p>Consider $\gcd(12, 15) = 3$. This theorem states that we can find $u, v$ such that $12u + 15v = 3$. One such pair is $u = 4, v = -3$. <em>Note: One of $u, v$ will likely be negative.</em></p>
+<p>A good question is, how can we determine $u, v$? This is a process we will become very familiar with later in this chapter. An important note to make – we will use this extensively in the case where $\gcd(a, b) = 1$, i.e. in finding coefficients such that $au + bv = 1$, though this holds in general.</p>
 <br>
 <a name='euclid'>
 <h3>Euclid’s GCD Algorithm</h3>
 <hr>
 </a>
-<p>IN PROGRESS.</p>
+<p>There’s another method that we can use to determine prime factorizations, called the <strong>Euclidean algorithm.</strong> Let’s take a look:</p>
+<pre><code class="language-py">def gcd(a, b):
+	assert a &gt;= b
+
+	if b == 0:
+		return a
+
+	return gcd(b, a % b)
+</code></pre>
+<p><em>The <code>%</code> sign in Python refers to the “modulo” operator, which we haven’t formally discussed yet. <code>a % b</code> is the remainder when dividing <code>a</code> by <code>b</code>, i.e. it is $r$ in $a = bq + r$.</em></p>
+<p>Notice, the Euclidean algorithm works recursively. Additionally, it assumes the first argument is greater than or equal to the second. This is not really an issue, as $\gcd(a, b) = \gcd(b, a)$.</p>
+<p>Let’s look at an example call to the algorithm:</p>
+<pre><code>gcd(290, 14)
+	gcd(14, 10)
+		gcd(10, 4)
+			gcd(4, 2)
+				gcd(2, 0)
+</code></pre>
+<p>Now that we reached $b = 0$, we’ve determined that $\gcd(290, 14) = 2$.</p>
+<p>It turns out, we can use what is known as the <strong>extended Euclidean algorithm</strong> to determine coefficients $u, v$ in $au + bv = \gcd(a, b)$. This is something we will look at in subsequent sections, when determining modular inverses.</p>
 <br>
 <a name='lcm'>
 <h3>Lowest Common Multiples</h3>
 <hr>
 </a>
-<p>IN PROGRESS.</p>
+<p>Recall, when determining the greatest common divisor of two numbers, we took the lower of the two powers for each prime base. Our exponents in the resulting canonical representation were of the form $\min(a_i, b_i)$.</p>
+<p>With the <strong>lowest common multiple</strong>, $\text{lcm}(a, b)$, we end up doing the opposite. Let’s consider an example – let’s determine $\text{lcm}(1200, 2520)$.</p>
+<div align=center>
+<p>$\text{gcd}(1200, 2520) = 2^{min(4, 3)} \cdot 3^{min(1, 2)} \cdot 5^{min(2, 1)} \cdot 7^{min(0, 1)} = 2^3 \cdot 3^1 \cdot 5^1 \cdot 7^0 = 120$</p>
+<p>$\text{lcm}(1200, 2520) = 2^{max(4, 3)} \cdot 3^{max(1, 2)} \cdot 5^{max(2, 1)} \cdot 7^{max(0, 1)} = 2^4 \cdot 3^2 \cdot 5^2 \cdot 7^1 = 25200$</p>
+</div>
+<p>Intuitively speaking, a divisor will always be less than or equal to a number, while a multiple will always be greater than or equal to a number. $2^4$ divides both $2^4$ and $2^3$, so we choose $4$ to be the exponent on $2$ in our LCM.</p>
+<p>In general, we have the following formula, given $a = p_1^{a_1} p_2^{a_2} … p_k^{a_k}$ and $b = p_1^{b_1} p_2^{b_2} … p_k^{b_k}$:</p>
+<div align=center>
+<p>$\boxed{\text{lcm}(a, b) = p_1^{\max(a_1, b_1)} p_2^{\max(a_2, b_2)} … p_k^{\max(a_k, b_k)}}$</p>
+</div>
+<br>
+<p>We will end this section with the proof of the following fact:</p>
+<div align=center>
+<p>$a \cdot b = \text{lcm}(a, b) \cdot \gcd(a, b)$</p>
+</div>
+<p>To be rigorous, we need to first start by proving the fact that for any two real numbers $x, y$, $\max(x, y) + \min(x, y) = x + y$.</p>
+<ul>
+<li>Case 1: $x &gt; y$: $\max(x, y) + \min(x, y) = x + y$</li>
+<li>Case 2: $x = y$: $\max(x, y) + \min(x, y) = x + x = y + y = x + y$</li>
+<li>Case 3: $x &lt; y$: $\max(x, y) + \min(x, y) = y + x = x + y$</li>
+</ul>
+<p>You can also reason about this intuitively – if one of the elements is the maximum, the other will be the minimum.</p>
+<p>Now, the proof comes easily from the definitions of greatest common divisor and lowest common multiple:</p>
+<div align=center>
+<p>$\begin{align*} \text{lcm}(a, b) \cdot \gcd(a, b) &amp;= p_1^{\max(a_1, b_1)} p_2^{\max(a_2, b_2)} … p_k^{\max(a_k, b_k)} \cdot p_1^{\min(a_1, b_1)} p_2^{\min(a_2, b_2)} … p_k^{\min(a_k, b_k)} \\ &amp;= p_1^{\max(a_1, b_1) + \min(a_1, b_1)} p_2^{\max(a_2, b_2) + \min(a_2, b_2)} … p_k^{\max(a_k, b_k) + \min(a_k, b_k)} \\ &amp;= p_1^{a_1 + b_1} p_2^{a_2 + b_2} … p_k^{a_k + b_k} \\ &amp;= a \cdot b \end{align*}$</p>
+</div>  
+<p>The last step comes from the definition of canonical form multiplication we saw above.</p>
+<br>
 
     </article>
   </div>
