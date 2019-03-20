@@ -6,6 +6,8 @@
 
 <br>
 
+<!--
+
 Jump to:
 - [Naive Approach, using the Quadratic Formula](#naive)
 - [Derivations](#derivations)
@@ -15,6 +17,7 @@ Jump to:
 - [Symmetric Sums](#symmetric)
 - [Example Problems](#examples)
 
+-->
 
 Vieta's formulas give us a way to interpret a polynomial in standard form, e.g. $$p(x) = 4x^2 + 3x + 3$$, in terms of its roots, without having to find the roots specifically. While there are more practical applications to this, the derivation of Vieta's formulas prove to be an interesting combinatoral problem.
 
