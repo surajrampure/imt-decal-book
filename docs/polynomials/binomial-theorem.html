@@ -1,0 +1,738 @@
+<!doctype html>
+<html>
+
+<head>
+  <script type='text/x-mathjax-config'>MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+  <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <style>
+    /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-rendering: optimizeLegibility;
+      line-height: 1;
+      margin-top: 0;
+      color: #000;
+    }
+
+    blockquote+figcaption cite {
+      display: block;
+      font-size: inherit;
+      text-align: right;
+    }
+
+    body {
+      word-wrap: break-word;
+    }
+
+    pre code {
+      word-wrap: normal;
+    }
+
+    body {
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #000000;
+      /* 2*16 = 32 */
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #000000;
+      /* 1.5*16 = 24 */
+    }
+
+    h3 {
+      font-size: 1.17em;
+      color: #000000;
+      /* 1.17*16 = 18.72 */
+    }
+
+    h4 {
+      font-size: 1em;
+      color: #000000;
+      /* 1*16 = 16 */
+    }
+
+    h5 {
+      font-size: 0.83em;
+      color: #000000;
+      /* 0.83*16 = 13.28 */
+    }
+
+    h6 {
+      font-size: 0.75em;
+      /* 0.75*16 = 12 */
+    }
+
+    h1 {
+      margin: 2.42424rem 0 1.454544rem;
+    }
+
+    h2 {
+      margin: 2.0202rem 0 1.21212rem;
+    }
+
+    h3 {
+      margin: 1.61616rem 0 1rem;
+    }
+
+    h4 {
+      margin: 1.21212rem 0 1;
+    }
+
+    h5 {
+      margin: 0.80808rem 0;
+    }
+
+    h6 {
+      margin: 0.70707rem 0;
+    }
+
+    p {
+      margin: auto auto 1.5rem;
+    }
+
+    small {
+      font-size: 65%;
+    }
+
+    input,
+    abbr,
+    acronym,
+    blockquote,
+    code,
+    kbd,
+    q,
+    samp,
+    var {
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+    }
+
+    pre {
+      white-space: pre;
+    }
+
+    pre code {
+      white-space: -moz-pre-wrap;
+      white-space: pre-wrap;
+    }
+
+    code {
+      white-space: pre;
+      font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+    }
+
+    abbr {
+      -webkit-font-variant: small-caps;
+      -moz-font-variant: small-caps;
+      -ms-font-variant: small-caps;
+      font-variant: small-caps;
+      font-weight: 600;
+      text-transform: lowercase;
+      color: gray;
+    }
+
+    abbr[title]:hover {
+      cursor: help;
+    }
+
+    /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      color: #444;
+    }
+
+    img {
+      max-width: 300%;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+    code,
+    pre {
+      background-color: #f5f5f5;
+      color: #000;
+      border-radius: 2px;
+      text-shadow: 0px 1px 0px white;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    pre code {
+      border: none;
+      box-shadow: none;
+    }
+
+    pre {
+      padding: 0.5em;
+    }
+
+    code {
+      display: inline-block;
+      padding: 0 0.5em;
+      line-height: 1.4;
+      font-size: 0.9em;
+    }
+
+    table {
+      border-spacing: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    table th,
+    table td {
+      padding: 0.3em 0.7em;
+    }
+
+    table th {
+      background-color: #f4f4f4;
+      border-bottom: 2px solid #444;
+    }
+
+    table td {
+      border: 1px solid #f5f5f5;
+    }
+
+    /* Add transition to containers so they can push in and out. */
+
+    #layout,
+    #menu,
+    .menu-link {
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+    }
+
+    /* This is the parent `<div>` that contains the menu and the content area. */
+
+    #layout {
+      position: relative;
+      padding-left: 0;
+    }
+
+    #layout.active #menu {
+      left: 250px;
+      width: 250px;
+    }
+
+    #layout.active .menu-link {
+      left: 250px;
+    }
+
+    /* The content `<div>` is where all your content goes. */
+
+    .content {
+      margin: 50px auto;
+      padding: 0 2em;
+      max-width: 120ex;
+      line-height: 1.6em;
+    }
+
+    /*
+    The `#menu` `<div>` is the parent `<div>` that contains the menu that
+    appears on the left side of the page.
+    */
+
+    #menu {
+      margin-left: -250px;
+      /* "#menu" width */
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1000;
+      /* so the menu or its navicon stays above all content */
+      background: #f4f4f4;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      font-size: 0.9em;
+    }
+
+    a,
+    a * {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    /* All anchors inside the menu should be styled like this. */
+
+    #menu a {
+      display: block;
+      padding: 0.5em 0.5em;
+    }
+
+    #menu a:first-letter {
+      text-transform: capitalize;
+    }
+
+    #menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1em 0.5em;
+    }
+
+    #menu ul ul {
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+      border-left: 4px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* Change color of the anchor links on hover/focus. */
+
+    #menu li a:hover,
+    #menu li a:focus {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* This styles the selected menu item `<li>`. */
+
+    #menu li a.active {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    /* This styles a link within a selected menu item `<li>`. */
+
+    #menu li a.active {
+      color: #222;
+    }
+
+    /* This styles the menu heading. */
+
+    #menu li.heading {
+      font-size: 0.9em;
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    #menu li.heading>* {
+      padding: 0.5em;
+      display: block;
+    }
+
+    #menu li.heading a {
+      color: #000000;
+    }
+
+    /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+    /*
+    `.menu-link` represents the responsive menu toggle that shows/hides on
+    small screens.
+    */
+
+    .menu-link {
+      position: fixed;
+      display: block;
+      /* show this only on small screens */
+      top: 0;
+      left: 0;
+      /* "#menu width" */
+      background: #f4f4f4;
+      /* change this value to increase/decrease button size */
+      z-index: 10;
+      width: 2em;
+      height: auto;
+      padding: 1.6em 1.2em;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .menu-link:hover {
+      background: /* #f4f4f4 * 0.8 */
+      #eee;
+    }
+
+    .menu-link span {
+      position: relative;
+      display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+      background-color: #555;
+      width: 100%;
+      height: 0.2em;
+      border-radius: 1em;
+    }
+
+    .menu-link span:before,
+    .menu-link span:after {
+      position: absolute;
+      margin-top: -0.6em;
+      content: " ";
+    }
+
+    .menu-link span:after {
+      margin-top: 0.6em;
+    }
+
+    /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+    @media (min-width: 48em) {
+
+      .header,
+      .content {
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+
+      #layout {
+        padding-left: 250px;
+        /* left col width "#menu" */
+        left: 0;
+      }
+      #menu {
+        left: 250px;
+      }
+
+      .menu-link {
+        position: fixed;
+        left: 250px;
+        display: none;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+    }
+
+    @media (max-width: 48em) {
+      /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+       * Make the window small.
+       * Tap the menu to trigger the active state.
+       * Make the window large again.
+       */
+      #layout.active {
+        position: relative;
+        left: 250px;
+      }
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+</head>
+
+<body>
+    <article id="main" class="content">
+      <title>Binomial Theorem – IMT DeCal</title>
+<h1>Binomial Theorem</h1>
+<hr>
+<br>
+<!--
+
+Jump to:
+- [Motivation](#motivation)
+- [The Combinatorial Approach](#combinatorial)
+- [The Binomial Theorem, Formalized](#formal)
+- [The General Term](#general)
+- [Applications](#applications)
+	- [Sum of Coefficients](#sumcoef)
+	- [Determining Coefficients without Expansion](#withoutexp)
+	- [Sum of $n$-th row of Pascal's Triangle](#pascal)
+- [Extensions](#extensions)
+	- [The "Trinomial" Theorem?](#trinomial)
+	- [The Multinomial Theorem](#multinomial)
+	- [Product of Two Binomial Expansions](#product)
+
+-->
+<p>In this note, we will extend our discussion of the combinatorial term and Pascal’s triangle into a useful concept in algebra, known as the binomial theorem. Recall, a binomial is a polynomial with two terms, where terms are items joined by addition. A trinomial is a polynomial with three terms.</p>
+<a name='motivation'>
+<h2>Motivation</h2>
+<hr>
+</a>
+<p>Consider the following expansion of the product of two binomials:</p>
+<div align=center>
+<p>$
+(a + b) (c + d)  = a(c + d) + b(c + d) = ac + ad + bc + bd
+$</p>
+</div>
+<p>To compute the final expansion, we multiplied every combination of terms in the first polynomial by terms in the second polynomial. In this example, we multiplied two different binomials — polynomials with two terms — both of which were used two different variables. Let’s concentrate our efforts on a simpler case, that is, binomials multiplied by themselves.</p>
+<p>What if we wanted to expand $(x + y)^2$? We can follow the same technique as above — multiply $x$ by $x + y$, yielding $x^2 + xy$, and $y$ by $x + y$, yielding $xy + y^2$ and sum the result, yielding $x^2 + 2xy + y^2$.</p>
+<p>What if instead we wanted to expand $(x + y)^3$? One approach is to write $(x+y)^3$ as $(x+y)(x+y)(x+y)$, and manually try and multiply every combination of one item from the first bracket, one item in the
+second bracket, and one item in the third bracket. If we were to do this, we would expand in the following way:</p>
+<div align=center>
+<p>$(x+y)(x+y)(x+y) = xxx + xxy + xyx + xyy + yxx + yxy + yyx + yyy$</p>
+</div>
+<p>However, if we were to try to expand $(x+y)^4$ in this way, we’d have a mess on our hands. Another approach is to recognize that $(x + y)^3$ is the product of $(x+y)^2$, which we know to be $x^2 + 2xy + y^2$, with $x + y$. We can then multiply each term in $x^2 + 2xy + y^2$ by each term in $x + y$, to yield the final expansion of $x^3 + 3x^2y + 3xy^2 + y^3$. Sure, this works, however with exponents greater than $3$ one can see that this process becomes messy.</p>
+<br>
+<a name="combinatorial">
+<h2>The Combinatorial Approach</h2>
+<hr>
+</a>
+<br>
+<p>Let’s approach this problem differently. Consider the expansion of $(x + y)^3$, which we can write as $(x+y)(x+y)(x+y)$. We know that each term in its expansion must contain one term from each polynomial being multiplied. Since the only possible terms are $x$ and $y$, and there are three polynomials being multiplied, the each term in the expansion of $(x+y)^3$ will contain either 3 $x$s, $2$ $x$s and 1 $y$, 1 $x$ and 2 $y$s, or 3 $y$s. Now, we need to determine the number of $x^3$, $x^2y$, $xy^2$ and $y^3$ terms that exist.</p>
+<p>To determine the coefficient on $x^3$, we think, how many ways can we choose 3 $x$s, from a possible 3? This is precisely ${3 \choose 3}$. Similarly, to determine the coefficient on $xy^2$, we ask, how many ways can we choose 1 $x$ from a possible of 3? Again, this is ${3 \choose 1}$. We don’t need to consider the number of ways to choose the $y$s in these cases, as whatever isn’t chosen to be an $x$ is automatically a $y$. Putting all of this together, we have:</p>
+<div align=center>
+<p>$(x + y)^3 = {3 \choose 3}x^3 + {3 \choose 2} x^2y + {3 \choose 1} xy^2 + {3 \choose 0} y^3 = x^3 + 3x^2y + 3xy^2 + y^3$</p>
+</div>
+<p>This confirms our result from the previous section. One point of interest is the fact that since ${3 \choose i} = {3 \choose 3 - I}$, we can treat our coefficients as either the number of ways to choose $x$s OR the number of ways to choose $y$s. This means that we can also write the above result as:</p>
+<div align=center>
+<p>$(x + y)^3 = {3 \choose 0}x^3 + {3 \choose 1} x^2y + {3 \choose 2} xy^2 + {3 \choose 3} y^3 = x^3 + 3x^2y + 3xy^2 + y^3$</p>
+</div>
+<p>In general, we can write $(x + y)^n$ as:</p>
+<div align=center>
+<p>$(x+y)^n = (x+y)(x+y)(x+y)…(x+y)$</p>
+</div>
+<p>To simplify the expansion, we need to determine the number of ways to choose $n$ $x$s, $n-1$ $x$s and 1 y, $n-2$ $x$s and 2 $y$s, so on and so forth, until we find the number of ways to choose $n$ $y$s. The result is presented in the following section.</p>
+<br>
+<a name='formal'>
+<h2>The Binomial Theorem, Formalized</h2>
+<hr>
+</a>
+<p>The binomial theorem states the following:</p>
+<div align=center>
+<p>$\boxed{(x + y)^n = {n \choose 0}x^n + {n \choose 1}x^{n-1}y + {n \choose 2}x^{n-2}y^2 + … + {n \choose n-1}xy^{n-1} + {n \choose n}y^n = \sum_{k = 0}^n {n \choose k} x^{n-k}y^k}$</p>
+</div>
+<p>It is worth noting that since we’re using the combinatorial term to determine coefficients, the coefficients in the expansion of $(x + y)^n$ are the entries in the $n$-th row of Pascal’s triangle. However, rarely will we expand $(x + y)^n$ itself; we will typically expand more complicated binomials raised to other exponents.</p>
+<p>Also, the term that we’ve introduced as the combinatorial term – ${n \choose k}$ – is sometimes referred to as the “binomial coefficient”, because of its significance in the binomial theorem.</p>
+<h4>Example</h4>
+<p>Let’s determine the expansion of $(3a^2 - 2b)^5$. In this case, we have $x = 3a^2$, $y = -2b$ and $n = 5$.</p>
+<div align=center>
+<p>$
+\begin{aligned}
+(3a^2 - 2b)^5 &amp;= {5 \choose 0} (3a^2)^5 + {5 \choose 1} (3a^2)^4 (-2b) + {5 \choose 2} (3a^2)^3 (-2b)^2 + {5 \choose 3} (3a^2)^2 (-2b)^3 + {5 \choose 4} (3a^2) (-2b)^4 + {5 \choose 5}(-2b)^5 \\ &amp;= 243a^{10} - 810a^8b + 1080a^6b^2 - 720a^4b^3 + 240 a^2b^4 - 32b^5 \end{aligned}
+$</p>
+</div>
+<br>
+<a name='general'>
+<h2>The General Term</h2>
+<hr>
+</a>
+<p>We define the $k$-th term in the expansion of a binomial as $\boxed{t_k = {n \choose k} x^{n-k}y^k}$, with $k$ ranging from 0 to $n$.</p>
+<p>In the expansion of $(3a^2 - 2b)^5$ from the previous section, the general term is:</p>
+<div align=center>
+<p>$
+\begin{aligned}
+t_k &amp;= {5 \choose k} (3a^2)^{5 - k} (-2b)^k \\ &amp;= {5 \choose k} 3^{5-k} a^{10 - 2k} (-1)^k 2^k b^k \\ &amp;= (-1)^k {5 \choose k} 2^k 3^{5-k} a^{10 - 2k}b^k \end{aligned}
+$</p>
+</div>
+<p>You may be asking yourself why we’ve written the general term this way. With the $(-1)^k$ at the front, we can quickly tell whether a term is positive or negative. By splitting the $2$, $3$, $a$ and $b$, each exponential base is isolated, simplifying the multiplication process (i.e. we don’t need to multiply $3$ and $a^2$ and then raise that to an exponent; instead, we raise $3$ and $a^2$ to exponents separately, as we are more likely to know the powers of $3$ on their own).</p>
+<p>Let’s look at another example, namely, the expansion of $(x^5 - \frac{1}{x^2})^7$.</p>
+<div align=center>
+<p>$
+\begin{aligned} t_k &amp;= {7 \choose k} (x^5)^{7-k}(-x^{-2})^{k} \\ &amp;= (-1)^k {7 \choose k} x^{35 - 5k} x^{-2k} \\ &amp;= (-1)^k {7 \choose k} x^{35 - 7k} \end{aligned}
+$</p>
+</div>
+<p>Since $x^5 - x^{-2}$ is a function of only one variable, $x$, we were able to combine $(x^5)^{7-k}$ and $(x^{-2})^{k}$ into a single $x$ term. Therefore, the general term only contains one variable, instead of two as in the previous example. We will use this fact in the next section to aid us in determining coefficients for arbitrary terms.</p>
+<br>
+<a name='applications'>
+<h2>Applications</h2>
+<hr>
+</a>
+<p>Now, we’ll look at some of the more direct applications of the binomial theorem.</p>
+<a name='sumcoef'>
+<h3>Sum of Coefficients</h3>
+<hr>
+</a>
+<br>
+<p>In the expansion of an instance of the binomial theorem, if one sets all variables equal to 1, then the result is the sum of the coefficients of in the expansion. Let’s consider $f(x) = (2x - 3x^2)^4$. If we set $x = 1$, then $f(1) = (-1)^4 = 1$, telling us that the sum of coefficients in the expansion of $f(x)$ should be $1$. We can verify this via expansion:</p>
+<div align=center>
+<p>$
+\begin{aligned}
+f(x) &amp;= (2x - 3x^2)^4 \\ &amp;= {4 \choose 0}(2x)^4 + {4 \choose 1}(2x)^3(-3x^2) + {4 \choose 2}(2x)^2(-3x^2)^2 + {4 \choose 3}(2x)(-3x^2)^3 + {4 \choose 4}(-3x^2)^4 \\ &amp;= 16x^4 - 96x^5 + 216x^6 - 216x^7 + 81x^8 \\ \\ \implies f(1) &amp;= 16 - 96 + 216 - 216 + 81 = -80 + 81 = 1 \end{aligned}$</p>
+</div>
+<p>This also works with multivariate binomials, i.e. binomials that are functions of more than one variable (as all previous examples were). In addition to verifying this on your own, you should also think about why this technique works overall. Feel free to ask questions.</p>
+<p>An interesting result in the above example is that no matter how large $n$ is, the sum of the coefficients in $(2x - 3x^2)^n$ is always either $1$ or $-1$, depending on whether $n$ is even or odd. This is interesting, as when $n = 1000$, terms of the form ${1000 \choose k}$ can be on the order of $10^{30}$, yet the sum of coefficients is still just $1$ - fascinating!</p>
+<br>
+<a name='pascal'>
+<h3>Sum of $n$-th row of Pascal’s Triangle</h3>
+<hr>
+</a>
+<p>The parallels between the binomial theorem and Pascal’s triangle were outlined earlier in this article. However, the binomial theorem gives us another way to prove that the sum of the $n$-th row of Pascal’s triangle is $2^n$.</p>
+<p>Recall, in Chapter 4, we determined that ${n \choose 0} + {n \choose 1} + … + {n \choose n} = 2^n$ by reasoning about the cardinality of the power set for a set of size $n$ - in creating a subset of a set of size $n$, there are two options for each item, either to include that item or to not include that item. This yields $2^n$, which should be the same as taking $0$ items (${n \choose 0}$), or $1$ item (${n \choose 1}$), and so on and so forth.</p>
+<p>However, let’s look at the expansion of $(1 + 1)^n$:</p>
+<div align=center>
+<p>$\begin{aligned} 2^n = (1 + 1)^n &amp;= {n \choose 0}1^n + {n \choose 1}1^{n-1} \cdot 1 + {n \choose 2} 1^{n-2} \cdot 1^2 + … + {n \choose n-1}1^1 \cdot 1^{n-1} + {n \choose n}1^n \\ &amp;= {n \choose 0} + {n \choose 1} + … + {n \choose n-1} + {n \choose n} \end{aligned}$</p>
+</div>
+<p>Neat!</p>
+<br>
+<a name='withoutexp'>
+<h3>Determining Coefficients without Expansion</h3>
+<hr>
+</a>
+<p>Consider the expansion of $(2x^3 + x^{-1})^8$. You should verify that it has the general term $t_k = {8 \choose k} 2^{8-k}x^{24 - 4k}$. In the exponent for $x$, since there is a $-4k$ term, we know that consecutive terms decrease in their exponent by $4$ - the first term has exponent $24$, the second exponent $20$, and so on. (You may be able to see this without calculating the general term, as the “difference in power” between $2x^3$ and $x^{-1}$ is $-4$.)</p>
+<p>Suppose we want to find the coefficient on $x^{16}$ in the expansion. In the general term, we can set the exponent, $24-4k$, equal to $16$, and solve for the term number ($k$), which in this case is $2$. We then can plug $2$ into the general term to find $t_2 = {8 \choose 2}2^{8-2}x^{16}$, yielding that the coefficient is ${8 \choose 2}2^{8-2} = 56 \cdot 32 = 1792$.</p>
+<p>What if we were asked for the coefficient on $x^{10}$? Upon solving $24 - 4k = 10$, we yield the solution $k = \frac{7}{2}$. However, this doesn’t make any sense - $k$ represents the term number in the expansion, and must be an integer between $0$ and $8$ inclusive. Therefore, in this case, there is no $x^{10}$ term in the expansion, and we can report that there is no solution.</p>
+<br>
+<a name='extensions'>
+<h2>Extensions</h2>
+<hr>
+</a>
+<a name='trinomial'>
+<h3>The “Trinomial” Theorem?</h3>
+<hr>
+</a>
+<p>What if we would like to expand something of the form $(x + y + z)^n$? One option is to treat either $(x + y)$ or $(y + z)$ as a single term, and use the binomial theorem. However, once again, we can treat this as a combinatorial problem on its own.</p>
+<p>Suppose a general term in the expansion of $(x + y + z)^n$ contains $a$ $x$s, $b$ $y$s and $c$ $z$s. Then, we must have that $a + b + c = n$, since the total number of parentheses we choose from in the expansion must be exactly $n$. We can then say the following:</p>
+<div align=center>
+<p>$
+t_{a, b, c} = \frac{n!}{a! b! c!} x^a y^b z^c
+$</p>
+</div>
+<p>The coefficient $\frac{n!}{a!b!c!}$ comes from the number of ways to arrange $a$ $x$s, $b$ $y$s and $c$ $z$s (think back to counting the number of permutations of MISSISSIPPI).</p>
+<h4>Example</h4>
+<p>Let’s calculate the coefficient of the term containing $x^4$ in the expansion of $(x - 3x^{-2} + 4)^8$:</p>
+<div align=center>
+<p>$
+\begin{aligned} t_{a, b, c} &amp;= \frac{8!}{a! b! c!} x^a (-3x^{-2})^b (4)^c
+\\ &amp;= (-1)^b \frac{8!}{a!b!c!}3^b4^c x^{a-2b} \end{aligned}$</p>
+</div>
+<p>Setting $x^{a - 2b} = x^4$, we require $a - 2b = 4$, with the constraints that $0 \leq a, b, c \leq 8$ and $a + b + c = 8$. If we set $a = 4$ and $b = 0$, we satisfy the given constraints. We can use this solution as a starting point to find the remaining solutions:</p>
+<ul>
+<li>
+<p>$a = 4, b = 0, c = 4$</p>
+</li>
+<li>
+<p>$a = 6, b = 1, c = 1$</p>
+</li>
+</ul>
+<p>We then find the general terms corresponding to each of these two triplets:</p>
+<div align=center>
+<p>$\begin{aligned} t_{4, 0, 4} &amp;= (-1)^0 \frac{8!}{4!0!4!} 3^0 4^4 x^4 = 17920x^4 \\ t_{6, 1, 1} &amp;= (-1)^1 \frac{8!}{6!1!1!}3^14^1x^4 = - 336x^4 \end{aligned}$</p>
+</div>
+<p>Then, in the final expansion, the term containing $x^4$ is $t_{4, 0, 4} + t_{6, 1,1} = 17920x^4 - 336x^4 = 17584x^4$, and the coefficient of $x^4$ is $17584$.</p>
+<h4>Generalization</h4>
+<p>Note that can write the expansion of a trinomial raised to an exponent
+as a sum, though it is slightly less meaningful:</p>
+<div align=center>
+$
+(x + y + z)^n = \sum_{a, b, c :  a + b + c = n} \frac{n!}{a!b!c!}x^ay^bz^c
+$
+</div>
+<br>
+<a name='multinomial'>
+<h3>The Multinomial Theorem</h3>
+<hr>
+</a>
+<p>We can generalize this even further. Let’s introduce the <strong>multinomial coefficient</strong>:</p>
+<div align=center>
+<p>$
+\boxed{{n \choose k_1, k_2, … k_m} = \frac{n!}{k_1!k_2! … k_m!}}
+$</p>
+</div>
+<p>Under the assumption $k_1 + k_2 + … + k_m = n$, this term is the number of ways to select one subset of size $k_1$, one subset of size $k_2$, … and one subset of size $k_m$ from a group of $n$ items. Notice that with $m = 2$, this is the same as the binomial coefficient that we’re used to.</p>
+<p>Then:</p>
+<div align=center>
+<p>$
+(x_1 + x_2 + … + x_m)^n = \sum_{k_1 + k_2 + … + k_m = n} {n \choose k_1, k_2, … k_m} \prod_{i = 1}^m x_i^{k_i}
+$</p>
+</div>
+<br>
+<a name='product'>
+<h3>Product of Two Binomial Expansions</h3>
+<hr>
+</a>
+<p>Let’s switch gears. Rather than expanding from binomials to trinomials or general multinomials, what if we instead take a look at the product of two binomials, each raised to different exponents? Let’s illustrate this with an example!</p>
+<p>Let $f(x, y) = (2x - 3y)^5$ and $g(x, y) = (x^3 - 3xy^2)^9$. Our goal will be to find the general term of the product $f(x, y) \cdot g(x, y)$, and determine the existence of certain terms.</p>
+<p>First, we find the general term of each, using the index variable $i$ for $f(x, y)$ and $k$ for $g(x, y)$ (these choices are arbitrary, but we need some way of differentiating the two, as you will see). You should verify these on your own:</p>
+<div align=center>
+<p>$
+\begin{aligned} t_i &amp;= (-1)^i {5 \choose i} 2^{5-i} 3^i x^{5-i} y^i \\ t_k &amp;= (-1)^k {9 \choose k} 3^k x^{27-2k} y^{2k} \end{aligned}$</p>
+</div>
+<p>Now, to find the general term of the product, we take the product of the two general terms:</p>
+<div align=center>
+<p>$
+\begin{aligned} t_{i, k} &amp;= (-1)^i {5 \choose i} 2^{5-i} 3^i x^{5-i} y^i (-1)^k {9 \choose k} 3^k x^{27-2k} y^{2k} \\ &amp;= (-1)^{i+k} {5 \choose i} {9 \choose k} 2^{5-i} 3^{i+k} x^{32 - i - 2k} y^{i+2k} \end{aligned}
+$</p>
+</div>
+<p>This tells us that the product of the $i$th term of $f(x)$ and $k$th term of $g(x)$ is $t_{i, k}$. Since we separated our exponential bases in the individual general terms, it was easy to combine bases in the product.</p>
+<p>We are now well equipped to answer the following questions:</p>
+<ul>
+<li>What are all terms containing $x^{20}$ in the expansion of $f(x, y) \cdot g(x,y)$?</li>
+<li>What is the coefficient of $x^{12}y^{10}$ in the expansion of $f(x, y) \cdot g(x, y)$?</li>
+</ul>
+<p>We will walk through the solution of the first problem as an example, while the latter is left as an exercise.</p>
+<br>
+<h4>Problem Setup</h4>
+<p>Using $f(x, y)$ and $g(x, y)$ as before, we want to find all terms containing $x^{20}$. Our analysis will be similar to what it was when we looked at the expansion of trinomials. Since the exponent on $x$ is $32 - i - 2k$, we are looking for all integer solutions to the following problem:</p>
+<div align=center>
+<p>$32 - i - 2k = 20$
+<br>
+$\text{s.t. } 0 \leq i \leq 5, 0 \leq k \leq 9$</p>
+</div>
+<p>(Note: “s.t.” means “such that”.)</p>
+<p>We know that the first line reduces to $i + 2k = 12$. One way to determine these solutions assuming the equation only contains two variables is to find the simplest solution that minimizes one variable and maximizes the other – such as $i = 0, k = 6$ – and iteratively increase the minimum and decrease the maximum until all solutions are found.</p>
+<p>After finding $i = 0, k = 6$, we can reduce $k$ by $1$ to find $i = 2, k = 5$. Doing so again yields $i = 4, k = 4$ which we know is the last solution as setting $k = 3$ yields $i = 6$ which is out of the range of possible values for $i$.</p>
+<p>Now that we have our three solutions, our problem reduces to plugging in the values of $i$ and $k$ into our expanded term.</p>
+<div align = center>
+<p>$t_{0, 6} = (-1)^{0 + 6} {5 \choose 0}{9 \choose 6} 2^{5-0} 3^{0 + 6} x^{32 - 0 - 2 \cdot 6} y^{0 + 2 \cdot 6} = 1959552x^{20}y^{12}$
+<br><br>
+$t_{2, 5} = (-1)^{2 + 5} {5 \choose 2}{9 \choose 5} 2^{5-2} 3^{2+5}x^{32 - 2 - 2 \cdot 5}y^{2 + 2 \cdot 5} = -22044960x^{20}y^{12}$
+<br><br>
+$t_{4, 4} = (-1)^{4 + 4} {5 \choose 4}{9 \choose 4} 2^{5-4} 3^{4+4} x^{32 - 4 - 2 \cdot 4} y^{4 + 2 \cdot 4} = 8266860x^{20}y^{12}$</p>
+</div>
+<p>It should also be noted that the multiplication of these large numbers isn’t exactly a skill that one needs to develop to be successful; no reasonable assessment (at least in this course) will ask for you to do this by hand, and leaving terms in the form ${5 \choose 2}{9 \choose 5}2^3 3^7 x^{20} y^{12}$ is perfectly fine.</p>
+<br>
+
+    </article>
+  <script>
+    // FROM http://purecss.io/js/ui.js
+    (function (window, document) {
+
+      var layout = document.getElementById('layout'),
+        menu = document.getElementById('menu'),
+        menuLink = document.getElementById('menuLink');
+
+      function toggleClass(element, className) {
+        var classes = element.className.split(/\s+/),
+          length = classes.length,
+          i = 0;
+
+        for (; i < length; i++) {
+          if (classes[i] === className) {
+            classes.splice(i, 1);
+            break;
+          }
+        }
+        // The className is not found
+        if (length === classes.length) {
+          classes.push(className);
+        }
+
+        element.className = classes.join(' ');
+      }
+
+      menuLink.onclick = function (e) {
+        var active = 'active';
+
+        e.preventDefault();
+        toggleClass(layout, active);
+        toggleClass(menu, active);
+        toggleClass(menuLink, active);
+      };
+
+    }(this, this.document));
+  </script>
+</body>
+
+</html>

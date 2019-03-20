@@ -1,0 +1,659 @@
+<!doctype html>
+<html>
+
+<head>
+  <script type='text/x-mathjax-config'>MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+  <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <style>
+    /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-rendering: optimizeLegibility;
+      line-height: 1;
+      margin-top: 0;
+      color: #000;
+    }
+
+    blockquote+figcaption cite {
+      display: block;
+      font-size: inherit;
+      text-align: right;
+    }
+
+    body {
+      word-wrap: break-word;
+    }
+
+    pre code {
+      word-wrap: normal;
+    }
+
+    body {
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #000000;
+      /* 2*16 = 32 */
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #000000;
+      /* 1.5*16 = 24 */
+    }
+
+    h3 {
+      font-size: 1.17em;
+      color: #000000;
+      /* 1.17*16 = 18.72 */
+    }
+
+    h4 {
+      font-size: 1em;
+      color: #000000;
+      /* 1*16 = 16 */
+    }
+
+    h5 {
+      font-size: 0.83em;
+      color: #000000;
+      /* 0.83*16 = 13.28 */
+    }
+
+    h6 {
+      font-size: 0.75em;
+      /* 0.75*16 = 12 */
+    }
+
+    h1 {
+      margin: 2.42424rem 0 1.454544rem;
+    }
+
+    h2 {
+      margin: 2.0202rem 0 1.21212rem;
+    }
+
+    h3 {
+      margin: 1.61616rem 0 1rem;
+    }
+
+    h4 {
+      margin: 1.21212rem 0 1;
+    }
+
+    h5 {
+      margin: 0.80808rem 0;
+    }
+
+    h6 {
+      margin: 0.70707rem 0;
+    }
+
+    p {
+      margin: auto auto 1.5rem;
+    }
+
+    small {
+      font-size: 65%;
+    }
+
+    input,
+    abbr,
+    acronym,
+    blockquote,
+    code,
+    kbd,
+    q,
+    samp,
+    var {
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+    }
+
+    pre {
+      white-space: pre;
+    }
+
+    pre code {
+      white-space: -moz-pre-wrap;
+      white-space: pre-wrap;
+    }
+
+    code {
+      white-space: pre;
+      font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+    }
+
+    abbr {
+      -webkit-font-variant: small-caps;
+      -moz-font-variant: small-caps;
+      -ms-font-variant: small-caps;
+      font-variant: small-caps;
+      font-weight: 600;
+      text-transform: lowercase;
+      color: gray;
+    }
+
+    abbr[title]:hover {
+      cursor: help;
+    }
+
+    /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      color: #444;
+    }
+
+    img {
+      max-width: 300%;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+    code,
+    pre {
+      background-color: #f5f5f5;
+      color: #000;
+      border-radius: 2px;
+      text-shadow: 0px 1px 0px white;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    pre code {
+      border: none;
+      box-shadow: none;
+    }
+
+    pre {
+      padding: 0.5em;
+    }
+
+    code {
+      display: inline-block;
+      padding: 0 0.5em;
+      line-height: 1.4;
+      font-size: 0.9em;
+    }
+
+    table {
+      border-spacing: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    table th,
+    table td {
+      padding: 0.3em 0.7em;
+    }
+
+    table th {
+      background-color: #f4f4f4;
+      border-bottom: 2px solid #444;
+    }
+
+    table td {
+      border: 1px solid #f5f5f5;
+    }
+
+    /* Add transition to containers so they can push in and out. */
+
+    #layout,
+    #menu,
+    .menu-link {
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+    }
+
+    /* This is the parent `<div>` that contains the menu and the content area. */
+
+    #layout {
+      position: relative;
+      padding-left: 0;
+    }
+
+    #layout.active #menu {
+      left: 250px;
+      width: 250px;
+    }
+
+    #layout.active .menu-link {
+      left: 250px;
+    }
+
+    /* The content `<div>` is where all your content goes. */
+
+    .content {
+      margin: 50px auto;
+      padding: 0 2em;
+      max-width: 120ex;
+      line-height: 1.6em;
+    }
+
+    /*
+    The `#menu` `<div>` is the parent `<div>` that contains the menu that
+    appears on the left side of the page.
+    */
+
+    #menu {
+      margin-left: -250px;
+      /* "#menu" width */
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1000;
+      /* so the menu or its navicon stays above all content */
+      background: #f4f4f4;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      font-size: 0.9em;
+    }
+
+    a,
+    a * {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    /* All anchors inside the menu should be styled like this. */
+
+    #menu a {
+      display: block;
+      padding: 0.5em 0.5em;
+    }
+
+    #menu a:first-letter {
+      text-transform: capitalize;
+    }
+
+    #menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1em 0.5em;
+    }
+
+    #menu ul ul {
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+      border-left: 4px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* Change color of the anchor links on hover/focus. */
+
+    #menu li a:hover,
+    #menu li a:focus {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* This styles the selected menu item `<li>`. */
+
+    #menu li a.active {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    /* This styles a link within a selected menu item `<li>`. */
+
+    #menu li a.active {
+      color: #222;
+    }
+
+    /* This styles the menu heading. */
+
+    #menu li.heading {
+      font-size: 0.9em;
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    #menu li.heading>* {
+      padding: 0.5em;
+      display: block;
+    }
+
+    #menu li.heading a {
+      color: #000000;
+    }
+
+    /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+    /*
+    `.menu-link` represents the responsive menu toggle that shows/hides on
+    small screens.
+    */
+
+    .menu-link {
+      position: fixed;
+      display: block;
+      /* show this only on small screens */
+      top: 0;
+      left: 0;
+      /* "#menu width" */
+      background: #f4f4f4;
+      /* change this value to increase/decrease button size */
+      z-index: 10;
+      width: 2em;
+      height: auto;
+      padding: 1.6em 1.2em;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .menu-link:hover {
+      background: /* #f4f4f4 * 0.8 */
+      #eee;
+    }
+
+    .menu-link span {
+      position: relative;
+      display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+      background-color: #555;
+      width: 100%;
+      height: 0.2em;
+      border-radius: 1em;
+    }
+
+    .menu-link span:before,
+    .menu-link span:after {
+      position: absolute;
+      margin-top: -0.6em;
+      content: " ";
+    }
+
+    .menu-link span:after {
+      margin-top: 0.6em;
+    }
+
+    /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+    @media (min-width: 48em) {
+
+      .header,
+      .content {
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+
+      #layout {
+        padding-left: 250px;
+        /* left col width "#menu" */
+        left: 0;
+      }
+      #menu {
+        left: 250px;
+      }
+
+      .menu-link {
+        position: fixed;
+        left: 250px;
+        display: none;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+    }
+
+    @media (max-width: 48em) {
+      /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+       * Make the window small.
+       * Tap the menu to trigger the active state.
+       * Make the window large again.
+       */
+      #layout.active {
+        position: relative;
+        left: 250px;
+      }
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+</head>
+
+<body>
+    <article id="main" class="content">
+      <title>Factor and Remainder Theorems – IMT DeCal</title>
+<h1>Factor and Remainder Theorems</h1>
+<hr>
+<br>
+<!--
+
+Jump to:
+- [Division Algorithm for Polynomials](#divisionalgo)
+- [Polynomial Division](#polydiv)
+	- [Polynomial Long Division](#longdiv)
+	- [Synthetic Division](#syntheticdiv)
+- [Remainder and Factor Theorems](#factrem)
+	- [Remainder Theorem](#remainder)
+	- [Factor Theorem](#factor)
+- [Roots](#roots)
+	- [Complex Roots](#complex)
+	- [Complex Root Pairs](#complexpair)
+
+-->
+<p>In this note, we will look at two theorems that formalize properties you are likely already aware of. These properties will allow us to explore the relationship between the degree of a polynomial and the number of roots it has.</p>
+<p>Before we look at these theorems, we need to look at another idea – the division of polynomials. As you will see, there are many parallels between polynomial division and regular integer division.</p>
+<br>
+<a name='divisionalgo'>
+<h2>Division Algorithm for Polynomials</h2>
+<hr>
+</a>
+<p>Recall the division algorithm for integers, which said that given some dividend $n$ and divisor $d$, it is always possible to write $n = d q + r$, where $q$ is the quotient and $r$ is the remainder, with $r &lt; d$.</p>
+<p>What if we want to divide some polynomial $p(x)$ by some other polynomial $d(x)$? Well, essentially the same statement holds: if $p(x), d(x)$ are polynomials such that $\text{deg}(p(x))\geq \text{deg}(d(x))$, then it is possible to find polynomials $q(x), r(x)$ such that</p>
+<div align=center>
+<p>$p(x) = d(x)q(x) + r(x)$</p>
+<p>where $\text{deg}(q(x)) = \text{deg}(p(x)) - \text{deg}(d(x))$ and $\text{deg}(r(x)) &lt; \text{deg}(d(x))$</p>
+</div>
+<br>
+<p>$d(x)$ is the divisor, $q(x)$ is the quotient and $r(x)$ is the remainder. For simplicity’s sake, we will almost always only look at linear divisors; that is, $d(x)$ will usually be of the form $x - a$ or $cx - a$.</p>
+<p>For example, suppose we want to show the division of $p(x) = x^2 - 5x + 6$ by $d(x) = x - 1$. It turns out the corresponding quotient is $q(x) = x - 4$ and remainder is $r(x) = 2$:</p>
+<div align=center> $x^2 - 5x + 6 = (x-1)(x-4) + 2$ </div> <br>
+<p>The question is, how did we find that value of $q(x)$ and $r(x)$? While some of the theorems presented later in this article may ease the process, the way to do this in general for any (valid) degrees of $p(x)$ and $d(x)$ is through <strong>polynomial division</strong>.</p>
+<br>
+<a name='polydiv'>
+<h2>Polynomial Division</h2>
+<hr>
+</a>
+<p>There are two ways we can divide one polynomial by another.</p>
+<a name='longdiv'>
+<h3>Polynomial Long Division</h3>
+<hr>
+</a>
+<p>Polynomial long division is directly analagous to regular long division. Let’s jump into an example - we’ll divide $p(x) = x^2 - 5x + 6$ by $d(x) = x - 7$:</p>
+<div align=center>
+<img src='polydiv1.png' width='200'>
+</div>
+<br>
+<p>As we do in integer long division, we iteratively multiply across and subtract downwards, until we are left with a remainder. We know that our remainder has to be a constant, as our divisor has degree 1 and the remainder’s degree must be strictly less than the divisor’s degree, so that’s when we know when to stop.</p>
+<p>Using the quotient and remainder we obtain from above, we can format our division using the division algorithm: $x^2 - 5x + 6 = (x-7)(x+2) + 20$.</p>
+<br>
+<p>Now, we’ll look at a higher degree example. Let $p(x) = 4x^4 - 10x^3 + 7x^2 - 11x - 9$ and $d(x) = 2x^2 + 10x + 3$.</p>
+<div align=center>
+<img src='polydiv2.png' width='400'>
+</div>
+<br>
+<p>Again, this tells us that we can write $4x^4 - 10x^3 + 7x^2 - 11x - 9 = (2x^2 + 10x + 3)(2x^2 - 15x + \frac{151}{2}) - 721x - \frac{471}{2}$. Here, while $r(x)$ is not a constant (it is the linear polynomial $-721x - \frac{471}{2}$), its degree is still less than the degree of $d(x)$.
+<br></p>
+<p>As with many things in this course, it’ll be very difficult to understand how to do polynomial division just by looking at this one example. Practice will be key here.</p>
+<br>
+<a name='syntheticdiv'>
+<h3>Synthetic Division</h3>
+<hr>
+</a>
+<p>Synthetic division is a short-form way of performing polynomial long division. While it can be done with divisors that are non-linear, for simplicity’s sake, we will stick with linear factors.</p>
+<p>Once again, let’s dive directly into an example, and then work our way through it. We’ll use the same example as in the previous section.</p>
+<img src='polydiv3.png' width='250'>
+<br>
+<ul>
+<li>If we divide by $x-a$, the number we write on the left-hand side is $a$ (which is why we put a $7$ there)
+<ul>
+<li>Formally, we set the divisor to $0$, so if we were dividing by $ax - b$, we’d use $\frac{b}{a}$ as this value</li>
+</ul>
+</li>
+<li>The top row represents the coefficients of the dividend $p(x)$ – the leftmost column is the highest degree term, the next column is the second highest degree term, etc.</li>
+<li>The very bottom row represents the quotient and remainder
+<ul>
+<li>We know that by dividing a degree 2 polynomial by a degree 1, our result will be a polynomial of degree 1 and remainder will be a constant</li>
+<li>The rightmost number is the remainder, $20$, whereas the two terms to the left represent the quotient $x + 2$</li>
+</ul>
+</li>
+</ul>
+<p>The process is iterative - we add downwards, and multiply numbers in the bottom row by $a$ ($7$) to create numbers in the middle row.</p>
+<ul>
+<li>We always bring down the leading coefficient.</li>
+<li>The $7$ in the middle row is the result of multiplying $7 \times 1$</li>
+<li>The $2$ in the bottom row is the result of adding $-5 + 7$</li>
+<li>The $14$ in the middle row is the result of multiplying $7 \times 2$</li>
+<li>The $20$ in the bottom row is the result of adding $6 + 14$</li>
+</ul>
+<p>Another example:</p>
+<div align=center>
+<img src='polydiv4.png' width='350'>
+</div>
+<br>
+<p>Here, we divided $p(x) = x^4 + 3x^2 - 11x - 3$ by $x-4$ to yield the quotient $q(x) = x^3 + 4x^2 + 19x + 65$ with remainder $r(x) = 257$.</p>
+<br>
+<a name='factrem'>
+<h2>Remainder and Factor Theorems</h2>
+<hr>
+</a>
+<p>Now, we’re equipped to do some analysis regarding the division algorithm.</p>
+<a name = 'remainder'>
+<h3>Remainder Theorem</h3>
+<hr>
+</a>
+<p>Suppose we’re dividing some arbitrary polynomial $p(x)$ by linear divisor $x-a$. Then, we can say $p(x) = (x-a)q(x) + r(x)$.</p>
+<p>What happens if we evaluate $p(a)$? Well, the first term cancels out since $a - a = 0$, and we’re left with $r(a)$. This result is known as the <strong>remainder theorem</strong>.</p>
+<p>Formally, the remainder theorem states that <strong>if $p(x)$ is a polynomial, such that $r(x)$ is the remainder that results from dividing $p(x)$ by $x - a$, then $p(a) = r(a)$</strong>. (Notice that this only applies to polynomial divisions with linear divisors.)</p>
+<p>As a sanity check: When introducing polynomial division, we showed that $x^2 - 5x + 6 = (x-7)(x+2) + 20$, meaning that the remainder when dividing $x^2 - 5x + 6$ by $x - 7$ was $20$. We can also easily verify that $p(7) = 7^2 - 5 \cdot 7 + 6 = 49 - 35 + 6 = 20$.</p>
+<br>
+<a name='factor'>
+<h3>Factor Theorem</h3>
+<hr>
+</a>
+<p>What if we had that $r(x) = 0$? Then, we’d write $p(x) = (x-a)q(x)$, meaning that $x-a$ evenly divided $p(x)$, i.e. that $x-a$ was a <strong>factor</strong> of $p(x)$. This leads to the <strong>factor theorem</strong>, which is a more specific case of the remainder theorem.</p>
+<p><strong>Specifically, the factor theorem states that $x-a$ is a factor of $p(x)$ if and only if $p(a) = 0$.</strong></p>
+<p>Clearly, $x - 7$ is not a factor of $p(x) = x^2 - 5x + 6$, since the remainder is 20 (or, equivalently, $p(7) = 20 \neq 0$). However, $x - 3$ is a factor of $p(x)$, as $x^2 - 5x + 6 = (x-3) (x-2) + 0$ (or, equivalently, $p(3) = 0$). As another example, since we can factor $p(x) = x^3 + 7x^2 + 6x$ into $p(x) = x(x + 1)(x + 6)$, we know that $p(0) = p(-1) = p(-6) = 0$.</p>
+<p>We now have all of the tools necessary to formally discuss the nature of complex roots.</p>
+<br>
+<a name='roots'>
+<h2>Roots</h2>
+<hr>
+</a>
+<p>The final key property of polynomials determined by their degree are their number of roots. You may have learned before that a real-valued polynomial with real coefficients of degree $n$ has anywhere between 0 and $n$ roots, depending on its specifics. However, we can actually make a stronger claim.</p>
+<p><strong>All real-valued polynomials with real coefficients of degree $n$ have exactly $n$ roots, with some possibly complex roots.</strong></p>
+<p>Let’s disect this. The first class of polynomial we encounter with varying numbers of roots is the parabola, of degree $2$. You may have studied before that parabolas have one of the following:</p>
+<ul>
+<li>$2$ roots, meaning they intercept the $x$ axis twice</li>
+<li>$1$ root, meaning they sit on the $x$ axis (this is actually known as a double root)</li>
+<li>$0$ roots, meaning that they sit completely above or completely below the $x$ axis</li>
+</ul>
+<p>Recall, given a quadratic of the form $f(x) = ax^2 + bx + c$, the solutions to $f(x) = 0$ are given by $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.</p>
+<p>The three cases above come from the three different states of the discriminant, $b^2 - 4ac$. When $b^2 - 4ac &gt; 0$, there are two distinct roots. When $b^2 - 4ac = 0$, the “plus-or-minus” term vanishes, leaving a double root at $x = -\frac{b}{2a}$. The case we’re now interested in is when $b^2 - 4ac &lt; 0$, where we would previously claim there to be “no solution” since we cannot take the square root of a negative number. In fact, there are still two perfectly valid solutions - they’re just not real numbers.</p>
+<br>
+<a name='complex'>
+<h3>Complex Roots</h3>
+<hr>
+</a>
+<p>Complex numbers (discussed in the appendix, if you need a refresher) are a superset of the real numbers. We can represent a complex number $z$ in <strong>rectangular form</strong> as $z = a + bi$, where $a, b$ are real numbers and $i$ is the imaginary unit defined by $i^2 = -1$. We say $a$ is the “real part” and $bi$ is the “imaginary part.” We can represent the set of real numbers as complex numbers, with $b = 0$.</p>
+<p>The simplest parabola that has complex roots is $p(x) = x^2 + 1$, which sits one unit above the $x$ axis, centered on the $y$ axis. It has roots $x_1 = i$ and $x_2 = -i$, respectively, which you can verify with the quadratic equation or by evaluating $p(x_1), p(x_2)$.</p>
+<p>An important consequence of our new, stronger definition of the number of roots of a polynomial is that <strong>all polynomials are now completely factorable into linear terms</strong>, whereas previously this was not the case. Previously, we could factor $x^2 + 5x + 6$ and $x^2 - 16$ into $(x+2)(x+3)$ and $(x-4)(x+4)$, respectively, because we knew these polynomials in standard form had roots. However, now we can factor $x^2 + 1$ as well, into $(x-i)(x+i)$, by the factor theorem. In general,</p>
+<div align=center>
+<p>$p(x) = \sum_{k = 0}^n a_kx^k = a(x-r_1)(x-r_2)(x-r_3)…(x-r_{n-1})(x-r_n)$ $= a\prod_{i = 0}^n (x - r_i)$</p>
+</div>
+<p>where $a$ is some real constant and $r_1, r_2, … r_n$ represent the roots of $p(x)$. Remember, our polynomials still only take and return real numbers as inputs and outputs, and all coefficients are still real numbers. It’s just the roots that are potentially complex.</p>
+<br>
+<a name='complexpair'>
+<h3>Complex Root Pairs</h3>
+<hr>
+</a>
+<p>As it turns out, complex roots always occur in pairs. No real polynomial can have only a single complex root, or three complex roots, or any odd number of complex roots. Furthermore:</p>
+<div align=center>
+<p>$f(a + bi) = 0 \implies f(a - bi) = 0$</p>
+</div>
+<p>This says that if a complex number is a root of a real polynomial, its <strong>complex conjugate</strong> must also be a root. Conjugates are defined exactly as above – the conjugate of $z = a + bi$ is $\bar{z} = a - bi$. Complex conjugates are defined this way for the following reason:</p>
+<div align=center>
+<p>$z\bar{z} = (a + bi)(a - bi) = a^2 - abi + bai - b^2i = a^2 - b^2i = a^2 + b^2$</p>
+</div>
+<p>When multiplying a complex number by its conjugate, the imaginary parts fall out and we’re left with a real number. In particular, this real number $z\bar{z} = |z|^2$ is the <strong>square of the magnitude</strong> of the complex number, i.e. the squared distance from $0$.</p>
+<p>Let’s justify why $a + bi$ and $a - bi$ will always exist together as roots. By the factor theorem, if they are both roots of some $p(x)$ of degree $n$:</p>
+<div align=center>
+<p>$\begin{aligned} p(x) &amp;= (x-r_1)(x-r_2)(x-r_3)…(x - r_{n-2})\left[(x - (a + bi))(x - (a - bi))\right] \\ &amp;= (x-r_1)(x-r_2)(x-r_3)…(x - r_{n-2})\left[x^2 - ((a - bi) + (a + bi))x - (a+bi)(a-bi) \right] \\ &amp;= (x-r_1)(x-r_2)(x-r_3)…(x - r_{n-2})\left[x^2 - 2ax - (a^2 + b^2) \right] \end{aligned} $</p>
+</div>
+<p>The product $(x - (a + bi))(x - (a - bi))$ yields a completely real polynomial. This real polynomial, multiplied by the rest of $(x - r_1)(x - r_2)…(x-r_{n-2})$, which is assumed to be real, will result in a real $p(x)$. However, if $(x - (a + bi))$ were multipled by $(x - (c + di))$, for any other complex number $c + di \neq a - bi$, the resulting last term of $p(x)$ would contain complex terms, meaning that $p(x)$ would have complex coefficients, going against our definition set in the beginning.</p>
+<p>To show this, a good exercise is to multiply out $(x - (a + bi))(x - (c + di))$ and show that the only way for this product polynomial to be real is if $c = a$ and $d = -b$.</p>
+
+    </article>
+  <script>
+    // FROM http://purecss.io/js/ui.js
+    (function (window, document) {
+
+      var layout = document.getElementById('layout'),
+        menu = document.getElementById('menu'),
+        menuLink = document.getElementById('menuLink');
+
+      function toggleClass(element, className) {
+        var classes = element.className.split(/\s+/),
+          length = classes.length,
+          i = 0;
+
+        for (; i < length; i++) {
+          if (classes[i] === className) {
+            classes.splice(i, 1);
+            break;
+          }
+        }
+        // The className is not found
+        if (length === classes.length) {
+          classes.push(className);
+        }
+
+        element.className = classes.join(' ');
+      }
+
+      menuLink.onclick = function (e) {
+        var active = 'active';
+
+        e.preventDefault();
+        toggleClass(layout, active);
+        toggleClass(menu, active);
+        toggleClass(menuLink, active);
+      };
+
+    }(this, this.document));
+  </script>
+</body>
+
+</html>

@@ -444,50 +444,93 @@
 
 <body>
     <article id="main" class="content">
-      <title>Notes – IMT DeCal</title>
-<h1>Notes – Introduction to Mathematical Thinking DeCal</h1>
+      <title>Stars and Bars – IMT DeCal</title>
+<h1>Counting Technique: Stars and Bars</h1>
 <hr>
-<p>Go to the course website <a href="http://imt-decal.org">here</a></p>
 <br>
-<p>Here, we link to all of the supplementary notes written specifically for this course, organized by topic. These are meant to be supplementary to other resources – other textbooks, lectures, etc. It should also be noted that some of these notes only consist of examples or explain just one specific topic.</p>
-<p>These notes are primarily written by Suraj Rampure, with contributions by Fahad Kamran, Hermish Mehta, Jerry Huang, and Sagnik Bhattacharya. Feel free to email <code>suraj.rampure@berkeley.edu</code> if you spot any issues with any of the notes.</p>
-<h3>Set Theory</h3>
-<ul>
-<li><a href="sets/sets-and-set-operations.html">Sets and Set Operations</a></li>
-<li><a href="sets/functions-and-bijections.html">Functions and Bijections</a></li>
-<li><a href="sets/sets-of-numbers.html">Sets of Numbers</a></li>
-<li><a href="sets/propositional-logic.html">Propositional Logic</a></li>
-<li><a href="sets/cheat-sheet.html">Cheat Sheet</a></li>
-</ul>
-<h3>Proof Techniques</h3>
-<ul>
-<li><a href="proofs/foundational-proof-techniques.html">Foundational Proof Techniques</a></li>
-<li><a href="proofs/mathematical-induction.html">Mathematical Induction</a></li>
-<li><a href="proofs/series-and-sequences.html">Series and Sequences</a></li>
-</ul>
-<h3>Number Theory and Modular Arithmetic</h3>
-<ul>
-<li><a href="nt/primality-and-divisibility.html">Primality and Divisibility</a></li>
-<li><a href="nt/modular-arithmetic.html">Modular Arithmetic</a></li>
-</ul>
-<h3>Counting</h3>
-<ul>
-<li><a href="counting/stars-and-bars.html">Stars and Bars</a></li>
-</ul>
-<h3>Polynomials</h3>
-<ul>
-<li><a href="polynomials/binomial-theorem.html">Binomial Theorem</a></li>
-<li><a href="polynomials/vietas-formulas.html">Vieta’s Formulas</a></li>
-<li><a href="polynomials/representation-and-interpolation.html">Representation and Interpolation</a></li>
-<li><a href="polynomials/factor-and-remainder-theorem.html">Factor and Remainder Theorems</a></li>
-</ul>
-<h3>Miscellaneous</h3>
-<ul>
-<li><a href="appendix/sigma-and-pi-notation.html">Sigma and Pi Notation</a></li>
-<li><a href="appendix/complex-numbers.html">Complex Numbers</a></li>
-</ul>
+<!--
+
+Jump to: 
+- [Introduction](#introduction)
+- [Generalization](#generalization)
+- [Algebraic Formulation](#algebraic)
+    - [Adding Constraints](#constraints)
+
 <br>
-<p><em>Built using <a href="https://www.npmjs.com/package/markdown-folder-to-html">markdown-folder-to-html</a>.</em></p>
+
+-->
+<a name="introduction">
+<h2>Introduction</h2>
+<hr>
+</a>
+<br>
+<p>The typical stars-and-bars problem is usually of the form</p>
+<div align=center>
+<p><strong>Suppose I have 20 one-dollar bills, and want to distribute them amongst my three closest friends. How many ways can I do this?</strong></p>
+</div>
+<p>This sounds like a counting problem, so let’s try and model this in a way that will allow us to use what we know about permutations and combinations.</p>
+<p>Let’s suppose I lay all 20 of my dollar bills out in a line, side-by-side. In order to split the money amongst my three friends, I could split the line of 20 dollars into three parts. Everything in the first part goes to my first friend, everything in the second part goes to my second friend, and everything in the third part goes to my third friend. I only need two dividers to do this — one to divide between my first and second friend, and another to divide between my second and third friend.</p>
+<p>We can treat each dollar as a “star”, with the symbol $*$. Since I have three friends, I have two “dividers”, which I can refer to as “bars”, with the symbol $|$. My problem now boils down to determining the number of <em>permutations</em> of 20 stars and 2 bars, i.e. the number of permutations of $********************||$. Each permutation of this string represents a different configuration.</p>
+<p>For example:</p>
+<ul>
+<li>$<strong><em><strong>|</strong></em>|</strong>**********$ represents the situation where my first friend gets 5 dollars, my second friend gets 3 dollars, and my third friend gets 12 dollars.</li>
+<li>“$*******<em><strong><strong>|</strong></strong></em>|***$” represents the situation where my first friend gets 12 dollars, my second friend gets 5 dollars, and my third friend gets 3 dollars. Notice that even though the numbers in the second example are the same, this represents a different distribution of the dollars to my friends and hence is counted separately).</li>
+<li>“$|<strong>|</strong>****************$” represents the situation where my first friend receives nothing, my second friend receives 2 dollars, and my third friend receives 18 dollars. Notice that for now, we are fine with one of my friends receiving no money. (What if we want to ensure that everyone receives at least one dollar? Keep on reading!)</li>
+</ul>
+<p>The number of permutations of the string $********************||$ is</p>
+<div align=center>
+<p>${22 \choose 2} = \frac{22!}{20! 2!} = 231$</p>
+</div>
+<p>We can reason about this in two slightly different ways:</p>
+<ol>
+<li>Recall, when we found the number of permutations of MISSISSIPPI earlier in the chapter, we found that the number of permutations of a string is the factorial of the number of total characters, divided by the product of the factorials of the quantity of each repeating character. In the MISSISSIPPI example, this evaluates to $\frac{11!}{4! 4! 2!}$, and in our case, since we have 22 total characters, with 2 repeated “$|$” and 20 repeated “$*$”, our result is $\frac{22!}{20!2!}$.</li>
+<li>In total, there are 22 characters in this string. We want to choose 2 of them to be bars, or equivalently, 20 of them to be stars. This can be done in ${22 \choose 2} = {22 \choose 20}$ ways.</li>
+</ol>
+<p>Both interpretations yield the same result. Let’s now generalize, to any number of dollars and any number of friends. Notice, we had 20 stars and 2 bars, and our result ended up being ${stars + bars \choose stars}$ which can also be written as ${stars + bars \choose bars}$.</p>
+<br>
+<a name="generalization">
+<h2>Generalization</h2>
+<hr>
+</a>
+<br>
+<p>When we want to distribute $n$ <strong>indistinguishable objects</strong> (dollars) into $k$ <strong>distinguishable bins</strong> (people), we can model our problem using $n$ <strong>stars</strong> and $k-1$ <strong>bars</strong>. The number of ways this can be done is</p>
+<div align=center>
+<p>$\boxed{{n + k - 1 \choose n}}$ or $\boxed{{n + k - 1 \choose k-1}}$</p>
+</div>
+<p>Or, equivalently,</p>
+<div align=center>
+<p>$\boxed{{stars + bars \choose stars}}$ or $\boxed{{stars + bars \choose bars}}$</p>
+</div>
+<p>Since ${a + b \choose a} = {a + b \choose b}$, these representations are identical.</p>
+<br>
+<a name="algebraic">
+<h2>Algebraic Formulation</h2>
+<hr>
+</a>
+<br>
+<p>Suppose I want to find the number of non-negative integer solutions (i.e., $x_i \in \mathbb{N}_0$) to</p>
+<div align=center>
+<p>$x_1 + x_2 + x_3 + x_4 + x_5 = 100$</p>
+</div>
+<p>This is actually the exact same problem as we saw above! We can model this using stars and bars, with 100 “stars” and 4 “bars.&quot; You can think of the addition signs as being the bars. Here, using the general formula defined above, we have ${104 \choose 4}$ solutions.</p>
+<p><strong>In general, the equation $\sum_{i = 1}^k x_i = n$ has ${n + k - 1 \choose k - 1}$ non-negative integer solutions.</strong></p>
+<br>
+<a name="constraints">
+<h3>Adding Constraints</h3>
+<hr>
+</a>
+<br>
+<p>Let’s make things slightly more interesting. How can we find the number of <strong>positive</strong> integer solutions to $x_1 + x_2 + x_3 + x_4 + x_5 = 100$, i.e. where all values are non-zero?</p>
+<p>In the non-negative case, we had that each $x_i \geq 0$. Now, we want $x_i &gt; 0$, or equivalently, $x_i \geq 1$ (this is true because in both cases, we are confined to the larger set of integers). To account for this, we can define $x_i’ = x_i - 1$. Now, the only constraint we have is $x_i’ \geq 0$, which we already know how to solve, from the above formulation.</p>
+<div align=center>
+<p>$x_1 + x_2 + x_3 + x_4 + x_5 = 100$</p>
+<p>$(x_1 - 1) + (x_2 - 1) + (x_3 - 1) + (x_4 - 1) + (x_5 - 1) = 100 - 5$</p>
+<p>$x_1’ + x_2’ + x_3’ + x_4’ + x_5’ = 95$</p>
+</div>
+<p>In our new equation, we have 95 stars and 4 bars, giving us ${99 \choose 4}$ solutions to this equation, meaning that our original equation $\sum_{i = 1}^5 x_i = 100$ has ${99 \choose 4}$ positive integer solutions.</p>
+<p><strong>In general, the equation $\sum_{i = 1}^k x_i = n$ has ${n - 1 \choose k - 1}$ positive integer solutions.</strong></p>
+<br>
+<p>The task of adding constraints to our problem isn’t just restricted to the algebraic formulation — let’s tie this back into the problem of distributing 20 dollar bills. Suppose we want to distribute these dollar bills in a way that everyone receives at least one dollar. We can model this with $x_1 + x_2 + x_3 = 20$, such that $x_i \geq 1$, giving us ${20 - 1 \choose 3 - 1} = {19 \choose 2}$ solutions.</p>
 
     </article>
   <script>

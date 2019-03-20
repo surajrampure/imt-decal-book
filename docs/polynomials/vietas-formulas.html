@@ -1,0 +1,678 @@
+<!doctype html>
+<html>
+
+<head>
+  <script type='text/x-mathjax-config'>MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+  <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <style>
+    /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-rendering: optimizeLegibility;
+      line-height: 1;
+      margin-top: 0;
+      color: #000;
+    }
+
+    blockquote+figcaption cite {
+      display: block;
+      font-size: inherit;
+      text-align: right;
+    }
+
+    body {
+      word-wrap: break-word;
+    }
+
+    pre code {
+      word-wrap: normal;
+    }
+
+    body {
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #000000;
+      /* 2*16 = 32 */
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #000000;
+      /* 1.5*16 = 24 */
+    }
+
+    h3 {
+      font-size: 1.17em;
+      color: #000000;
+      /* 1.17*16 = 18.72 */
+    }
+
+    h4 {
+      font-size: 1em;
+      color: #000000;
+      /* 1*16 = 16 */
+    }
+
+    h5 {
+      font-size: 0.83em;
+      color: #000000;
+      /* 0.83*16 = 13.28 */
+    }
+
+    h6 {
+      font-size: 0.75em;
+      /* 0.75*16 = 12 */
+    }
+
+    h1 {
+      margin: 2.42424rem 0 1.454544rem;
+    }
+
+    h2 {
+      margin: 2.0202rem 0 1.21212rem;
+    }
+
+    h3 {
+      margin: 1.61616rem 0 1rem;
+    }
+
+    h4 {
+      margin: 1.21212rem 0 1;
+    }
+
+    h5 {
+      margin: 0.80808rem 0;
+    }
+
+    h6 {
+      margin: 0.70707rem 0;
+    }
+
+    p {
+      margin: auto auto 1.5rem;
+    }
+
+    small {
+      font-size: 65%;
+    }
+
+    input,
+    abbr,
+    acronym,
+    blockquote,
+    code,
+    kbd,
+    q,
+    samp,
+    var {
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+    }
+
+    pre {
+      white-space: pre;
+    }
+
+    pre code {
+      white-space: -moz-pre-wrap;
+      white-space: pre-wrap;
+    }
+
+    code {
+      white-space: pre;
+      font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+    }
+
+    abbr {
+      -webkit-font-variant: small-caps;
+      -moz-font-variant: small-caps;
+      -ms-font-variant: small-caps;
+      font-variant: small-caps;
+      font-weight: 600;
+      text-transform: lowercase;
+      color: gray;
+    }
+
+    abbr[title]:hover {
+      cursor: help;
+    }
+
+    /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      color: #444;
+    }
+
+    img {
+      max-width: 300%;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+    code,
+    pre {
+      background-color: #f5f5f5;
+      color: #000;
+      border-radius: 2px;
+      text-shadow: 0px 1px 0px white;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    pre code {
+      border: none;
+      box-shadow: none;
+    }
+
+    pre {
+      padding: 0.5em;
+    }
+
+    code {
+      display: inline-block;
+      padding: 0 0.5em;
+      line-height: 1.4;
+      font-size: 0.9em;
+    }
+
+    table {
+      border-spacing: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    table th,
+    table td {
+      padding: 0.3em 0.7em;
+    }
+
+    table th {
+      background-color: #f4f4f4;
+      border-bottom: 2px solid #444;
+    }
+
+    table td {
+      border: 1px solid #f5f5f5;
+    }
+
+    /* Add transition to containers so they can push in and out. */
+
+    #layout,
+    #menu,
+    .menu-link {
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+    }
+
+    /* This is the parent `<div>` that contains the menu and the content area. */
+
+    #layout {
+      position: relative;
+      padding-left: 0;
+    }
+
+    #layout.active #menu {
+      left: 250px;
+      width: 250px;
+    }
+
+    #layout.active .menu-link {
+      left: 250px;
+    }
+
+    /* The content `<div>` is where all your content goes. */
+
+    .content {
+      margin: 50px auto;
+      padding: 0 2em;
+      max-width: 120ex;
+      line-height: 1.6em;
+    }
+
+    /*
+    The `#menu` `<div>` is the parent `<div>` that contains the menu that
+    appears on the left side of the page.
+    */
+
+    #menu {
+      margin-left: -250px;
+      /* "#menu" width */
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1000;
+      /* so the menu or its navicon stays above all content */
+      background: #f4f4f4;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      font-size: 0.9em;
+    }
+
+    a,
+    a * {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    /* All anchors inside the menu should be styled like this. */
+
+    #menu a {
+      display: block;
+      padding: 0.5em 0.5em;
+    }
+
+    #menu a:first-letter {
+      text-transform: capitalize;
+    }
+
+    #menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1em 0.5em;
+    }
+
+    #menu ul ul {
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+      border-left: 4px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* Change color of the anchor links on hover/focus. */
+
+    #menu li a:hover,
+    #menu li a:focus {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* This styles the selected menu item `<li>`. */
+
+    #menu li a.active {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    /* This styles a link within a selected menu item `<li>`. */
+
+    #menu li a.active {
+      color: #222;
+    }
+
+    /* This styles the menu heading. */
+
+    #menu li.heading {
+      font-size: 0.9em;
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    #menu li.heading>* {
+      padding: 0.5em;
+      display: block;
+    }
+
+    #menu li.heading a {
+      color: #000000;
+    }
+
+    /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+    /*
+    `.menu-link` represents the responsive menu toggle that shows/hides on
+    small screens.
+    */
+
+    .menu-link {
+      position: fixed;
+      display: block;
+      /* show this only on small screens */
+      top: 0;
+      left: 0;
+      /* "#menu width" */
+      background: #f4f4f4;
+      /* change this value to increase/decrease button size */
+      z-index: 10;
+      width: 2em;
+      height: auto;
+      padding: 1.6em 1.2em;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .menu-link:hover {
+      background: /* #f4f4f4 * 0.8 */
+      #eee;
+    }
+
+    .menu-link span {
+      position: relative;
+      display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+      background-color: #555;
+      width: 100%;
+      height: 0.2em;
+      border-radius: 1em;
+    }
+
+    .menu-link span:before,
+    .menu-link span:after {
+      position: absolute;
+      margin-top: -0.6em;
+      content: " ";
+    }
+
+    .menu-link span:after {
+      margin-top: 0.6em;
+    }
+
+    /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+    @media (min-width: 48em) {
+
+      .header,
+      .content {
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+
+      #layout {
+        padding-left: 250px;
+        /* left col width "#menu" */
+        left: 0;
+      }
+      #menu {
+        left: 250px;
+      }
+
+      .menu-link {
+        position: fixed;
+        left: 250px;
+        display: none;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+    }
+
+    @media (max-width: 48em) {
+      /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+       * Make the window small.
+       * Tap the menu to trigger the active state.
+       * Make the window large again.
+       */
+      #layout.active {
+        position: relative;
+        left: 250px;
+      }
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+</head>
+
+<body>
+    <article id="main" class="content">
+      <title>Vieta's Formulas – IMT DeCal</title>
+<h1>Vieta’s Formulas</h1>
+<hr>
+<br>
+<p>Jump to:</p>
+<ul>
+<li><a href="#naive">Naive Approach, using the Quadratic Formula</a></li>
+<li><a href="#derivations">Derivations</a>
+<ul>
+<li><a href="#degree2">Derivation for Polynomials of Degree 2</a></li>
+<li><a href="#degree34">Derivation for Polynomials of Degrees 3, 4</a></li>
+<li><a href="#general">General Vieta’s, Similarity to Binomial Theorem</a></li>
+</ul>
+</li>
+<li><a href="#symmetric">Symmetric Sums</a></li>
+<li><a href="#examples">Example Problems</a></li>
+</ul>
+<p>Vieta’s formulas give us a way to interpret a polynomial in standard form, e.g. $p(x) = 4x^2 + 3x + 3$, in terms of its roots, without having to find the roots specifically. While there are more practical applications to this, the derivation of Vieta’s formulas prove to be an interesting combinatoral problem.</p>
+<br>
+<a name="naive">
+<h2>Naive Approach, using the Quadratic Formula</h2>
+<hr>
+</a>
+<p>Let $p(x) = ax^2 + bx + c$. We know that $p(x)$ will have two roots, i.e. solutions to $p(x) = 0$ (they might be complex and/or equal).</p>
+<p>Suppose $p(x)$'s roots are $r_1$ and $r_2$, and suppose we want to find the sum ($r_1 + r_2$) and product ($r_1 r_2$) of these roots. One way to do this would be to use the quadratic formula to solve for both roots, and simplify.</p>
+<p>Using the quadratic formula:</p>
+<div align=center>
+<p>$r_1, r_2 = \frac{-b + \sqrt{b^2 - 4ac}}{2a}, \frac{-b - \sqrt{b^2 - 4ac}}{2a}$</p>
+</div>
+<p>Then:</p>
+<div align=center>
+<p>$r_1 + r_2 = \frac{-b + \sqrt{b^2 - 4ac} - b - \sqrt{b^2 - 4ac}}{2a} = -\frac{2b}{2a} = -\frac{b}{a}$</p>
+<p>$r_1r_2 = \left( \frac{-b + \sqrt{b^2 - 4ac}}{2a} \right)\left( \frac{-b - \sqrt{b^2 - 4ac}}{2a} \right) = \frac{b^2 - (b^2 - 4ac)}{4a^2} = \frac{4ac}{4a^2} = \frac{c}{a}$</p>
+</div>
+<p>We’ve found that the sum of the roots is $-\frac{b}{a}$, and the product of the roots is $\frac{c}{a}$.</p>
+<p>How would we extend this to cubic polynomials, though? <em>There’s a simpler way to look at this.</em></p>
+<br>
+<a name='derivations'>
+<h2>Derivations</h2>
+<hr>
+</a>
+<a name = 'degree2'>
+<h3>Derivation of Vieta’s Formulas for Polynomials of Degree 2</h3>
+<hr>
+</a>
+<p>Again, suppose $p(x) = ax^2 + bx + c$ have have roots $r_1, r_2$. By the factor theorem (which you can read about in Chapter 5.4), we know that $p(x) = a(x - r_1)(x - r_2)$, for some constant $a$. Expanding $p(x)$:</p>
+<div align=center>
+<p>$\begin{aligned}
+p(x) &amp;= a(x - r_1)(x-r_2) \\ &amp;= a[x^2 - (r_1 + r_2)x + r_1r_2 ] \\ &amp;= ax^2 - a(r_1 + r_2)x + ar_1r_2 \\ \end{aligned}$</p>
+</div>
+<p>Comparing this expansion with $ax^2 + bx + c$, we see:</p>
+<div align=center>
+<p>$-a(r_1 + r_2) = b \implies \boxed{r_1 + r_2 = -\frac{b}{a}}$</p>
+<p>$ar_1r_2 = c \implies \boxed{r_1r_2 = \frac{c}{a}}$</p>
+</div>
+<p>These are known as <strong>Vieta’s formulas</strong> for polynomials of degree 2. This matches the results we saw above, using the quadratic formula. However, we conducted this analysis in a way that can be extended to polynomials of any degree!</p>
+<p>Notice that the signs alternate:</p>
+<ul>
+<li>In $p(x) = x^2 - 5x + 6$, the sum of the roots is 5 and product is 6.</li>
+<li>In $p(x) = x^2 + 5x + 6$, the sum of the roots is -5 and the product is 6.</li>
+</ul>
+<br>
+<a name='degree34'>
+<h3>Derivation of Vieta’s Formulas for Polynomials of Degrees 3, 4</h3>
+<hr>
+</a>
+<br>
+<p>We will follow a similar process as above to derive Vieta’s formulas for degree 3. However, at this point, you should try and derive these on your own, then come back here to check your work.</p>
+<p>Assume $p(x)$ has roots $r_1, r_2, r_3$, and has the form $p(x) = ax^3 + bx^2 + cx + d$. Then:</p>
+<div align=center>
+<p>$
+\begin{aligned} p(x) &amp;= a(x-r_1)(x-r_2)(x-r_3) \\ &amp;= a \left[(x^3 - (r_1 + r_2 + r_3)x + (r_1r_2 + r_1r_3 + r_2r_3)x - r_1r_2r_3\right] \\ &amp;= ax^3 - a(r_1 + r_2 + r_3)x^2 + a(r_1r_2 + r_1r_3 + r_2r_3)x - ar_1r_2r_3 \<br>
+\end{aligned}
+$</p>
+<p>$\implies \boxed{r_1 + r_2 + r_3 = -\frac{b}{a}}$</p>
+<p>$\implies \boxed{r_1r_2 + r_1r_3 + r_2r_3 = \frac{c}{a}}$</p>
+<p>$\implies \boxed{r_1r_2r_3 = -\frac{d}{a}}$</p>
+</div>
+<br>
+<p>Again, it should be noted that the signs alternate. The sign on the sum of the roots is always negative.</p>
+<p>We could follow the same process to find the formulas for degrees 4, 5 and so on and so forth. However, there’s a pattern here. When multiplying out $(x - r_1)(x - r_2)(x - r_3)$, we know our product must contain every combination of one term from the first bracket, one term from the second bracket and one term from the third bracket. Then, our choices are the following:</p>
+<ul>
+<li>
+<p>We can choose $3$ $x$s and no roots, yielding $x^3$</p>
+</li>
+<li>
+<p>We can choose $2$ $x$s and one root, yielding
+$(-r_1 - r_2 - r_3)x^2 = -(r_1+r_2+r_3)x^2$</p>
+</li>
+<li>
+<p>We can choose $1$ $x$ and two roots, yielding
+$((-r_1) \cdot (-r_2) + (-r_1) \cdot (-r_3) + (-r_2) \cdot (-r_3))x = (r_1r_2 + r_1r_3 + r_2r_3)x$</p>
+</li>
+<li>
+<p>We can choose no $x$s and three roots, yielding
+$((-r_1) \cdot (-r_2) \cdot (-r_3)) = -r_1r_2r_3$</p>
+</li>
+</ul>
+<br>
+<p>Each successive term is a <strong>sum of products of roots, taken in different quantities at a time</strong>. $r_1 + r_2 + r_3$ is the sum of the products of the roots, taken one at a time, since multiplying a constant by nothing is the constant itself. $r_1r_2 + r_1r_3 + r_2r_3$ is the sum of the product of the roots, taken two at a time – it features all 3 possible combinations of two different roots multiplied together. $r_1r_2r_3$ is the sum of the product of the roots, taken three at a time – there is only one way to take three items at once, and this is that one way.</p>
+<p>Following this pattern, we can find the expansion (and Vieta’s) for a degree 4 polynomial without having to do any manual expanding. Let $p(x)$ have roots $r_1, r_2, r_3, r_4$. Then, if we let $p(x) = ax^4 + bx^3 + cx^2 + dx + e$ we have:</p>
+<div align=center>
+<p>$
+r_1 + r_2 + r_3 + r_4 = -\frac{b}{a} \\ r_1r_2 + r_1r_3 + r_1r_4 + r_2r_3 + r_2r_4 + r_3r_4 = \frac{c}{a} \\ r_1r_2r_3 + r_1r_2r_4 + r_1r_3r_4 + r_2r_3r_4 = -\frac{d}{a} \\ r_1r_2r_3r_4 = \frac{e}{a} $</p>
+</div>
+<p>One thing to notice is that 1 term makes up the coefficient of $x^4$, 4 terms make up the coefficient of $x^3$, 6 terms make up the coefficient of $x^2$, 4 terms make up the coefficient of $x$ and 1 term makes up the coefficient of $1$. These numbers – 1, 4, 6, 4, 1 – are of course the 4th row of <strong>Pascal’s triangle</strong>! This makes sense, as the coefficient of $x^3$ consists of the roots taken one at a time, which means there should be ${4 \choose 1} = 4$ terms. The coefficient of $x^2$ consists of the roots taken two at a time, which means there should be ${4 \choose 2} = 6$ terms.</p>
+<p>Of course, since this is a pattern, we can generalize it to polynomials of an arbitrary degree.</p>
+<br>
+<a name = 'general'>
+<h3>General Vieta’s, Similarity to Binomial Theorem</h3>
+<hr>
+</a>
+<br>
+<div align=center>
+<p>$p(x) = \sum_{k = 0}^n a_k x^k = \sum_{k = 0}^n (-1)^{n-k} \big(\text{sum of the products of the roots of } p(x) \text{, taken } n-k \text{ at a time}  \big)x^k$</p>
+</div>
+<p><strong>The binomial theorem is actually just a special case of Vieta’s formulas, when all roots are the same!</strong> For example, suppose $n = 4$, $r_i = c$ for all $i$ and the leading coefficient is 1. Then:</p>
+<div align=center>
+<p>$p(x) = (x-c)^4 = {4 \choose 0}x^4 - {4 \choose 1} x^3c + {4 \choose 2}x^2c^2 - {4 \choose 3}xc^3 + {4 \choose 4}c^4$</p>
+</div>
+<p>Using Vieta’s formulas for $n = 4$:</p>
+<div align=center>
+<p>$\begin{aligned} a_3 &amp;= -(r_1 + r_2 + r_3 + r_4) = -4c = {4 \choose 1}(-c)^1 \\ a_2 &amp;= r_1r_2 + r_1r_3 + r_1r_4 + r_2r_3 + r_2r_4 + r_3r_4 = 6c^2 = {4 \choose 2}(-c)^2 \\ a_1 &amp;= -(r_1r_2r_3 + r_1r_2r_4 + r_1r_3r_4 + r_2r_3r_4) = -4c^3 = {4 \choose 3}(-c)^3 \\ a_0 &amp;= r_1r_2r_3r_4 = c^4 = {4 \choose 4}(-c)^4 \end{aligned}$</p>
+</div>
+<br>
+<a name='symmetric'>
+<h2>Symmetric Sums</h2>
+<hr>
+</a>
+<p>Vieta’s formulas give us expressions for the sum of the roots and product of the roots of polynomials. However, we are also given expressions for sums of the form $r_1r_2 + r_1r_3 + r_2r_3$, for instance.</p>
+<p>A <strong>symmetric sum</strong> is an sum in which the value does not change when the order of variables are swapped. For example, $f(a, b, c) = ab + ac + bc$ is symmetric, because in any <em>permutation</em> of our variables $a, b, c$, the value stays the same:</p>
+<div align=center>
+<p>$\begin{aligned} f(a, b, c) &amp;= ab + ac + bc = ab + ac + bc \\ f(a, c, b) &amp;= ac + ab + cb = ab + ac + bc \\ f(b, a, c) &amp;= ba + bc + ac = ab + ac + bc \\ f(b, c, a) &amp;= bc + ba + ca = ab + ac + bc \\ f(c, a, b) &amp;= ca + cb + ab = ab + ac + bc \\ f(c, b, a) &amp;= cb + ca + ba = ab + ac + bc \end{aligned}$</p>
+</div>
+<p>More concretely, with $n = 4$:</p>
+<div align=center>
+<p>$\begin{aligned} S_1 &amp;= a + b + c + d \\ S_2 &amp;= ab + ac + ad + bc + bd + cd \\ S_3 &amp;= abc + abd + acd + bcd \\ S_4 &amp;= abcd \end{aligned}$</p>
+</div>
+<br>
+<a name="examples">
+<h2>Example Problems</h2>
+<hr>
+</a>
+<p>You should attempt each of these problems on your own before looking at the solutions that follow.</p>
+<br>
+<h3>Example 1</h3>
+<hr>
+<p>Suppose $a, b$ satisfy $x^2 - 18x + 18$. Determine $a^2 + b^2$.</p>
+<br>
+<p><strong>Solution:</strong> From Vieta’s, we know $a + b = 18$ and $ab = 18$. Then:</p>
+<div align=center>
+<p>$(a+b)^2 = a^2 + b^2 + 2ab$</p>
+<p>$\implies a^2 + b^2 = (a+b)^2 - 2ab = 18^2 - 2\cdot18 = \boxed{288}$</p>
+</div>
+<br>
+<h3>Example 2</h3>
+<hr>
+<p>$p(x) = x^3 - Ax + 15$ has three real roots, two of which sum to 5. What is $|A|$?</p>
+<br>
+<p><strong>Solution:</strong> Let $r_1, r_2$ be the roots that sum to 5. This must mean $r_3 = -5$, since $r_1 + r_2 + r_3 = 5 - 5 = 0$ (there is no $x^2$ term).</p>
+<p>We also know $r_1r_2r_3 = - 15$. Then,</p>
+<div align=center>
+<p>$\begin{aligned} -A &amp;= r_1r_2 + r_1r_3 + r_2r_3  = r_3(r_1 + r_2) + r_1r_2 \\ &amp;= r_3(r_1 + r_2) + \frac{r_1r_2r_3}{r_3} \\ &amp;= -5(5) + \frac{-15}{-5} = -25 + 3 = -22 \end{aligned}$</p>
+</div>
+<p>Thus, $\boxed{|A| = 22}$.</p>
+<br>
+<h3>Example 3</h3>
+<hr>
+<p>Suppose the polynomial $f(x) = x^3 − \alpha x^2 + \beta$ has three roots, one of which is equal to $\beta^2$. What is the sum of all possible values of $\beta$? <em>(Hint: There is both an easy way and hard way to reason about this. Vieta’s formulas aren’t necessary involved.)</em></p>
+<br>
+<p><strong>Solution 1:</strong> First, let’s do this using Vieta’s formulas.</p>
+<p><strong>Solution 2:</strong> Now, let’s reason about this using the remainder theorem (which, again, you can read about in 5.4). If $\beta^2$ is a root, then $f(\beta^2) = 0$.</p>
+<div align=center>
+<p>$\begin{aligned} f(\beta^2) &amp;= 0 \\ \beta^6 - \alpha \beta^4 + \beta &amp;= 0 \end{aligned}$</p>
+</div>
+<p>This is the same polynomial as we saw in the first method just above. The sum of the roots of $\beta$ here, again, is $\boxed{0}$.</p>
+<br>
+<h3>Example 4</h3>
+<hr>
+<p>Let $f(x) = (x^2 + 6x + 9)^{50} - 4x + 3$, and suppose $f(x)$ has 100 roots, $r_1, r_2, r_3, …, r_{100}$.  Determine $(r_1 + 3)^{100} + (r_2 + 3)^{100} + … + (r_{100} + 3)^{100}$.</p>
+<br>
+<p><strong>Solution:</strong> All roots $r_i$ must satisfy $(x^2 + 6x + 9)^{50} - 4x + 3 = 0$, i.e. $(x + 3)^{100} = 4x - 3$. Taking the sum over all roots $r_i$ on both sides:</p>
+<div align=center>
+<p>$\begin{aligned} \sum_{i = 1}^{100} (r_i + 3)^{100} &amp;= \sum_{i = 1}^{100} (4r_i - 3) \\ &amp;= 4 \sum_{i = 1}^{100}r_i - 300 \end{aligned}$</p>
+</div>
+<p>Now, we just need to find the sum of the roots $r_i$. Using the <em>binomial theorem</em>, we find the coefficient of the second term of $(x+3)^{100}$ to be ${100 \choose 1}3 = 300$, meaning the sum of the roots is $-300$. Then:</p>
+<div align=center>
+<p>$\sum_{i = 1}^{100} (r_i + 3)^{100} = 4 \cdot (-300) - 300 = \boxed{-1500}$</p>
+</div>
+
+    </article>
+  <script>
+    // FROM http://purecss.io/js/ui.js
+    (function (window, document) {
+
+      var layout = document.getElementById('layout'),
+        menu = document.getElementById('menu'),
+        menuLink = document.getElementById('menuLink');
+
+      function toggleClass(element, className) {
+        var classes = element.className.split(/\s+/),
+          length = classes.length,
+          i = 0;
+
+        for (; i < length; i++) {
+          if (classes[i] === className) {
+            classes.splice(i, 1);
+            break;
+          }
+        }
+        // The className is not found
+        if (length === classes.length) {
+          classes.push(className);
+        }
+
+        element.className = classes.join(' ');
+      }
+
+      menuLink.onclick = function (e) {
+        var active = 'active';
+
+        e.preventDefault();
+        toggleClass(layout, active);
+        toggleClass(menu, active);
+        toggleClass(menuLink, active);
+      };
+
+    }(this, this.document));
+  </script>
+</body>
+
+</html>

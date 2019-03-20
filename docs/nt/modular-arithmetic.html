@@ -1,0 +1,681 @@
+<!doctype html>
+<html>
+
+<head>
+  <script type='text/x-mathjax-config'>MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+  <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <style>
+    /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-rendering: optimizeLegibility;
+      line-height: 1;
+      margin-top: 0;
+      color: #000;
+    }
+
+    blockquote+figcaption cite {
+      display: block;
+      font-size: inherit;
+      text-align: right;
+    }
+
+    body {
+      word-wrap: break-word;
+    }
+
+    pre code {
+      word-wrap: normal;
+    }
+
+    body {
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #000000;
+      /* 2*16 = 32 */
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #000000;
+      /* 1.5*16 = 24 */
+    }
+
+    h3 {
+      font-size: 1.17em;
+      color: #000000;
+      /* 1.17*16 = 18.72 */
+    }
+
+    h4 {
+      font-size: 1em;
+      color: #000000;
+      /* 1*16 = 16 */
+    }
+
+    h5 {
+      font-size: 0.83em;
+      color: #000000;
+      /* 0.83*16 = 13.28 */
+    }
+
+    h6 {
+      font-size: 0.75em;
+      /* 0.75*16 = 12 */
+    }
+
+    h1 {
+      margin: 2.42424rem 0 1.454544rem;
+    }
+
+    h2 {
+      margin: 2.0202rem 0 1.21212rem;
+    }
+
+    h3 {
+      margin: 1.61616rem 0 1rem;
+    }
+
+    h4 {
+      margin: 1.21212rem 0 1;
+    }
+
+    h5 {
+      margin: 0.80808rem 0;
+    }
+
+    h6 {
+      margin: 0.70707rem 0;
+    }
+
+    p {
+      margin: auto auto 1.5rem;
+    }
+
+    small {
+      font-size: 65%;
+    }
+
+    input,
+    abbr,
+    acronym,
+    blockquote,
+    code,
+    kbd,
+    q,
+    samp,
+    var {
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+    }
+
+    pre {
+      white-space: pre;
+    }
+
+    pre code {
+      white-space: -moz-pre-wrap;
+      white-space: pre-wrap;
+    }
+
+    code {
+      white-space: pre;
+      font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+    }
+
+    abbr {
+      -webkit-font-variant: small-caps;
+      -moz-font-variant: small-caps;
+      -ms-font-variant: small-caps;
+      font-variant: small-caps;
+      font-weight: 600;
+      text-transform: lowercase;
+      color: gray;
+    }
+
+    abbr[title]:hover {
+      cursor: help;
+    }
+
+    /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      color: #444;
+    }
+
+    img {
+      max-width: 300%;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+    code,
+    pre {
+      background-color: #f5f5f5;
+      color: #000;
+      border-radius: 2px;
+      text-shadow: 0px 1px 0px white;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    pre code {
+      border: none;
+      box-shadow: none;
+    }
+
+    pre {
+      padding: 0.5em;
+    }
+
+    code {
+      display: inline-block;
+      padding: 0 0.5em;
+      line-height: 1.4;
+      font-size: 0.9em;
+    }
+
+    table {
+      border-spacing: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    table th,
+    table td {
+      padding: 0.3em 0.7em;
+    }
+
+    table th {
+      background-color: #f4f4f4;
+      border-bottom: 2px solid #444;
+    }
+
+    table td {
+      border: 1px solid #f5f5f5;
+    }
+
+    /* Add transition to containers so they can push in and out. */
+
+    #layout,
+    #menu,
+    .menu-link {
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+    }
+
+    /* This is the parent `<div>` that contains the menu and the content area. */
+
+    #layout {
+      position: relative;
+      padding-left: 0;
+    }
+
+    #layout.active #menu {
+      left: 250px;
+      width: 250px;
+    }
+
+    #layout.active .menu-link {
+      left: 250px;
+    }
+
+    /* The content `<div>` is where all your content goes. */
+
+    .content {
+      margin: 50px auto;
+      padding: 0 2em;
+      max-width: 120ex;
+      line-height: 1.6em;
+    }
+
+    /*
+    The `#menu` `<div>` is the parent `<div>` that contains the menu that
+    appears on the left side of the page.
+    */
+
+    #menu {
+      margin-left: -250px;
+      /* "#menu" width */
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1000;
+      /* so the menu or its navicon stays above all content */
+      background: #f4f4f4;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      font-size: 0.9em;
+    }
+
+    a,
+    a * {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    /* All anchors inside the menu should be styled like this. */
+
+    #menu a {
+      display: block;
+      padding: 0.5em 0.5em;
+    }
+
+    #menu a:first-letter {
+      text-transform: capitalize;
+    }
+
+    #menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1em 0.5em;
+    }
+
+    #menu ul ul {
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+      border-left: 4px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* Change color of the anchor links on hover/focus. */
+
+    #menu li a:hover,
+    #menu li a:focus {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* This styles the selected menu item `<li>`. */
+
+    #menu li a.active {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    /* This styles a link within a selected menu item `<li>`. */
+
+    #menu li a.active {
+      color: #222;
+    }
+
+    /* This styles the menu heading. */
+
+    #menu li.heading {
+      font-size: 0.9em;
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    #menu li.heading>* {
+      padding: 0.5em;
+      display: block;
+    }
+
+    #menu li.heading a {
+      color: #000000;
+    }
+
+    /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+    /*
+    `.menu-link` represents the responsive menu toggle that shows/hides on
+    small screens.
+    */
+
+    .menu-link {
+      position: fixed;
+      display: block;
+      /* show this only on small screens */
+      top: 0;
+      left: 0;
+      /* "#menu width" */
+      background: #f4f4f4;
+      /* change this value to increase/decrease button size */
+      z-index: 10;
+      width: 2em;
+      height: auto;
+      padding: 1.6em 1.2em;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .menu-link:hover {
+      background: /* #f4f4f4 * 0.8 */
+      #eee;
+    }
+
+    .menu-link span {
+      position: relative;
+      display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+      background-color: #555;
+      width: 100%;
+      height: 0.2em;
+      border-radius: 1em;
+    }
+
+    .menu-link span:before,
+    .menu-link span:after {
+      position: absolute;
+      margin-top: -0.6em;
+      content: " ";
+    }
+
+    .menu-link span:after {
+      margin-top: 0.6em;
+    }
+
+    /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+    @media (min-width: 48em) {
+
+      .header,
+      .content {
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+
+      #layout {
+        padding-left: 250px;
+        /* left col width "#menu" */
+        left: 0;
+      }
+      #menu {
+        left: 250px;
+      }
+
+      .menu-link {
+        position: fixed;
+        left: 250px;
+        display: none;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+    }
+
+    @media (max-width: 48em) {
+      /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+       * Make the window small.
+       * Tap the menu to trigger the active state.
+       * Make the window large again.
+       */
+      #layout.active {
+        position: relative;
+        left: 250px;
+      }
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+</head>
+
+<body>
+    <article id="main" class="content">
+      <title>Modular Arithmetic – IMT DeCal</title>
+<h1>Modular Arithmetic</h1>
+<hr>
+<br>
+<!--
+
+Jump to:
+
+- [Motivation](#motivation)
+	- [Parity](#parity)
+	- [Clock](#clock)
+- [Formalization](#formalization)
+- [Arithmetic](#arithmetic)
+	- [Order of Operations](#orderofop)
+	- [Exponentiation](#exp)
+	- [Fermat's Little Theorem](#flt)
+
+<br>
+
+-->
+<a name='motivation'>
+<h2>Motivation</h2>
+<hr>
+</a>
+<p>Before diving into any definitions, let’s look at a few motivating examples.</p>
+<a name='parity'>
+<h3>Example: Parity</h3>
+<hr>
+</a>
+<p><em>Note: We use the term “parity” to reflect whether a number is odd or even.</em></p>
+<p>Consider the set of odd numbers and even numbers (where “numbers” here represents the set of integers). We know that every number is either even or odd. Furthermore, when we divide any even number by $2$, the remainder is $0$, and when we divide any odd number by $2$, the remainder is $1$.</p>
+<p>In this sense, we can say all odd numbers – for example, $-3, 15, 1, 7, 9$ – are all “equivalent” to $1$, and similarly, we can say all even numbers are “equivalent” to $0$. In this new number system, everything is equivalent to one of $\{0, 1\}$. We can then perform the standard addition and multiplication operations on these numbers:</p>
+<div align=center>
+<p>$\begin{align*} 15 + 22 &amp;\equiv 1 + 0 \equiv 1 \\ 15 \cdot 22 &amp;\equiv 1 \cdot 0 \equiv 0\end{align*}$</p>
+</div>
+<p><em>Notice we didn’t use the standard equals sign, but instead used $\equiv$, which means “equivalent”.</em></p>
+<p>The result under this “equivalence” – either $1$ or $0$ – tells us the parity of the original result (odd or even).</p>
+<br>
+<a name='clock'>
+<h3>Example: Clock</h3>
+<hr>
+</a>
+<p>Another standard introductory example is the idea of a clock. Suppose you look at an analog clock and it reads $5$, and you want to know what time it will be in $13$ hours. The result you are looking for is $6$, not $18$ – after we pass the value of $11$, we wrap around back to $0$.</p>
+<p>On an analog clock, there are really only $12$ numbers: $\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11\}$. Every other number when we are dealing with a clock is equivalent to one of these numbers.</p>
+<br>
+<a name='formalization'>
+<h2>Formalization</h2>
+<hr>
+</a>
+<p>Formally, we say</p>
+<div align=center>
+<p>$a \equiv b \: (\text{mod} \: m)$ if and only if $m | (a - b)$</p>
+</div>
+<p>This reads, $a$ and $b$ are <strong>equivalent (or congruent) modulo</strong> $m$ if and only iff $m$ divides $a - b$ (or equivalently, $b - a$). Another way of thinking about this is $a \equiv b \: (\text{mod} \: m)$ if and only if $a, b$ have the same remainder when divided by $m$. For instance, $18 \equiv 33 \: (\text{mod} \: 5)$, since $33 - 18 = 15$, and $5 | 15$. We can also think of this as $a$ and $b$ differing by a multiple of $m$, i.e. $b = a + mk, k \in \mathbb{Z}$.</p>
+<p>Sometimes, context depending, we use “$\text{mod} \: m$” to refer to the modulo operator. $a \: (\text{mod} \: m)$ refers to $r$ in $a = mq + r$, i.e. $a \equiv m\: (\text{mod} \: m)$. (In other words, $a \: (\text{mod} \: m)$ refers to <code>a % m</code> in Python.)</p>
+<br>
+<p>When dealing with numbers $\text{mod} \: m$, all integers can be reduced to one of</p>
+<div align=center>
+<p>$\{0, 1, 2, 3, …, m - 1\}$</p>
+</div>
+<p><strong>This is the set of all possible remainders when dividing by $m$</strong>.</p>
+<p>For example, consider the set of integers $\text{mod} \: 3$. All integers are equivalent to a number in the set $\{0, 1, 2\}$. For instance, under modulo $3$, we have that $33 \equiv 0$ and $11 \equiv 2$.</p>
+<p>Suppose that $a \equiv r \: (\text{mod} \: m)$. We can add any integer multiple of $m$ to $a$, and the equivalence still holds, since the remainder when dividing by $m$ doesn’t change:</p>
+<div align=center>
+<p>$\begin{align*} a &amp;= mq + r \\ a + m &amp;= mq + m + r = m(q + 1) + r \end{align*}$</p>
+</div>
+<p>This tells us that we can add (or subtract) any integer multiple of $m$ and the equivalence will still hold true, i.e. $a + km \equiv a \: (\text{mod} \: m)$. Therefore, the following are all equivalent to $a$ in modulo $m$:</p>
+<div align=center>
+<p>$\{ …, a-2m, a-m, a, a + m, a+2m, … \}$</p>
+</div>
+<p>For example, all elements in the following set are equivalent to $3 \: (\text{mod} \: 5)$, and can thus be “reduced” to $3$:</p>
+<div align=center>
+<p>$\{ … ,-12, -7, -2, 3, 8, 13, 18, 23, … \}$</p>
+</div>
+<p>Note, this implies that negative integers also have equivalences in modular arithmetic, e.g. $-12 \equiv 3 \: (\text{mod} \: 5)$.</p>
+<div align=center>
+<img src='clock.png' width=250>
+<p><em>Image taken from <strong><a href="https://www.ias.edu/ideas/2012/taylor-modular-arithmetic">ias.edu</a></strong></em></p>
+</div>
+<br>
+<a name='arithmetic'>
+<h2>Arithmetic</h2>
+<hr>
+</a>
+<a name='orderofop'>
+<h3>Order of Operations – Addition and Multiplication</h3>
+<hr>
+</a>
+<p>Suppose we want to simplify $13 + 14 \cdot 6 \: (\text{mod} \: 5)$. We could do the following:</p>
+<div align=center>
+<p>$13 + 14 \cdot 6 \equiv 13 + 84 \equiv 97 \equiv 2 \: (\text{mod} \: 5)$</p>
+</div>
+<p>However, we could also simplify things first:</p>
+<div align=center>
+<p>$13 + 14 \cdot 6 \equiv 3  + 4 \cdot 1 \equiv 7 \: (\text{mod} \: 5) \equiv 2 \: (\text{mod} \: 5)$</p>
+</div>
+<p>or even</p>
+<div align=center>
+<p>$13 + 14 \cdot 6 \equiv -2 + 4 \cdot 1 \equiv 2 \: (\text{mod} \: 5)$</p>
+</div>
+<p>Regardless of the order we simplify things in, the “lowest form” result – i.e. the result in the set $\{0, 1, 2, 3, 4 \}$ – always ends up being the same.</p>
+<p>In general, if we have $a \equiv b \: (\text{mod} \: m)$ and $c \equiv d \: (\text{mod} \: m)$, the following hold:</p>
+<div align=center>
+<p>$\boxed{\begin{align*} a + c &amp;\equiv b + d  \: (\text{mod} \: m) \\ a \cdot c &amp;\equiv b \cdot d \: (\text{mod} \: m) \end{align*} }$</p>
+</div>
+<p>Let’s prove each of these properties.</p>
+<h4>Addition</h4>
+<p>If $a \equiv b \: (\text{mod} \: m)$ and $c \equiv d \: (\text{mod} \: m)$, then $b = a + mk_1$ and $d = c + mk_2$.</p>
+<div align=center>
+<p>$\begin{align*}b + d &amp;= a + c + mk_1 + mk_2 \\ &amp;= (a + c) + m(k_1 + k_2) \\ &amp;= (a + c) + m \cdot (\text{some integer}) \\ \implies b + d &amp;\equiv a + c \: (\text{mod} \: m) \end{align*}$</p>
+</div>
+<h4>Multiplication</h4>
+<p>Multiplying our expressions for $b$ and $d$:</p>
+<div align=center>
+<p>$\begin{align*} bd &amp;= (a + mk_1)(c + mk_2) \\ &amp;= ac + ak_2m + ck_1m + k_1k_2m^2 \\ &amp;= ac + m(ak_2 + ck_1 + k_1k_2m) \\ &amp;= ac + m \cdot (\text{some integer}) \\ \implies bd &amp;\equiv ac \: (\text{mod} \: m)\end{align*}$</p>
+</div>
+<p>The key takeaway of these proofs is that we can “simplify $\text{mod} \: m$” as we go, in any order.</p>
+<br>
+<a name='exp'>
+<h3>Exponentiation</h3>
+<hr>
+</a>
+<p>Suppose we want to evaluate $2^{15} \: (\text{mod} \: 9)$. We <em>could</em> find $2^{15} = 32768$, and divide this number by $9$ and find the remainder, but there’s a better way.</p>
+<div align=center>
+<p>$2^{15} = (2^3) ^5 $</p>
+</div>
+<p>We can use the fact that $2^3 \equiv 8 \equiv -1 \: (\text{mod} \: 9)$:</p>
+<div align=center>
+<p>$(2^3)^5 \equiv (-1)^5 \equiv -1 \equiv 8 \: (\text{mod} \: 9)$</p>
+</div>
+<p>Other examples:</p>
+<ul>
+<li>$5^{11} \: (\text{mod} \: 26) \equiv (5^2)^5\cdot 5 \equiv (-1)^5 \cdot 5 \equiv -5 \: \equiv 21 \: (\text{mod} \: 26)$</li>
+<li>$23^9 \: (\text{mod} \: 24) \equiv (-1)^9 \equiv -1 \equiv 23 \: (\text{mod} \: 24) $</li>
+</ul>
+<br>
+<p>For calculations that are more involved, we can consider the idea of <strong>repeated squaring</strong>. Repeated squaring uses the fact that any integer can be written as the sum of powers of two (because any integer can be written in binary).</p>
+<p>Suppose we want to consider $4^{26} \: (\text{mod} \: 13)$. We can write $26 = 16 + 8 + 2$, implying that we can write $4^{26}$ as $4^{16} \cdot 4^8 \cdot 4^2$.</p>
+<p>Now, we can start with $4$ and repeatedly square it (modulo $13$), yielding $4^2, 4^4, 4^8$ and $4^{16}$.</p>
+<div align=center>
+<p>$\begin{align*} 4^1 &amp;\equiv 4 \: (\text{mod} \: 13) \\ 4^2 \equiv 16 &amp;\equiv 3 \: (\text{mod} \: 13) \\ 4^8 \equiv (4^2)^4 \equiv 3^4 \equiv 81 &amp;\equiv 3 \: (\text{mod} \: 13) \\ 4^{16} \equiv (4^8)^2 \equiv 3^2 \equiv 16 &amp;\equiv 9  \: (\text{mod} \: 13) \end{align*}$</p>
+</div>
+<p>Combining these results:</p>
+<div align=center>
+<p>$\begin{align*} 4^{26} &amp;\equiv 4^{16} \cdot 4^{8} \cdot 4^2 \\ &amp;\equiv 3 \cdot 3 \cdot 9 \\ &amp;\equiv 27 \cdot 3 \\ &amp;\equiv (1) \cdot 3 \\ &amp;\equiv 3 \: (\text{mod} \: 13) \end{align*} $</p>
+</div>
+<br>
+<a name='flt'>
+<h3>Fermat’s Little Theorem</h3>
+<hr>
+</a>
+<p>Another property we can use for simplifcation in modular arithmetic is Fermat’s Little Theorem (FLT), which states</p>
+<div align=center>
+<p>$\boxed{a^{p} \equiv a \: (\text{mod } p), p \text{ is prime}}$</p>
+<p>or, given that $a$ is not a multiple of $p$,</p>
+<p>$\boxed{a^{p-1} \equiv 1 \: (\text{mod } p), p \text{ is prime}}$</p>
+</div>
+<p>We can use either of the two forms in helping us simplify expressions.</p>
+<p>Let’s use FLT to simplify $5^{73} \: (\text{mod } 7)$.</p>
+<div align=center>
+<p>$\begin{align*} 5^{73} &amp;\equiv (5^6)^{12} \cdot 5^1 \\ &amp;\equiv 1^{12} \cdot 5 \\ &amp;\equiv 5 \: (\text{mod } 7) \end{align*}$</p>
+</div>
+<a name='examples'>
+<h2>Examples</h2>
+<hr>
+</a>
+<p>Using modular arithmetic can make many of the proofs that we previously did involving divisibility significantly easier.</p>
+<h4>Example 1</h4>
+<p><strong>Prove that $4 | 5^n - 1, \forall n \in \mathbb{N}$.</strong></p>
+<p>Previously, we did this proof using induction on $n$. However, this problem really is asking us to prove that $5^n - 1 \equiv 0 \: (\text{mod} \: 4)$, which we can do pretty easily:</p>
+<div align=center>
+<p>$\begin{align*} 5^n - 1 &amp;\equiv 1^n - 1 \\ &amp;\equiv 1 - 1 \\ &amp;\equiv 0 \: (\text{mod} \: 4) \end{align*}$</p>
+</div>
+<br>
+<h4>Example 2</h4>
+<p><strong>Prove that $3 | n^3 - n, n \in \mathbb{N}$.</strong></p>
+<p>Again, we’ve previously done this proof using casework or induction. However, with Fermat’s Little Theorem, this comes out directly:  $a^3 \equiv a \: (\text{mod } 3)$, and thus $3 | a^3 - a$ for any $a \in \mathbb{N}$. We’re done!</p>
+<p>However, suppose for a second that we didn’t know Fermat’s Little Theorem. Then, could use the fact that we know any number under modulo $3$ is equivalent to either $0$, $1$, or $2$. Then, we only need to look at these three cases, as they cover all naturals.</p>
+<div align=center>
+<p>$\begin{align*} 0^3 - 0 &amp;\equiv 0 \: (\text{mod} \: 3) \\ 1^3 - 1 &amp;\equiv 0 \: (\text{mod} \: 3) \\ 2^3 - 2 = 6 &amp;\equiv 0 \: (\text{mod} \: 3) \end{align*}$</p>
+</div>
+<p>Thus, in all cases, $n^3 - n \equiv 0 \: (\text{mod} \: 3)$, and so $3 | n^3 - n$.</p>
+<br>
+<h4>Example 3</h4>
+<p><strong>Prove that any odd square is of the form $8k + 1$, where $k$ is an integer.</strong></p>
+<p>This question boils down to showing that if $n$ is an odd number, then $n^2 \equiv 1 \: (\text{mod} \: 8)$. Notice, under modulo $8$, there are essentially only $8$ unique numbers – $0, 1, 2, 3, 4, 5, 6$ and $7$.</p>
+<p>Futhermore, only $1, 3, 5$ and $7$ correspond to odd numbers. This is because, in modulo $8$, $1, 3, 5$ and $7$ really correspond to numbers of the form $8c + 1$, $8c + 3$, $8c + 5$, and $8c + 7$. (The other cases, $8c, 8c + 2, 8c + 4$ and $8c + 6$ can all clearly be written as even numbers.)</p>
+<p>Then:</p>
+<div align=center>
+<p>$\begin{align*} 1^2 &amp;\equiv 1 \: (\text{mod} \: 8) \\ 3^2 \equiv 9 &amp;\equiv 1 \: (\text{mod} \: 8) \\ 5^2 \equiv 25 &amp;\equiv 1 \: (\text{mod} \: 8) \\ 7^2 \equiv (-1)^2 &amp;\equiv 1 \: (\text{mod} \: 8) \end{align*}$</p>
+</div>
+<p>Therefore, in all cases, if $n$ is odd, then $n^2 \equiv 1 \: (\text{mod} \: 8)$, hence proving the claim.</p>
+
+    </article>
+  <script>
+    // FROM http://purecss.io/js/ui.js
+    (function (window, document) {
+
+      var layout = document.getElementById('layout'),
+        menu = document.getElementById('menu'),
+        menuLink = document.getElementById('menuLink');
+
+      function toggleClass(element, className) {
+        var classes = element.className.split(/\s+/),
+          length = classes.length,
+          i = 0;
+
+        for (; i < length; i++) {
+          if (classes[i] === className) {
+            classes.splice(i, 1);
+            break;
+          }
+        }
+        // The className is not found
+        if (length === classes.length) {
+          classes.push(className);
+        }
+
+        element.className = classes.join(' ');
+      }
+
+      menuLink.onclick = function (e) {
+        var active = 'active';
+
+        e.preventDefault();
+        toggleClass(layout, active);
+        toggleClass(menu, active);
+        toggleClass(menuLink, active);
+      };
+
+    }(this, this.document));
+  </script>
+</body>
+
+</html>
