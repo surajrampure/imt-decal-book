@@ -21,7 +21,7 @@ Jump to:
 
 -->
 
-To thoroughly introduce complex numbers, we need to talk about imaginary numbers. Imaginary numbers stem from the fact that the square root of a negative number is undefined over the set of real numbers – there is no real number $$x$$ such that $$x = \sqrt{-25}$$. In order to accomodate square roots of negative numbers, we introduce the imaginary unit $$i$$.
+Before talking about complex numbers, we first need to talk about imaginary numbers. Imaginary numbers stem from the fact that the square root of a negative number is undefined over the set of real numbers – there is no real number $$x$$ such that $$x = \sqrt{-25}$$. In order to accomodate square roots of negative numbers, we introduce the imaginary unit $$i$$.
 
 <a name='imaginary_numbers'>
 
