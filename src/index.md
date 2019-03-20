@@ -37,8 +37,8 @@ These notes are primarily written by Suraj Rampure, with contributions by Fahad 
 - [Factor and Remainder Theorems](polynomials/factor-and-remainder-theorem.html)
 
 ### Miscellaneous
-- [Sigma and Pi Notation](appendix/sigma-and-pi-notation.html)
-- [Complex Numbers](appendix/complex-numbers.html)
+- [Sigma and Pi Notation](misc/sigma-and-pi-notation.html)
+- [Complex Numbers](misc/complex-numbers.html)
 
 <br>
 

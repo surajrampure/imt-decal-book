@@ -225,7 +225,7 @@ The three cases above come from the three different states of the discriminant, 
 
 </a>
 
-Complex numbers (discussed in the appendix, if you need a refresher) are a superset of the real numbers. We can represent a complex number $z$ in **rectangular form** as $z = a + bi$, where $a, b$ are real numbers and $i$ is the imaginary unit defined by $i^2 = -1$. We say $a$ is the "real part" and $bi$ is the "imaginary part." We can represent the set of real numbers as complex numbers, with $b = 0$.
+Complex numbers (look **[here](../misc/complex-numbers.html)** for a refresher) are a superset of the real numbers. We can represent a complex number $z$ in **rectangular form** as $z = a + bi$, where $a, b$ are real numbers and $i$ is the imaginary unit defined by $i^2 = -1$. We say $a$ is the "real part" and $bi$ is the "imaginary part." We can represent the set of real numbers as complex numbers, with $b = 0$.
 
 The simplest parabola that has complex roots is $p(x) = x^2 + 1$, which sits one unit above the $x$ axis, centered on the $y$ axis. It has roots $x_1 = i$ and $x_2 = -i$, respectively, which you can verify with the quadratic equation or by evaluating $$p(x_1), p(x_2)$$. 
 

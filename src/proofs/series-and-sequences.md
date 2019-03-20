@@ -27,7 +27,7 @@ In this note, we will review definitions and formulas for arithmetic and geometr
 
 We'll introduce these ideas as they tie in quite well with proof techniques. We will show how to prove the identities in this article in multiple ways.
 
-If you're uncomfortable with sigma notation, please refer to the appendix note on **[Sigma and Pi Notation](../appendix/sigma-and-pi-notation.html)**.
+If you're uncomfortable with sigma notation, please refer to the note on **[Sigma and Pi Notation](../misc/sigma-and-pi-notation.html)**.
 
 <br>
 

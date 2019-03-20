@@ -261,7 +261,7 @@ The following diagram summarizes the hierarchy of the number sets we've studied 
 
 <img src="venn-diagram-real.png" alt="real-venn-diagram" style="width: 500px;"/>
 
-A more complete version of this picture is painted in the **[complex numbers note](../appendix/complex-numbers.html)**.
+A more complete version of this picture is painted in the **[complex numbers note](../misc/complex-numbers.html)**.
 
 
 <br>

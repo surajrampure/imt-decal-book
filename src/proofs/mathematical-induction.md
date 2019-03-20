@@ -52,7 +52,7 @@ Suppose the expression we want to prove is in terms of the variable $$n$$ (which
 2. **Induction Hypothesis**: Assume that the statement holds true for $$n = k$$, for some arbitrary $$k$$.
 3. **Induction Step**: Given the fact that the statement holds true for $$n = k$$, show that it holds for $$n = k + 1$$.
 
-Let's dive right into an example. _Note: If you're uncomfortable with summation notation, refer to the note on **[Sigma and Pi Notation](../appendix/sigma-and-pi-notation.html)**._
+Let's dive right into an example. _Note: If you're uncomfortable with summation notation, refer to the note on **[Sigma and Pi Notation](../misc/sigma-and-pi-notation.html)**._
 
 #### Example: Sum of First $n$ Naturals
 
