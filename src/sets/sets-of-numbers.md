@@ -1,6 +1,10 @@
 <title>Sets of Numbers – IMT DeCal</title>
 
 # Sets of Numbers
+
+_by Suraj Rampure_<br>
+_Last modified: March 21, 2019_
+
 ---
 
 <br>

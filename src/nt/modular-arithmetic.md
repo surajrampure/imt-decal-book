@@ -1,6 +1,10 @@
 <title>Modular Arithmetic – IMT DeCal</title>
 
 # Modular Arithmetic
+
+_by Suraj Rampure_<br>
+_Last modified: March 21, 2019_
+
 ---
 
 <br>

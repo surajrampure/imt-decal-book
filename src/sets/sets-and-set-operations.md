@@ -1,6 +1,10 @@
 <title>Sets and Set Operations – IMT DeCal</title>
 
 # Sets and Set Operations
+
+_by Suraj Rampure_<br>
+_Last modified: March 21, 2019_
+
 ---
 
 <br>

@@ -1,6 +1,10 @@
 <title>Primality and Divisibility – IMT DeCal</title>
 
 # Primality and Divisibility
+
+_by Suraj Rampure_<br>
+_Last modified: March 21, 2019_
+
 ---
 
 <br>

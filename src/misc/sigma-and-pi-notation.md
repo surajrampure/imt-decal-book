@@ -1,6 +1,10 @@
 <title>Sigma and Pi Notation – IMT DeCal</title>
 
 # Sigma and Pi Notation
+
+_by Suraj Rampure_<br>
+_Last modified: March 21, 2019_
+
 ---
 
 <br>

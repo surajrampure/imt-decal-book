@@ -1,6 +1,10 @@
 <title>Foundational Proof Techniques – IMT DeCal</title>
 
 # Foundational Proof Techniques
+
+_by Fahad Kamran, Suraj Rampure_<br>
+_Last modified: March 21, 2019_
+
 ---
 
 <br>

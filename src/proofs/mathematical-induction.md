@@ -1,6 +1,10 @@
 <title>Mathematical Induction – IMT DeCal</title>
 
 # Mathematical Induction
+
+_by Suraj Rampure_<br>
+_Last modified: March 21, 2019_
+
 ---
 
 <br>

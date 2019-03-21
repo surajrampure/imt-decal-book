@@ -1,6 +1,10 @@
 <title>Sets and Logic Cheat Sheet – IMT DeCal</title>
 
 # Sets and Logic Cheat Sheet
+
+_by Sagnik Bhattacharya, Suraj Rampure_<br>
+_Last modified: March 21, 2019_
+
 ---
 
 <br>

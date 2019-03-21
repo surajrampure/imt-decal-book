@@ -28,7 +28,9 @@ These notes are primarily written by Suraj Rampure, with contributions by Fahad 
 - [Modular Arithmetic](nt/modular-arithmetic.html)
 
 ### Counting
-- [Stars and Bars](counting/stars-and-bars.md)
+- [Principle of Inclusion-Exclusion](counting/principle-include-exclude.html)
+- [Key Examples in Counting](counting/key-examples-counting.html)
+- [Stars and Bars](counting/stars-and-bars.html)
 
 ### Polynomials
 - [Binomial Theorem](polynomials/binomial-theorem.html)
