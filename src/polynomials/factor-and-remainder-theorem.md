@@ -1,6 +1,10 @@
 <title>Factor and Remainder Theorems – IMT DeCal</title>
 
 # Factor and Remainder Theorems
+
+_by Suraj Rampure_<br>
+_Last modified: March 21, 2019_
+
 ---
 
 <br>

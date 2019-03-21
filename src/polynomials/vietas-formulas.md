@@ -1,6 +1,10 @@
 <title>Vieta's Formulas – IMT DeCal</title>
 
 # Vieta's Formulas
+
+_by Suraj Rampure_<br>
+_Last modified: March 21, 2019_
+
 ---
 
 

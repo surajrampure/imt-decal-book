@@ -2,6 +2,10 @@
 
 
 # Binomial Theorem
+
+_by Suraj Rampure_<br>
+_Last modified: March 21, 2019_
+
 ---
 
 <br>

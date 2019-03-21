@@ -1,6 +1,10 @@
 <title>Representation and Interpolation – IMT DeCal</title>
 
 # Representation and Interpolation
+
+_by Suraj Rampure_<br>
+_Last modified: March 21, 2019_
+
 ---
 
 <br>
