@@ -3,7 +3,7 @@
 # Key Examples in Counting
 
 _by Suraj Rampure_<br>
-_Last modified: March 21, 2019_
+_Last modified: March 28, 2019_
 
 ---
 
@@ -34,9 +34,9 @@ We can also extend this problem.
 
 ### How many factors does 1200 have, that are multiples of 24? <br>
 
-We know each factor of 1200 will be of the form $$2^a \cdot 3^b \cdot 5^c$$. We now just need to determine the number of options we have for $$a, b$$ and $$c$$. Since $24 = 2^3 \cdot 3$, we know that $a$ must be at least $3$ and $c$ must be at least $1$.
+We know each factor of 1200 will be of the form $$2^a \cdot 3^b \cdot 5^c$$. We now just need to determine the number of options we have for $$a, b$$ and $$c$$. Since $24 = 2^3 \cdot 3^1 \cdot 5^0$, we know that $a$ must be at least $3$ and $b$ must be at least $1$.
 
-This restricts our set of choices: now, we have $$3 \leq a \leq 4, 0 \leq b \leq 1$$ and $$1 \leq c \leq 2$$. This means we have 2 choices for $a$ (3, 4), 2 choices for $b$ (0, 1) and 2 for $c$ (1, 2), yielding $2 \cdot 2 \cdot 2 = 8$ factors of 1200 that are multiples of 24.
+This restricts our set of choices: now, we have $$3 \leq a \leq 4, 1 \leq b \leq 1$$ and $$0 \leq c \leq 2$$. This means we have 2 choices for $a$ (3, 4), 1 choice for $b$ (1) and 3 for $c$ (0, 1, 2), yielding $2 \cdot 1 \cdot 3 = 6$ factors of 1200 that are multiples of 24.
 
 <br>
 

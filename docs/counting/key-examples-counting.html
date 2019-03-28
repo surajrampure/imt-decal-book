@@ -447,7 +447,7 @@
       <title>Key Examples in Counting – IMT DeCal</title>
 <h1>Key Examples in Counting</h1>
 <p><em>by Suraj Rampure</em><br>
-<em>Last modified: March 21, 2019</em></p>
+<em>Last modified: March 28, 2019</em></p>
 <hr>
 <br>
 <p>This note walks through a few selected examples of interesting problems in combinatorics. It also touches on the idea of combinatorial proofs.</p>
@@ -462,8 +462,8 @@
 <div align=center> $\boxed{\text{number of factors of } n = \prod_{i = 1}^k (e_i + 1) = (e_1 + 1) \cdot (e_2 + 1) \cdot ... \cdot (e_{k - 1} + 1) \cdot (e_k + 1)} $</div><br>
 <p>We can also extend this problem.</p>
 <h3>How many factors does 1200 have, that are multiples of 24? <br></h3>
-<p>We know each factor of 1200 will be of the form $2^a \cdot 3^b \cdot 5^c$. We now just need to determine the number of options we have for $a, b$ and $c$. Since $24 = 2^3 \cdot 3$, we know that $a$ must be at least $3$ and $c$ must be at least $1$.</p>
-<p>This restricts our set of choices: now, we have $3 \leq a \leq 4, 0 \leq b \leq 1$ and $1 \leq c \leq 2$. This means we have 2 choices for $a$ (3, 4), 2 choices for $b$ (0, 1) and 2 for $c$ (1, 2), yielding $2 \cdot 2 \cdot 2 = 8$ factors of 1200 that are multiples of 24.</p>
+<p>We know each factor of 1200 will be of the form $2^a \cdot 3^b \cdot 5^c$. We now just need to determine the number of options we have for $a, b$ and $c$. Since $24 = 2^3 \cdot 3^1 \cdot 5^0$, we know that $a$ must be at least $3$ and $b$ must be at least $1$.</p>
+<p>This restricts our set of choices: now, we have $3 \leq a \leq 4, 1 \leq b \leq 1$ and $0 \leq c \leq 2$. This means we have 2 choices for $a$ (3, 4), 1 choice for $b$ (1) and 3 for $c$ (0, 1, 2), yielding $2 \cdot 1 \cdot 3 = 6$ factors of 1200 that are multiples of 24.</p>
 <br>
 <h2>2. Cardinality of the Power Set, Combinatorial Proofs</h2>
 <p>The power set $P(S)$ of a set $S$ is a set of all possible subsets of $S$. For example, if $S = {1, 2, 3}$, we have $P(S) = \{ \emptyset , \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1, 2, 3\} \}$.</p>
