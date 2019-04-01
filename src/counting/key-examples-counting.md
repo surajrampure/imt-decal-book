@@ -73,7 +73,7 @@ This is not a co-incidence, and in fact, it holds in general (for $n \in \mathbb
 
 <div align=center>
 
-$$\boxed{\sum_{i = 1}^n {n \choose i} = {n \choose 0} + {n \choose 1} + ... + {n \choose n} = 2^n}$$
+$$\boxed{\sum_{i = 0}^n {n \choose i} = {n \choose 0} + {n \choose 1} + ... + {n \choose n} = 2^n}$$
 
 </div>
 
